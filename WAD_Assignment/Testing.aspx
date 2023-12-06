@@ -14,6 +14,19 @@
 
             testingggg2
             <asp:Button ID="Button1" runat="server" Text="TestYA" />
+            <br />
+            <div>
+                <asp:LoginView ID="LoginView1" runat="server">
+                <AnonymousTemplate>
+                    <asp:Button ID="Button2" runat="server" Text="Button" />
+                </AnonymousTemplate>
+                <LoggedInTemplate>
+                    <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                    </asp:CheckBoxList>
+                </LoggedInTemplate>
+            </asp:LoginView>
+            </div>
+            
         </div>
     </form>
 </body>
