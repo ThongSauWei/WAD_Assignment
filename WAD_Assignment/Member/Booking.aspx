@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Booking.aspx.cs" Inherits="WAD_Assignment.Member.WebForm1" %>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -23,10 +23,10 @@
         <table style="width:30%;">
             <tr>
                 <td class="auto-style1">
-                    <asp:Button ID="Button1" CssClass="empty" runat="server" Text="" disabled="true"/>
+                    <asp:Button ID="Button1" CssClass="empty" runat="server" Text="" disabled="true" />
                 </td>
                 <td class="auto-style1">
-                    <asp:Button ID="Button2" CssClass="empty" runat="server" Text="" disabled="true"/>
+                    <asp:Button ID="Button2" CssClass="empty" runat="server" Text="" disabled="true" />
                 </td>
                 <td class="auto-style1">
                     <asp:Button ID="Button3" CssClass="empty" runat="server" Text="" />
