@@ -1,13 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Testing.aspx.cs" Inherits="WAD_Assignment.Testing" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Header.Master" AutoEventWireup="true" CodeBehind="Testing.aspx.cs" Inherits="WAD_Assignment.Testing" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1"
+Runat="Server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+
+    
         <div>
             Testing<br />
 
@@ -28,6 +25,7 @@
             </div>
             
         </div>
-    </form>
-</body>
-</html>
+    
+
+    </asp:Content>
+
