@@ -1,0 +1,345 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Header.master.cs" Inherits="WAD_Assignment.Header" %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE</title>
+
+    <!--title image-->
+    <link rel="shortcut icon" href="cinemaLogo.png">
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="header.css">
+
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="top">
+    <!--- #HEADER-->
+    <header class="header" data-header>
+        <div class="container">
+            <div class="overlay" data-overlay></div>
+            <a href="./index.html" class="logo">
+                <img src="cinemaLogo.png" alt="cinemaLogo" width="85px" height="75px" />
+            </a>
+
+            <div class="header-actions">
+                <!--Search-->
+                <div class="searchWrap">
+                    <div class="search-box">
+                        <button class="btn-search">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </button>
+
+                        <input type="text" class="input-search" placeholder="Search Movie...">
+                    </div>
+                </div>
+
+                <!--Cutter-->
+                <div class="cutter"></div>
+
+                <!---Right-->
+                <div class="lang-wrapper">
+                    <!---Reminder-->
+                    <label for="reminderSite">
+                        <div class="notification" id="notificationContainer">
+                            <div class="notBtn" id="notificationBtn">
+                                <div class="number">3</div>
+                                <ion-icon name="notifications-outline" style="color: rgb(226, 226, 20);"></ion-icon>
+                                <div class="box" id="notificationDropdown">
+
+                                    <div class="cont">
+                                        <div class="contTop">
+                                            Notifications
+                                        </div>
+                                        <div class="sec">
+                                            <a href="#">
+                                                <div class="profCont">
+                                                    <!-- <i class="fa-solid fa-ban"></i>/ -->
+                                                    <div class="profile">
+                                                        <img src="movie1.jpg" alt="movie" width="100%" />
+                                                    </div>
+                                                </div>
+                                                <div class="content">
+                                                    <div class="txt">
+                                                        For you: "Hunger Games" now showing in cinema
+                                                    </div>
+                                                    <div class="txtIcon">
+                                                        <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="sec">
+                                            <a href="#">
+                                                <div class="profCont">
+                                                    <!-- <i class="fa-solid fa-ban"></i>/ -->
+                                                    <div class="profile">
+                                                        <img src="movie1.jpg" alt="movie" width="100%" />
+                                                    </div>
+                                                </div>
+                                                <div class="content">
+                                                    <div class="txt">
+                                                        Refund: Your refund for "Hunger Games" unsuccessful
+                                                    </div>
+                                                    <div class="txtIcon">
+                                                        <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="sec">
+                                            <a href="#">
+                                                <div class="profCont">
+                                                    <!-- <i class="fa-solid fa-ban"></i>/ -->
+                                                    <div class="profile">
+                                                        <img src="movie1.jpg" alt="movie" width="100%" />
+                                                    </div>
+                                                </div>
+                                                <div class="content">
+                                                    <div class="txt">
+                                                        Rate: Rate and Review "Hunger games" 
+                                                    </div>
+                                                    <div class="txtIcon">
+                                                        <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <button class="btn btn-primary">Sign in</button>
+
+            </div>
+
+
+            <button class="menu-open-btn" data-menu-open-btn>
+                <ion-icon name="reorder-two"></ion-icon>
+            </button>
+
+            <nav class="navbar" data-navbar>
+                <div class="navbar-top">
+                    <a href="./index.html" class="logo">
+                        <div class="logo-container1">
+                            <img src="cinemaLogo.png" alt="cinemaLogo" width="80px" height="70px" />
+                            <h3 style="color: rgb(226, 226, 20);">ET CINEMA</h3>
+                        </div>
+                    </a>
+                    <button class="menu-close-btn" data-menu-close-btn>
+                        <ion-icon name="close-outline"></ion-icon>
+                    </button>
+                </div>
+
+                <ul class="navbar-list">
+                    <li>
+                        <a href="./index.html" class="navbar-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar-link">Movie</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar-link">Upcoming</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar-link">My Booking</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar-link">Contact Us</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-social-list">
+                    <li>
+                        <a href="#" class="navbar-social-link">
+                            <button class="btn btn-primary">Sign in</button>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+
+    <!-- #FOOTER-->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="Fcontainer">
+                <div class="rowFooter">
+                    <div class="footer-col">
+                        <div class="footer1">
+                            <img src="cinemaLogo.png" alt="cinemaLogo" width="50%" />
+                            <p class="fLeft">
+                                <a href="#" class="link-1">Home</a>
+
+                                <a href="#">Movie</a>
+
+                                <a href="#">Upcoming</a>
+
+                                <a href="#">My Booking</a>
+
+                                <a href="#">Contact Us</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Us<span></span></h4>
+
+                        <ul style="margin-top: -20px;">
+                            <li>
+                                <div class="address">
+                                    <ion-icon name="navigate-outline" style="font-size: 60px; color: red;"></ion-icon>
+                                    <p>
+                                        1, Jalan SS 22/19, Damansara Jaya,
+                                        47400 Petaling Jaya, Selangor, Malaysia
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="address">
+                                    <ion-icon name="call-outline" style="font-size: 25px; color: red;"></ion-icon>
+                                    <p>
+                                        +60-112147553
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="address">
+                                    <ion-icon name="mail-outline" style="font-size: 25px; color: red;"></ion-icon>
+                                    <p>
+                                        info@gmail.com
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col" id="getInTouch">
+                        <h4>Get in Touch<span></span></h4>
+                        <form id="formFooter" class="topBefore">
+                            <input id="name" type="text" placeholder="NAME">
+                            <input id="email" type="text" placeholder="E-MAIL">
+                            <textarea id="message" placeholder="MESSAGE" rows="4" cols="50"></textarea>
+                            <input id="submit" type="submit" value="GO!">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="footer-bottom">
+            <div class="container">
+
+                <p class="copyright">
+                    &copy; 2023 RSDS2G3. All Rights Reserved
+                </p>
+
+                <ul class="social-listFooter">
+
+                    <li>
+                        <a href="#" class="social-linkFooter">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-linkFooter">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-linkFooter">
+                            <ion-icon name="logo-pinterest"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-linkFooter">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!--- #GO TO TOP-->
+    <a href="#top" class="go-top" data-go-top>
+        <ion-icon name="chevron-up"></ion-icon>
+    </a>
+
+    <!--- ionicon link-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        'use strict';
+
+        /*** navbar variables*/
+        const navOpenBtn = document.querySelector("[data-menu-open-btn]");
+        const navCloseBtn = document.querySelector("[data-menu-close-btn]");
+        const navbar = document.querySelector("[data-navbar]");
+        const overlay = document.querySelector("[data-overlay]");
+
+        const navElemArr = [navOpenBtn, navCloseBtn, overlay];
+
+        for (let i = 0; i < navElemArr.length; i++) {
+
+            navElemArr[i].addEventListener("click", function () {
+
+                navbar.classList.toggle("active");
+                overlay.classList.toggle("active");
+                document.body.classList.toggle("active");
+
+            });
+
+        }
+
+        /*** header sticky*/
+        const header = document.querySelector("[data-header]");
+
+        window.addEventListener("scroll", function () {
+
+            window.scrollY >= 10 ? header.classList.add("active") : header.classList.remove("active");
+
+        });
+
+        /*** go top*/
+        const goTopBtn = document.querySelector("[data-go-top]");
+
+        window.addEventListener("scroll", function () {
+
+            window.scrollY >= 500 ? goTopBtn.classList.add("active") : goTopBtn.classList.remove("active");
+
+        });
+    </script>
+
+</body>
+
+</html>

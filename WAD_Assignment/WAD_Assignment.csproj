@@ -67,11 +67,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cinemaLogo.png" />
+    <Content Include="header.css" />
     <Content Include="Member\Booking.aspx" />
+    <Content Include="movie1.jpg" />
+    <Content Include="movie2.jpg" />
     <Content Include="Testing.aspx" />
+    <Content Include="TTT.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Header.Master.cs">
+      <DependentUpon>Header.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Header.Master.designer.cs">
+      <DependentUpon>Header.Master</DependentUpon>
+    </Compile>
     <Compile Include="Member\Booking.aspx.cs">
       <DependentUpon>Booking.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -87,16 +99,25 @@
     <Compile Include="Testing.aspx.designer.cs">
       <DependentUpon>Testing.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TTT.aspx.cs">
+      <DependentUpon>TTT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TTT.aspx.designer.cs">
+      <DependentUpon>TTT.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Web.config" />
     <Content Include="Member\Web.config" />
+    <Content Include="Header.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
