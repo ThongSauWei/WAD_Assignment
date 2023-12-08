@@ -67,7 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="image\chair.png" />
+    <Content Include="image\checked.png" />
+    <Content Include="image\profile-user.png" />
     <Content Include="Member\Booking.aspx" />
+    <Content Include="Member\ConfirmBooking.aspx" />
+    <Content Include="image\movie-image1.jpg" />
+    <Content Include="Member\Booking.css" />
     <Content Include="Testing.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -78,6 +84,13 @@
     </Compile>
     <Compile Include="Member\Booking.aspx.designer.cs">
       <DependentUpon>Booking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\ConfirmBooking.aspx.cs">
+      <DependentUpon>ConfirmBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\ConfirmBooking.aspx.designer.cs">
+      <DependentUpon>ConfirmBooking.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testing.aspx.cs">

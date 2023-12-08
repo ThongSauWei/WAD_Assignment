@@ -11,12 +11,37 @@ namespace WAD_Assignment.Member
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        protected void btnSeat_Click(object sender, EventArgs e)
+        protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            lblSeat.Text = "Seat selected";
+            Response.Redirect("ConfirmBooking.aspx");
+        }
+
+        protected void Seat_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton seatClicked = sender as ImageButton;
+
+            if (seatClicked.ImageUrl.EndsWith("chair.png"))
+            {
+                if (lblSeats.Text == "")
+                {
+                    lblSeats.Text += seatClicked.ID;
+                }
+                else
+                {
+                    lblSeats.Text += "," + seatClicked.ID;
+                }
+
+                seatClicked.ImageUrl = seatClicked.ImageUrl.Replace("chair.png", "checked.png");
+            }
+            else
+            {
+                lblSeats.Text = lblSeats.Text.Replace(seatClicked.ID, "");
+
+                seatClicked.ImageUrl = seatClicked.ImageUrl.Replace("checked.png", "chair.png");
+            }
         }
     }
 }
