@@ -3,6 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <style>
+        .descBanner a {
+            text-decoration: none;
+            display: block;
+        }
+
+        .descBanner span {
+            display: block;
+        }
         /*Banner*/
         .banner {
             z-index: -1;
@@ -55,6 +63,8 @@
         .slider .list .item .contentBanner h2 {
             font-size: 80px;
             margin: 0;
+            margin-top: 3px;
+            margin-bottom: 4px;
         }
 
         .slider .list .item.active {
@@ -91,7 +101,7 @@
             position: absolute;
             top: 30%;
             right: 50px;
-            z-index: 100;
+            z-index: 11;
             display: inline-block;
         }
 
@@ -114,7 +124,7 @@
 
         .thumbnail {
             position: absolute;
-            bottom: -450px;
+            bottom: -410px;
             z-index: 11;
             display: flex;
             gap: 10px;
@@ -168,6 +178,8 @@
             }
         }
 
+
+
         @media (max-width: 767px) {
             .slider .list .item .contentBanner h2 {
                 font-size: 30px;
@@ -216,7 +228,7 @@
                         <h2>Thanksgiving</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btn btn-primary" style="width: 150px; display: inline-block;">
+                                <a href="booking.aspx" class="btnHeader btn-primary" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -235,7 +247,7 @@
                         <h2>Aquaman and the Lost Kingdom</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btn btn-primary" style="width: 150px; display: inline-block;">
+                                <a href="booking.aspx" class="btnHeader btn-primary" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -254,7 +266,7 @@
                         <h2>Wish</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btn btn-primary" style="width: 150px; display: inline-block;">
+                                <a href="booking.aspx" class="btnHeader btn-primary" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -273,7 +285,7 @@
                         <h2>War On Terror: KL Anarki</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btn btn-primary" style="width: 150px; display: inline-block;">
+                                <a href="booking.aspx" class="btnHeader btn-primary" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -292,7 +304,7 @@
                         <h2>Wonka</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btn btn-primary" style="width: 150px; display: inline-block;">
+                                <a href="booking.aspx" class="btnHeader btn-primary" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -335,6 +347,11 @@
             </div>
         </div>
     </div>
+
+
+
+
+
 
     <!--swipper-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -394,5 +411,6 @@
             })
         })
     </script>
+
 </asp:Content>
 
