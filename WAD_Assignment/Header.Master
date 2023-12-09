@@ -1,5 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Header.master.cs" Inherits="WAD_Assignment.Header" %>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,26 +13,25 @@
     <!--title image-->
     <link rel="shortcut icon" href="cinemaLogo.png">
 
-    <!-- 
-    - custom css link
-  -->
+    <!--- custom css link-->
     <link rel="stylesheet" href="header.css">
 
-
-    <!-- 
-    - google font link
-  -->
+    <!-- - google font link-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!---swipper-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
-<body id="top">
-    <form id="form1" runat="server">
+<body id="topHeader">
+    <form id="form1" runat="server"></form>
     <!--- #HEADER-->
     <header class="header" data-header>
-        <div class="container">
-            <div class="overlay" data-overlay></div>
+        <div class="containerHeader">
+            <div class="overlayHeader" data-overlay></div>
             <a href="./index.html" class="logo">
                 <img src="cinemaLogo.png" alt="cinemaLogo" width="85px" height="75px" />
             </a>
@@ -40,9 +40,7 @@
                 <!--Search-->
                 <div class="searchWrap">
                     <div class="search-box">
-                        <button class="btn-search">
-                            <ion-icon name="search-outline"></ion-icon>
-                        </button>
+                        <button class="btn-search"><ion-icon name="search-outline"></ion-icon></button>
 
                         <input type="text" class="input-search" placeholder="Search Movie...">
                     </div>
@@ -57,11 +55,11 @@
                     <label for="reminderSite">
                         <div class="notification" id="notificationContainer">
                             <div class="notBtn" id="notificationBtn">
-                                <div class="number">3</div>
+                                <div class="numberReminder">3</div>
                                 <ion-icon name="notifications-outline" style="color: rgb(226, 226, 20);"></ion-icon>
-                                <div class="box" id="notificationDropdown">
+                                <div class="boxReminder" id="notificationDropdown">
 
-                                    <div class="cont">
+                                    <div class="contReminder">
                                         <div class="contTop">
                                             Notifications
                                         </div>
@@ -74,7 +72,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="content">
-                                                    <div class="txt">
+                                                    <div class="txtReminder">
                                                         For you: "Hunger Games" now showing in cinema
                                                     </div>
                                                     <div class="txtIcon">
@@ -93,7 +91,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="content">
-                                                    <div class="txt">
+                                                    <div class="txtReminder">
                                                         Refund: Your refund for "Hunger Games" unsuccessful
                                                     </div>
                                                     <div class="txtIcon">
@@ -112,14 +110,16 @@
                                                     </div>
                                                 </div>
                                                 <div class="content">
-                                                    <div class="txt">
-                                                        Rate: Rate and Review "Hunger games" 
+                                                    <div class="txtReminder">
+                                                        Rate: Rate and Review "Hunger games"
                                                     </div>
                                                     <div class="txtIcon">
                                                         <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
                                                     </div>
                                                 </div>
                                             </a>
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@
                     </label>
                 </div>
 
-                <button class="btn btn-primary">Sign in</button>
+                <button class="btnHeader btn-primary">Sign in</button>
 
             </div>
 
@@ -137,7 +137,7 @@
                 <ion-icon name="reorder-two"></ion-icon>
             </button>
 
-            <nav class="navbar" data-navbar>
+            <nav class="navbarHeader" data-navbar>
                 <div class="navbar-top">
                     <a href="./index.html" class="logo">
                         <div class="logo-container1">
@@ -152,8 +152,7 @@
 
                 <ul class="navbar-list">
                     <li>
-                        <a href="./Member/Booking.aspx" class="navbar-link">Home</a>
-                        
+                        <a href="./index.html" class="navbar-link">Home</a>
                     </li>
                     <li>
                         <a href="#" class="navbar-link">Movie</a>
@@ -172,7 +171,7 @@
                 <ul class="navbar-social-list">
                     <li>
                         <a href="#" class="navbar-social-link">
-                            <button class="btn btn-primary">Sign in</button>
+                            <button class="btnHeader btn-primary">Sign in</button>
                         </a>
                     </li>
                 </ul>
@@ -181,7 +180,9 @@
     </header>
 
 
+
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+
 
     <!-- #FOOTER-->
     <footer class="footer">
@@ -237,11 +238,13 @@
                     </div>
                     <div class="footer-col" id="getInTouch">
                         <h4>Get in Touch<span></span></h4>
+                        <form id="formFooter" class="topBefore">
                             <input id="name" type="text" placeholder="NAME">
                             <input id="email" type="text" placeholder="E-MAIL">
                             <textarea id="message" placeholder="MESSAGE" rows="4" cols="50"></textarea>
                             <input id="submit" type="submit" value="GO!">
-                        </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -249,7 +252,7 @@
         <div class="divider"></div>
 
         <div class="footer-bottom">
-            <div class="container">
+            <div class="containerHeader">
 
                 <p class="copyright">
                     &copy; 2023 RSDS2G3. All Rights Reserved
@@ -289,19 +292,78 @@
     </footer>
 
 
+
+
     <!--- #GO TO TOP-->
-    <a href="#top" class="go-top" data-go-top>
+    <a href="#topHeader" class="go-top" data-go-top>
         <ion-icon name="chevron-up"></ion-icon>
     </a>
 
-    <!--- ionicon link-->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!--swipper-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        'use strict';
+        let items = document.querySelectorAll('.slider .list .item');
+        let next = document.getElementById('next');
+        let prev = document.getElementById('prev');
+        let thumbnails = document.querySelectorAll('.thumbnail .item');
 
-        /*** navbar variables*/
+        // config param
+        let countItem = items.length;
+        let itemActive = 0;
+        // event next click
+        next.onclick = function () {
+            itemActive = itemActive + 1;
+            if (itemActive >= countItem) {
+                itemActive = 0;
+            }
+            showSlider();
+        }
+        //event prev click
+        prev.onclick = function () {
+            itemActive = itemActive - 1;
+            if (itemActive < 0) {
+                itemActive = countItem - 1;
+            }
+            showSlider();
+        }
+        // auto run slider
+        let refreshInterval = setInterval(() => {
+            next.click();
+        }, 5000)
+        function showSlider() {
+            // remove item active old
+            let itemActiveOld = document.querySelector('.slider .list .item.active');
+            let thumbnailActiveOld = document.querySelector('.thumbnail .item.active');
+            itemActiveOld.classList.remove('active');
+            thumbnailActiveOld.classList.remove('active');
+
+            // active new item
+            items[itemActive].classList.add('active');
+            thumbnails[itemActive].classList.add('active');
+
+            // clear auto time run slider
+            clearInterval(refreshInterval);
+            refreshInterval = setInterval(() => {
+                next.click();
+            }, 5000)
+        }
+
+        // click thumbnail
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => {
+                itemActive = index;
+                showSlider();
+            })
+        })
+    </script>
+
+    <!--- custom js link-->
+    <script>
+        'use strict';
+        /**
+         * navbar variables
+         */
         const navOpenBtn = document.querySelector("[data-menu-open-btn]");
         const navCloseBtn = document.querySelector("[data-menu-close-btn]");
         const navbar = document.querySelector("[data-navbar]");
@@ -321,7 +383,10 @@
 
         }
 
-        /*** header sticky*/
+        /**
+         * header sticky
+         */
+
         const header = document.querySelector("[data-header]");
 
         window.addEventListener("scroll", function () {
@@ -330,7 +395,9 @@
 
         });
 
-        /*** go top*/
+        /**
+         * go top
+         */
         const goTopBtn = document.querySelector("[data-go-top]");
 
         window.addEventListener("scroll", function () {
@@ -338,10 +405,34 @@
             window.scrollY >= 500 ? goTopBtn.classList.add("active") : goTopBtn.classList.remove("active");
 
         });
+
+
+        /**swipper */
+        const swiper = new Swiper('.bannerSwiper', {
+
+            spaceBetween: 0,
+            effect: "fade",
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+        });
     </script>
 
-    </form>
+    <!--- ionicon link-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+</form>
 </body>
 
 </html>

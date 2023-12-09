@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HomePage\Homepage.aspx" />
     <Content Include="image\chair.png" />
     <Content Include="image\checked.png" />
     <Content Include="image\profile-user.png" />
@@ -93,6 +94,13 @@
     </Compile>
     <Compile Include="Header.Master.designer.cs">
       <DependentUpon>Header.Master</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\Homepage.aspx.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\Homepage.aspx.designer.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Member\Booking.aspx.cs">
       <DependentUpon>Booking.aspx</DependentUpon>
