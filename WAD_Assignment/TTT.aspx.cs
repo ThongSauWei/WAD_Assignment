@@ -7,11 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace WAD_Assignment
 {
-    public partial class Testing : System.Web.UI.Page
+    public partial class TTT : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

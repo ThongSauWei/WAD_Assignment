@@ -1,0 +1,98 @@
+﻿body {
+}
+
+div.movie {
+    height: 1000px;
+}
+
+div.movie-image {
+    width: 189px;
+    height: 270px;
+    margin-left: 5%;
+    float: left;
+}
+
+div.movie-detail {
+    float: left;
+    margin-left: 20px;
+}
+
+form#form {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    height: 700px;
+}
+
+div.content {
+    float: left;
+    width: 100%;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+div.movie-seat, div.legend {
+    margin: 10px auto;
+    min-width: 450px;
+    max-width: 100%;
+    width: 50%;
+}
+
+div.screen {
+    border: 1px solid black;
+    margin: 10px auto 50px;
+    text-align: center;
+}
+
+table.select-seat {
+    margin: 0 auto;
+}
+
+td.seat {
+    border: 1px solid black;
+    width: 32px;
+    height: 32px;
+}
+
+.empty {
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+td.seat-gap {
+    width: 10px;
+    height: 25px;
+}
+
+td.pathway {
+    width: 32px;
+}
+
+td.row-gap {
+    height: 5px;
+}
+
+div.legend {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+span.legend-desc {
+    margin-left: 5px;
+}
+
+div.seatSelected {
+    width: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

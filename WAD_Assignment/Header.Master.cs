@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WAD_Assignment
 {
-    public partial class Testing : System.Web.UI.Page
+    public partial class Header : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

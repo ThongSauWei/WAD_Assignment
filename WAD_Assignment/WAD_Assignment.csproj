@@ -67,13 +67,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="image\chair.png" />
+    <Content Include="image\checked.png" />
+    <Content Include="image\profile-user.png" />
+    <Content Include="Member\Booking.aspx" />
+    <Content Include="Member\ConfirmBooking.aspx" />
+    <Content Include="image\movie-image1.jpg" />
+    <Content Include="Member\Booking.css" />
+    <Content Include="cinemaLogo.png" />
+    <Content Include="header.css" />
+    <Content Include="Member\Booking.aspx" />
+    <Content Include="movie1.jpg" />
+    <Content Include="movie2.jpg" />
     <Content Include="loginRegister\Login.aspx" />
     <Content Include="loginRegister\PasswordRecovery.aspx" />
     <Content Include="Testing.aspx" />
+    <Content Include="TTT.aspx" />
     <Content Include="Web.config" />
     <Content Include="loginRegister\Register.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Header.Master.cs">
+      <DependentUpon>Header.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Header.Master.designer.cs">
+      <DependentUpon>Header.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Booking.aspx.cs">
+      <DependentUpon>Booking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Booking.aspx.designer.cs">
+      <DependentUpon>Booking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\ConfirmBooking.aspx.cs">
+      <DependentUpon>ConfirmBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\ConfirmBooking.aspx.designer.cs">
+      <DependentUpon>ConfirmBooking.aspx</DependentUpon>
+    </Compile>
     <Compile Include="loginRegister\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -96,6 +130,13 @@
     <Compile Include="Testing.aspx.designer.cs">
       <DependentUpon>Testing.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TTT.aspx.cs">
+      <DependentUpon>TTT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TTT.aspx.designer.cs">
+      <DependentUpon>TTT.aspx</DependentUpon>
+    </Compile>
     <Compile Include="loginRegister\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,14 +146,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Content Include="Admin\Web.config" />
+    <Content Include="Member\Web.config" />
+    <Content Include="Header.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
