@@ -10,7 +10,7 @@
     <title>MOVIE</title>
 
     <!--title image-->
-    <link rel="shortcut icon" href="cinemaLogo.png">
+    <link rel="shortcut icon" href="image/cinemaLogo.png">
 
     <!-- 
     - custom css link
@@ -32,7 +32,7 @@
         <div class="container">
             <div class="overlay" data-overlay></div>
             <a href="./index.html" class="logo">
-                <img src="cinemaLogo.png" alt="cinemaLogo" width="85px" height="75px" />
+                <img src="image/cinemaLogo.png" alt="cinemaLogo" width="85px" height="75px" />
             </a>
 
             <div class="header-actions">
@@ -42,7 +42,6 @@
                         <button class="btn-search">
                             <ion-icon name="search-outline"></ion-icon>
                         </button>
-
                         <input type="text" class="input-search" placeholder="Search Movie...">
                     </div>
                 </div>
@@ -69,7 +68,7 @@
                                                 <div class="profCont">
                                                     <!-- <i class="fa-solid fa-ban"></i>/ -->
                                                     <div class="profile">
-                                                        <img src="movie1.jpg" alt="movie" width="100%" />
+                                                        <img src="image/movie1.jpg" alt="movie" width="100%" />
                                                     </div>
                                                 </div>
                                                 <div class="content">
@@ -88,7 +87,7 @@
                                                 <div class="profCont">
                                                     <!-- <i class="fa-solid fa-ban"></i>/ -->
                                                     <div class="profile">
-                                                        <img src="movie1.jpg" alt="movie" width="100%" />
+                                                        <img src="image/movie1.jpg" alt="movie" width="100%" />
                                                     </div>
                                                 </div>
                                                 <div class="content">
@@ -107,7 +106,7 @@
                                                 <div class="profCont">
                                                     <!-- <i class="fa-solid fa-ban"></i>/ -->
                                                     <div class="profile">
-                                                        <img src="movie1.jpg" alt="movie" width="100%" />
+                                                        <img src="image/movie1.jpg" alt="movie" width="100%" />
                                                     </div>
                                                 </div>
                                                 <div class="content">
@@ -140,7 +139,7 @@
                 <div class="navbar-top">
                     <a href="./index.html" class="logo">
                         <div class="logo-container1">
-                            <img src="cinemaLogo.png" alt="cinemaLogo" width="80px" height="70px" />
+                            <img src="image/cinemaLogo.png" alt="cinemaLogo" width="80px" height="70px" />
                             <h3 style="color: rgb(226, 226, 20);">ET CINEMA</h3>
                         </div>
                     </a>
@@ -188,7 +187,7 @@
                 <div class="rowFooter">
                     <div class="footer-col">
                         <div class="footer1">
-                            <img src="cinemaLogo.png" alt="cinemaLogo" width="50%" />
+                            <img src="image/cinemaLogo.png" alt="cinemaLogo" width="50%" />
                             <p class="fLeft">
                                 <a href="#" class="link-1">Home</a>
 
