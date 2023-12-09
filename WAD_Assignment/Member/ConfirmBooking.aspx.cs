@@ -13,5 +13,15 @@ namespace WAD_Assignment.Member
         {
 
         }
+
+        protected void btnReserve_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnPurchase_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

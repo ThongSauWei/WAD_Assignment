@@ -1,0 +1,111 @@
+﻿div.confirm-booking {
+    margin-top: 130px;
+    height: 750px;
+    background-color: rgba(40,41,52,1);
+}
+
+div.show-movie {
+    background-color: #ecd261;
+    height: 310px;
+}
+
+div.movie-image {
+    width: 189px;
+    height: 270px;
+    margin: 20px 0 20px 5%;
+    float: left;
+}
+
+div.movie-image img {
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+div.movie-detail {
+    float: left;
+    margin: 65px 0 0 20px;
+    width: 60%;
+}
+
+div.logo {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-top: 50px;
+}
+
+div.logo img {
+    opacity: 0.2;
+}
+
+div.check-booking > div {
+    margin-top: 20px;
+}
+
+div.seatSelected, div.calculate-price {
+    width: 100%;
+    padding-left: 5%;
+}
+
+div.seatSelected *, div.calculate-price > div {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+div.calculate-price {
+    height: 88px;
+}
+
+div.calculate-price div {
+    height: 24px;
+}
+
+.label {
+    color: antiquewhite;
+}
+
+div.calculate-price > div > .label, div.total-price .label {
+    width: 30%;
+    float: left;
+}
+
+.separator {
+    width: 5px;
+    color: antiquewhite;
+    float: left;
+}
+
+.value {
+    color: #ecd261;
+}
+
+div.calculate-price .value, div.total-price .value {
+    border: none;
+    background: none;
+    width: 30%;
+    float: left;
+    margin-right:30%;
+    margin-left: 30px;
+    text-align: right;
+}
+
+div.total-price {
+    width: 100%;
+    height: 24px;
+    padding-left: 5%;
+    margin-bottom: 20px;
+}
+
+div.buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 50px !important;
+}
+
+div.buttons * {
+    background-color: #ecd261;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+}
