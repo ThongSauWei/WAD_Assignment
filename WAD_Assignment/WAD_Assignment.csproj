@@ -68,6 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="image\booked.png" />
+    <Content Include="HomePage\Homepage.aspx" />
+    <Content Include="HomePage\swipperMovie1.png" />
+    <Content Include="HomePage\swipperMovie2.jpg" />
+    <Content Include="HomePage\swipperMovie3.jpg" />
+    <Content Include="HomePage\swipperMovie4.jpg" />
+    <Content Include="HomePage\swipperMovie5.jpeg" />
     <Content Include="image\chair.png" />
     <Content Include="image\checked.png" />
     <Content Include="image\profile-user.png" />
@@ -81,9 +87,15 @@
     <Content Include="image\movie1.jpg" />
     <Content Include="image\movie2.jpg" />
     <Content Include="Member\ConfirmBooking.css" />
+    <Content Include="Member\Booking.aspx" />
+    <Content Include="movie1.jpg" />
+    <Content Include="movie2.jpg" />
+    <Content Include="loginRegister\Login.aspx" />
+    <Content Include="loginRegister\PasswordRecovery.aspx" />
     <Content Include="Testing.aspx" />
     <Content Include="TTT.aspx" />
     <Content Include="Web.config" />
+    <Content Include="loginRegister\Register.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Header.Master.cs">
@@ -92,6 +104,13 @@
     </Compile>
     <Compile Include="Header.Master.designer.cs">
       <DependentUpon>Header.Master</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\Homepage.aspx.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\Homepage.aspx.designer.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Member\Booking.aspx.cs">
       <DependentUpon>Booking.aspx</DependentUpon>
@@ -107,6 +126,20 @@
     <Compile Include="Member\ConfirmBooking.aspx.designer.cs">
       <DependentUpon>ConfirmBooking.aspx</DependentUpon>
     </Compile>
+    <Compile Include="loginRegister\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loginRegister\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="loginRegister\PasswordRecovery.aspx.cs">
+      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loginRegister\PasswordRecovery.aspx.designer.cs">
+      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testing.aspx.cs">
       <DependentUpon>Testing.aspx</DependentUpon>
@@ -121,6 +154,13 @@
     </Compile>
     <Compile Include="TTT.aspx.designer.cs">
       <DependentUpon>TTT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="loginRegister\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loginRegister\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
