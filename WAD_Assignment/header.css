@@ -306,12 +306,12 @@ html {
 }
 
 body {
-    background: var(--eerie-black);
+    background: rgba(40, 41, 52, 1);
 }
 
-    body.active {
-        overflow: hidden;
-    }
+body.active {
+    overflow: hidden;
+}
 
 .container {
     padding-inline: 15px;
@@ -377,7 +377,7 @@ body {
 }
 
 .header.active {
-    background: var(--eerie-black);
+    background: rgba(40, 41, 52, 1);
     padding-block: 20px;
 }
 

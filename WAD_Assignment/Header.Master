@@ -27,6 +27,7 @@
 </head>
 
 <body id="top">
+    <form id="form1" runat="server">
     <!--- #HEADER-->
     <header class="header" data-header>
         <div class="container">
@@ -151,7 +152,8 @@
 
                 <ul class="navbar-list">
                     <li>
-                        <a href="./index.html" class="navbar-link">Home</a>
+                        <a href="./Member/Booking.aspx" class="navbar-link">Home</a>
+                        
                     </li>
                     <li>
                         <a href="#" class="navbar-link">Movie</a>
@@ -208,7 +210,7 @@
                         <ul style="margin-top: -20px;">
                             <li>
                                 <div class="address">
-                                    <ion-icon name="navigate-outline" style="font-size: 60px; color: red;"></ion-icon>
+                                    <ion-icon name="navigate-outline" style="font-size: 50px; color: red;"></ion-icon>
                                     <p>
                                         1, Jalan SS 22/19, Damansara Jaya,
                                         47400 Petaling Jaya, Selangor, Malaysia
@@ -235,13 +237,11 @@
                     </div>
                     <div class="footer-col" id="getInTouch">
                         <h4>Get in Touch<span></span></h4>
-                        <form id="formFooter" class="topBefore">
                             <input id="name" type="text" placeholder="NAME">
                             <input id="email" type="text" placeholder="E-MAIL">
                             <textarea id="message" placeholder="MESSAGE" rows="4" cols="50"></textarea>
                             <input id="submit" type="submit" value="GO!">
-                        </form>
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -339,6 +339,8 @@
 
         });
     </script>
+
+    </form>
 
 </body>
 
