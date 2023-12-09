@@ -67,18 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="image\booked.png" />
     <Content Include="image\chair.png" />
     <Content Include="image\checked.png" />
     <Content Include="image\profile-user.png" />
+    <Content Include="image\screen.png" />
     <Content Include="Member\Booking.aspx" />
     <Content Include="Member\ConfirmBooking.aspx" />
     <Content Include="image\movie-image1.jpg" />
     <Content Include="Member\Booking.css" />
-    <Content Include="cinemaLogo.png" />
+    <Content Include="image\cinemaLogo.png" />
     <Content Include="header.css" />
-    <Content Include="Member\Booking.aspx" />
-    <Content Include="movie1.jpg" />
-    <Content Include="movie2.jpg" />
+    <Content Include="image\movie1.jpg" />
+    <Content Include="image\movie2.jpg" />
+    <Content Include="Member\ConfirmBooking.css" />
     <Content Include="Testing.aspx" />
     <Content Include="TTT.aspx" />
     <Content Include="Web.config" />
@@ -133,7 +135,9 @@
     </None>
     <Content Include="Web.sitemap" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Guest\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
