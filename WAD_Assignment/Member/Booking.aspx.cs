@@ -40,7 +40,14 @@ namespace WAD_Assignment.Member
             {
                 if (lblSeats.Text.EndsWith(seatClicked.ID))
                 {
-                    lblSeats.Text = lblSeats.Text.Replace(seatClicked.ID, "");
+                    if (lblSeats.Text.Equals(seatClicked.ID))
+                    {
+                        lblSeats.Text = lblSeats.Text.Replace(seatClicked.ID, "");
+                    }
+                    else
+                    {
+                        lblSeats.Text = lblSeats.Text.Replace("," + seatClicked.ID, "");
+                    }
                 }
                 else
                 {

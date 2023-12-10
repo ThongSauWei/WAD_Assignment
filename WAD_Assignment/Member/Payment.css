@@ -1,0 +1,11 @@
+﻿#form1 {
+    width: 1000px;
+    height: 800px;
+    background-color: white;
+    margin: 130px auto;
+}
+
+.movie-image {
+    width: 189px;
+    height: 270px;
+}

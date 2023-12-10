@@ -50,6 +50,7 @@ div.seatSelected, div.calculate-price {
 div.seatSelected *, div.calculate-price > div {
     width: 100%;
     margin-bottom: 20px;
+    display: block;
 }
 
 div.calculate-price {
@@ -104,8 +105,21 @@ div.buttons {
 }
 
 div.buttons * {
-    background-color: #ecd261;
+    background-color: inherit;
+    border: 2px solid #ecd261;
     width: 200px;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 50px;
+    color: antiquewhite;
+    font-weight: bolder;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+div.buttons *:hover {
+    background-color: #ecd261;
+    color: rgba(40,41,52,1);
+
 }

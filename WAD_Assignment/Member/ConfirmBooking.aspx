@@ -31,19 +31,19 @@
                     <div class="unit-price">
                         <asp:Label ID="priceText" CssClass="label" runat="server" Text="Unit Price"></asp:Label>
                         <span class="separator">:</span>
-                        <asp:TextBox ID="txtPrice" CssClass="value" runat="server" Text="RM 101.00"></asp:TextBox>
+                        <asp:TextBox ID="txtPrice" CssClass="value" runat="server" Text="RM 101.00" disabled="true" ></asp:TextBox>
                     </div>
                     <div class="quantity">
                         <asp:Label ID="qtyText" CssClass="label" runat="server" Text="Quantity"></asp:Label>
                         <span class="separator">:</span>
-                        <asp:TextBox ID="txtQty" CssClass="value" runat="server" Text="x 3"></asp:TextBox>
+                        <asp:TextBox ID="txtQty" CssClass="value" runat="server" Text="x 3" disabled="true" ></asp:TextBox>
                     </div>
                 </div>
                 <hr />
                 <div class="total-price">
                         <asp:Label ID="totalText" CssClass="label" runat="server" Text="Total Price"></asp:Label>
                         <span class="separator">:</span>
-                        <asp:TextBox ID="txtTotal" CssClass="value" runat="server" Text="RM 303.00"></asp:TextBox>
+                        <asp:TextBox ID="txtTotal" CssClass="value" runat="server" Text="RM 303.00" disabled="true" ></asp:TextBox>
                 </div>
                 <hr />
                 <div class="buttons">

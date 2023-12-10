@@ -268,7 +268,13 @@
                             <asp:Label ID="lblSeatSelection" runat="server" Text="Seat(s) Selected: "></asp:Label>
                             <asp:Label ID="lblSeats" runat="server" Text=""></asp:Label>
                         </div>
-                        <asp:Button ID="btnConfirm" CssClass="btnConfirm" runat="server" Text="Confirm" OnClick="btnConfirm_Click" />
+                        <div class="booking-button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <asp:Button ID="btnConfirm" CssClass="btnConfirm" runat="server" Text="Confirm" OnClick="btnConfirm_Click" />
+                        </div>
                     </div>
                 </ContentTemplate>
             </asp:UpdatePanel>
