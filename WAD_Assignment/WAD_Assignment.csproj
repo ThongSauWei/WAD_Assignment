@@ -77,6 +77,7 @@
     <Content Include="HomePage\swipperMovie5.jpeg" />
     <Content Include="image\chair.png" />
     <Content Include="image\checked.png" />
+    <Content Include="image\picture-1.jpg" />
     <Content Include="image\profile-user.png" />
     <Content Include="image\screen.png" />
     <Content Include="Member\Booking.aspx" />
