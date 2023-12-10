@@ -20,7 +20,7 @@
             height: 107vh;
             margin-top: -50px;
             position: relative;
-            margin-bottom: 300px;
+            margin-bottom: 30px;
             /* z-index: -1; */
         }
 
@@ -124,7 +124,7 @@
 
         .thumbnail {
             position: absolute;
-            bottom: -410px;
+            bottom: -390px;
             z-index: 11;
             display: flex;
             gap: 10px;
@@ -203,15 +203,357 @@
             }
         }
 
-        @media all and (min-width: 768px) and (max-width: 1200px) {
+        @media all and (min-width: 768px) and (max-width: 1300px) {
             .thumbnail {
-                bottom: -610px;
+                bottom: -320px;
             }
 
             .slider .list .item .contentBanner h2 {
                 font-size: 50px;
                 margin-top: 8px;
                 margin-bottom: 8px;
+            }
+        }
+
+        /*upcoming*/
+.coming, .trendingNow{
+    margin-top: 75px;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+.coming .section-title, .trendingNow .section-title {
+    text-align: center;
+    margin-bottom: 45px;
+    color: var(--white);
+    line-height: 1.2;
+    font-size: 33px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+        .section-title strong {
+            color: var(--citrine);
+        }
+
+
+        .box .box-img {
+            width: 100%;
+            height: 380px;
+            cursor: pointer;
+        }
+
+            .box .box-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+                .box .box-img img:hover {
+                    transform: translateY(-10px);
+                    transition: 0.2s all linear;
+                }
+
+        .box h3 {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* coming containrer  */
+        .coming-container {
+            display: grid;
+            gap: 1rem;
+            max-width: 1300px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2rem;
+        }
+
+            .coming-container .box img:hover {
+                transform: translateY(0);
+            }
+
+            .coming-container .box img {
+                border-radius: 15px;
+            }
+
+        .swiper-slide h3 {
+            font-size: 17px;
+            margin-top: 5px;
+            color: #dfdddb;
+        }
+
+
+        @media (max-width: 774px) {
+
+            /* baad m  */
+            header.shadow #menu-icon {
+                color: var(--text-color);
+            }
+        }
+
+        @media (max-width: 472px) {
+            .box .box-img img {
+                height: 350px;
+            }
+
+            .coming-container img {
+                width: 100%;
+                max-height: 500px;
+            }
+
+            .swiper-slide h3 {
+                margin-top: 0px;
+            }
+        }
+
+        /**Trending Now*/
+        .movies-list {
+            display: grid;
+            gap: 50px;
+        }
+
+        .movie-cardTrending {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+            .movie-cardTrending .card-banner {
+                position: relative;
+                background: var(--gunmetal-1);
+                aspect-ratio: 2 / 3;
+                border-radius: 6px;
+                overflow: hidden;
+                margin-bottom: 20px;
+                transition: var(--transition-1);
+            }
+
+                .movie-cardTrending .card-banner::after {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    transition: var(--transition-1);
+                }
+
+                .movie-cardTrending .card-banner:hover {
+                    box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.5);
+                }
+
+                    .movie-cardTrending .card-banner:hover::after {
+                        background: hsla(0, 0%, 100%, 0.05);
+                    }
+
+                .movie-cardTrending .card-banner img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+            .movie-cardTrending .title-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
+                margin-bottom: 10px;
+            }
+
+            .movie-cardTrending .card-meta .duration time {
+                color: #e2dedb;
+            }
+
+            .movie-cardTrending .card-title {
+                color: var(--white);
+                font-size: 17px;
+                transition: var(--transition-1);
+            }
+
+                .movie-cardTrending .card-title:is(:hover, :focus) {
+                    color: var(--citrine);
+                }
+
+            .movie-cardTrending .title-wrapper time {
+                color: var(--citrine);
+                font-size: var(--fs-9);
+                font-weight: var(--fw-500);
+            }
+
+            .movie-cardTrending .card-meta {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .movie-cardTrending .badge {
+                color: var(--citrine);
+            }
+
+            .movie-cardTrending .duration {
+                margin-left: auto;
+            }
+
+            .movie-cardTrending :is(.duration, .languageTrending) {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                color: #e2dedb;
+                font-size: var(--fs-11);
+                font-weight: var(--fw-500);
+            }
+
+                .movie-cardTrending :is(.duration, .languageTrending) ion-icon {
+                    font-size: 13px;
+                    --ionicon-stroke-width: 50px;
+                    color: var(--citrine);
+                }
+
+        .trendingNow {
+            background-position: center;
+            padding-block: var(--section-padding);
+        }
+
+            .trendingNow li {
+                list-style: none;
+            }
+
+            .trendingNow a {
+                text-decoration: none;
+                display: block;
+            }
+
+            .trendingNow .section-title {
+                margin-bottom: 50px;
+            }
+
+            .trendingNow .filter-list {
+                gap: 15px;
+                margin-bottom: 50px;
+            }
+
+            .trendingNow .filter-btn {
+                position: relative;
+                background: var(--rich-black-fogra-39);
+                color: var(--light-gray);
+                font-size: var(--fs-10);
+                font-weight: var(--fw-700);
+                text-transform: uppercase;
+                padding: 17px 25px;
+                border-radius: 4px;
+                box-shadow: inset 0 3px 7px hsla(0, 0%, 0%, 0.8);
+            }
+
+                .trendingNow.filter-btn:focus {
+                    color: var(--citrine);
+                    text-shadow: 0 3px 25px hsla(57, 97%, 45%, 0.5);
+                }
+
+                    .trendingNow .filter-btn:focus::before,
+                    .trendingNow .filter-btn:focus::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background: var(--citrine);
+                        width: 2px;
+                        height: 15px;
+                    }
+
+                    .trendingNow .filter-btn:focus::before {
+                        left: 0;
+                    }
+
+                    .trendingNow .filter-btn:focus::after {
+                        right: 0;
+                    }
+
+
+        /*-----------------------------------*\
+   * #MEDIA QUERIES
+  \*-----------------------------------*/
+
+        @media (max-width: 440px) {
+            .movies-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 450px) {
+
+            :root {
+                /**
+       * typography
+       */
+
+                --fs-1: 42px;
+            }
+
+            .container {
+                max-width: 540px;
+                margin-inline: auto;
+            }
+
+            .movies-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            :root {
+                /**
+       * typography
+       */
+
+                --fs-2: 36px;
+            }
+
+
+            .container {
+                max-width: 720px;
+            }
+
+            .movies-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+
+            /* MOVIE CARD */
+
+            .movies-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+
+            :root {
+                /**
+       * typography
+       */
+
+                --fs-1: 60px;
+                --fs-4: 26px;
+            }
+
+            /**
+     * REUSED STYLE
+     */
+
+            .container {
+                max-width: 1320px;
+            }
+
+            /* MOVIE CARD */
+
+            .movies-list {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
     </style>
@@ -348,6 +690,365 @@
         </div>
     </div>
 
+    <!--Trneding Now-->
+    <section class="trendingNow">
+        <div class="containerHeader">
+
+            <h2 class="h2 section-title">Trending <strong>Now</strong></h2>
+
+            <ul class="movies-list">
+
+                <li>
+                    <div class="movie-cardTrending">
+
+                        <a href="./movie-details.html">
+                            <figure class="card-banner">
+                                <img src="swipperMovie1.png" alt="Thanksgiving">
+                            </figure>
+                        </a>
+
+                        <div class="title-wrapper">
+                            <a href="./movie-details.html">
+                                <h3 class="card-title">Thanksgiving</h3>
+                            </a>
+
+
+                        </div>
+
+                        <div class="card-meta">
+                            <div class="badge badge-outline">Horror</div>
+
+                            <div class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+
+                                <time datetime="PT122M">1h 12min</time>
+                            </div>
+
+                            <div class="languageTrending">
+                                <ion-icon name="language-outline"></ion-icon>
+
+                                <data>ENG</data>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="movie-cardTrending">
+
+                        <a href="./movie-details.html">
+                            <figure class="card-banner">
+                                <img src="swipperMovie2.jpg" alt="Aquaman and the Lost Kingdom">
+                            </figure>
+                        </a>
+
+                        <div class="title-wrapper">
+                            <a href="./movie-details.html">
+                                <h3 class="card-title">Aquaman and the Lost Kingdom</h3>
+                            </a>
+
+
+                        </div>
+
+                        <div class="card-meta">
+                            <div class="badge badge-outline">Action</div>
+
+                            <div class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+
+                                <time datetime="PT122M">1h 45min</time>
+                            </div>
+
+                            <div class="languageTrending">
+                                <ion-icon name="language-outline"></ion-icon>
+
+                                <data>ENG</data>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="movie-cardTrending">
+
+                        <a href="./movie-details.html">
+                            <figure class="card-banner">
+                                <img src="swipperMovie3.jpg" alt="Wish">
+                            </figure>
+                        </a>
+
+                        <div class="title-wrapper">
+                            <a href="./movie-details.html">
+                                <h3 class="card-title">Wish</h3>
+                            </a>
+
+
+                        </div>
+
+                        <div class="card-meta">
+                            <div class="badge badge-outline">Musical</div>
+
+                            <div class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+
+                                <time datetime="PT122M">1h 22min</time>
+                            </div>
+
+                            <div class="languageTrending">
+                                <ion-icon name="language-outline"></ion-icon>
+
+                                <data>ENG</data>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="movie-cardTrending">
+
+                        <a href="./movie-details.html">
+                            <figure class="card-banner">
+                                <img src="swipperMovie4.jpg" alt="War On Terror: KL Anarki">
+                            </figure>
+                        </a>
+
+                        <div class="title-wrapper">
+                            <a href="./movie-details.html">
+                                <h3 class="card-title">War On Terror: KL Anarki</h3>
+                            </a>
+
+
+                        </div>
+
+                        <div class="card-meta">
+                            <div class="badge badge-outline">Action</div>
+
+                            <div class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+
+                                <time datetime="PT122M">1h 30min</time>
+                            </div>
+
+                            <div class="languageTrending">
+                                <ion-icon name="language-outline"></ion-icon>
+
+                                <data>ENG</data>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="movie-cardTrending">
+
+                        <a href="./movie-details.html">
+                            <figure class="card-banner">
+                                <img src="swipperMovie5.jpeg" alt="Wonka">
+                            </figure>
+                        </a>
+
+                        <div class="title-wrapper">
+                            <a href="./movie-details.html">
+                                <h3 class="card-title">Wonka</h3>
+                            </a>
+
+
+                        </div>
+
+                        <div class="card-meta">
+                            <div class="badge badge-outline">Musical</div>
+
+                            <div class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+
+                                <time datetime="PT122M">1h 45min</time>
+                            </div>
+
+                            <div class="languageTrending">
+                                <ion-icon name="language-outline"></ion-icon>
+
+                                <data>ENG</data>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="movie-cardTrending">
+
+                        <a href="./movie-details.html">
+                            <figure class="card-banner">
+                                <img src="swipperMovie1.png" alt="Thanksgiving">
+                            </figure>
+                        </a>
+
+                        <div class="title-wrapper">
+                            <a href="./movie-details.html">
+                                <h3 class="card-title">Thanksgiving</h3>
+                            </a>
+
+
+                        </div>
+
+                        <div class="card-meta">
+                            <div class="badge badge-outline">Horror</div>
+
+                            <div class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+
+                                <time datetime="PT122M">1h 12min</time>
+                            </div>
+
+                            <div class="languageTrending">
+                                <ion-icon name="language-outline"></ion-icon>
+
+                                <data>ENG</data>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="movie-cardTrending">
+
+                        <a href="./movie-details.html">
+                            <figure class="card-banner">
+                                <img src="swipperMovie2.jpg" alt="Aquaman and the Lost Kingdom">
+                            </figure>
+                        </a>
+
+                        <div class="title-wrapper">
+                            <a href="./movie-details.html">
+                                <h3 class="card-title">Aquaman and the Lost Kingdom</h3>
+                            </a>
+
+
+                        </div>
+
+                        <div class="card-meta">
+                            <div class="badge badge-outline">Action</div>
+
+                            <div class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+
+                                <time datetime="PT122M">1h 45min</time>
+                            </div>
+
+                            <div class="languageTrending">
+                                <ion-icon name="language-outline"></ion-icon>
+
+                                <data>ENG</data>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="movie-cardTrending">
+
+                        <a href="./movie-details.html">
+                            <figure class="card-banner">
+                                <img src="swipperMovie3.jpg" alt="Wish">
+                            </figure>
+                        </a>
+
+                        <div class="title-wrapper">
+                            <a href="./movie-details.html">
+                                <h3 class="card-title">Wish</h3>
+                            </a>
+
+
+                        </div>
+
+                        <div class="card-meta">
+                            <div class="badge badge-outline">Musical</div>
+
+                            <div class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+
+                                <time datetime="PT122M">1h 22min</time>
+                            </div>
+
+                            <div class="languageTrending">
+                                <ion-icon name="language-outline"></ion-icon>
+
+                                <data>ENG</data>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </section>
+
+    <!-- coming  -->
+    <section class="coming" id="coming">
+        <h2 class="h2 section-title">Upcoming <strong>Movies</strong></h2>
+        <!-- coming container  -->
+        <div class="coming-container swiper">
+            <div class="swiper-wrapper">
+                <!-- box-1  -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="swipperMovie1.png" alt="">
+                    </div>
+                    <h3>Ant-Man and the Wasp:Quantumania</h3>
+                </div>
+
+                <!-- box-2  -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="swipperMovie2.jpg" alt="">
+                    </div>
+                    <h3>The Flash</h3>
+                </div>
+
+                <!-- box-3  -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="swipperMovie3.jpg" alt="">
+                    </div>
+                    <h3>Guardians of the Galaxy Vol. 3</h3>
+                </div>
+
+                <!-- box-4  -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="swipperMovie4.jpg" alt="">
+                    </div>
+                    <h3>Shazam! Fury of the Gods</h3>
+                </div>
+
+                <!-- box-5  -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="swipperMovie5.jpeg" alt="">
+                    </div>
+                    <h3>Aquaman and the Lost Kingdom</h3>
+                </div>
+
+                <!-- box-6  -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="swipperMovie6.jpg" alt="">
+                    </div>
+                    <h3>John Wick:Chapter 4</h3>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
 
 
 
@@ -410,6 +1111,37 @@
                 showSlider();
             })
         })
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        // responsive 
+
+        var swiper = new Swiper(".coming-container", {
+            loop: true,
+            spaceBetween: 20,
+            centeredSlides: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                },
+                568: {
+                    slidesPerView: 3,
+                },
+                768: {
+                    slidesPerView: 4,
+                },
+                968: {
+                    slidesPerView: 5,
+                }
+            }
+        });
+
     </script>
 
 </asp:Content>

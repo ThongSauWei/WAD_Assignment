@@ -439,14 +439,13 @@ body {
 \*-----------------------------------*/
 
 .footer {
-    background: rgba(40, 41, 52, 1);
+    background: rgb(37, 39, 48);
+    margin-top: 18px;
 }
 
 .footer-top {
-    background: url("../images/footer-bg.jpg") no-repeat;
-    background-size: cover;
     background-position: center;
-    padding-block: 80px 50px;
+    padding-block: 80px 24px;
 }
 
 .footer-brand-wrapper .logo {
