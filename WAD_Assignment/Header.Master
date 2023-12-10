@@ -27,13 +27,13 @@
 </head>
 
 <body id="topHeader">
-    <form id="form1" runat="server"></form>
+    <%--<form id="form1" runat="server"></form> --%>
     <!--- #HEADER-->
     <header class="header" data-header>
         <div class="containerHeader">
             <div class="overlayHeader" data-overlay></div>
             <a href="./index.html" class="logo">
-                <img src="image/cinemaLogo.png" alt="cinemaLogo" width="85px" height="75px" />
+                <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="85px" height="75px" />
             </a>
 
             <div class="header-actions">
@@ -69,7 +69,7 @@
                                                 <div class="profCont">
                                                     <!-- <i class="fa-solid fa-ban"></i>/ -->
                                                     <div class="profile">
-                                                        <img src="image/movie1.jpg" alt="movie" width="100%" />
+                                                        <img src='<%= ResolveUrl("~/image/movie1.jpg") %>' alt="movie" width="100%" />
                                                     </div>
                                                 </div>
                                                 <div class="content">
@@ -88,7 +88,7 @@
                                                 <div class="profCont">
                                                     <!-- <i class="fa-solid fa-ban"></i>/ -->
                                                     <div class="profile">
-                                                        <img src="image/movie1.jpg" alt="movie" width="100%" />
+                                                        <img src='<%= ResolveUrl("~/image/movie1.jpg") %>' alt="movie" width="100%" />
                                                     </div>
                                                 </div>
                                                 <div class="content">
@@ -107,7 +107,7 @@
                                                 <div class="profCont">
                                                     <!-- <i class="fa-solid fa-ban"></i>/ -->
                                                     <div class="profile">
-                                                        <img src="image/movie1.jpg" alt="movie" width="100%" />
+                                                        <img src='<%= ResolveUrl("~/image/movie1.jpg") %>' alt="movie" width="100%" />
                                                     </div>
                                                 </div>
                                                 <div class="content">
@@ -142,7 +142,7 @@
                 <div class="navbar-top">
                     <a href="./index.html" class="logo">
                         <div class="logo-container1">
-                            <img src="image/cinemaLogo.png" alt="cinemaLogo" width="80px" height="70px" />
+                            <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="80px" height="70px" />
                             <h3 style="color: rgb(226, 226, 20);">ET CINEMA</h3>
                         </div>
                     </a>
@@ -192,7 +192,7 @@
                 <div class="rowFooter">
                     <div class="footer-col">
                         <div class="footer1">
-                            <img src="image/cinemaLogo.png" alt="cinemaLogo" width="50%" />
+                            <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="50%" />
                             <p class="fLeft">
                                 <a href="#" class="link-1">Home</a>
 

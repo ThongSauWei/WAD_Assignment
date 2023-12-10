@@ -87,7 +87,6 @@
     <Content Include="image\movie1.jpg" />
     <Content Include="image\movie2.jpg" />
     <Content Include="Member\ConfirmBooking.css" />
-    <Content Include="Member\Booking.aspx" />
     <Content Include="loginRegister\Login.aspx" />
     <Content Include="loginRegister\PasswordRecovery.aspx" />
     <Content Include="Testing.aspx" />
