@@ -154,8 +154,9 @@
       <DependentUpon>Payment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Member\Payment.aspx.designer.cs">
-      <DependentUpon>Payment.aspx</DependentUpon>
+	  <Compile Include="Member\Payment.aspx.designer.cs">
+		  <DependentUpon>Payment.aspx</DependentUpon>
+	  </Compile>
     <Compile Include="Menu\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
