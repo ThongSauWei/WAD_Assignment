@@ -698,7 +698,7 @@
                         <h2>Thanksgiving</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btnHeader btn-primary" style="width: 150px; display: inline-block;">
+                                <a href="booking.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -717,7 +717,7 @@
                         <h2>Aquaman and the Lost Kingdom</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btnHeader btn-primary" style="width: 150px; display: inline-block;">
+                                <a href="booking.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -736,7 +736,7 @@
                         <h2>Wish</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btnHeader btn-primary" style="width: 150px; display: inline-block;">
+                                <a href="booking.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -755,7 +755,7 @@
                         <h2>War On Terror: KL Anarki</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btnHeader btn-primary" style="width: 150px; display: inline-block;">
+                                <a href="booking.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -774,7 +774,7 @@
                         <h2>Wonka</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btnHeader btn-primary" style="width: 150px; display: inline-block;">
+                                <a href="booking.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -1134,7 +1134,7 @@
                         Horror
                     </p>
                     <a href="haha.html" class="navbar-social-link">
-                        <button class="btnHeader btn-primary">View</button>
+                        <button class="btnHeader btn-primarySign">View</button>
                     </a>
                 </li>
                 <li style="background-image: url(swipperMovie5.jpeg); background-size: cover; background-position: center; width: 100%; height: 100%;">
@@ -1144,7 +1144,7 @@
                         Musical
                     </p>
                     <a href="haha.html" class="navbar-social-link">
-                        <button class="btnHeader btn-primary">View</button>
+                        <button class="btnHeader btn-primarySign">View</button>
                     </a>
                 </li>
                 <li style="background-image: url(swipperMovie3.jpg); background-size: cover; background-position: center; width: 100%; height: 100%;">
@@ -1154,7 +1154,7 @@
                         Musical
                     </p>
                     <a href="haha.html" class="navbar-social-link">
-                        <button class="btnHeader btn-primary">View</button>
+                        <button class="btnHeader btn-primarySign">View</button>
                     </a>
                 </li>
                 <li style="background-image: url(swipperMovie4.jpg); background-size: cover; background-position: center; width: 100%; height: 100%;">
@@ -1164,7 +1164,7 @@
                         Action
                     </p>
                     <a href="haha.html" class="navbar-social-link">
-                        <button class="btnHeader btn-primary">View</button>
+                        <button class="btnHeader btn-primarySign">View</button>
                     </a>
                 </li>
 

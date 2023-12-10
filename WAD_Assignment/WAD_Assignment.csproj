@@ -90,6 +90,7 @@
     <Content Include="Member\ConfirmBooking.css" />
     <Content Include="loginRegister\Login.aspx" />
     <Content Include="loginRegister\PasswordRecovery.aspx" />
+    <Content Include="Menu\Menu.aspx" />
     <Content Include="Testing.aspx" />
     <Content Include="TTT.aspx" />
     <Content Include="Web.config" />
@@ -137,6 +138,13 @@
     </Compile>
     <Compile Include="loginRegister\PasswordRecovery.aspx.designer.cs">
       <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testing.aspx.cs">

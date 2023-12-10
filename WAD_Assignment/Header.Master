@@ -129,14 +129,16 @@
                     </label>
                 </div>
 
-                <button class="btnHeader btn-primary">Sign in</button>
-
+                <form id="form1" runat="server">
+                    <asp:Button ID="Button1" class="btnHeader btn-primarySign" runat="server" Text="Sign in" />
+               </form>
             </div>
 
-
-            <button class="menu-open-btn" data-menu-open-btn>
+            <button type="button" id="Button2" class="menu-open-btn" data-menu-open-btn runat="server">
                 <ion-icon name="reorder-two"></ion-icon>
             </button>
+        
+
 
             <nav class="navbarHeader" data-navbar>
                 <div class="navbar-top">
@@ -172,7 +174,7 @@
                 <ul class="navbar-social-list">
                     <li>
                         <a href="#" class="navbar-social-link">
-                            <button class="btnHeader btn-primary">Sign in</button>
+                            <button class="btnHeader btn-primarySign">Sign in</button>
                         </a>
                     </li>
                 </ul>
@@ -303,7 +305,7 @@
     <!--swipper-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    
+
     <!--- custom js link-->
     <script>
         'use strict';
@@ -357,7 +359,7 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-</form>
+    </form>
 </body>
 
 </html>
