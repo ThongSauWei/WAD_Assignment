@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Detail\Detail.aspx" />
     <Content Include="HomePage\swipperMovie6.jpg" />
     <Content Include="image\booked.png" />
     <Content Include="HomePage\Homepage.aspx" />
@@ -93,12 +94,20 @@
     <Content Include="loginRegister\PasswordRecovery.aspx" />
     <Content Include="Member\Payment.aspx" />
     <Content Include="Member\Payment.css" />
+    <Content Include="Menu\Menu.aspx" />
     <Content Include="Testing.aspx" />
     <Content Include="TTT.aspx" />
     <Content Include="Web.config" />
     <Content Include="loginRegister\Register.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Detail\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Header.Master.cs">
       <DependentUpon>Header.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -147,6 +156,12 @@
     </Compile>
     <Compile Include="Member\Payment.aspx.designer.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
+    <Compile Include="Menu\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testing.aspx.cs">

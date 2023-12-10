@@ -14,5 +14,10 @@ namespace WAD_Assignment
         {
 
         }
+
+        protected void Button2_ServerClick(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

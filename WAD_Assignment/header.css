@@ -293,7 +293,7 @@ body {
         font-size: 18px;
     }
 
-.btn-primary:is(:hover, :focus) {
+.btn-primarySign:is(:hover, :focus) {
     background: var(--citrine);
     color: var(--xiketic);
 }
@@ -603,7 +603,7 @@ body {
         gap: 35px;
     }
 
-        .header-actions .btn-primary {
+        .header-actions .btn-primarySign {
             display: none;
         }
 
@@ -703,7 +703,7 @@ body {
         margin-inline: auto;
     }
 
-    .header-actions .btn-primary {
+    .header-actions .btn-primarySign {
         display: block;
         --fs-11: 14px;
         padding: 10px 35px;
