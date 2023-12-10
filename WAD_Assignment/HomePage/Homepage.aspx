@@ -216,12 +216,13 @@
         }
 
         /*upcoming*/
-.coming, .trendingNow{
-    margin-top: 75px;
-    margin-bottom: 50px;
-    font-weight: bold;
-}
-.coming .section-title, .trendingNow .section-title {
+        .coming, .trendingNow {
+            margin-top: 75px;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
+
+            .coming .section-title, .trendingNow .section-title, .topList .section-title {
     text-align: center;
     margin-bottom: 45px;
     color: var(--white);
@@ -556,6 +557,133 @@
                 grid-template-columns: repeat(4, 1fr);
             }
         }
+
+
+        /*top10*/
+        .tilesWrap {
+            padding: 0;
+            margin: 50px auto;
+            list-style: none;
+            text-align: center;
+        }
+
+            .tilesWrap li {
+                display: inline-block;
+                width: 20%;
+                min-width: 200px;
+                max-width: 230px;
+                padding: 80px 20px 40px;
+                position: relative;
+                vertical-align: top;
+                margin: 10px;
+                font-family: 'helvetica', san-serif;
+                min-height: 25vh;
+                background: #262a2b;
+                border: 1px solid #252727;
+                text-align: left;
+            }
+
+                .tilesWrap li h2 {
+                    font-size: 114px;
+                    margin: 0;
+                    position: absolute;
+                    opacity: 0.2;
+                    top: 50px;
+                    right: 10px;
+                    transition: all 0.3s ease-in-out;
+                    color: #575b5c;
+                }
+
+                .tilesWrap li h3 {
+                    font-size: 25px;
+                    color: #d6d3d3;
+                    margin-bottom: 5px;
+                }
+
+                .tilesWrap li p {
+                    font-size: 16px;
+                    line-height: 18px;
+                    color: #adabab;
+                    margin-top: 5px;
+                }
+
+                .tilesWrap li button {
+                    background: transparent;
+                    border: 1px solid #b7b7b7;
+                    padding: 10px 20px;
+                    color: #b7b7b7;
+                    border-radius: 3px;
+                    position: relative;
+                    transition: all 0.3s ease-in-out;
+                    transform: translateY(-40px);
+                    opacity: 0;
+                    cursor: pointer;
+                    overflow: hidden;
+                }
+
+                .tilesWrap li a {
+                    text-decoration: none;
+                }
+
+                .tilesWrap li button:before {
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: 120%;
+                    background: var(--citrine);
+                    top: 0;
+                    opacity: 0;
+                    left: -140px;
+                    border-radius: 0 20px 20px 0;
+                    z-index: -1;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                .tilesWrap li:hover button {
+                    transform: translateY(5px);
+                    opacity: 1;
+                }
+
+                .tilesWrap li button:hover {
+                    color: #262a2b;
+                }
+
+                    .tilesWrap li button:hover:before {
+                        left: 0;
+                        opacity: 1;
+                    }
+
+                .tilesWrap li:hover h2 {
+                    top: 0px;
+                    opacity: 0.6;
+                    color: #64696b;
+                }
+
+                .tilesWrap li:before {
+                    content: '';
+                    position: absolute;
+                    top: -2px;
+                    left: -2px;
+                    right: -2px;
+                    bottom: -2px;
+                    z-index: -1;
+                    background: #fff;
+                    transform: skew(2deg, 2deg);
+                }
+
+                .tilesWrap li:after {
+                    content: '';
+                    position: absolute;
+                    width: 40%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    background: rgba(255, 255, 255, 0.02);
+                }
+
+                .tilesWrap li:before {
+                    background: #656565;
+                }
     </style>
 
     <!---Banner-->
@@ -991,6 +1119,61 @@
         </div>
     </section>
 
+
+    <!---Top4-->
+    <div class="topList">
+        <div class="containerHeader">
+            <h2 class="h2 section-title">Top <strong>4</strong></h2>
+
+            <ul class="tilesWrap">
+
+                <li style="background-image: url(swipperMovie1.png); background-size: cover; background-position: center; width: 100%; height: 100%;">
+                    <h2>01</h2>
+                    <h3>Thanksgiving</h3>
+                    <p>
+                        Horror
+                    </p>
+                    <a href="haha.html" class="navbar-social-link">
+                        <button class="btnHeader btn-primary">View</button>
+                    </a>
+                </li>
+                <li style="background-image: url(swipperMovie5.jpeg); background-size: cover; background-position: center; width: 100%; height: 100%;">
+                    <h2>02</h2>
+                    <h3>Wonka</h3>
+                    <p>
+                        Musical
+                    </p>
+                    <a href="haha.html" class="navbar-social-link">
+                        <button class="btnHeader btn-primary">View</button>
+                    </a>
+                </li>
+                <li style="background-image: url(swipperMovie3.jpg); background-size: cover; background-position: center; width: 100%; height: 100%;">
+                    <h2>03</h2>
+                    <h3>Wish</h3>
+                    <p>
+                        Musical
+                    </p>
+                    <a href="haha.html" class="navbar-social-link">
+                        <button class="btnHeader btn-primary">View</button>
+                    </a>
+                </li>
+                <li style="background-image: url(swipperMovie4.jpg); background-size: cover; background-position: center; width: 100%; height: 100%;">
+                    <h2>04</h2>
+                    <h3>War On Terror: KL Anarki</h3>
+                    <p>
+                        Action
+                    </p>
+                    <a href="haha.html" class="navbar-social-link">
+                        <button class="btnHeader btn-primary">View</button>
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+
+    </div>
+
     <!-- coming  -->
     <section class="coming" id="coming">
         <h2 class="h2 section-title">Upcoming <strong>Movies</strong></h2>
@@ -1002,7 +1185,7 @@
                     <div class="box-img">
                         <img src="swipperMovie1.png" alt="">
                     </div>
-                    <h3>Ant-Man and the Wasp:Quantumania</h3>
+                    <h3>Thanksgiving</h3>
                 </div>
 
                 <!-- box-2  -->
@@ -1010,7 +1193,7 @@
                     <div class="box-img">
                         <img src="swipperMovie2.jpg" alt="">
                     </div>
-                    <h3>The Flash</h3>
+                    <h3>Aquaman and the Lost Kingdom</h3>
                 </div>
 
                 <!-- box-3  -->
@@ -1018,7 +1201,7 @@
                     <div class="box-img">
                         <img src="swipperMovie3.jpg" alt="">
                     </div>
-                    <h3>Guardians of the Galaxy Vol. 3</h3>
+                    <h3>Wish</h3>
                 </div>
 
                 <!-- box-4  -->
@@ -1026,7 +1209,7 @@
                     <div class="box-img">
                         <img src="swipperMovie4.jpg" alt="">
                     </div>
-                    <h3>Shazam! Fury of the Gods</h3>
+                    <h3>War On Terror: KL Anarki</h3>
                 </div>
 
                 <!-- box-5  -->
@@ -1034,7 +1217,7 @@
                     <div class="box-img">
                         <img src="swipperMovie5.jpeg" alt="">
                     </div>
-                    <h3>Aquaman and the Lost Kingdom</h3>
+                    <h3>Wonka</h3>
                 </div>
 
                 <!-- box-6  -->
@@ -1042,7 +1225,7 @@
                     <div class="box-img">
                         <img src="swipperMovie6.jpg" alt="">
                     </div>
-                    <h3>John Wick:Chapter 4</h3>
+                    <h3>Five Nights At Freddy's</h3>
                 </div>
 
 
