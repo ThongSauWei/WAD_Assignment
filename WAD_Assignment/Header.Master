@@ -34,7 +34,8 @@
             <div class="overlayHeader" data-overlay></div>
 
             <asp:HyperLink ID="HyperLink3" class="logo" runat="server" NavigateUrl="~/HomePage/Homepage.aspx">
-                <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="85px" height="75px" />
+<%--                <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="85px" height="75px" />--%>
+                <img id="cinemaLogo" src="~/image/cinemaLogo.png" runat="server" alt="cinemaLogo" />
             </asp:HyperLink>
 
             <div class="header-actions">
