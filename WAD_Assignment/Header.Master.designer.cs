@@ -15,13 +15,31 @@ namespace WAD_Assignment
     {
 
         /// <summary>
-        /// form1 control.
+        /// cinemaLogo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Image cinemaLogo;
+
+        /// <summary>
+        /// movieImage1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image movieImage1;
+
+        /// <summary>
+        /// movieImage2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image movieImage2;
 
         /// <summary>
         /// HyperLink3 control.
@@ -102,7 +120,7 @@ namespace WAD_Assignment
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Image movieImage3;
 
         /// <summary>
         /// Button2 control.
