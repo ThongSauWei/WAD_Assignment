@@ -268,6 +268,10 @@ body {
     background: rgba(40, 41, 52, 1);
 }
 
+header {
+    box-shadow: 5px 5px 15px 0px rgb(252 255 99 / 60%);
+}
+
 .containerHeader {
     padding-inline: 15px;
 }

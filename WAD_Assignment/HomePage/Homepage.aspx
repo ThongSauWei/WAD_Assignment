@@ -3,6 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <style>
+        header {
+            box-shadow: none !important;
+        }
+
         .descBanner a {
             text-decoration: none;
             display: block;
@@ -223,14 +227,14 @@
         }
 
             .coming .section-title, .trendingNow .section-title, .topList .section-title {
-    text-align: center;
-    margin-bottom: 45px;
-    color: var(--white);
-    line-height: 1.2;
-    font-size: 33px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
+                text-align: center;
+                margin-bottom: 45px;
+                color: var(--white);
+                line-height: 1.2;
+                font-size: 33px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
 
         .section-title strong {
             color: var(--citrine);
@@ -1239,7 +1243,7 @@
 
     <!--swipper-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
+
     <script>
         let items = document.querySelectorAll('.slider .list .item');
         let next = document.getElementById('next');
@@ -1295,7 +1299,7 @@
             })
         })
     </script>
-    
+
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
