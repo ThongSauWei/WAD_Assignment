@@ -15,6 +15,7 @@
 
     <!--- custom css link-->
     <link rel="stylesheet" href="header.css">
+    <link type="text/css" rel="stylesheet" href="./MyBooking/bookingStyles.css" />
 
     <!-- - google font link-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -164,7 +165,7 @@
                     </li>
                     
                     <li>
-                        <asp:HyperLink ID="HyperLink8" class="navbar-link" runat="server" NavigateUrl="~/Menu/Menu.aspx">My Booking</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink8" class="navbar-link" runat="server" NavigateUrl="~/MyBooking/booking.aspx">My Booking</asp:HyperLink>
                         <!---<a href="#" class="navbar-link">My Booking</a>-->
                     </li>
                     
