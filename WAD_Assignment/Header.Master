@@ -134,7 +134,7 @@
                 </div>
 
                 
-                    <asp:Button ID="Button1" class="btnHeader btn-primarySign" runat="server" Text="Sign in" OnClick="Button1_Click" />
+                    <asp:Button ID="Button1" class="btnHeader btn-primarySign" runat="server" Text="Sign in" PostBackUrl="~/loginRegister/Login.aspx" />
                 
             </div>
 
