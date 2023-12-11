@@ -2,6 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <style>
+        header {
+            box-shadow: none !important;
+        }
+
         /* ----------------------------------- */
         .swiper {
             width: 100%;
@@ -303,6 +307,140 @@
         .popup a {
             text-decoration: none;
         }
+
+        /**Review*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .containerReview{
+            margin-top:730px;
+            margin-bottom:-30px;
+        }
+
+        .clientImage {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .reviewItem .topReview .clientImage span {
+            color: rgb(203, 203, 54);
+            font-weight: bold;
+        }
+
+        .clientImage img {
+            width: 40px;
+        }
+
+        .reviewSection {
+            padding: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .reviewItem {
+            width: 600px;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: #10102a;
+            border: 1px solid #10102a;
+            transition: all .2s linear;
+            padding: 30px 20px;
+        }
+
+            .reviewItem:hover {
+                border-color: yellow;
+                transform: scale(1.01);
+                background-color: #090921;
+                box-shadow: 0 0px 5px 0px #cbc0c0;
+            }
+
+            .reviewItem .topReview li i {
+                color: rgb(232, 232, 30);
+            }
+
+        .review {
+            color: rgb(183, 181, 181);
+        }
+
+        .review1 {
+            color: white;
+        }
+
+        .topReview {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+            .topReview ul {
+                display: flex;
+                list-style: none;
+                margin-right: 20px;
+            }
+
+                .topReview ul li {
+                    padding-left: 4px;
+                }
+
+        article p {
+            font-size: 15px;
+            font-weight: 100;
+            margin-bottom: 1rem;
+            font-family: system-ui;
+            padding: 0px 40px;
+        }
+
+
+        @media screen and (max-width:375px) {
+            .reviewSection {
+                padding: 0;
+            }
+
+            .reviewItem {
+                width: 100%;
+            }
+
+            .clientImage {
+                margin-bottom: 0.6rem;
+            }
+
+            .topReview {
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width:675px) {
+            .reviewItem {
+                width: 300px;
+            }
+        }
+
+        .containerReview .section-title {
+            margin-top:780px;
+                text-align: center;
+                margin-bottom: -50px !important;
+                color: var(--white);
+                line-height: 1.2;
+                font-size: 33px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+        .containerReview .section-title strong {
+            color: var(--citrine);
+        }
     </style>
 
     <div class="swiper mySwiper">
@@ -367,10 +505,10 @@
                                         <p><span>Movie Date:</span> 17/7/2024</p>
                                         <p><span>Movie Time:</span> 2pm - 4pm</p>
                                     </p>
-                         
+
                                     <a href="../../Member/Booking.aspx" class="btnHeader btn-primarySign" style="width: 350px; text-decoration: none; line-height: -5px; border-radius: 15px;">
 
-                                        <div class="seatButton" style="margin-left:90px;">
+                                        <div class="seatButton" style="margin-left: 90px;">
                                             Select Seats
                                         </div>
                                     </a>
@@ -378,6 +516,46 @@
                                 <a href="#" class="close_popupModal1"><span>X</span></a>
                             </div>
                         </div>
+                        
+                        
+                        
+
+                        <a href="#popup1" class="btnHeader btn-primarySign" style="width: 130px; text-decoration: none; line-height: -5px;">27 June</a>
+
+                        <div class="popup" id="popup1">
+                            <div class="popup_inner" style="margin-top: 55px;">
+                                <div class="imgModal">
+
+                                    <img id="Img1" src="~/HomePage/swipperMovie1.png" runat="server" alt="modalImage" />
+
+                                </div>
+                                <div class="contentModal">
+                                    <h2 style="font-size: 28px;">27<p class="titleSmall">Horror / Adventure</p>
+                                    </h2>
+
+
+                                    <p>
+                                        <span>Duration:</span> 1h 45min
+                            <p><span>Language:</span> ENG</p>
+                                        <p><span>Subtitles:</span> CHI/BM</p>
+                                        <p><span>Classification:</span> 18</p>
+                                        <p><span>Hall:</span> Hall 1</p>
+                                        <p><span>Movie Date:</span> 17/7/2024</p>
+                                        <p><span>Movie Time:</span> 2pm - 4pm</p>
+                                    </p>
+
+                                    <a href="../../Member/Booking.aspx" class="btnHeader btn-primarySign" style="width: 350px; text-decoration: none; line-height: -5px; border-radius: 15px;">
+
+                                        <div class="seatButton" style="margin-left: 90px;">
+                                            Select Seats
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="#" class="close_popupModal1"><span>X</span></a>
+                            </div>
+                        </div>
+                        
+
                         <!--
                         <button class="btn-1" style="width:100px;">18 June</button>
                         <button class="btn-1" style="width:100px;">27 June</button>
@@ -386,6 +564,91 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+
+    
+
+    <!-- Main Container for Clients Review -->
+    <div class="containerReview">
+        <h2 class="h2 section-title"> Re<strong>view</strong></h2>
+        <!-- Clients Review Section -->
+        <div class="reviewSection">
+
+            <!-- Clients Review-1 Section Starts from Here  -->
+            <div class="reviewItem">
+                <div class="topReview">
+                    <div class="clientImage">
+                        <img src="./client.png" alt="">
+                        <span>Raju Sheoran</span>
+                    </div>
+                    <ul>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-regular fa-star"></i></li>
+                        <li><i class="fa-regular fa-star"></i></li>
+                    </ul>
+                </div>
+                <article>
+                    <p class="review">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit beatae ipsa
+                        voluptatibus perferendis quos eaque nemo error tempora harum quas, laudantium tenetur, neque,
+                        facere exercitationem!
+                    </p>
+                    <p class="review1">Jan 01, 2023</p>
+                </article>
+            </div>
+
+            <!-- Clients Review-2 Section Starts from Here  -->
+            <div class="reviewItem">
+                <div class="topReview">
+                    <div class="clientImage">
+                        <img src="./client.png" alt="">
+                        <span>Raju Sheoran</span>
+                    </div>
+                    <ul>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-regular fa-star"></i></li>
+                        <li><i class="fa-regular fa-star"></i></li>
+                    </ul>
+                </div>
+                <article>
+                    <p class="review">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit beatae ipsa
+                        voluptatibus perferendis quos eaque nemo error tempora harum quas, laudantium tenetur, neque,
+                        facere exercitationem!
+                    </p>
+                    <p class="review1">Jan 01, 2023</p>
+                </article>
+            </div>
+
+            <!-- Clients Review-3 Section Starts from Here  -->
+            <div class="reviewItem">
+                <div class="topReview">
+                    <div class="clientImage">
+                        <img src="./client.png" alt="">
+                        <span>Raju Sheoran</span>
+                    </div>
+                    <ul>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-regular fa-star"></i></li>
+                        <li><i class="fa-regular fa-star"></i></li>
+                    </ul>
+                </div>
+                <article>
+                    <p class="review">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit beatae ipsa
+                        voluptatibus perferendis quos eaque nemo error tempora harum quas, laudantium tenetur, neque,
+                        facere exercitationem!
+                    </p>
+                    <p class="review1">Jan 01, 2023</p>
+                </article>
+            </div>
         </div>
     </div>
 </asp:Content>

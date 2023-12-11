@@ -1,11 +1,65 @@
 ﻿#form1 {
-    width: 1000px;
-    height: 800px;
-    background-color: white;
+    width: 916.67px;
+    height: 650px;
     margin: 130px auto;
 }
 
-.movie-image {
-    width: 189px;
-    height: 270px;
+div.ticket {
+    width: 100%;
+    height: 100%;
+}
+
+div.left-side {
+    width: 266.67px;
+    height: 550px;
+    float: left;
+}
+
+div.movie-detail {
+    background-color: yellow;
+    width: 266.67px;
+    height: 400px;
+    float: left;
+}
+
+div.movie-image {
+    width: 100%;
+    height: 100%;
+    background: url("../image/movie-image1.jpg") no-repeat;
+    background-size: contain;
+}
+
+div.total-price {
+    background-color: blue;
+    width: 266.67px;
+    height: 150px;
+    float: left;
+}
+
+div.right-side {
+    width: 650px;
+    height: 650px;
+    float: left;
+}
+
+div.payment-detail {
+    background-color: red;
+    width: 650px;
+    height: 550px;
+    float: left;
+    box-shadow: -4px 4px 8px #5f5656;
+    border-radius: 0px 10px 0px 0px;
+}
+
+div.checkout {
+    background-color: green;
+    width: 650px;
+    height: 100px;
+    float: right;
+}
+
+.payment-button {
+    width: 100%;
+    height: 100%;
+    border: none;
 }

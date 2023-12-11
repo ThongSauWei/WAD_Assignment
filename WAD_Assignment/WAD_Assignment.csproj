@@ -68,6 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Detail\abc\Testing.aspx" />
+    <Content Include="App_Data\TicketDB.mdf" />
+    <Content Include="App_Data\TicketDB_log.ldf">
+      <DependentUpon>TicketDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Detail\Detail.aspx" />
     <Content Include="HomePage\swipperMovie6.jpg" />
     <Content Include="image\booked.png" />
@@ -109,6 +113,7 @@
     <Content Include="Member\Payment.css" />
     <Content Include="Menu\Menu.aspx" />
     <Content Include="MyBooking\booking.aspx" />
+    <Content Include="MyBooking\BookingDetail.aspx" />
     <Content Include="MyBooking\bookingStyles.css" />
     <Content Include="Testing.aspx" />
     <Content Include="TTT.aspx" />
@@ -192,6 +197,13 @@
     </Compile>
     <Compile Include="MyBooking\booking.aspx.designer.cs">
       <DependentUpon>booking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyBooking\BookingDetail.aspx.cs">
+      <DependentUpon>BookingDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyBooking\BookingDetail.aspx.designer.cs">
+      <DependentUpon>BookingDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testing.aspx.cs">
