@@ -11,44 +11,125 @@ div.ticket {
 
 div.left-side {
     width: 266.67px;
-    height: 550px;
+    height: 540px;
     float: left;
 }
 
 div.movie-detail {
-    background-color: yellow;
     width: 266.67px;
     height: 400px;
     float: left;
+    transition: 0.5s ease;
 }
 
-div.movie-image {
-    width: 100%;
-    height: 100%;
-    background: url("../image/movie-image1.jpg") no-repeat;
-    background-size: contain;
+img.movie-image {
+    display: block;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+}
+
+div.movie-desc {
+    position: relative;
+    top: -70%;
+    left: 15%;
+    opacity: 0;
+    transition: 0.5s ease;
+    color: white;
+}
+
+div.movie-detail:hover img.movie-image {
+    filter: blur(5px);
+}
+
+div.movie-detail:hover div.movie-desc {
+    opacity: 1;
 }
 
 div.total-price {
-    background-color: blue;
+    background-color: rgb(212, 70, 44);
     width: 266.67px;
-    height: 150px;
+    height: 140px;
     float: left;
+}
+
+div.total-price span {
+    display: block;
+    width: 100%;
+    margin-left: 20px;
+}
+
+span.lblTotalPrice {
+    font-weight: bold;
+    margin-top: 25px;
+    font-size: 20px;
+    color: #d8bbc5;
+}
+
+span.txtTotalPrice {
+    font-weight: bolder;
+    font-size: 36px;
+    color: #ede4e7;
+}
+
+span.t-and-c {
+    font-size: 12px;
+    margin-top: 20px;
+    color: #d1b2c2b5;
 }
 
 div.right-side {
     width: 650px;
-    height: 650px;
+    height: 640px;
     float: left;
 }
 
 div.payment-detail {
-    background-color: red;
+    background-color: white;
     width: 650px;
-    height: 550px;
+    height: 540px;
     float: left;
     box-shadow: -4px 4px 8px #5f5656;
     border-radius: 0px 10px 0px 0px;
+}
+
+div.payment-method {
+    margin: 20px auto;
+    width: 85%;
+}
+
+span.payment-text {
+    color: #ecd261;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+div.payment-choice {
+    width: 550px;
+    height: 100px;
+    margin-top: 20px;
+}
+
+div.payment-choice > button {
+    width: 250px;
+    height: 100px;
+    border: 1px solid grey;
+    margin-right: 25px;
+    float: left;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+div.payment-choice button img {
+    margin: 10px auto;
+    display: block;
+}
+
+.deselected {
+    filter: grayscale(100%);
+}
+
+.selected {
+    box-shadow: 2px 2px 5px grey;
 }
 
 div.checkout {

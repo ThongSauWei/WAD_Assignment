@@ -81,11 +81,12 @@
     <Content Include="HomePage\swipperMovie3.jpg" />
     <Content Include="HomePage\swipperMovie4.jpg" />
     <Content Include="HomePage\swipperMovie5.jpeg" />
+    <Content Include="image\card-payment.png" />
     <Content Include="image\chair.png" />
     <Content Include="image\checked.png" />
-    <Content Include="image\picture-1.jpg" />
     <Content Include="image\profile-user.png" />
     <Content Include="image\screen.png" />
+    <Content Include="image\tng-payment.png" />
     <Content Include="loginRegister\banana.gif" />
     <Content Include="loginRegister\banana1.gif" />
     <Content Include="loginRegister\catt.gif" />
