@@ -1,0 +1,34 @@
+﻿.container {
+    margin: 126px 1.5rem 3rem 1.5rem;
+}
+
+.container > .card {
+    display: flex;
+    max-width: 800px;
+    margin: 30px auto;
+    border-radius: 12px;
+    background-color: orange;
+    transition: transform 260ms ease-in-out, box-shadow 260ms ease-in-out;
+}
+
+    .container > .card:first-child {
+        margin-top:0;
+    }
+    .container > .card:last-child {
+        margin-bottom: 0;
+    }
+        .container > .card > img {
+    vertical-align: middle;
+    border-radius: 12px 0 0 12px;
+}
+
+.container > .card > .card_content {
+    margin: 10px 15px;
+}
+
+    .container > .card:hover,
+    .container > .card:active {
+        transform: scale(1.05);
+        cursor: pointer;
+        box-shadow: -10px 3px 61px -20px rgba(0,0,0,0.87);
+    }
