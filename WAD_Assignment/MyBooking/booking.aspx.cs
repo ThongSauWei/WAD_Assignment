@@ -14,9 +14,5 @@ namespace WAD_Assignment.MyBooking
          
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

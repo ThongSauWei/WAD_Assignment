@@ -20,7 +20,6 @@
             </p>
             <div>
                 CATEGORY
-                <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Button" />
             </div>
         </div>
     </asp:a>
