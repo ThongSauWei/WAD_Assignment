@@ -1,20 +1,40 @@
-﻿body {
+﻿div.movie {
+    margin-top: 130px;
+    height: 1275px;   
 }
 
-div.movie {
-    height: 1000px;
+div.show-movie {
+    background-color: #ecd261;
+    height: 310px;
 }
 
 div.movie-image {
     width: 189px;
     height: 270px;
-    margin-left: 5%;
+    margin: 20px 0 20px 5%;
     float: left;
+}
+
+div.movie-image img {
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px grey;
 }
 
 div.movie-detail {
     float: left;
-    margin-left: 20px;
+    margin: 65px 0 0 20px;
+    width: 60%;
+}
+
+div.logo {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-top: 50px;
+}
+
+div.logo img {
+    opacity: 0.2;
 }
 
 form#form {
@@ -24,24 +44,25 @@ form#form {
     height: 700px;
 }
 
-div.content {
+div.booking-content {
     float: left;
     width: 100%;
-    border: 1px solid black;
-    margin-bottom: 20px;
+    background-color: rgba(40,41,52,1);
 }
 
 div.movie-seat, div.legend {
     margin: 10px auto;
-    min-width: 450px;
+    min-width: 650px;
     max-width: 100%;
     width: 50%;
+    padding-top: 100px
 }
 
 div.screen {
-    border: 1px solid black;
-    margin: 10px auto 50px;
-    text-align: center;
+    margin: 10px auto 100px;
+    width: 130%;
+    height: 150px;
+    margin-left: -15%;
 }
 
 table.select-seat {
@@ -49,12 +70,11 @@ table.select-seat {
 }
 
 td.seat {
-    border: 1px solid black;
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
 }
 
-.empty {
+.seat-button {
     width: 100%;
     height: 100%;
     border: none;
@@ -62,22 +82,21 @@ td.seat {
 }
 
 td.seat-gap {
-    width: 10px;
-    height: 25px;
+    width: 20px;
 }
 
 td.pathway {
-    width: 32px;
+    width: 80px;
 }
 
 td.row-gap {
-    height: 5px;
+    height: 30px;
 }
 
 div.legend {
-    margin-top: 20px;
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 40px;
 }
 
 div.legend-item {
@@ -87,6 +106,7 @@ div.legend-item {
 
 span.legend-desc {
     margin-left: 5px;
+    color: white;
 }
 
 div.seatSelected {
@@ -94,5 +114,150 @@ div.seatSelected {
     float: left;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    background-color: black;
+    height: 65px;
+}
+
+div.seatLabel * {
+    width: 100%;
+    color: white;
+}
+
+div.booking-button {
+    width: 200px;
+    height: 38.4px;
+    overflow: hidden;
+}
+
+div.booking-button span {
+    position: relative;
+    display: block;
+}
+
+.btnConfirm {
+    position: relative;
+    top: -82px;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    background-color: inherit;
+    border: none;
+    text-transform: uppercase;
+    color: #ecd261;
+    letter-spacing: 3px;
+    transition: 0.5s;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.btnConfirm:hover {
+    color: black;
+    background-color: #ecd261;
+}
+
+div.booking-button:hover {
+    box-shadow: 0 0 5px #ecd261, 0 0 25px #ecd261, 0 0 50px #ecd261, 0 0 100px #ecd261;
+}
+
+div.booking-button span:first-child {
+    top: 0px;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ecd261);
+    animation: animation-top 1s linear infinite;
+}
+
+@keyframes animation-top {
+    0% {
+        left: -100%;
+    }
+
+    50%,100% {
+        left: 100%;
+    }
+}
+
+div.booking-button span:nth-child(2) {
+    top: -100%;
+    left: 198px;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #ecd261);
+    animation: animation-right 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes animation-right {
+    0% {
+        top: -100%;
+    }
+
+    50%,100% {
+        top: 100%;
+    }
+}
+
+div.booking-button span:nth-child(3) {
+    bottom: 3px;
+    left: 100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #ecd261);
+    animation: animation-bottom 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes animation-bottom {
+    0% {
+        left: 100%;
+    }
+
+    50%,100% {
+        left: -100%;
+    }
+}
+
+div.booking-button span:nth-child(4) {
+    top: 100%;
+    left: 0px;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #ecd261);
+    animation: animation-left 1s linear infinite;
+    animation-delay: 0.6s;
+}
+
+@keyframes animation-left {
+    0% {
+        top: 100%;
+    }
+
+    50%,100% {
+        top: -200%;
+    }
+}
+
+/* Small screens (phones) */
+@media all and (max-width: 880px) {
+    div.movie-seat, div.legend {
+        margin: 10px auto;
+        min-width: 450px;
+        max-width: 100%;
+        width: 50%;
+        padding-top: 100px
+    }
+
+    div.screen {
+        margin: 10px auto 100px;
+        width: 100%;
+        height: 100px;
+    }
+
+    td.seat {
+        min-width: 30px;
+        width: 30px;
+        height: 30px;
+    }
 }

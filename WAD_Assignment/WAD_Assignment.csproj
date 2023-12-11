@@ -67,9 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Detail\Detail.aspx" />
+    <Content Include="HomePage\swipperMovie6.jpg" />
+    <Content Include="image\booked.png" />
+    <Content Include="HomePage\Homepage.aspx" />
+    <Content Include="HomePage\swipperMovie1.png" />
+    <Content Include="HomePage\swipperMovie2.jpg" />
+    <Content Include="HomePage\swipperMovie3.jpg" />
+    <Content Include="HomePage\swipperMovie4.jpg" />
+    <Content Include="HomePage\swipperMovie5.jpeg" />
     <Content Include="image\chair.png" />
     <Content Include="image\checked.png" />
+    <Content Include="image\picture-1.jpg" />
     <Content Include="image\profile-user.png" />
+    <Content Include="image\screen.png" />
     <Content Include="loginRegister\banana.gif" />
     <Content Include="loginRegister\banana1.gif" />
     <Content Include="loginRegister\catt.gif" />
@@ -86,25 +97,44 @@
     <Content Include="Member\ConfirmBooking.aspx" />
     <Content Include="image\movie-image1.jpg" />
     <Content Include="Member\Booking.css" />
-    <Content Include="cinemaLogo.png" />
+    <Content Include="image\cinemaLogo.png" />
     <Content Include="header.css" />
-    <Content Include="Member\Booking.aspx" />
-    <Content Include="movie1.jpg" />
-    <Content Include="movie2.jpg" />
+    <Content Include="image\movie1.jpg" />
+    <Content Include="image\movie2.jpg" />
+    <Content Include="Member\ConfirmBooking.css" />
     <Content Include="loginRegister\Login.aspx" />
     <Content Include="loginRegister\PasswordRecovery.aspx" />
+    <Content Include="Member\Payment.aspx" />
+    <Content Include="Member\Payment.css" />
+    <Content Include="Menu\Menu.aspx" />
+    <Content Include="MyBooking\booking.aspx" />
+    <Content Include="MyBooking\bookingStyles.css" />
     <Content Include="Testing.aspx" />
     <Content Include="TTT.aspx" />
     <Content Include="Web.config" />
     <Content Include="loginRegister\Register.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Detail\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Header.Master.cs">
       <DependentUpon>Header.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Header.Master.designer.cs">
       <DependentUpon>Header.Master</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\Homepage.aspx.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage\Homepage.aspx.designer.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Member\Booking.aspx.cs">
       <DependentUpon>Booking.aspx</DependentUpon>
@@ -133,6 +163,27 @@
     </Compile>
     <Compile Include="loginRegister\PasswordRecovery.aspx.designer.cs">
       <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyBooking\booking.aspx.cs">
+      <DependentUpon>booking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyBooking\booking.aspx.designer.cs">
+      <DependentUpon>booking.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testing.aspx.cs">
@@ -169,7 +220,9 @@
     </None>
     <Content Include="Web.sitemap" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Guest\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

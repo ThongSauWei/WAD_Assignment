@@ -14,7 +14,7 @@ namespace WAD_Assignment.Member
 
         }
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
+        protected void btnConfirm_Click(object sender, EventArgs e)
         {
             Response.Redirect("ConfirmBooking.aspx");
         }
@@ -38,7 +38,21 @@ namespace WAD_Assignment.Member
             }
             else
             {
-                lblSeats.Text = lblSeats.Text.Replace(seatClicked.ID, "");
+                if (lblSeats.Text.EndsWith(seatClicked.ID))
+                {
+                    if (lblSeats.Text.Equals(seatClicked.ID))
+                    {
+                        lblSeats.Text = lblSeats.Text.Replace(seatClicked.ID, "");
+                    }
+                    else
+                    {
+                        lblSeats.Text = lblSeats.Text.Replace("," + seatClicked.ID, "");
+                    }
+                }
+                else
+                {
+                    lblSeats.Text = lblSeats.Text.Replace(seatClicked.ID + ",", "");
+                }
 
                 seatClicked.ImageUrl = seatClicked.ImageUrl.Replace("checked.png", "chair.png");
             }
