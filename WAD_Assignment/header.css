@@ -243,7 +243,7 @@
     list-style: none;
 }
 
-.sec a, .navbar-top a, .navbar-list a, .navbar-social-list a, .fLeft a {
+.sec .secLink, .navbar-top a, .navbar-list a, .navbar-social-list a, .fLeft a {
     text-decoration: none;
     display: block;
 }

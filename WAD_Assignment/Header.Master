@@ -29,13 +29,14 @@
 <body id="topHeader">
     <%--<form id="form1" runat="server"></form> --%>
     <!--- #HEADER-->
+    <form id="form1" runat="server">
     <header class="header" data-header>
         <div class="containerHeader">
             <div class="overlayHeader" data-overlay></div>
 
             <asp:HyperLink ID="HyperLink3" class="logo" runat="server" NavigateUrl="~/HomePage/Homepage.aspx">
-<%--                <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="85px" height="75px" />--%>
-                <img id="cinemaLogo" src="~/image/cinemaLogo.png" runat="server" alt="cinemaLogo" />
+                <%--                <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="85px" height="75px" />--%>
+                <img id="cinemaLogo" src="~/image/cinemaLogo.png" runat="server" alt="cinemaLogo" style="width: 85px; height: 75px;" />
             </asp:HyperLink>
 
             <div class="header-actions">
@@ -67,11 +68,12 @@
                                             Notifications
                                         </div>
                                         <div class="sec">
-                                            <a href="#">
+                                            <asp:HyperLink ID="HyperLink9" class="secLink" runat="server" NavigateUrl="~/Detail/Detail.aspx">
+                                                <!-- <a href="#"> -->
                                                 <div class="profCont">
                                                     <!-- <i class="fa-solid fa-ban"></i>/ -->
                                                     <div class="profile">
-                                                        <img src='<%= ResolveUrl("~/image/movie1.jpg") %>' alt="movie" width="100%" />
+                                                        <img id="Img1" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />
                                                     </div>
                                                 </div>
                                                 <div class="content">
@@ -82,15 +84,16 @@
                                                         <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
                                                     </div>
                                                 </div>
-                                            </a>
+                                                <!-- </a> -->
+                                            </asp:HyperLink>
                                         </div>
 
                                         <div class="sec">
-                                            <a href="#">
+                                            <asp:HyperLink ID="HyperLink7" class="secLink" runat="server" NavigateUrl="~/Detail/Detail.aspx">
+                                                <!-- <a href="#"> -->
                                                 <div class="profCont">
-                                                    <!-- <i class="fa-solid fa-ban"></i>/ -->
                                                     <div class="profile">
-                                                        <img src='<%= ResolveUrl("~/image/movie1.jpg") %>' alt="movie" width="100%" />
+                                                        <img id="Img2" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />
                                                     </div>
                                                 </div>
                                                 <div class="content">
@@ -101,15 +104,15 @@
                                                         <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
                                                     </div>
                                                 </div>
-                                            </a>
+                                                <!-- </a> -->
+                                            </asp:HyperLink>
                                         </div>
 
                                         <div class="sec">
-                                            <a href="#">
+                                            <asp:HyperLink ID="HyperLink10" class="secLink" runat="server" NavigateUrl="~/Detail/Detail.aspx">
                                                 <div class="profCont">
-                                                    <!-- <i class="fa-solid fa-ban"></i>/ -->
                                                     <div class="profile">
-                                                        <img src='<%= ResolveUrl("~/image/movie1.jpg") %>' alt="movie" width="100%" />
+                                                        <img id="Img3" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />
                                                     </div>
                                                 </div>
                                                 <div class="content">
@@ -120,9 +123,7 @@
                                                         <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
                                                     </div>
                                                 </div>
-                                            </a>
-
-
+                                            </asp:HyperLink>
                                         </div>
                                     </div>
                                 </div>
@@ -131,24 +132,32 @@
                     </label>
                 </div>
 
-                <form id="form1" runat="server">
+                
                     <asp:Button ID="Button1" class="btnHeader btn-primarySign" runat="server" Text="Sign in" PostBackUrl="~/loginRegister/Login.aspx" />
-               </form>
+                
             </div>
 
             <button type="button" id="Button2" class="menu-open-btn" data-menu-open-btn runat="server">
                 <ion-icon name="reorder-two"></ion-icon>
             </button>
-        
+
 
             <nav class="navbarHeader" data-navbar>
                 <div class="navbar-top">
-                    <a href="./index.html" class="logo">
+
+
+
+                    <asp:HyperLink ID="HyperLink11" class="logo" runat="server" NavigateUrl="~/HomePage/Homepage.aspx">
                         <div class="logo-container1">
-                            <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="80px" height="70px" />
+                            <img id="Img4" src="~/image/cinemaLogo.png" runat="server" alt="cinemaLogo"
+                                style="width: 80px; height: 70px;" />
                             <h3 style="color: rgb(226, 226, 20);">ET CINEMA</h3>
                         </div>
-                    </a>
+
+                    </asp:HyperLink>
+
+
+
                     <button class="menu-close-btn" data-menu-close-btn>
                         <ion-icon name="close-outline"></ion-icon>
                     </button>
@@ -163,12 +172,12 @@
                         <asp:HyperLink ID="HyperLink6" class="navbar-link" runat="server" NavigateUrl="~/Menu/Menu.aspx">Movie</asp:HyperLink>
                         <!---<a href="#" class="navbar-link">Movie</a>-->
                     </li>
-                    
+
                     <li>
                         <asp:HyperLink ID="HyperLink8" class="navbar-link" runat="server" NavigateUrl="~/Menu/Menu.aspx">My Booking</asp:HyperLink>
                         <!---<a href="#" class="navbar-link">My Booking</a>-->
                     </li>
-                    
+
                 </ul>
 
                 <ul class="navbar-social-list">
