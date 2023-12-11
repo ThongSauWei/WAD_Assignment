@@ -88,10 +88,12 @@
     <Content Include="loginRegister\cinema-walk.gif" />
     <Content Include="loginRegister\duck.gif" />
     <Content Include="loginRegister\K9it.gif" />
+    <Content Include="loginRegister\Login.aspx" />
     <Content Include="loginRegister\minion.gif" />
     <Content Include="loginRegister\minion1.mp4" />
     <Content Include="loginRegister\minion2.gif" />
     <Content Include="loginRegister\MM9r.gif" />
+    <Content Include="loginRegister\PasswordRecovery.aspx" />
     <Content Include="loginRegister\RBackground.gif" />
     <Content Include="loginRegister\Register.css" />
     <Content Include="Member\Booking.aspx" />
@@ -103,8 +105,6 @@
     <Content Include="image\movie1.jpg" />
     <Content Include="image\movie2.jpg" />
     <Content Include="Member\ConfirmBooking.css" />
-    <Content Include="loginRegister\Login.aspx" />
-    <Content Include="loginRegister\PasswordRecovery.aspx" />
     <Content Include="Member\Payment.aspx" />
     <Content Include="Member\Payment.css" />
     <Content Include="Menu\Menu.aspx" />
@@ -144,20 +144,6 @@
     <Compile Include="HomePage\Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Member\Booking.aspx.cs">
-      <DependentUpon>Booking.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Member\Booking.aspx.designer.cs">
-      <DependentUpon>Booking.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Member\ConfirmBooking.aspx.cs">
-      <DependentUpon>ConfirmBooking.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Member\ConfirmBooking.aspx.designer.cs">
-      <DependentUpon>ConfirmBooking.aspx</DependentUpon>
-    </Compile>
     <Compile Include="loginRegister\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -171,6 +157,20 @@
     </Compile>
     <Compile Include="loginRegister\PasswordRecovery.aspx.designer.cs">
       <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Booking.aspx.cs">
+      <DependentUpon>Booking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Booking.aspx.designer.cs">
+      <DependentUpon>Booking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\ConfirmBooking.aspx.cs">
+      <DependentUpon>ConfirmBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\ConfirmBooking.aspx.designer.cs">
+      <DependentUpon>ConfirmBooking.aspx</DependentUpon>
     </Compile>
     <Compile Include="Member\Payment.aspx.cs">
       <DependentUpon>Payment.aspx</DependentUpon>

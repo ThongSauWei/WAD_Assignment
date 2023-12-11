@@ -1,6 +1,6 @@
-﻿HTML {
+﻿body#topHeader {
     background-image: url('K9it.gif') !important;
-    background-size: cover !important;
+    /*background-size: cover !important;*/
     background-attachment: fixed !important;
     max-height: 100% !important;
     max-width: 100% !important;
@@ -49,8 +49,8 @@ body {
 #registerForm {
     animation: form-entry 3s ease-in-out;
     /*background: linear-gradient(#ecd261, #0b2135);*/
-    margin: 120px auto;
-    width: 600px;
+    margin: 205px auto;
+    width: 520px;
     padding: 10px 30px 10px 30px;
     border: 1px solid #ecd261;
     /*background-color: rgba(40, 41, 52, 1);*/ /*#e9eb74*/
@@ -98,31 +98,31 @@ body {
     font-size: 18px;
 }
 
-span#RegularExpressionValidator2 {
+span#ContentPlaceHolder1_RegularExpressionValidator2 {
     color: red;
     position: relative;
     top: -48px;
     animation: blink-shadow-errorMsg 1s infinite;
 }
 
-span#RegularExpressionValidator1 {
+span#ContentPlaceHolder1_RegularExpressionValidator1 {
     color: red;
     position: relative;
-    top: -40px;
+    top: -45px;
     animation: blink-shadow-errorMsg 1s infinite;
 }
 
-span#passwordValidator {
+span#ContentPlaceHolder1_passwordValidator {
     color: red;
     position: relative;
-    top: -40px;
+    top: -45px;
     animation: blink-shadow-errorMsg 1s infinite;
 }
 
 .reg {
     display: flex;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 15px;
     font-size: 15px;
     color: #ffff;
 }
@@ -132,7 +132,7 @@ span#passwordValidator {
     margin-left: 5px;
     color: #e9eb74;
     font-weight: bold;
-    margin-top: 14px;
+    margin-top: 0px;
 }
 
 div.btnRegister {
@@ -183,7 +183,7 @@ div.btnRegister span:first-child {
 
 ion-icon.iconFirst.md.hydrated {
     position: absolute;
-    top: 108px;
+    top: 88px;
     right: 40px;
     transform: translateY(-50%);
     color: #ddc862;
@@ -192,7 +192,7 @@ ion-icon.iconFirst.md.hydrated {
 
 ion-icon.iconTwo.md.hydrated {
     position: absolute;
-    top: 188px;
+    top: 167px;
     right: 40px;
     transform: translateY(-50%);
     color: #ddc862;
@@ -201,7 +201,7 @@ ion-icon.iconTwo.md.hydrated {
 
 ion-icon.iconThree.md.hydrated {
     position: absolute;
-    top: 260px;
+    top: 238px;
     right: 40px;
     transform: translateY(-50%);
     color: #ddc862;
@@ -210,7 +210,7 @@ ion-icon.iconThree.md.hydrated {
 
 ion-icon.iconFour.md.hydrated {
     position: absolute;
-    top: 335px;
+    top: 315px;
     right: 40px;
     transform: translateY(-50%);
     color: #ddc862;
@@ -219,7 +219,7 @@ ion-icon.iconFour.md.hydrated {
 
 ion-icon.iconFive.md.hydrated {
     position: absolute;
-    top: 410px;
+    top: 390px;
     right: 40px;
     transform: translateY(-50%);
     color: #ddc862;
@@ -228,7 +228,7 @@ ion-icon.iconFive.md.hydrated {
 
 ion-icon.iconSix.md.hydrated {
     position: absolute;
-    top: 497px;
+    top: 482px;
     right: 40px;
     transform: translateY(-50%);
     color: #ddc862;
