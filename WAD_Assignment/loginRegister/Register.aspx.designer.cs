@@ -15,15 +15,6 @@ namespace WAD_Assignment
     {
 
         /// <summary>
-        /// registerForm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm registerForm;
-
-        /// <summary>
         /// CustomerName control.
         /// </summary>
         /// <remarks>
@@ -69,13 +60,13 @@ namespace WAD_Assignment
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
 
         /// <summary>
-        /// TextBox4 control.
+        /// SecurityQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox SecurityQuestion;
 
         /// <summary>
         /// CustomerPassword control.
@@ -96,22 +87,13 @@ namespace WAD_Assignment
         protected global::System.Web.UI.WebControls.RegularExpressionValidator passwordValidator;
 
         /// <summary>
-        /// TextBox5 control.
+        /// ReenterPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
-
-        /// <summary>
-        /// Cancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Cancel;
+        protected global::System.Web.UI.WebControls.TextBox ReenterPassword;
 
         /// <summary>
         /// Register control.
@@ -121,5 +103,14 @@ namespace WAD_Assignment
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Register;
+
+        /// <summary>
+        /// loginLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink loginLink;
     }
 }
