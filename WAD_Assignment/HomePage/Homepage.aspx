@@ -790,10 +790,10 @@
             </div>
             <!-- button arrows -->
             <div class="arrows">
-                <button id="prev">
+                <button id="prev" type="button">
                     <ion-icon name="chevron-back-outline"></ion-icon>
                 </button>
-                <button id="next">
+                <button id="next" type="button">
                     <ion-icon name="chevron-forward-outline"></ion-icon>
                 </button>
             </div>
@@ -1239,7 +1239,7 @@
 
     <!--swipper-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    
     <script>
         let items = document.querySelectorAll('.slider .list .item');
         let next = document.getElementById('next');
@@ -1295,6 +1295,7 @@
             })
         })
     </script>
+    
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
