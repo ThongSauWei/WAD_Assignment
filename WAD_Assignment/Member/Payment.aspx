@@ -2,19 +2,20 @@
 
 <asp:Content ID="ContentPlaceHolder" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="Payment.css" rel="stylesheet" />
-
-    <div class="ticket">
+    <div class="form1">
+        <div class="ticket">
         <div class="movie-detail">
             <div class="movie-image">
                 <img src="../image/movie-image1.jpg" width="100%" height="100%" />
             </div>
             <div class="movie-desc">
-                <h2>Movie Title</h2>
-                <h4>Age | Language | Duration</h4>
-                <br />
-                <h4>Cast</h4>
-                <br />
-                <h4>Date Time</h4>
+                    <h2>Movie Title</h2>
+                    <h4>Age | Language | Duration</h4>
+                    <br />
+                    <h4>Cast</h4>
+                    <br />
+                    <h4>Date Time</h4>
+                </div>
             </div>
         </div>
     </div>
