@@ -2,9 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-<div class="container">
+    <div class="container">
     <!-- long card -->
-    <asp:a class="card" href="/ticket?id=???">
+    <asp:HyperLink class="card" runat="server" NavigateUrl="~/MyBooking/BookingDetail.aspx">
         <img 
             src="../image/movie-image1.jpg" 
             alt="INSERT_ALT" 
@@ -22,7 +22,8 @@
                 CATEGORY
             </div>
         </div>
-    </asp:a>
+    </asp:HyperLink>
+
     <div class="card">
         <img 
             src="../image/movie-image1.jpg" 
@@ -42,6 +43,7 @@
             </div>
         </div>
     </div>
+
 </div>
 
 </asp:Content>

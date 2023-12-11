@@ -200,7 +200,7 @@
 
                                 <asp:HyperLink ID="HyperLink1" class="fLink" runat="server" NavigateUrl="~/loginRegister/Login.aspx">Home</asp:HyperLink>
                                 <asp:HyperLink ID="HyperLink2" class="fLink" runat="server" NavigateUrl="~/Menu/Menu.aspx">Movie</asp:HyperLink>
-                                <asp:HyperLink ID="HyperLink4" class="fLink" runat="server" NavigateUrl="~/loginRegister/Login.aspx">My Booking</asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink4" class="fLink" runat="server" NavigateUrl="~/MyBooking/booking.aspx">My Booking</asp:HyperLink>
 
                                 <!---
                                 <a href="#" class="fLink">Movie</a>
