@@ -32,9 +32,10 @@
     <header class="header" data-header>
         <div class="containerHeader">
             <div class="overlayHeader" data-overlay></div>
-            <a href="./index.html" class="logo">
+
+            <asp:HyperLink ID="HyperLink3" class="logo" runat="server" NavigateUrl="~/HomePage/Homepage.aspx">
                 <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="85px" height="75px" />
-            </a>
+            </asp:HyperLink>
 
             <div class="header-actions">
                 <!--Search-->
@@ -130,7 +131,7 @@
                 </div>
 
                 <form id="form1" runat="server">
-                    <asp:Button ID="Button1" class="btnHeader btn-primarySign" runat="server" Text="Sign in" />
+                    <asp:Button ID="Button1" class="btnHeader btn-primarySign" runat="server" Text="Sign in" PostBackUrl="~/loginRegister/Login.aspx" />
                </form>
             </div>
 
@@ -138,7 +139,6 @@
                 <ion-icon name="reorder-two"></ion-icon>
             </button>
         
-
 
             <nav class="navbarHeader" data-navbar>
                 <div class="navbar-top">
@@ -155,20 +155,19 @@
 
                 <ul class="navbar-list">
                     <li>
-                        <a href="./index.html" class="navbar-link">Home</a>
+                        <asp:HyperLink ID="HyperLink5" class="navbar-link" runat="server" NavigateUrl="~/HomePage/Homepage.aspx">Home</asp:HyperLink>
+                        <!---<a href="./index.html" class="navbar-link">Home</a>-->
                     </li>
                     <li>
-                        <a href="#" class="navbar-link">Movie</a>
+                        <asp:HyperLink ID="HyperLink6" class="navbar-link" runat="server" NavigateUrl="~/Menu/Menu.aspx">Movie</asp:HyperLink>
+                        <!---<a href="#" class="navbar-link">Movie</a>-->
                     </li>
+                    
                     <li>
-                        <a href="#" class="navbar-link">Upcoming</a>
+                        <asp:HyperLink ID="HyperLink8" class="navbar-link" runat="server" NavigateUrl="~/Menu/Menu.aspx">My Booking</asp:HyperLink>
+                        <!---<a href="#" class="navbar-link">My Booking</a>-->
                     </li>
-                    <li>
-                        <a href="#" class="navbar-link">My Booking</a>
-                    </li>
-                    <li>
-                        <a href="#" class="navbar-link">Contact Us</a>
-                    </li>
+                    
                 </ul>
 
                 <ul class="navbar-social-list">
@@ -196,15 +195,20 @@
                         <div class="footer1">
                             <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="50%" />
                             <p class="fLeft">
-                                <a href="#" class="link-1">Home</a>
+                                <!---<a href="#" >Home</a>--->
 
-                                <a href="#">Movie</a>
+                                <asp:HyperLink ID="HyperLink1" class="fLink" runat="server" NavigateUrl="~/loginRegister/Login.aspx">Home</asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink2" class="fLink" runat="server" NavigateUrl="~/Menu/Menu.aspx">Movie</asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink4" class="fLink" runat="server" NavigateUrl="~/loginRegister/Login.aspx">My Booking</asp:HyperLink>
 
-                                <a href="#">Upcoming</a>
+                                <!---
+                                <a href="#" class="fLink">Movie</a>
 
-                                <a href="#">My Booking</a>
+                                <a href="#" class="fLink">Upcoming</a>
 
-                                <a href="#">Contact Us</a>
+                                <a href="#" class="fLink">My Booking</a>
+
+                                <a href="#" class="fLink">Contact Us</a>--->
                             </p>
                         </div>
                     </div>

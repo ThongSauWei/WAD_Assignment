@@ -383,7 +383,7 @@ body {
     color: var(--white);
     font-size: var(--fs-8);
     font-weight: var(--fw-500);
-    padding: 10px 25px;
+    padding: 10px 35px;
     border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
     transition: var(--transition-1);
 }
@@ -680,7 +680,7 @@ body {
         font-size: var(--fs-9);
         font-weight: var(--fw-700);
         text-transform: uppercase;
-        padding: 30px 15px;
+        padding: 30px 30px;
     }
 
     .overlayHeader {
@@ -779,7 +779,7 @@ body {
             width: 50%;
         }
 
-.fLeft a {
+.fLeft .fLink {
     font-size: 17px;
     display: inline-block;
     vertical-align: top;
@@ -789,7 +789,7 @@ body {
     font-weight: 300;
 }
 
-    .fLeft a:hover {
+    .fLeft .fLink:hover {
         color: var(--citrine);
     }
 

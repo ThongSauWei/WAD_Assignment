@@ -54,7 +54,7 @@
 
         .swiper-container .movie-titleMenu {
             width: 60%;
-            margin-top: 1rem;
+            margin-top: 3rem;
         }
 
             .swiper-container .movie-titleMenu h2 {
@@ -94,12 +94,12 @@
                 margin-left: 5px;
                 border: 1px solid #fff;
                 padding: 0.6rem;
-                width: 20px;
-                height: 30px;
+                width: 35px;
+                height: 40px;
             }
 
                 .swiper-container .movie-rating .rect p {
-                    margin-top: 6px;
+                    margin-top: 3px;
                 }
 
         .swiper-container .movie-btnMenu {
@@ -186,12 +186,12 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide slide-1">
                 <div class="swiper-container">
-                    <div class="typeMenu" style="margin-bottom: -30px;">
+                    <div class="typeMenu">
                         <p>Horror</p>
                         <div class="line"></div>
                         <p>Action</p>
                     </div>
-                    <div class="movie-titleMenu" style="margin-top: -10px;">
+                    <div class="movie-titleMenu">
                         <h2>Thanksgiving</h2>
                         <p>
                             After a Black Friday riot ends in tragedy, a mysterious Thanksgiving-inspired killer terrorizes Plymouth, Massachusetts – the birthplace of the holiday. Picking off residents one by one, what begins as random revenge killings are soon revealed to be part of a larger, sinister holiday plan. Will the town uncover the killer and survive the holidays...or become guests at his twisted holiday dinner table?
