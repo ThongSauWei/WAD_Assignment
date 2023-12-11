@@ -12,7 +12,9 @@ namespace WAD_Assignment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string logoPath = "~/image/cinemaLogo.png";
 
+            cinemaLogo.Src = ResolveUrl(logoPath);
         }
 
         protected void Button2_ServerClick(object sender, EventArgs e)

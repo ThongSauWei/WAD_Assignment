@@ -243,12 +243,12 @@
     list-style: none;
 }
 
-.sec a, .navbar-top a, .navbar-list a, .navbar-social-list a, .fLeft a {
+.sec .secLink, .navbar-top a, .navbar-list a, .navbar-social-list a, .fLeft a {
     text-decoration: none;
     display: block;
 }
 
-.logo img, .profile img, .logo-container1 img, .list .item img, .thumbnail .item img, .footer1 img, .footer-col span, .search-box input, .topBefore input, .search-box button {
+.logo img, .profile .profileImg, .logo-container1 img, .list .item img, .thumbnail .item img, .footer1 .footerImg, .footer-col span, .search-box input, .topBefore input, .search-box button {
     display: block;
 }
 
