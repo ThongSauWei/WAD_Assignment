@@ -119,9 +119,10 @@
                                                 </div>
                                                 <div class="content">
                                                     <div class="txtReminder">
-                                                         <a href="#popupRate"
+                                                        Rate: Rate and Review "Hunger games"<br />
+                                                         <a href="#popupRate" class="rateA"
                                                             style="width: 130px; text-decoration: none; line-height: -5px;">
-                                                        Rate: Rate and Review "Hunger games"
+                                                        Rate Now!
                                                        </a>
                                                         <div class="popup" id="popupRate">
                                                             <div class="popup_inner" style="margin-top: 55px;">
@@ -206,18 +207,20 @@
                                                                                     </symbol>
                                                                                 </svg>
 
-
                                                                             </div>
-                                                                            <p>Movie Date : 17/5/2024</p>
-                                                                            <p>Movie Time : 2- 4 pm</p>
-                                                                            <textarea name="opinion" cols="30" rows="5" placeholder="Your opinion..."></textarea>
+                                                                            <p style="color:#F5F5F5;"><span>Movie Date:</span> 30 November 2023</p>
+                                                                            <p style="color:#F5F5F5;"><span>Movie Time:</span> 2 - 4pm</p>
+                                                                            <p style="color:#F5F5F5;"><span>Duration:</span> 1h 20min</p>
+                                                                            <!---<p>Movie Date : 17/5/2024</p>--->
+                                                                            <!----<p>Movie Time : 2- 4 pm</p>------->
+                                                                            <textarea name="opinion" cols="30" rows="5" placeholder="Your review..."></textarea>
                                                                             <div class="btn-group">
                                                                                 <button type="submit" class="btnHeader btn-primarySign">Submit</button>
                                                                             </div>
                                                                         </form>
                                                                     </div>
                                                                 </section>
-                                                                <a href="#" class="close_popupModal1"><span>X</span></a>
+                                                                <a href="#" class="close_popupModal1" style="border-color:gold;"><span>X</span></a>
                                                             </div>
                                                         </div>
 
