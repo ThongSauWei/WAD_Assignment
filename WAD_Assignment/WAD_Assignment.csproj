@@ -113,6 +113,7 @@
     <Content Include="Member\ConfirmBooking.css" />
     <Content Include="Member\Payment.aspx" />
     <Content Include="Member\Payment.css" />
+    <Content Include="Member\Payment.js" />
     <Content Include="Menu\Menu.aspx" />
     <Content Include="MyBooking\booking.aspx" />
     <Content Include="MyBooking\BookingDetail.aspx" />
