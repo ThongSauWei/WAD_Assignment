@@ -3,6 +3,7 @@
 <%@ Page Language="C#" MasterPageFile="~/Header.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="WAD_Assignment.WebForm1" %>
 
 <asp:Content ID="ContentPlaceHolder" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<link href="Register.css" rel="stylesheet" />
     <style>
         .auto-style1 {
             width: 471px;
@@ -76,7 +77,7 @@
                 <label for="SecurityQuestion" class="RLaber">What is your favorite movie?</label>
             </div>
 
-            <div class="form-group" style="margin-bottom: -25px;">
+            <div class="form-group" style="margin-bottom: -20px;">
                 <ion-icon name="lock-closed-outline" class="iconFive"></ion-icon>
                 <asp:TextBox ID="CustomerPassword" runat="server" placeholder="" Required="true" type="password"></asp:TextBox>
                 <label for="CustomerPassword" class="RLaber">Password</label>

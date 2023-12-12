@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 
 
-namespace WAD_Assignment
+namespace WAD_Assignment.loginRegister
 {
-    public partial class hahahaha
+    public partial class Login
     {
 
         /// <summary>

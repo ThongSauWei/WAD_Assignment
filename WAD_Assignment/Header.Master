@@ -58,7 +58,7 @@
                 <!---Right-->
                 <div class="lang-wrapper">
                     <!---Reminder-->
-                    <label for="reminderSite">
+                    <label>
                         <div class="notification" id="notificationContainer">
                             <div class="notBtn" id="notificationBtn">
                                 <div class="numberReminder">3</div>
@@ -205,7 +205,7 @@
                 <div class="rowFooter">
                     <div class="footer-col">
                         <div class="footer1">
-                            <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="50%" />
+                            <img id='footerImg' src="~/image/cinemaLogo.png" runat="server" alt="cinemaLogo" style="width:50%;" />
                             <p class="fLeft">
                                 <!---<a href="#" >Home</a>--->
 
@@ -257,16 +257,16 @@
                     </div>
                     <div class="footer-col" id="getInTouch">
                         <h4>Get in Touch<span></span></h4>
-                        <form id="formFooter" class="topBefore">
+                        <div id="formFooter" class="topBefore">
                             <input id="name" type="text" placeholder="NAME">
                             <input id="email" type="text" placeholder="E-MAIL">
                             <textarea id="message" placeholder="MESSAGE" rows="4" cols="50"></textarea>
                             <input id="submit" type="submit" value="GO!">
-                        </form>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
         <div class="divider"></div>
 
