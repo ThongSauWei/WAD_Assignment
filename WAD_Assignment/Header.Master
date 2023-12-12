@@ -16,6 +16,7 @@
     <!--- custom css link-->
     <link rel="stylesheet" href="header.css">
     <link type="text/css" rel="stylesheet" href="./MyBooking/bookingStyles.css" />
+    <link type="text/css" rel="stylesheet" href="global.css" />
 
     <!-- - google font link-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,86 +32,86 @@
     <%--<form id="form1" runat="server"></form> --%>
     <!--- #HEADER-->
     <form id="form1" runat="server">
-    <header class="header" data-header>
-        <div class="containerHeader">
-            <div class="overlayHeader" data-overlay></div>
+        <header class="header" data-header>
+            <div class="containerHeader">
+                <div class="overlayHeader" data-overlay></div>
 
-            <asp:HyperLink ID="HyperLink3" class="logo" runat="server" NavigateUrl="~/HomePage/Homepage.aspx">
-                <%--                <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="85px" height="75px" />--%>
-                <img id="cinemaLogo" src="~/image/cinemaLogo.png" runat="server" alt="cinemaLogo" style="width: 85px; height: 75px;" />
-            </asp:HyperLink>
+                <asp:HyperLink ID="HyperLink3" class="logo" runat="server" NavigateUrl="~/HomePage/Homepage.aspx">
+                    <%--                <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="85px" height="75px" />--%>
+                    <img id="cinemaLogo" src="~/image/cinemaLogo.png" runat="server" alt="cinemaLogo" style="width: 85px; height: 75px;" />
+                </asp:HyperLink>
 
-            <div class="header-actions">
-                <!--Search-->
-                <div class="searchWrap">
-                    <div class="search-box">
-                        <button class="btn-search">
-                            <ion-icon name="search-outline"></ion-icon>
-                        </button>
-                        <input type="text" class="input-search" placeholder="Search Movie...">
+                <div class="header-actions">
+                    <!--Search-->
+                    <div class="searchWrap">
+                        <div class="search-box">
+                            <button class="btn-search">
+                                <ion-icon name="search-outline"></ion-icon>
+                            </button>
+                            <input type="text" class="input-search" placeholder="Search Movie...">
+                        </div>
                     </div>
-                </div>
 
-                <!--Cutter-->
-                <div class="cutter"></div>
+                    <!--Cutter-->
+                    <div class="cutter"></div>
 
-                <!---Right-->
-                <div class="lang-wrapper">
-                    <!---Reminder-->
-                    <label>
-                        <div class="notification" id="notificationContainer">
-                            <div class="notBtn" id="notificationBtn">
-                                <div class="numberReminder">3</div>
-                                <ion-icon name="notifications-outline" style="color: rgb(226, 226, 20);"></ion-icon>
-                                <div class="boxReminder" id="notificationDropdown">
+                    <!---Right-->
+                    <div class="lang-wrapper">
+                        <!---Reminder-->
+                        <label>
+                            <div class="notification" id="notificationContainer">
+                                <div class="notBtn" id="notificationBtn">
+                                    <div class="numberReminder">3</div>
+                                    <ion-icon name="notifications-outline" style="color: rgb(226, 226, 20);"></ion-icon>
+                                    <div class="boxReminder" id="notificationDropdown">
 
-                                    <div class="contReminder">
-                                        <div class="contTop">
-                                            Notifications
-                                        </div>
-                                        <div class="sec">
-                                            <asp:HyperLink ID="HyperLink9" class="secLink" runat="server" NavigateUrl="~/Detail/Detail.aspx">
-                                                <!-- <a href="#"> -->
-                                                <div class="profCont">
-                                                    <!-- <i class="fa-solid fa-ban"></i>/ -->
-                                                    <div class="profile">
-                                                        <img id="Img1" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />
+                                        <div class="contReminder">
+                                            <div class="contTop">
+                                                Notifications
+                                            </div>
+                                            <div class="sec">
+                                                <asp:HyperLink ID="HyperLink9" class="secLink" runat="server" NavigateUrl="~/Detail/Detail.aspx">
+                                                    <!-- <a href="#"> -->
+                                                    <div class="profCont">
+                                                        <!-- <i class="fa-solid fa-ban"></i>/ -->
+                                                        <div class="profile">
+                                                            <img id="Img1" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="content">
-                                                    <div class="txtReminder">
-                                                        For you: "Hunger Games" now showing in cinema
+                                                    <div class="content">
+                                                        <div class="txtReminder">
+                                                            For you: "Hunger Games" now showing in cinema
+                                                        </div>
+                                                        <div class="txtIcon">
+                                                            <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
+                                                        </div>
                                                     </div>
-                                                    <div class="txtIcon">
-                                                        <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
-                                                    </div>
-                                                </div>
-                                                <!-- </a> -->
-                                            </asp:HyperLink>
-                                        </div>
+                                                    <!-- </a> -->
+                                                </asp:HyperLink>
+                                            </div>
 
-                                        <div class="sec">
-                                            <asp:HyperLink ID="HyperLink7" class="secLink" runat="server" NavigateUrl="~/Detail/Detail.aspx">
-                                                <!-- <a href="#"> -->
-                                                <div class="profCont">
-                                                    <div class="profile">
-                                                        <img id="Img2" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />
+                                            <div class="sec">
+                                                <asp:HyperLink ID="HyperLink7" class="secLink" runat="server" NavigateUrl="~/Detail/Detail.aspx">
+                                                    <!-- <a href="#"> -->
+                                                    <div class="profCont">
+                                                        <div class="profile">
+                                                            <img id="Img2" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="content">
-                                                    <div class="txtReminder">
-                                                        Refund: Your refund for "Hunger Games" unsuccessful
+                                                    <div class="content">
+                                                        <div class="txtReminder">
+                                                            Refund: Your refund for "Hunger Games" unsuccessful
+                                                        </div>
+                                                        <div class="txtIcon">
+                                                            <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
+                                                        </div>
                                                     </div>
-                                                    <div class="txtIcon">
-                                                        <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
-                                                    </div>
-                                                </div>
-                                                <!-- </a> -->
-                                            </asp:HyperLink>
-                                        </div>
+                                                    <!-- </a> -->
+                                                </asp:HyperLink>
+                                            </div>
 
-                                        <div class="sec">
-                                            <asp:HyperLink ID="HyperLink10" class="secLink" runat="server" NavigateUrl="~/Detail/Detail.aspx">
+                                            <div class="sec">
+
                                                 <div class="profCont">
                                                     <div class="profile">
                                                         <img id="Img3" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />
@@ -118,101 +119,206 @@
                                                 </div>
                                                 <div class="content">
                                                     <div class="txtReminder">
-                                                        Rate: Rate and Review "Hunger games"
+                                                        Rate: Rate and Review "Hunger games"<br />
+                                                         <a href="#popupRate" class="rateA"
+                                                            style="width: 130px; text-decoration: none; line-height: -5px;">
+                                                        Rate Now!
+                                                       </a>
+                                                        <div class="popupRating" id="popupRate">
+                                                            <div class="popup_innerRating" style="margin-top: 55px;">
+                                                                <section class="modalRate hiddenRate">
+                                                                    <div class="flex">
+                                                                        <p></p>
+
+                                                                    </div>
+                                                                    <div class="wrapperFeed">
+                                                                        <h3>Thanksgiving </h3>
+                                                                        <form action="#">
+                                                                            <div class="ratingFeed">
+                                                                                <div class="feedback">
+                                                                                    <label class="angry">
+                                                                                        <input type="radio" value="1" name="feedback" />
+                                                                                        <div>
+                                                                                            <svg class="eye left">
+                                                                                                <use xlink:href="#eye">
+                                                                                            </svg>
+                                                                                            <svg class="eye right">
+                                                                                                <use xlink:href="#eye">
+                                                                                            </svg>
+                                                                                            <svg class="mouth">
+                                                                                                <use xlink:href="#mouth">
+                                                                                            </svg>
+                                                                                        </div>
+                                                                                    </label>
+                                                                                    <label class="sad">
+                                                                                        <input type="radio" value="2" name="feedback" />
+                                                                                        <div>
+                                                                                            <svg class="eye left">
+                                                                                                <use xlink:href="#eye">
+                                                                                            </svg>
+                                                                                            <svg class="eye right">
+                                                                                                <use xlink:href="#eye">
+                                                                                            </svg>
+                                                                                            <svg class="mouth">
+                                                                                                <use xlink:href="#mouth">
+                                                                                            </svg>
+                                                                                        </div>
+                                                                                    </label>
+                                                                                    <label class="ok">
+                                                                                        <input type="radio" value="3" name="feedback" />
+                                                                                        <div></div>
+                                                                                    </label>
+                                                                                    <label class="good">
+                                                                                        <input type="radio" value="4" name="feedback" checked />
+                                                                                        <div>
+                                                                                            <svg class="eye left">
+                                                                                                <use xlink:href="#eye">
+                                                                                            </svg>
+                                                                                            <svg class="eye right">
+                                                                                                <use xlink:href="#eye">
+                                                                                            </svg>
+                                                                                            <svg class="mouth">
+                                                                                                <use xlink:href="#mouth">
+                                                                                            </svg>
+                                                                                        </div>
+                                                                                    </label>
+                                                                                    <label class="happy">
+                                                                                        <input type="radio" value="5" name="feedback" />
+                                                                                        <div>
+                                                                                            <svg class="eye left">
+                                                                                                <use xlink:href="#eye">
+                                                                                            </svg>
+                                                                                            <svg class="eye right">
+                                                                                                <use xlink:href="#eye">
+                                                                                            </svg>
+                                                                                        </div>
+                                                                                    </label>
+                                                                                </div>
+
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                                                                                    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 4" id="eye">
+                                                                                        <path
+                                                                                            d="M1,1 C1.83333333,2.16666667 2.66666667,2.75 3.5,2.75 C4.33333333,2.75 5.16666667,2.16666667 6,1">
+                                                                                        </path>
+                                                                                    </symbol>
+                                                                                    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 7" id="mouth">
+                                                                                        <path d="M1,5.5 C3.66666667,2.5 6.33333333,1 9,1 C11.6666667,1 14.3333333,2.5 17,5.5">
+                                                                                        </path>
+                                                                                    </symbol>
+                                                                                </svg>
+
+                                                                            </div>
+                                                                            <p style="color:#F5F5F5;"><span>Movie Date:</span> 30 November 2023</p>
+                                                                            <p style="color:#F5F5F5;"><span>Movie Time:</span> 2 - 4pm</p>
+                                                                            <p style="color:#F5F5F5;"><span>Duration:</span> 1h 20min</p>
+                                                                            <!---<p>Movie Date : 17/5/2024</p>--->
+                                                                            <!----<p>Movie Time : 2- 4 pm</p>------->
+                                                                            <textarea name="opinion" cols="30" rows="5" placeholder="Your review..."></textarea>
+                                                                            <div class="btn-group">
+                                                                                <button type="submit" class="btnHeader btn-primarySign">Submit</button>
+                                                                            </div>
+                                                                        </form>
+                                                                    </div>
+                                                                </section>
+                                                                <a href="#" class="close_popupModal1" style="border-color:gold;"><span>X</span></a>
+                                                            </div>
+                                                        </div>
+
+
                                                     </div>
                                                     <div class="txtIcon">
                                                         <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
                                                     </div>
                                                 </div>
-                                            </asp:HyperLink>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </label>
-                </div>
+                        </label>
+                    </div>
 
-                
+
                     <asp:Button ID="Button1" class="btnHeader btn-primarySign" runat="server" Text="Sign in" PostBackUrl="~/loginRegister/Login.aspx" />
-                
-            </div>
 
-            <button type="button" id="Button2" class="menu-open-btn" data-menu-open-btn runat="server">
-                <ion-icon name="reorder-two"></ion-icon>
-            </button>
-
-
-            <nav class="navbarHeader" data-navbar>
-                <div class="navbar-top">
-
-
-
-                    <asp:HyperLink ID="HyperLink11" class="logo" runat="server" NavigateUrl="~/HomePage/Homepage.aspx">
-                        <div class="logo-container1">
-                            <img id="Img4" src="~/image/cinemaLogo.png" runat="server" alt="cinemaLogo"
-                                style="width: 80px; height: 70px;" />
-                            <h3 style="color: rgb(226, 226, 20);">ET CINEMA</h3>
-                        </div>
-
-                    </asp:HyperLink>
-
-
-
-                    <button class="menu-close-btn" data-menu-close-btn>
-                        <ion-icon name="close-outline"></ion-icon>
-                    </button>
                 </div>
 
-                <ul class="navbar-list">
-                    <li>
-                        <asp:HyperLink ID="HyperLink5" class="navbar-link" runat="server" NavigateUrl="~/HomePage/Homepage.aspx">Home</asp:HyperLink>
-                        <!---<a href="./index.html" class="navbar-link">Home</a>-->
-                    </li>
-                    <li>
-                        <asp:HyperLink ID="HyperLink6" class="navbar-link" runat="server" NavigateUrl="~/Menu/Menu.aspx">Movie</asp:HyperLink>
-                        <!---<a href="#" class="navbar-link">Movie</a>-->
-                    </li>
+                <button type="button" id="Button2" class="menu-open-btn" data-menu-open-btn runat="server">
+                    <ion-icon name="reorder-two"></ion-icon>
+                </button>
 
-                    <li>
-                        <asp:HyperLink ID="HyperLink8" class="navbar-link" runat="server" NavigateUrl="~/MyBooking/booking.aspx">My Booking</asp:HyperLink>
-                        <!---<a href="#" class="navbar-link">My Booking</a>-->
-                    </li>
 
-                </ul>
-
-                <ul class="navbar-social-list">
-                    <li>
-                        <a href="#" class="navbar-social-link">
-                            <button class="btnHeader btn-primarySign">Sign in</button>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+                <nav class="navbarHeader" data-navbar>
+                    <div class="navbar-top">
 
 
 
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                        <asp:HyperLink ID="HyperLink11" class="logo" runat="server" NavigateUrl="~/HomePage/Homepage.aspx">
+                            <div class="logo-container1">
+                                <img id="Img4" src="~/image/cinemaLogo.png" runat="server" alt="cinemaLogo"
+                                    style="width: 80px; height: 70px;" />
+                                <h3 style="color: rgb(226, 226, 20);">ET CINEMA</h3>
+                            </div>
+
+                        </asp:HyperLink>
 
 
-    <!-- #FOOTER-->
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="Fcontainer">
-                <div class="rowFooter">
-                    <div class="footer-col">
-                        <div class="footer1">
-                            <img id='footerImg' src="~/image/cinemaLogo.png" runat="server" alt="cinemaLogo" style="width:50%;" />
-                            <p class="fLeft">
-                                <!---<a href="#" >Home</a>--->
 
-                                <asp:HyperLink ID="HyperLink1" class="fLink" runat="server" NavigateUrl="~/loginRegister/Login.aspx">Home</asp:HyperLink>
-                                <asp:HyperLink ID="HyperLink2" class="fLink" runat="server" NavigateUrl="~/Menu/Menu.aspx">Movie</asp:HyperLink>
-                                <asp:HyperLink ID="HyperLink4" class="fLink" runat="server" NavigateUrl="~/MyBooking/booking.aspx">My Booking</asp:HyperLink>
+                        <button class="menu-close-btn" data-menu-close-btn>
+                            <ion-icon name="close-outline"></ion-icon>
+                        </button>
+                    </div>
 
-                                <!---
+                    <ul class="navbar-list">
+                        <li>
+                            <asp:HyperLink ID="HyperLink5" class="navbar-link" runat="server" NavigateUrl="~/HomePage/Homepage.aspx">Home</asp:HyperLink>
+                            <!---<a href="./index.html" class="navbar-link">Home</a>-->
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink6" class="navbar-link" runat="server" NavigateUrl="~/Menu/Menu.aspx">Movie</asp:HyperLink>
+                            <!---<a href="#" class="navbar-link">Movie</a>-->
+                        </li>
+
+                        <li>
+                            <asp:HyperLink ID="HyperLink8" class="navbar-link" runat="server" NavigateUrl="~/MyBooking/booking.aspx">My Booking</asp:HyperLink>
+                            <!---<a href="#" class="navbar-link">My Booking</a>-->
+                        </li>
+
+                    </ul>
+
+                    <ul class="navbar-social-list">
+                        <li>
+                            <a href="#" class="navbar-social-link">
+                                <button class="btnHeader btn-primarySign">Sign in</button>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+
+
+        <!-- #FOOTER-->
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="Fcontainer">
+                    <div class="rowFooter">
+                        <div class="footer-col">
+                            <div class="footer1">
+                                <img id='footerImg' src="~/image/cinemaLogo.png" runat="server" alt="cinemaLogo" style="width: 50%;" />
+                                <p class="fLeft">
+                                    <!---<a href="#" >Home</a>--->
+
+                                    <asp:HyperLink ID="HyperLink1" class="fLink" runat="server" NavigateUrl="~/HomePage/Homepage.aspx">Home</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink2" class="fLink" runat="server" NavigateUrl="~/Menu/Menu.aspx">Movie</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink4" class="fLink" runat="server" NavigateUrl="~/MyBooking/booking.aspx">My Booking</asp:HyperLink>
+
+                                    <!---
                                 <a href="#" class="fLink">Movie</a>
 
                                 <a href="#" class="fLink">Upcoming</a>
@@ -220,18 +326,18 @@
                                 <a href="#" class="fLink">My Booking</a>
 
                                 <a href="#" class="fLink">Contact Us</a>--->
-                            </p>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Contact Us<span></span></h4>
+                        <div class="footer-col">
+                            <h4>Contact Us<span></span></h4>
 
-                        <ul style="margin-top: -20px;">
-                            <li>
-                                <div class="address">
-                                    <ion-icon name="navigate-outline" style="font-size: 50px; color: red;"></ion-icon>
-                                    <p>
-                                        1, Jalan SS 22/19, Damansara Jaya,
+                            <ul style="margin-top: -20px;">
+                                <li>
+                                    <div class="address">
+                                        <ion-icon name="navigate-outline" style="font-size: 50px; color: red;"></ion-icon>
+                                        <p>
+                                            1, Jalan SS 22/19, Damansara Jaya,
                                         47400 Petaling Jaya, Selangor, Malaysia
                                     </p>
                                 </div>
@@ -260,119 +366,118 @@
                             <input id="name" type="text" placeholder="NAME">
                             <input id="email" type="text" placeholder="E-MAIL">
                             <textarea id="message" placeholder="MESSAGE" rows="4" cols="50"></textarea>
-                            <input id="submit" type="submit" value="GO!">
-                        </div>
+                            <input id="submitButton" type="submit" value="GO!">
                         </div>
                     </div>
                 </div>
             </div>
 
-        <div class="divider"></div>
+            <div class="divider"></div>
 
-        <div class="footer-bottom">
-            <div class="containerHeader">
+            <div class="footer-bottom">
+                <div class="containerHeader">
 
-                <p class="copyright">
-                    &copy; 2023 RSDS2G3. All Rights Reserved
-                </p>
+                    <p class="copyright">
+                        &copy; 2023 RSDS2G3. All Rights Reserved
+                    </p>
 
-                <ul class="social-listFooter">
+                    <ul class="social-listFooter">
 
-                    <li>
-                        <a href="#" class="social-linkFooter">
-                            <ion-icon name="logo-facebook"></ion-icon>
-                        </a>
-                    </li>
+                        <li>
+                            <a href="#" class="social-linkFooter">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
 
-                    <li>
-                        <a href="#" class="social-linkFooter">
-                            <ion-icon name="logo-twitter"></ion-icon>
-                        </a>
-                    </li>
+                        <li>
+                            <a href="#" class="social-linkFooter">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+                        </li>
 
-                    <li>
-                        <a href="#" class="social-linkFooter">
-                            <ion-icon name="logo-pinterest"></ion-icon>
-                        </a>
-                    </li>
+                        <li>
+                            <a href="#" class="social-linkFooter">
+                                <ion-icon name="logo-pinterest"></ion-icon>
+                            </a>
+                        </li>
 
-                    <li>
-                        <a href="#" class="social-linkFooter">
-                            <ion-icon name="logo-linkedin"></ion-icon>
-                        </a>
-                    </li>
+                        <li>
+                            <a href="#" class="social-linkFooter">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
 
-                </ul>
+                    </ul>
 
+                </div>
             </div>
-        </div>
 
-    </footer>
-
+        </footer>
 
 
 
-    <!--- #GO TO TOP-->
-    <a href="#topHeader" class="go-top" data-go-top>
-        <ion-icon name="chevron-up"></ion-icon>
-    </a>
 
-    <!--swipper-->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!--- #GO TO TOP-->
+        <a href="#topHeader" class="go-top" data-go-top>
+            <ion-icon name="chevron-up"></ion-icon>
+        </a>
+
+        <!--swipper-->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
-    <!--- custom js link-->
-    <script>
-        'use strict';
-        /**
-         * navbar variables
-         */
-        const navOpenBtn = document.querySelector("[data-menu-open-btn]");
-        const navCloseBtn = document.querySelector("[data-menu-close-btn]");
-        const navbar = document.querySelector("[data-navbar]");
-        const overlay = document.querySelector("[data-overlay]");
+        <!--- custom js link-->
+        <script>
+            'use strict';
+            /**
+             * navbar variables
+             */
+            const navOpenBtn = document.querySelector("[data-menu-open-btn]");
+            const navCloseBtn = document.querySelector("[data-menu-close-btn]");
+            const navbar = document.querySelector("[data-navbar]");
+            const overlay = document.querySelector("[data-overlay]");
 
-        const navElemArr = [navOpenBtn, navCloseBtn, overlay];
+            const navElemArr = [navOpenBtn, navCloseBtn, overlay];
 
-        for (let i = 0; i < navElemArr.length; i++) {
+            for (let i = 0; i < navElemArr.length; i++) {
 
-            navElemArr[i].addEventListener("click", function () {
+                navElemArr[i].addEventListener("click", function () {
 
-                navbar.classList.toggle("active");
-                overlay.classList.toggle("active");
-                document.body.classList.toggle("active");
+                    navbar.classList.toggle("active");
+                    overlay.classList.toggle("active");
+                    document.body.classList.toggle("active");
+
+                });
+
+            }
+
+            /**
+             * header sticky
+             */
+
+            const header = document.querySelector("[data-header]");
+
+            window.addEventListener("scroll", function () {
+
+                window.scrollY >= 10 ? header.classList.add("active") : header.classList.remove("active");
 
             });
 
-        }
+            /**
+             * go top
+             */
+            const goTopBtn = document.querySelector("[data-go-top]");
 
-        /**
-         * header sticky
-         */
+            window.addEventListener("scroll", function () {
 
-        const header = document.querySelector("[data-header]");
+                window.scrollY >= 500 ? goTopBtn.classList.add("active") : goTopBtn.classList.remove("active");
 
-        window.addEventListener("scroll", function () {
+            });
+        </script>
 
-            window.scrollY >= 10 ? header.classList.add("active") : header.classList.remove("active");
-
-        });
-
-        /**
-         * go top
-         */
-        const goTopBtn = document.querySelector("[data-go-top]");
-
-        window.addEventListener("scroll", function () {
-
-            window.scrollY >= 500 ? goTopBtn.classList.add("active") : goTopBtn.classList.remove("active");
-
-        });
-    </script>
-
-    <!--- ionicon link-->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!--- ionicon link-->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     </form>
 </body>

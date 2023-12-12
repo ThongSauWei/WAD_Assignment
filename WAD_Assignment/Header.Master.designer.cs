@@ -78,15 +78,6 @@ namespace WAD_Assignment
         protected global::System.Web.UI.HtmlControls.HtmlImage Img2;
 
         /// <summary>
-        /// HyperLink10 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink10;
-
-        /// <summary>
         /// Img3 control.
         /// </summary>
         /// <remarks>

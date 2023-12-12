@@ -1,34 +1,167 @@
-﻿.container {
+﻿/*booking.aspx*/
+.my-booking-header {
+    font-size: 33px;
+    font-weight: bold;
+    color: #fff;
+
+    width: 840px;
+    margin: 0 auto;
+}
+
+.mybooking-container {
     margin: 126px 1.5rem 3rem 1.5rem;
 }
 
-.container > .card {
-    display: flex;
-    max-width: 800px;
-    margin: 30px auto;
-    border-radius: 12px;
-    background-color: orange;
-    transition: transform 260ms ease-in-out, box-shadow 260ms ease-in-out;
-}
-
-    .container > .card:first-child {
-        margin-top:0;
+    .mybooking-container > .card {
+        display: flex;
+        max-width: 800px;
+        margin: 30px auto;
+        border-radius: 12px;
+        background-color: orange;
+        transition: transform 260ms ease-in-out, box-shadow 260ms ease-in-out;
     }
-    .container > .card:last-child {
-        margin-bottom: 0;
+
+    .mybooking-container > .card-old {
+        filter: contrast(0.6);
     }
-        .container > .card > img {
-    vertical-align: middle;
-    border-radius: 12px 0 0 12px;
+
+        .mybooking-container > .card:first-child {
+            margin-top: 0;
+        }
+
+        .mybooking-container > .card:last-child {
+            margin-bottom: 0;
+        }
+
+        .mybooking-container > .card > img {
+            vertical-align: middle;
+            border-radius: 12px 0 0 12px;
+        }
+
+        .mybooking-container > .card > .card_content {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 15px;
+        }
+
+.refund-btn {
+    padding: 8px 16px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid #4A4737;
+    font-weight: bold;
+    color: #4A4737;
+    text-decoration: none;
+    text-align: center;
+    margin: auto 0 10px 0;
+    transition: background-color 160ms ease-in-out, color 160ms ease-in-out, transform 160ms ease-in-out, border 160ms ease-in-out;
 }
 
-.container > .card > .card_content {
-    margin: 10px 15px;
-}
-
-    .container > .card:hover,
-    .container > .card:active {
-        transform: scale(1.05);
-        cursor: pointer;
+    .refund-btn:hover {
+        border: none;
+        color: #fff;
+        background-color: #4A4737;
         box-shadow: -10px 3px 61px -20px rgba(0,0,0,0.87);
     }
+
+    .refund-btn:active {
+        border: none;
+        transform: scale(0.95);
+        color: #fff;
+        background-color: #4A4737;
+        box-shadow: -10px 3px 61px -20px rgba(0,0,0,0.87);
+    }
+
+.mybooking-container > .card:hover,
+.mybooking-container > .card:active {
+    transform: scale(1.01);
+    box-shadow: -10px 3px 61px -20px rgba(0,0,0,0.87);
+}
+
+/*BookingDetail.aspx*/
+.mybooking-container > .mov-details {
+    display:flex;
+
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.mybooking-container > .mov-details > img {
+    border-radius: 12px;
+    vertical-align: middle;
+}
+
+    .mybooking-container > .mov-details > .mov-content {
+        border-radius: 12px;
+        vertical-align: middle;
+        color: #fff;
+        margin-left: 20px;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+        .mybooking-container > .mov-details > .mov-content p {
+            width: 100%;
+            font-size: 1.1rem;
+            line-height: 2.3rem;
+        }
+
+    .mybooking-container > .mov-details > .mov-content > div.col {
+        display: flex;
+    }
+
+.mybooking-container > .mov-details > .mov-content p > span::before {
+    content: ":"
+}
+
+.mybooking-container > .mov-details > .mov-content > .btn-group {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    margin: auto 0 0 0;
+}
+
+    .mybooking-container > .mov-details > .mov-content > .btn-group > .btn {
+        appearance: none;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        margin: auto 0 10px 0;
+        transition: background-color 160ms ease-in-out, transform 160ms ease-in-out;
+    }
+
+        .mybooking-container > .mov-details > .mov-content > .btn-group > .btn.print {
+            color: blue;
+            background-color: transparent;
+            font-size: 1.1rem;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+    .mybooking-container > .mov-details > .mov-content > .btn-group > .btn.cancel {
+        background-color: #b80600;
+    }
+
+.mybooking-container > .mov-details > .mov-content > .btn-group > .btn.cancel:hover {
+    background-color: #920500;
+    box-shadow: -10px 3px 61px -20px rgba(0,0,0,0.87);
+}
+
+.mybooking-container > .mov-details > .mov-content > .btn-group > .btn.cancel:active {
+    transform: scale(0.95);
+            
+    background-color: #7b0400;
+    box-shadow: -10px 3px 61px -20px rgba(0,0,0,0.87);
+}
+
+.mybooking-container > .mov-details > .mov-content > .btn-group > .btn.print:active {
+    transform: scale(0.95);
+           
+    box-shadow: -10px 3px 61px -20px rgba(0,0,0,0.87);
+}
