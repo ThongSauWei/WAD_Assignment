@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminPage\Admin.aspx" />
     <Content Include="Detail\abc\Testing.aspx" />
     <Content Include="App_Data\TicketDB.mdf" />
     <Content Include="App_Data\TicketDB_log.ldf">
@@ -87,19 +88,19 @@
     <Content Include="image\profile-user.png" />
     <Content Include="image\screen.png" />
     <Content Include="image\tng-payment.png" />
-    <Content Include="loginRegister\banana.gif" />
-    <Content Include="loginRegister\banana1.gif" />
-    <Content Include="loginRegister\catt.gif" />
-    <Content Include="loginRegister\cinema-walk.gif" />
-    <Content Include="loginRegister\duck.gif" />
-    <Content Include="loginRegister\K9it.gif" />
+    <Content Include="image\banana.gif" />
+    <Content Include="image\banana1.gif" />
+    <Content Include="image\catt.gif" />
+    <Content Include="image\cinema-walk.gif" />
+    <Content Include="image\duck.gif" />
+    <Content Include="image\K9it.gif" />
+    <Content Include="image\minion.gif" />
+    <Content Include="image\minion1.mp4" />
+    <Content Include="image\minion2.gif" />
+    <Content Include="image\MM9r.gif" />
     <Content Include="loginRegister\Login.aspx" />
-    <Content Include="loginRegister\minion.gif" />
-    <Content Include="loginRegister\minion1.mp4" />
-    <Content Include="loginRegister\minion2.gif" />
-    <Content Include="loginRegister\MM9r.gif" />
     <Content Include="loginRegister\PasswordRecovery.aspx" />
-    <Content Include="loginRegister\RBackground.gif" />
+    <Content Include="image\RBackground.gif" />
     <Content Include="loginRegister\Register.css" />
     <Content Include="Member\Booking.aspx" />
     <Content Include="Member\ConfirmBooking.aspx" />
@@ -122,6 +123,13 @@
     <Content Include="loginRegister\Register.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPage\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Detail\abc\Testing.aspx.cs">
       <DependentUpon>Testing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

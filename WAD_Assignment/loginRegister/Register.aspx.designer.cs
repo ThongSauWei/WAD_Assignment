@@ -15,6 +15,15 @@ namespace WAD_Assignment
     {
 
         /// <summary>
+        /// CustomerName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CustomerName;
+
+        /// <summary>
         /// CustomerEmail control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,33 @@ namespace WAD_Assignment
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+
+        /// <summary>
+        /// CustomerPhoneNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CustomerPhoneNo;
+
+        /// <summary>
+        /// RegularExpressionValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+
+        /// <summary>
+        /// SecurityQuestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SecurityQuestion;
 
         /// <summary>
         /// CustomerPassword control.
@@ -51,6 +87,15 @@ namespace WAD_Assignment
         protected global::System.Web.UI.WebControls.RegularExpressionValidator passwordValidator;
 
         /// <summary>
+        /// ReenterPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ReenterPassword;
+
+        /// <summary>
         /// Register control.
         /// </summary>
         /// <remarks>
@@ -60,12 +105,12 @@ namespace WAD_Assignment
         protected global::System.Web.UI.WebControls.Button Register;
 
         /// <summary>
-        /// registerLink control.
+        /// loginLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink registerLink;
+        protected global::System.Web.UI.WebControls.HyperLink loginLink;
     }
 }
