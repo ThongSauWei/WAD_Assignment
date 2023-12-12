@@ -13,5 +13,11 @@ namespace WAD_Assignment.MyBooking
         {
 
         }
+
+/*        public List<string> details = new List<string> {
+            "Booking ID", "Movie ID", "Movie Name",
+            "Hall", "Movie Date", "Classification",
+            "Seat No", "Amount", "Purchase Date"
+        };*/
     }
 }

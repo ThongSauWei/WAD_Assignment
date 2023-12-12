@@ -112,7 +112,6 @@
             .arrows button {
                 /* background-color: #eee5; */
                 border: none;
-                font-family: monospace;
                 width: 40px;
                 height: 40px;
                 border-radius: 5px;
@@ -580,7 +579,6 @@
                 position: relative;
                 vertical-align: top;
                 margin: 10px;
-                font-family: 'helvetica', san-serif;
                 min-height: 25vh;
                 background: #262a2b;
                 border: 1px solid #252727;

@@ -2,47 +2,62 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <div class="container">
-    <!-- long card -->
-    <asp:HyperLink class="card" runat="server" NavigateUrl="~/MyBooking/BookingDetail.aspx">
-        <img 
-            src="../image/movie-image1.jpg" 
-            alt="INSERT_ALT" 
-            width="180"
-            height="270"
-            />
-        <div class="card_content">
-            <h2>
-                MOVIE_NAME
-            </h2>
-            <p>
-                DESCRIPTION_HERE
-            </p>
-            <div>
-                CATEGORY
-            </div>
-        </div>
-    </asp:HyperLink>
+<div class="mybooking-container">
 
-    <div class="card">
-        <img 
-            src="../image/movie-image1.jpg" 
-            alt="INSERT_ALT" 
-            width="180"
-            height="270"
-            />
-        <div class="card_content">
-            <h2>
-                MOVIE_NAME
-            </h2>
-            <p>
-                DESCRIPTION_HERE
-            </p>
-            <div>
-                CATEGORY
+    <h1 class="my-booking-header">
+        Active Booking
+    </h1>
+
+    <!-- long card -->
+        <article class="card">
+            <img 
+                src="../image/movie-image1.jpg" 
+                alt="INSERT_ALT" 
+                width="180"
+                height="270"
+                />
+            <div class="card_content">
+                <h3>
+                    MOVIE_NAME
+                </h3>
+                <p>
+                    DESCRIPTION_HERE
+                </p>
+                <div>
+                    CATEGORY
+                </div>
+                <asp:HyperLink class="refund-btn" runat="server" NavigateUrl="~/MyBooking/BookingDetail.aspx">
+                    View More
+                </asp:HyperLink>
             </div>
-        </div>
-    </div>
+        </article>
+        
+    <h2 class="my-booking-header">
+        History
+    </h2>
+
+        <article class="card card-old">
+            <img 
+                src="../image/movie-image1.jpg" 
+                alt="INSERT_ALT" 
+                width="180"
+                height="270"
+                />
+            <div class="card_content">
+                <h3>
+                    MOVIE_NAME
+                </h3>
+                <p>
+                    DESCRIPTION_HERE
+                </p>
+                <div>
+                    CATEGORY
+                </div>
+                <asp:HyperLink class="refund-btn" runat="server" NavigateUrl="~/MyBooking/BookingDetail.aspx">
+                    View More
+                </asp:HyperLink>
+            </div>
+        </article>
 
 </div>
 
