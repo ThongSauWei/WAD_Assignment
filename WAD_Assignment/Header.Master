@@ -368,15 +368,6 @@
                             <textarea id="message" placeholder="MESSAGE" rows="4" cols="50"></textarea>
                             <input id="submitButton" type="submit" value="GO!">
                         </div>
-                        <div class="footer-col" id="getInTouch">
-                            <h4>Get in Touch<span></span></h4>
-                            <div id="formFooter" class="topBefore">
-                                <input id="name" type="text" placeholder="NAME">
-                                <input id="email" type="text" placeholder="E-MAIL">
-                                <textarea id="message" placeholder="MESSAGE" rows="4" cols="50"></textarea>
-                                <input id="submit" type="submit" value="GO!">
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
