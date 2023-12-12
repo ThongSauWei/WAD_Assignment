@@ -950,7 +950,7 @@ header {
             color: #e2dedb;
         }
 
-    #formFooter #submit {
+    #formFooter #submitButton {
         width: 400px;
         padding: 0;
         margin: -5px 0px 0px 0px;
@@ -963,7 +963,7 @@ header {
         border-top: none;
     }
 
-        #formFooter #submit:hover {
+        #formFooter #submitButton:hover {
             color: #e2dedb;
         }
 
@@ -979,7 +979,7 @@ header {
         padding-left: 40px;
     }
 
-    #formFooter input textarea #submit {
+    #formFooter input textarea #submitButton {
         width: 100px;
     }
 }
@@ -997,6 +997,10 @@ header {
 
     #getInTouch {
         display: none;
+    }
+
+    .header {
+        box-shadow: none;
     }
 }
 

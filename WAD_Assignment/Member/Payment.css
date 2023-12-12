@@ -1,7 +1,7 @@
-﻿#form1 {
+﻿div#form-content {
     width: 916.67px;
     height: 650px;
-    margin: 130px auto;
+    margin: 180px auto;
 }
 
 div.ticket {
@@ -94,7 +94,7 @@ div.payment-detail {
 
 div.payment-method {
     margin: 20px auto;
-    width: 85%;
+    width: 90%;
 }
 
 span.payment-text {
@@ -104,7 +104,7 @@ span.payment-text {
 }
 
 div.payment-choice {
-    width: 550px;
+    width: 100%;
     height: 100px;
     margin-top: 20px;
 }
@@ -119,6 +119,13 @@ div.payment-choice > button {
     border-radius: 5px;
 }
 
+div.validation {
+    width: 35px;
+    height: 100%;
+    float:left;
+    background-color: red;
+}
+
 div.payment-choice button img {
     margin: 10px auto;
     display: block;
@@ -130,6 +137,70 @@ div.payment-choice button img {
 
 .selected {
     box-shadow: 2px 2px 5px grey;
+}
+
+div.tngInfo {
+
+}
+
+div.cardInfo {
+    margin-top: 30px;
+}
+
+div.cardInfo > div {
+    margin-top: 25px;
+    float: left;
+}
+
+div.name-div {
+    width: 585px;
+}
+
+div.cardNo-div {
+    width: 360px;
+    margin-right: 25px;
+}
+
+div.CVV-div {
+    width: 200px;
+}
+
+div.expire-div {
+    width: 360px;
+}
+
+div.payment-input {
+    width: 100%;
+    height: 50px;
+}
+
+div.cardInfo div div input, div.cardInfo div div select {
+    margin-right: 25px;
+    height: 100%;
+    float: left;
+    border-radius: 5px;
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+div.name-div div input {
+    width: 525px;
+}
+
+div.cardNo-div div input {
+    width: 300px;
+}
+
+div.CVV-div div input {
+    width: 140px;
+}
+
+div.expire-div div select:first-child {
+    width: 100px;
+}
+
+div.expire-div div select:nth-child(2) {
+    width: 175px;
 }
 
 div.checkout {
