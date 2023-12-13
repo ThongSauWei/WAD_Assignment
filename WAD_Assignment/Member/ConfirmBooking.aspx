@@ -46,8 +46,8 @@
             </div>
             <hr />
             <div class="buttons">
-                <asp:Button ID="btnReserve" runat="server" Text="Reserve" OnClick="btnReserve_Click" />
-                <asp:Button ID="btnPurchase" runat="server" Text="Purchase" OnClick="btnPurchase_Click" />
+                <asp:Button ID="btnReserve" runat="server" Text="Reserve"  />
+                <asp:Button ID="btnPurchase" runat="server" Text="Purchase"  PostBackUrl="~/Member/Payment.aspx" />
             </div>
         </div>
     </div>
