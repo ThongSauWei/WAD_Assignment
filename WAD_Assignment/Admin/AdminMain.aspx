@@ -1,43 +1,49 @@
-﻿
-<%@ Page Language="C#" MasterPageFile="~/Header.Master" AutoEventWireup="true" CodeBehind="AdminMain.aspx.cs" Inherits="WAD_Assignment.Admin.AdminMain" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Admin/AdminHeader.Master" AutoEventWireup="true" CodeBehind="AdminMain.aspx.cs" Inherits="WAD_Assignment.Admin.AdminMain" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <style type="text/css">
-        .auto-style1 {
-            width: 180px;
+
+        /* Change the color of the HyperLink text to white */
+        #HyperLinkAdminCRUD,
+        #HyperLinkMemberCRUD,
+        #HyperLinkProductCRUD,
+        #HyperLinkRefundStatus {
+            color: white;
         }
-        .auto-style2 {
-            width: 306px;
-        }
+
     </style>
 
-<div>
+    <script>
+        function redirectToHomePage() {
+            window.location.href = 'Homepage.aspx';
+        }
 
-    ADMIN PAGE<br />
-    <table style="width: 100%;">
-        <tr>
-            <td class="auto-style1">Admin CRUD<br />
-            </td>
-            <td class="auto-style2">
-                <asp:HyperLink ID="HyperLinkAdminCRUD" runat="server" NavigateUrl="~/Admin/AdminCRUD.aspx">Admin CRUD</asp:HyperLink>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style1">Product CRUD<br />
-            </td>
-            <td class="auto-style2">
-                <asp:HyperLink ID="HyperLinkProductCRUD" runat="server" NavigateUrl="~/Admin/ProductCRUD.aspx">Product CRUD</asp:HyperLink>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style1">Refund Status<br />
-            </td>
-            <td class="auto-style2">
-                <asp:HyperLink ID="HyperLinkRefundStatus" runat="server" NavigateUrl="~/Admin/Refund.aspx">Refund Status</asp:HyperLink>
-            </td>
-        </tr>
-    </table>
+    </script>
 
-</div>
+    <div class="table-container">
+        <h1>ADMIN PAGE</h1><br />
+        <h3>What do you want to do?</h3>
+        <p>&nbsp;</p>
+        <asp:HyperLink ID="HyperLinkAdminCRUD" runat="server" NavigateUrl="~/AdminCRUD.aspx">Admin CRUD</asp:HyperLink>
+        &nbsp;<br />
+        <br />
+        <asp:HyperLink ID="HyperLinkMemberCRUD" runat="server" NavigateUrl="~/MemberCRUD.aspx">Member CRUD</asp:HyperLink>
+        <br />
+        <br />
+        <asp:HyperLink ID="HyperLinkProductCRUD" runat="server" NavigateUrl="~/ProductCRUD.aspx">Product CRUD</asp:HyperLink>
+        <br />
+        <br />
+        <asp:HyperLink ID="HyperLinkRefundStatus" runat="server" NavigateUrl="~/RefundStatus.aspx">Refund Status</asp:HyperLink>
+        &nbsp;&nbsp;
+
+        <br />
+        <br />
+        <br />
+        <asp:Button ID="btnRedirect" runat="server" Text="Back to Homepage" OnClientClick="redirectToHomePage()" PostBackUrl="~/Homepage/Homepage.aspx" />
+
+
+    </div>
+
 </asp:Content>

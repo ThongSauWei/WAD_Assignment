@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WAD_Assignment.Admin
 {
-    public partial class AdminCRUD : System.Web.UI.Page
+    public partial class AdminHeader : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void btnDelete_Click(object sender, EventArgs e)
-        {
-            ScriptManager.RegisterStartupScript(this, GetType(), "DeletAdmin", "deleteAdmin();", true);
         }
     }
 }

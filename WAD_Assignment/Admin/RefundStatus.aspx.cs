@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WAD_Assignment.Admin
 {
-    public partial class Refund : System.Web.UI.Page
+    public partial class RefundStatus : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // You can add additional logic in Page_Load if needed
+
         }
 
         protected void btnAccept_Click(object sender, EventArgs e)

@@ -1,32 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Header.Master" AutoEventWireup="true" CodeBehind="Refund.aspx.cs" Inherits="WAD_Assignment.Admin.Refund" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Admin/AdminHeader.Master" AutoEventWireup="true" CodeBehind="RefundStatus.aspx.cs" Inherits="WAD_Assignment.Admin.RefundStatus" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
-<style type="text/css">
-
-
-* {
-    box-sizing: border-box;
-    font-family: var(--primary-font), "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-        .auto-style1 {
-            width: 150px;
-        }
-        .auto-style2 {
-            width: 250px;
-        }
-        .auto-style3 {
-            width: 300px;
-        }
-        </style>
-
     <script type="text/javascript">
         function confirmAccept() {
             var result = confirm("Are you sure you want to accept?");
@@ -53,7 +27,7 @@
     </script>
 
         <div>
-            <h2 class="h2-section-title">REFUND STATUS</h2>
+            <h1>REFUND STATUS</h1>
             <table style="width:100%;">
                 <tr>
                     <td class="auto-style1">Booking ID</td>
@@ -81,6 +55,13 @@
                     </td>
                 </tr>
             </table>
+
+            
+        <br />
+        <br />
+        <br />
+        <asp:Button ID="btnRedirect8" runat="server" Text="Back to Admin Main Page" OnClientClick="redirectToAdminMain()" PostBackUrl="~/Admin/AdminMain.aspx" OnClick="btnRedirect8_Click" />
+
 
         </div>
 </asp:Content>
