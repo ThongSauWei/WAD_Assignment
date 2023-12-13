@@ -37,7 +37,7 @@ namespace WAD_Assignment.loginRegister
                 enteredPassword.Equals(adminPassword))
             {
                 // Redirect to the admin page
-                Response.Redirect("~/AdminPage/Admin.aspx");
+                Response.Redirect("~/Admin/AdminMain.aspx");
             }
             else
             {

@@ -69,13 +69,15 @@
   <ItemGroup>
     <Content Include="Admin\AdminCRUD.aspx" />
     <Content Include="Admin\AdminMain.aspx" />
-    <Content Include="Admin\MemberCRUD.aspx" />
     <Content Include="Admin\RefundStatus.aspx" />
     <Content Include="Detail\abc\Testing.aspx" />
+    <Content Include="Admin\ProductCRUD.aspx" />
+    <Content Include="Admin\Refund.aspx" />
     <Content Include="App_Data\TicketDB.mdf" />
     <Content Include="App_Data\TicketDB_log.ldf">
       <DependentUpon>TicketDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Detail\abc\Testing.aspx" />
     <Content Include="Detail\Detail.aspx" />
     <Content Include="HomePage\swipperMovie6.jpg" />
     <Content Include="image\booked.png" />
