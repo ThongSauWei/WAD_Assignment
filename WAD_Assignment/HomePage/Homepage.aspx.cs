@@ -14,9 +14,9 @@ namespace WAD_Assignment.HomePage
 
         }
 
-        protected System.Void Page_Load(System.Object sender, System.EventArgs e)
-        {
+        //protected System.Void Page_Load(System.Object sender, System.EventArgs e)
+        //{
 
-        }
+        //}
     }
 }

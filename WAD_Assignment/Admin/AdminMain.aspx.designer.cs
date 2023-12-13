@@ -11,7 +11,7 @@ namespace WAD_Assignment.Admin
 {
 
 
-    public partial class AdminCRUDMain
+    public partial class AdminMain
     {
 
         /// <summary>

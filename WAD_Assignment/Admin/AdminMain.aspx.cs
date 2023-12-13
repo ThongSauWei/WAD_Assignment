@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WAD_Assignment.Admin
 {
-    public partial class AdminCRUDMain : System.Web.UI.Page
+    public partial class AdminMain : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -14,10 +14,10 @@ namespace WAD_Assignment.MyBooking
 
         }
 
-        protected System.Void Page_Load(System.Object sender, System.EventArgs e)
-        {
+        //protected System.Void Page_Load(System.Object sender, System.EventArgs e)
+        //{
 
-        }
+        //}
 
         /*        public List<string> details = new List<string> {
                     "Booking ID", "Movie ID", "Movie Name",

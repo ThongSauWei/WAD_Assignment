@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Header.Master" AutoEventWireup="true" CodeBehind="AdminMain.aspx.cs" Inherits="WAD_Assignment.Admin.AdminCRUDMain" %>
+﻿
+<%@ Page Language="C#" MasterPageFile="~/Header.Master" AutoEventWireup="true" CodeBehind="AdminMain.aspx.cs" Inherits="WAD_Assignment.Admin.AdminMain" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 

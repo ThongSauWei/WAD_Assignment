@@ -11,17 +11,17 @@ namespace WAD_Assignment.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // You can add additional logic in Page_Load if needed
         }
 
-        protected System.Void btnAccept_Click(System.Object sender, System.EventArgs e)
+        protected void btnAccept_Click(object sender, EventArgs e)
         {
-            ClientScript.RegisterStartupScript(GetType(), "ConfirmAccept", "confirmAccept();", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "ConfirmAccept", "confirmAccept();", true);
         }
 
-        protected System.Void btnReject_Click(System.Object sender, System.EventArgs e)
+        protected void btnReject_Click(object sender, EventArgs e)
         {
-            ClientScript.RegisterStartupScript(GetType(), "ConfirmReject", "confirmReject();", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "ConfirmReject", "confirmReject();", true);
         }
     }
 }

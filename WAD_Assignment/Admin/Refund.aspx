@@ -2,8 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <title>Refund Status</title>
-        <style type="text/css">
+<style type="text/css">
 
 
 * {
