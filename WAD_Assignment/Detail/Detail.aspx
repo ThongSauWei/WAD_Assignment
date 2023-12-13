@@ -421,7 +421,7 @@
             }
         }
 
-        @media screen and (max-width:675px) {
+        @media screen and (max-width:1375px) {
             .reviewItem {
                 width: 300px;
             }
@@ -580,7 +580,7 @@
                 <div class="topReview">
                     <div class="clientImage">
                         <img src="./client.png" alt="">
-                        <span>Raju Sheoran</span>
+                        <span>Haha heyheyhey</span>
                     </div>
                     <ul>
                         <li><i class="fa-solid fa-star"></i></li>
@@ -605,7 +605,7 @@
                 <div class="topReview">
                     <div class="clientImage">
                         <img src="./client.png" alt="">
-                        <span>Raju Sheoran</span>
+                        <span>Testing Name</span>
                     </div>
                     <ul>
                         <li><i class="fa-solid fa-star"></i></li>
@@ -630,7 +630,7 @@
                 <div class="topReview">
                     <div class="clientImage">
                         <img src="./client.png" alt="">
-                        <span>Raju Sheoran</span>
+                        <span>haloo testing</span>
                     </div>
                     <ul>
                         <li><i class="fa-solid fa-star"></i></li>

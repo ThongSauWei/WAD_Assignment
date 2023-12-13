@@ -46,6 +46,15 @@ namespace WAD_Assignment.Member
 
         protected void btnPayment_Click(object sender, EventArgs e)
         {
+            if (paymentChoiceField.Value == "tng")
+            {
+                Page.Validate("tngValidation");
+            }
+            else if (paymentChoiceField.Value == "card")
+            {
+                Page.Validate("cardValidation");
+            }
+
             Response.Redirect("~/HomePage/Homepage.aspx");
         }
     }

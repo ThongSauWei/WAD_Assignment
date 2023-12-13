@@ -65,7 +65,7 @@
         }
 
         .slider .list .item .contentBanner h2 {
-            font-size: 80px;
+            font-size: 67px;
             margin: 0;
             margin-top: 3px;
             margin-bottom: 4px;
@@ -127,7 +127,7 @@
 
         .thumbnail {
             position: absolute;
-            bottom: -390px;
+            bottom: -430px;
             z-index: 11;
             display: flex;
             gap: 10px;
@@ -700,7 +700,7 @@
                         <h2>Thanksgiving</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
+                                <a href="../Detail/Detail.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -719,7 +719,7 @@
                         <h2>Aquaman and the Lost Kingdom</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
+                                <a href="../Detail/Detail.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -738,7 +738,7 @@
                         <h2>Wish</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
+                                <a href="../Detail/Detail.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -757,7 +757,7 @@
                         <h2>War On Terror: KL Anarki</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
+                                <a href="../Detail/Detail.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -776,7 +776,7 @@
                         <h2>Wonka</h2>
                         <div class="descBanner">
                             <p>
-                                <a href="booking.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
+                                <a href="../Detail/Detail.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
                                     <span>Book Now</span>
                                 </a>
 
@@ -831,14 +831,14 @@
                 <li>
                     <div class="movie-cardTrending">
 
-                        <a href="./movie-details.html">
+                        <a href="../Detail/Detail.aspx">
                             <figure class="card-banner">
                                 <img src="swipperMovie1.png" alt="Thanksgiving">
                             </figure>
                         </a>
 
                         <div class="title-wrapper">
-                            <a href="./movie-details.html">
+                            <a href="../Detail/Detail.aspx">
                                 <h3 class="card-title">Thanksgiving</h3>
                             </a>
 
@@ -867,14 +867,14 @@
                 <li>
                     <div class="movie-cardTrending">
 
-                        <a href="./movie-details.html">
+                        <a href="../Detail/Detail.aspx">
                             <figure class="card-banner">
                                 <img src="swipperMovie2.jpg" alt="Aquaman and the Lost Kingdom">
                             </figure>
                         </a>
 
                         <div class="title-wrapper">
-                            <a href="./movie-details.html">
+                            <a href="../Detail/Detail.aspx">
                                 <h3 class="card-title">Aquaman and the Lost Kingdom</h3>
                             </a>
 
@@ -903,14 +903,14 @@
                 <li>
                     <div class="movie-cardTrending">
 
-                        <a href="./movie-details.html">
+                        <a href="../Detail/Detail.aspx">
                             <figure class="card-banner">
                                 <img src="swipperMovie3.jpg" alt="Wish">
                             </figure>
                         </a>
 
                         <div class="title-wrapper">
-                            <a href="./movie-details.html">
+                            <a href="../Detail/Detail.aspx">
                                 <h3 class="card-title">Wish</h3>
                             </a>
 
@@ -939,14 +939,14 @@
                 <li>
                     <div class="movie-cardTrending">
 
-                        <a href="./movie-details.html">
+                        <a href="../Detail/Detail.aspx">
                             <figure class="card-banner">
                                 <img src="swipperMovie4.jpg" alt="War On Terror: KL Anarki">
                             </figure>
                         </a>
 
                         <div class="title-wrapper">
-                            <a href="./movie-details.html">
+                            <a href="../Detail/Detail.aspx">
                                 <h3 class="card-title">War On Terror: KL Anarki</h3>
                             </a>
 
@@ -975,14 +975,14 @@
                 <li>
                     <div class="movie-cardTrending">
 
-                        <a href="./movie-details.html">
+                        <a href="../Detail/Detail.aspx">
                             <figure class="card-banner">
                                 <img src="swipperMovie5.jpeg" alt="Wonka">
                             </figure>
                         </a>
 
                         <div class="title-wrapper">
-                            <a href="./movie-details.html">
+                            <a href="../Detail/Detail.aspx">
                                 <h3 class="card-title">Wonka</h3>
                             </a>
 
@@ -1011,14 +1011,14 @@
                 <li>
                     <div class="movie-cardTrending">
 
-                        <a href="./movie-details.html">
+                        <a href="../Detail/Detail.aspx">
                             <figure class="card-banner">
                                 <img src="swipperMovie1.png" alt="Thanksgiving">
                             </figure>
                         </a>
 
                         <div class="title-wrapper">
-                            <a href="./movie-details.html">
+                            <a href="../Detail/Detail.aspx">
                                 <h3 class="card-title">Thanksgiving</h3>
                             </a>
 
@@ -1047,14 +1047,14 @@
                 <li>
                     <div class="movie-cardTrending">
 
-                        <a href="./movie-details.html">
+                        <a href="../Detail/Detail.aspx">
                             <figure class="card-banner">
                                 <img src="swipperMovie2.jpg" alt="Aquaman and the Lost Kingdom">
                             </figure>
                         </a>
 
                         <div class="title-wrapper">
-                            <a href="./movie-details.html">
+                            <a href="../Detail/Detail.aspx">
                                 <h3 class="card-title">Aquaman and the Lost Kingdom</h3>
                             </a>
 
@@ -1083,14 +1083,14 @@
                 <li>
                     <div class="movie-cardTrending">
 
-                        <a href="./movie-details.html">
+                        <a href="../Detail/Detail.aspx">
                             <figure class="card-banner">
                                 <img src="swipperMovie3.jpg" alt="Wish">
                             </figure>
                         </a>
 
                         <div class="title-wrapper">
-                            <a href="./movie-details.html">
+                            <a href="../Detail/Detail.aspx">
                                 <h3 class="card-title">Wish</h3>
                             </a>
 
@@ -1135,7 +1135,7 @@
                     <p>
                         Horror
                     </p>
-                    <a href="haha.html" class="navbar-social-link">
+                    <a href="../Detail/Detail.aspx" class="navbar-social-link">
                         <button class="btnHeader btn-primarySign">View</button>
                     </a>
                 </li>
@@ -1145,7 +1145,7 @@
                     <p>
                         Musical
                     </p>
-                    <a href="haha.html" class="navbar-social-link">
+                    <a href="../Detail/Detail.aspx" class="navbar-social-link">
                         <button class="btnHeader btn-primarySign">View</button>
                     </a>
                 </li>
@@ -1155,7 +1155,7 @@
                     <p>
                         Musical
                     </p>
-                    <a href="haha.html" class="navbar-social-link">
+                    <a href="../Detail/Detail.aspx" class="navbar-social-link">
                         <button class="btnHeader btn-primarySign">View</button>
                     </a>
                 </li>
@@ -1165,7 +1165,7 @@
                     <p>
                         Action
                     </p>
-                    <a href="haha.html" class="navbar-social-link">
+                    <a href="../Detail/Detail.aspx" class="navbar-social-link">
                         <button class="btnHeader btn-primarySign">View</button>
                     </a>
                 </li>
@@ -1183,50 +1183,59 @@
         <div class="coming-container swiper">
             <div class="swiper-wrapper">
                 <!-- box-1  -->
+
                 <div class="swiper-slide box">
-                    <div class="box-img">
-                        <img src="swipperMovie1.png" alt="">
-                    </div>
+                    <a href="../Detail/Detail.aspx">
+                        <div class="box-img">
+                            <img src="swipperMovie1.png" alt="">
+                        </div>
+                    </a>
                     <h3>Thanksgiving</h3>
                 </div>
 
                 <!-- box-2  -->
                 <div class="swiper-slide box">
-                    <div class="box-img">
-                        <img src="swipperMovie2.jpg" alt="">
-                    </div>
+                    <a href="../Detail/Detail.aspx">
+                        <div class="box-img">
+                            <img src="swipperMovie2.jpg" alt="">
+                        </div>
+                    </a>
                     <h3>Aquaman and the Lost Kingdom</h3>
                 </div>
 
                 <!-- box-3  -->
                 <div class="swiper-slide box">
+                    <a href="../Detail/Detail.aspx">
                     <div class="box-img">
                         <img src="swipperMovie3.jpg" alt="">
-                    </div>
+                    </div></a>
                     <h3>Wish</h3>
                 </div>
 
                 <!-- box-4  -->
                 <div class="swiper-slide box">
+                    <a href="../Detail/Detail.aspx">
                     <div class="box-img">
                         <img src="swipperMovie4.jpg" alt="">
-                    </div>
+                    </div></a>
                     <h3>War On Terror: KL Anarki</h3>
                 </div>
 
                 <!-- box-5  -->
                 <div class="swiper-slide box">
+                    <a href="../Detail/Detail.aspx">
                     <div class="box-img">
                         <img src="swipperMovie5.jpeg" alt="">
-                    </div>
+                    </div></a>
                     <h3>Wonka</h3>
                 </div>
 
                 <!-- box-6  -->
                 <div class="swiper-slide box">
+                    <a href="../Detail/Detail.aspx">
                     <div class="box-img">
                         <img src="swipperMovie6.jpg" alt="">
-                    </div>
+                    </div></a>
                     <h3>Five Nights At Freddy's</h3>
                 </div>
 

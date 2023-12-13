@@ -81,6 +81,7 @@
                 <ion-icon name="lock-closed-outline" class="iconFive"></ion-icon>
                 <asp:TextBox ID="CustomerPassword" runat="server" placeholder="" Required="true" type="password"></asp:TextBox>
                 <label for="CustomerPassword" class="RLaber">Password</label>
+  
                 <br />
                 <asp:RegularExpressionValidator ID="passwordValidator" runat="server" ControlToValidate="CustomerPassword" ErrorMessage="Password must be at least 8 characters, 1 uppercase, 1 lowercase, 1 digit, and 1 special character." ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%?&amp;*_])[A-Za-z\d@$!%*?&amp;_]{8,}$"></asp:RegularExpressionValidator>
 
@@ -88,8 +89,8 @@
 
             <div class="form-group" style="margin-bottom: -18px;">
                 <ion-icon name="lock-closed-outline" class="iconSix"></ion-icon>
-                <asp:TextBox ID="ReenterPassword" runat="server" placeholder="" Required="true" type="password"></asp:TextBox>
-                <label for="ReenterPassword" class="RLaber">Reenter Password</label>
+                <asp:TextBox ID="ReenterPassword" runat="server" placeholder="" Required="true" type="password" OnTextChanged="ReenterPassword_TextChanged1"></asp:TextBox>
+                <label for="ReenterPassword" class="RLaber">Confirm Password</label>
             </div>
 
             <div class="btnRegister">
@@ -97,10 +98,10 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <asp:Button ID="Register" runat="server" Text="Register" CssClass="register-btn" />
+                <asp:Button ID="Register" runat="server" Text="Register" CssClass="register-btn" PostBackURL="login.aspx" />
             </div>
-            <div class="reg">
-                <p>Already have an account?</p>
+            <div class="reg2">
+                <p>Already have an account?
                 <asp:HyperLink ID="loginLink" runat="server" NavigateUrl="login.aspx"><i>Login</i></asp:HyperLink>
             </div>
         </div>
