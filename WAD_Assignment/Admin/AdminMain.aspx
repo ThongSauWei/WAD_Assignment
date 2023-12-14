@@ -32,7 +32,7 @@
         <asp:HyperLink ID="HyperLinkMemberCRUD" runat="server" NavigateUrl="~/MemberCRUD.aspx">Member CRUD</asp:HyperLink>
         <br />
         <br />
-        <asp:HyperLink ID="HyperLinkProductCRUD" runat="server" NavigateUrl="~/ProductCRUD.aspx">Product CRUD</asp:HyperLink>
+        <asp:HyperLink ID="HyperLinkProductCRUD" runat="server" NavigateUrl="~/Admin-New/ManageMovie.aspx">Manage Movie</asp:HyperLink>
         <br />
         <br />
         <asp:HyperLink ID="HyperLinkRefundStatus" runat="server" NavigateUrl="~/RefundStatus.aspx">Refund Status</asp:HyperLink>
