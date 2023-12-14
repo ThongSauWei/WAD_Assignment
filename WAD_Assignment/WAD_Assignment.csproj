@@ -84,7 +84,9 @@
     <Content Include="image\card-payment.png" />
     <Content Include="image\chair.png" />
     <Content Include="image\checked.png" />
+    <Content Include="image\confirm.png" />
     <Content Include="image\profile-user.png" />
+    <Content Include="image\refund.png" />
     <Content Include="image\screen.png" />
     <Content Include="image\tng-payment.png" />
     <Content Include="loginRegister\banana.gif" />
@@ -113,7 +115,9 @@
     <Content Include="Member\Payment.aspx" />
     <Content Include="Member\Payment.css" />
     <Content Include="Menu\Menu.aspx" />
-    <Content Include="MyBooking\booking.aspx" />
+    <Content Include="MyBooking\Cancel.aspx" />
+    <Content Include="MyBooking\Completed.aspx" />
+    <Content Include="MyBooking\myBooking.aspx" />
     <Content Include="MyBooking\BookingDetail.aspx" />
     <Content Include="MyBooking\bookingStyles.css" />
     <Content Include="Testing.aspx" />
@@ -192,12 +196,26 @@
     <Compile Include="Menu\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MyBooking\booking.aspx.cs">
-      <DependentUpon>booking.aspx</DependentUpon>
+    <Compile Include="MyBooking\Cancel.aspx.cs">
+      <DependentUpon>Cancel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MyBooking\booking.aspx.designer.cs">
-      <DependentUpon>booking.aspx</DependentUpon>
+    <Compile Include="MyBooking\Cancel.aspx.designer.cs">
+      <DependentUpon>Cancel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyBooking\Completed.aspx.cs">
+      <DependentUpon>Completed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyBooking\Completed.aspx.designer.cs">
+      <DependentUpon>Completed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyBooking\myBooking.aspx.cs">
+      <DependentUpon>myBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyBooking\myBooking.aspx.designer.cs">
+      <DependentUpon>myBooking.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyBooking\BookingDetail.aspx.cs">
       <DependentUpon>BookingDetail.aspx</DependentUpon>
