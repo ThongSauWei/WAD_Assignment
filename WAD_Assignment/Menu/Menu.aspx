@@ -97,7 +97,7 @@
         <!-- movies container  -->
         <div class="movies-container">
             <!-- box-1  -->
-            <a href="#">
+            <a href="../Detail/Detail.aspx">
                 <div class="boxMenu">
                     <div class="box-img">
                         <img src="../HomePage/swipperMovie1.png" alt="">
@@ -108,7 +108,7 @@
             </a>
 
             <!-- box-2  -->
-            <a href="#">
+            <a href="../Detail/Detail.aspx">
                 <div class="boxMenu">
                     <div class="box-img">
                         <img src="../HomePage/swipperMovie2.jpg" alt="">
@@ -119,7 +119,7 @@
             </a>
 
             <!-- box-3  -->
-            <a href="#">
+            <a href="../Detail/Detail.aspx">
                 <div class="boxMenu">
                     <div class="box-img">
                         <img src="../HomePage/swipperMovie3.jpg" alt="">
@@ -141,7 +141,7 @@
             </a>
 
             <!-- box-5  -->
-            <a href="#">
+            <a href="../Detail/Detail.aspx">
                 <div class="boxMenu">
                     <div class="box-img">
                         <img src="../HomePage/swipperMovie5.jpeg" alt="">
@@ -152,7 +152,7 @@
             </a>
 
             <!-- box-6  -->
-            <a href="#">
+            <a href="../Detail/Detail.aspx">
                 <div class="boxMenu">
                     <div class="box-img">
                         <img src="../HomePage/swipperMovie5.jpeg" alt="">
@@ -163,7 +163,7 @@
             </a>
 
             <!-- box-7  -->
-            <a href="#">
+            <a href="../Detail/Detail.aspx">
                 <div class="boxMenu">
                     <div class="box-img">
                         <img src="../HomePage/swipperMovie5.jpeg" alt="">
@@ -174,7 +174,7 @@
             </a>
 
             <!-- box-8  -->
-            <a href="#">
+            <a href="../Detail/Detail.aspx">
                 <div class="boxMenu">
                     <div class="box-img">
                         <img src="../HomePage/swipperMovie5.jpeg" alt="">
@@ -185,7 +185,7 @@
             </a>
 
             <!-- box-9  -->
-            <a href="#">
+            <a href="../Detail/Detail.aspx">
                 <div class="boxMenu">
                     <div class="box-img">
                         <img src="../HomePage/swipperMovie5.jpeg" alt="">
@@ -196,7 +196,7 @@
             </a>
 
             <!-- box-10  -->
-            <a href="#">
+            <a href="../Detail/Detail.aspx">
                 <div class="boxMenu">
                     <div class="box-img">
                         <img src="../HomePage/swipperMovie5.jpeg" alt="">
