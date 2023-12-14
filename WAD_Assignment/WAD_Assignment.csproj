@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin-New\AddMovie.aspx" />
     <Content Include="Admin-New\EditMovie.aspx" />
     <Content Include="Admin-New\ManageMovie.aspx" />
     <Content Include="Admin\AdminCRUD.aspx" />
@@ -131,6 +132,13 @@
     <Content Include="loginRegister\Register.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin-New\AddMovie.aspx.cs">
+      <DependentUpon>AddMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin-New\AddMovie.aspx.designer.cs">
+      <DependentUpon>AddMovie.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin-New\EditMovie.aspx.cs">
       <DependentUpon>EditMovie.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
