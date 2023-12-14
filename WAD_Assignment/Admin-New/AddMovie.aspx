@@ -1,8 +1,8 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Header.Master" AutoEventWireup="true" CodeBehind="EditMovie.aspx.cs" Inherits="WAD_Assignment.Admin_New.EditMovie" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Header.Master" AutoEventWireup="true" CodeBehind="AddMovie.aspx.cs" Inherits="WAD_Assignment.Admin_New.AddMovie" %>
 
 <asp:Content ID="ContentPlaceHolder" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
-        .edit-content {
+        .add-content {
             margin: 180px auto 0;
             height: 450px;
             width: 70%;
@@ -44,7 +44,7 @@
             width: 100%;
         }
 
-        .btnUpdate {
+        .btnAdd {
             background-color: #ecd261;
             border: none;
             width: 25%;
@@ -57,12 +57,12 @@
         }
     </style>
 
-    <div class="edit-content">
+    <div class="add-content">
         <div class="left-side">
             <img src="../image/movie1.jpg" width="270px" height="330px"/>
         </div>
         <div class="right-side">
-            <h2 style="padding-left: 30px; color:#ecd261;">Edit Movie</h2>
+            <h2 style="padding-left: 30px; color:#ecd261;">Add Movie</h2>
             <div class="movie-input">
                 <asp:Label ID="lblMovieName" runat="server" Text="Movie Name:"></asp:Label>
                 <asp:TextBox ID="txtMovieName" runat="server"></asp:TextBox>
@@ -154,7 +154,7 @@
                 <asp:FileUpload ID="imgUpload" runat="server" />
             </div>
             <div class="bottom-side">
-            <asp:Button ID="updateMovie" CssClass="btnUpdate" runat="server" Text="Update Movie" />
+            <asp:Button ID="addMovie" CssClass="btnAdd" runat="server" Text="Add Movie" />
         </div>
         </div>
     </div>

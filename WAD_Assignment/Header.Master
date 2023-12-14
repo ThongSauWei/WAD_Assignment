@@ -278,10 +278,10 @@
                             <!---<a href="#" class="navbar-link">Movie</a>-->
                         </li>
 
-                        <li>
-                            <asp:HyperLink ID="HyperLink8" class="navbar-link" runat="server" NavigateUrl="~/MyBooking/booking.aspx">My Booking</asp:HyperLink>
-                            <!---<a href="#" class="navbar-link">My Booking</a>-->
-                        </li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink8" class="navbar-link" runat="server" NavigateUrl="~/MyBooking/myBooking.aspx">My Booking</asp:HyperLink>
+                        <!---<a href="#" class="navbar-link">My Booking</a>-->
+                    </li>
 
                     </ul>
 
@@ -312,9 +312,9 @@
                                 <p class="fLeft">
                                     <!---<a href="#" >Home</a>--->
 
-                                    <asp:HyperLink ID="HyperLink1" class="fLink" runat="server" NavigateUrl="~/HomePage/Homepage.aspx">Home</asp:HyperLink>
-                                    <asp:HyperLink ID="HyperLink2" class="fLink" runat="server" NavigateUrl="~/Menu/Menu.aspx">Movie</asp:HyperLink>
-                                    <asp:HyperLink ID="HyperLink4" class="fLink" runat="server" NavigateUrl="~/MyBooking/booking.aspx">My Booking</asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink1" class="fLink" runat="server" NavigateUrl="~/loginRegister/Login.aspx">Home</asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink2" class="fLink" runat="server" NavigateUrl="~/Menu/Menu.aspx">Movie</asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink4" class="fLink" runat="server" NavigateUrl="~/MyBooking/myBooking.aspx">My Booking</asp:HyperLink>
 
                                     <!---
                                 <a href="#" class="fLink">Movie</a>
