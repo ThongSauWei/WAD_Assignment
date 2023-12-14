@@ -133,7 +133,6 @@
                                                                     </div>
                                                                     <div class="wrapperFeed">
                                                                         <h3>Thanksgiving </h3>
-                                                                        <form action="#">
                                                                             <div class="ratingFeed">
                                                                                 <div class="feedback">
                                                                                     <label class="angry">
@@ -217,7 +216,6 @@
                                                                             <div class="btn-group">
                                                                                 <button type="submit" class="btnHeader btn-primarySign">Submit</button>
                                                                             </div>
-                                                                        </form>
                                                                     </div>
                                                                 </section>
                                                                 <a href="#" class="close_popupModal1" style="border-color:gold;"><span>X</span></a>

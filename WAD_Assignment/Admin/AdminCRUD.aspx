@@ -56,9 +56,9 @@
                 <td class="left-aligned" style="width: 204px">
 
                 &nbsp;&nbsp;
-                <asp:Button ID="btnRedirect" runat="server" Text="Update" OnClientClick="redirectToDetailsPage()" PostBackUrl="~/Detail/Detail.aspx" OnClick="btnRedirect_Click" />
+                <asp:Button ID="btnRedirect" runat="server" Text="Update" OnClientClick="redirectToDetailsPage()" PostBackUrl="~/Detail/Detail.aspx" />
                 &nbsp;&nbsp;
-                <asp:Button ID="btnDelete" runat="server" OnClick="deleteAdmin" Text="Delete" />
+                <asp:Button ID="btnDelete" runat="server" OnClientClick="deleteAdmin()" Text="Delete" />
                 &nbsp;&nbsp;
                 <asp:Button ID="btnRedirect0" runat="server" Text="View" OnClientClick="redirectToMenuPage()" PostBackUrl="~/Menu/Menu.aspx" />
                 </td>
@@ -71,7 +71,7 @@
                 &nbsp;&nbsp;
                 <asp:Button ID="btnRedirect1" runat="server" Text="Update" OnClientClick="redirectToDetailsPage()" PostBackUrl="~/Detail/Detail.aspx" />
                 &nbsp;&nbsp;
-                <asp:Button ID="btnDelete0" runat="server" OnClick="deleteAdmin" Text="Delete" />
+                <asp:Button ID="btnDelete0" runat="server" OnClientClick="deleteAdmin()" Text="Delete" />
                 &nbsp;&nbsp;
                 <asp:Button ID="btnRedirect2" runat="server" Text="View" OnClientClick="redirectToMenuPage()" PostBackUrl="~/Menu/Menu.aspx" />
             </tr>
@@ -83,7 +83,7 @@
                 &nbsp;&nbsp;
                 <asp:Button ID="btnRedirect3" runat="server" Text="Update" OnClientClick="redirectToDetailsPage()" PostBackUrl="~/Detail/Detail.aspx" />
                 &nbsp;&nbsp;
-                <asp:Button ID="btnDelete1" runat="server" OnClick="deleteAdmin" Text="Delete" />
+                <asp:Button ID="btnDelete1" runat="server" OnClientClick="deleteAdmin()" Text="Delete" />
                 &nbsp;&nbsp;
                 <asp:Button ID="btnRedirect4" runat="server" Text="View" OnClientClick="redirectToMenuPage()" PostBackUrl="~/Menu/Menu.aspx" />
                 </td>
@@ -96,7 +96,7 @@
                 &nbsp;&nbsp;
                 <asp:Button ID="btnRedirect5" runat="server" Text="Update" OnClientClick="redirectToDetailsPage()" PostBackUrl="~/Detail/Detail.aspx" />
                 &nbsp;&nbsp;
-                <asp:Button ID="btnDelete2" runat="server" OnClick="deleteAdmin" Text="Delete" />
+                <asp:Button ID="btnDelete2" runat="server" OnClientClick="deleteAdmin()" Text="Delete" />
                 &nbsp;&nbsp;
                 <asp:Button ID="btnRedirect6" runat="server" Text="View" OnClientClick="redirectToMenuPage()" PostBackUrl="~/Menu/Menu.aspx" />
                 </td>
@@ -106,7 +106,7 @@
         <br />
         <br />
         <br />
-        <asp:Button ID="btnRedirect8" runat="server" Text="Back to Admin Main Page" OnClientClick="redirectToAdminMain()" PostBackUrl="~/Admin/AdminMain.aspx" OnClick="btnRedirect8_Click" />
+        <asp:Button ID="btnRedirect8" runat="server" Text="Back to Admin Main Page" OnClientClick="redirectToAdminMain()" PostBackUrl="~/Admin/AdminMain.aspx" />
 
 
     </div>
