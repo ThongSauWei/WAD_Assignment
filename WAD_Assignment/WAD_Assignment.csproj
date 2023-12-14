@@ -67,11 +67,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin-New\EditMovie.aspx" />
+    <Content Include="Admin-New\ManageMovie.aspx" />
+    <Content Include="Admin\AdminCRUD.aspx" />
+    <Content Include="Admin\AdminMain.aspx" />
+    <Content Include="Admin\MemberCRUD.aspx" />
+    <Content Include="Admin\MovieCRUD.aspx" />
+    <Content Include="Admin\RefundStatus.aspx" />
     <Content Include="Detail\abc\Testing.aspx" />
     <Content Include="App_Data\TicketDB.mdf" />
     <Content Include="App_Data\TicketDB_log.ldf">
       <DependentUpon>TicketDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Detail\abc\Testing.aspx" />
     <Content Include="Detail\Detail.aspx" />
     <Content Include="HomePage\swipperMovie6.jpg" />
     <Content Include="image\booked.png" />
@@ -89,19 +97,19 @@
     <Content Include="image\refund.png" />
     <Content Include="image\screen.png" />
     <Content Include="image\tng-payment.png" />
-    <Content Include="loginRegister\banana.gif" />
-    <Content Include="loginRegister\banana1.gif" />
-    <Content Include="loginRegister\catt.gif" />
-    <Content Include="loginRegister\cinema-walk.gif" />
-    <Content Include="loginRegister\duck.gif" />
-    <Content Include="loginRegister\K9it.gif" />
+    <Content Include="image\banana.gif" />
+    <Content Include="image\banana1.gif" />
+    <Content Include="image\catt.gif" />
+    <Content Include="image\cinema-walk.gif" />
+    <Content Include="image\duck.gif" />
+    <Content Include="image\K9it.gif" />
+    <Content Include="image\minion.gif" />
+    <Content Include="image\minion1.mp4" />
+    <Content Include="image\minion2.gif" />
+    <Content Include="image\MM9r.gif" />
     <Content Include="loginRegister\Login.aspx" />
-    <Content Include="loginRegister\minion.gif" />
-    <Content Include="loginRegister\minion1.mp4" />
-    <Content Include="loginRegister\minion2.gif" />
-    <Content Include="loginRegister\MM9r.gif" />
     <Content Include="loginRegister\PasswordRecovery.aspx" />
-    <Content Include="loginRegister\RBackground.gif" />
+    <Content Include="image\RBackground.gif" />
     <Content Include="loginRegister\Register.css" />
     <Content Include="Member\Booking.aspx" />
     <Content Include="Member\ConfirmBooking.aspx" />
@@ -114,6 +122,7 @@
     <Content Include="Member\ConfirmBooking.css" />
     <Content Include="Member\Payment.aspx" />
     <Content Include="Member\Payment.css" />
+    <Content Include="Member\Payment.js" />
     <Content Include="Menu\Menu.aspx" />
     <Content Include="MyBooking\Cancel.aspx" />
     <Content Include="MyBooking\Completed.aspx" />
@@ -126,6 +135,61 @@
     <Content Include="loginRegister\Register.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin-New\EditMovie.aspx.cs">
+      <DependentUpon>EditMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin-New\EditMovie.aspx.designer.cs">
+      <DependentUpon>EditMovie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin-New\ManageMovie.aspx.cs">
+      <DependentUpon>ManageMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin-New\ManageMovie.aspx.designer.cs">
+      <DependentUpon>ManageMovie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminCRUD.aspx.cs">
+      <DependentUpon>AdminCRUD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminCRUD.aspx.designer.cs">
+      <DependentUpon>AdminCRUD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminHeader.Master.cs">
+      <DependentUpon>AdminHeader.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminHeader.Master.designer.cs">
+      <DependentUpon>AdminHeader.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminMain.aspx.cs">
+      <DependentUpon>AdminMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMain.aspx.designer.cs">
+      <DependentUpon>AdminMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MemberCRUD.aspx.cs">
+      <DependentUpon>MemberCRUD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MemberCRUD.aspx.designer.cs">
+      <DependentUpon>MemberCRUD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MovieCRUD.aspx.cs">
+      <DependentUpon>MovieCRUD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MovieCRUD.aspx.designer.cs">
+      <DependentUpon>MovieCRUD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RefundStatus.aspx.cs">
+      <DependentUpon>RefundStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RefundStatus.aspx.designer.cs">
+      <DependentUpon>RefundStatus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Detail\abc\Testing.aspx.cs">
       <DependentUpon>Testing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -251,6 +315,7 @@
     <Content Include="Admin\Web.config" />
     <Content Include="Member\Web.config" />
     <Content Include="Header.Master" />
+    <Content Include="Admin\AdminHeader.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

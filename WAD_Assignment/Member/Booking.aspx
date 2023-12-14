@@ -2,7 +2,6 @@
 
 <asp:Content ID="ContentPlaceHolder" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="Booking.css" rel="stylesheet" />
-
     <div class="movie">
         <div class="show-movie">
             <div class="movie-image">
@@ -27,7 +26,8 @@
                     <div class="movie-seat">
                         <div>
                             <div class="screen">
-                                <img src="../image/screen.png" width="100%" height="100%" /></div>
+                                <img src="../image/screen.png" width="100%" height="100%" />
+                            </div>
                         </div>
                         <table class="select-seat">
                             <tr>

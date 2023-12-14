@@ -1,6 +1,6 @@
 ﻿body#topHeader {
-    background-image: url('K9it.gif') !important;
-    /*background-size: cover !important;*/
+    background-image: url('../image/K9it.gif') !important;
+    /*background-size: cover !important; ~/AdminPage/Admin.aspx*/
     background-attachment: fixed !important;
     max-height: 100% !important;
     max-width: 100% !important;
@@ -46,7 +46,7 @@ body {
     }
 }
 
-#registerForm {
+#registerForm, #passwordRecoveryPopup {
     animation: form-entry 3s ease-in-out;
     /*background: linear-gradient(#ecd261, #0b2135);*/
     margin: 205px auto;
@@ -62,6 +62,10 @@ body {
     transition: 1s all;
     opacity: 0.95;
     backdrop-filter: blur(8px);
+}
+
+.form-group {
+    animation:input-entry 3s ease-in;
 }
 
 .form-group input {
@@ -88,6 +92,14 @@ body {
     pointer-events: none;
     transition: .5s;
     letter-spacing: 2px;
+}
+
+#passwordRecoveryPopup .form-group input:focus ~ label,
+#passwordRecoveryPopup .form-group input:valid ~ label {
+    top: -80px;
+    left: 0;
+    color: #e9eb74;
+    font-size: 18px;
 }
 
 #registerForm .form-group input:focus ~ label,
@@ -119,7 +131,7 @@ span#ContentPlaceHolder1_passwordValidator {
     animation: blink-shadow-errorMsg 1s infinite;
 }
 
-.reg {
+.reg, .reg1 {
     display: flex;
     justify-content: center;
     margin-top: 15px;
@@ -127,7 +139,24 @@ span#ContentPlaceHolder1_passwordValidator {
     color: #ffff;
 }
 
-.reg a {
+.reg, .reg1 a {
+    text-decoration: none;
+    margin-left: 5px;
+    color: #e9eb74;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+
+.reg2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #ffff;
+}
+
+.reg2 a {
     text-decoration: none;
     margin-left: 5px;
     color: #e9eb74;
@@ -333,7 +362,7 @@ div.btnRegister span:nth-child(4) {
     }
 
     100% {
-        height: 100%;
+        /*height: 100%;*/
         width: 500px;
         opacity: 1;
     }
@@ -401,6 +430,12 @@ div.btnRegister span:nth-child(4) {
         background-size: cover;
         background-attachment: fixed;
     }
+    div#passwordRecoveryPopup {
+        top: 25% !important;
+        width: 60% !important;
+        left: 179px !important;
+    }
+        
 }
 /* Large screens (desktops) */
 @media all and (min-width: 992px) and (max-width: 1199px) {
@@ -408,11 +443,19 @@ div.btnRegister span:nth-child(4) {
         background-size: cover;
         background-attachment: fixed;
     }
+    div#passwordRecoveryPopup {
+        top: 26% !important;
+        width: 46% !important;
+        left: 313px !important;
+    }
 }
 /* Extra-large screens (large desktops) */
 @media all and (min-width: 1200px) {
     .registerHTML {
         background-size: cover;
         background-attachment: fixed;
+    }
+    div#passwordRecoveryPopup {
+        top: 24% !important;
     }
 }
