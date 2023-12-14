@@ -81,7 +81,7 @@
     </div>
 
     <!-- Add this div for the password recovery popup -->
-    <div id="passwordRecoveryPopup" style=" display:none; top: 40%; left: 32%; margin: auto; position: absolute; max-height: 100%; /* height: 77%; */ width: 35%; opacity: 1;">
+    <div id="passwordRecoveryPopup" style="display: none; top: 40%; left: 32%; margin: auto; position: absolute; max-height: 100%; /* height: 77%; */ width: 35%; opacity: 1;">
         <div style="text-align: right; margin-bottom: -15px; color: #e9eb74;">
             <ion-icon name="close" style="cursor: pointer; font-size: 23px; margin-top: 5px; margin-right: -10px;"
                 onclick="hidePasswordRecoveryPopup();">
@@ -92,14 +92,14 @@
         <!-- Security Question -->
         <div class="form-group" style="margin-top: 45px; margin-bottom: -15px; }">
             <ion-icon name="help-circle-outline" class="iconFour" style="top: 113px"></ion-icon>
-            <asp:TextBox ID="SecurityQuestion" runat="server" placeholder="" Required="true"></asp:TextBox>
+            <asp:TextBox ID="SecurityQuestion" runat="server" placeholder="" Onclick=""></asp:TextBox>
             <label for="SecurityQuestion" class="RLaber">What is your favorite movie?</label>
         </div>
 
         <!-- New Password and Confirm Password (hidden by default) -->
         <div class="form-group" style="margin-bottom: -20px;">
             <ion-icon name="lock-closed-outline" class="iconFive" style="top: 176px;"></ion-icon>
-            <asp:TextBox ID="TextBox1" runat="server" placeholder="" Required="true" type="password"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" placeholder="" type="password"></asp:TextBox>
             <label for="newPassword" class="RLaber">New Password</label>
             <br />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox1" ErrorMessage="Password must be at least 8 characters, 1 uppercase, 1 lowercase, 1 digit, and 1 special character." ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%?&amp;*_])[A-Za-z\d@$!%*?&amp;_]{8,}$" Display="Dynamic" ViewStateMode="Inherit"></asp:RegularExpressionValidator>
@@ -108,7 +108,7 @@
 
         <div class="form-group" style="margin-bottom: -18px;">
             <ion-icon name="lock-closed-outline" class="iconSix" style="top: 233px;"></ion-icon>
-            <asp:TextBox ID="confirmPassword" runat="server" placeholder="" Required="true" type="password"></asp:TextBox>
+            <asp:TextBox ID="confirmPassword" runat="server" placeholder=""  type="password"></asp:TextBox>
             <label for="confirmPassword" class="RLaber">Confirm Password</label>
         </div>
         <!-- Submit Button -->
@@ -126,27 +126,57 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+
     <script type="text/javascript">
-        function showPasswordRecoveryPopup() {
-            var popup = document.getElementById('passwordRecoveryPopup');
-            popup.style.display = 'block';
 
-            // Triggering a reflow to enable the transition effect
-            popup.offsetHeight;
+        function removeRequiredAttribute(divId) {
+            var hiddenDiv = document.getElementById(divId);
 
-            popup.style.opacity = 1;
+            if (hiddenDiv) {
+                var allInputs = hiddenDiv.querySelectorAll('input[required]');
+
+                allInputs.forEach(function (input) {
+                    input.removeAttribute('required');
+                });
+            }
         }
 
-        function hidePasswordRecoveryPopup() {
-            var popup = document.getElementById('passwordRecoveryPopup');
-            popup.style.opacity = 0;
+        function addRequiredAttribute(divId) {
+            var shownDiv = document.getElementById(divId);
 
-            // After the transition, hide the popup
-            setTimeout(function () {
-                popup.style.display = 'none';
-            }, 300); // 300ms matches the transition duration
-        }
+            if (shownDiv) {
+                var allInputs = shownDiv.querySelectorAll('input');
+
+                allInputs.forEach(function (input) {
+                    input.setAttribute('required', 'true');
+                });
+            }
+
+            function showPasswordRecoveryPopup() {
+                var popup = document.getElementById('passwordRecoveryPopup');
+                popup.style.display = 'block';
+
+                // Triggering a reflow to enable the transition effect
+                popup.offsetHeight;
+
+                popup.style.opacity = 1;
+
+                addRequiredAttribute("passwordRecoveryPopup");
+                removeRequiredAttribute("registerForm");
+            }
+
+            function hidePasswordRecoveryPopup() {
+                var popup = document.getElementById('passwordRecoveryPopup');
+                popup.style.opacity = 0;
+
+                // After the transition, hide the popup
+                setTimeout(function () {
+                    popup.style.display = 'none';
+                }, 300); // 300ms matches the transition duration
+
+                addRequiredAttribute("registerForm");
+                removeRequiredAttribute("passwordRecoveryPopup");
+            }
     </script>
-    ipt>
 
 </asp:Content>
