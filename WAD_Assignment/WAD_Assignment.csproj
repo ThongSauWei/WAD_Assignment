@@ -71,10 +71,10 @@
     <Content Include="Admin-New\ManageMovie.aspx" />
     <Content Include="Admin\AdminCRUD.aspx" />
     <Content Include="Admin\AdminMain.aspx" />
+    <Content Include="Admin\MemberCRUD.aspx" />
+    <Content Include="Admin\MovieCRUD.aspx" />
     <Content Include="Admin\RefundStatus.aspx" />
     <Content Include="Detail\abc\Testing.aspx" />
-    <Content Include="Admin\ProductCRUD.aspx" />
-    <Content Include="Admin\Refund.aspx" />
     <Content Include="App_Data\TicketDB.mdf" />
     <Content Include="App_Data\TicketDB_log.ldf">
       <DependentUpon>TicketDB.mdf</DependentUpon>
@@ -171,6 +171,13 @@
     </Compile>
     <Compile Include="Admin\MemberCRUD.aspx.designer.cs">
       <DependentUpon>MemberCRUD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MovieCRUD.aspx.cs">
+      <DependentUpon>MovieCRUD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MovieCRUD.aspx.designer.cs">
+      <DependentUpon>MovieCRUD.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\RefundStatus.aspx.cs">
       <DependentUpon>RefundStatus.aspx</DependentUpon>
