@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Admin/AdminHeader.Master" AutoEventWireup="true" CodeBehind="MemberCRUD.aspx.cs" Inherits="WAD_Assignment.Admin.MemberCRUD" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Admin/AdminHeader.Master" AutoEventWireup="true" CodeBehind="MovieCRUD.aspx.cs" Inherits="WAD_Assignment.Admin.MovieCRUD" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -42,18 +42,18 @@
     </script>
 
     <div class="table-container">
-        <h1>MEMBER CRUD PAGE</h1><br />
-        <h3>Which member do you want to amend?</h3>
+        <h1>MOVIE CRUD PAGE</h1><br />
+        <h3>Which movie do you want to amend?</h3>
         <br />
         <table style="width:100%;">
             <tr>
-                <td class="auto-style2">MEMBER ID&nbsp;</td>
+                <td class="auto-style2">MOVIE ID&nbsp;</td>
                 <td class="auto-style3">NAME</td>
                 <td class="auto-style1">ACTION</td>
             </tr>
             <tr>
-                <td class="auto-style2">MB5001</td>
-                <td class="auto-style3">PETER REUBEN</td>
+                <td class="auto-style2">MV8001</td>
+                <td class="auto-style3">WISH</td>
                 <td class="left-aligned" style="width: 204px">
 
                 &nbsp;&nbsp;
@@ -65,8 +65,8 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">MB5002</td>
-                <td class="auto-style3">DORCAS POON KAR WEI</td>
+                <td class="auto-style2">MB8002</td>
+                <td class="auto-style3">WONKA</td>
                 <td class="left-aligned" style="width: 204px">
 
                 &nbsp;&nbsp;
@@ -77,8 +77,8 @@
                 <asp:Button ID="btnRedirect2" runat="server" Text="View" OnClientClick="redirectToMenuPage()" PostBackUrl="~/Menu/Menu.aspx" />
             </tr>
             <tr>
-                <td class="auto-style2">MB5003</td>
-                <td class="auto-style3">ALI BIN ABU</td>
+                <td class="auto-style2">MB8003</td>
+                <td class="auto-style3">AQUAMAN</td>
                 <td class="left-aligned" style="width: 204px">
 
                 &nbsp;&nbsp;
@@ -90,8 +90,8 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">MB5004</td>
-                <td class="auto-style3">AMIRUL BINTI MUHAMMAD JOHARI</td>
+                <td class="auto-style2">MB8004</td>
+                <td class="auto-style3">WAR ON TERROR KL ANARKI</td>
                 <td class="left-aligned" style="width: 204px">
 
                 &nbsp;&nbsp;

@@ -1,0 +1,69 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/Header.Master" AutoEventWireup="true" CodeBehind="Completed.aspx.cs" Inherits="WAD_Assignment.MyBooking.Completed" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
+<main class="confirm-container" style="opacity: 1; transform: none;">
+
+<div class="confirm-center">
+    <article class="confirm-content">
+        <img
+            src="../image/confirm.png"
+            alt="confirmImage"
+            width="90"
+            height="95"
+            />
+        <p class="confirm-step">STEP 2 OF 2</p>
+    <div class="confirm-refund">
+    <div class="row">
+        <p>Refund ID </p>
+        <p>R001</p>
+    </div>
+    <div class="row">
+        <p>Refund Date </p>
+            <p>11/12/2023</p>
+    </div>
+    <div class="row">
+        <p>Amount</p>
+        <p>RM 28.00</p>
+        </div>
+    </div>
+<div class="terms">
+    <p>
+        <input type="checkbox" id="term" name="term" class="term"/>
+        <label for="term"> I have read the <a href="#">terms &amp; conditions</a>.</label> 
+    </p>
+</div>
+    </article>
+    <a id="submitRefund" href="../MyBooking/myBooking.aspx ">Submit</a>
+</div>
+   
+
+</main>
+
+<div id ="popUpContainer">
+    <div class="popUpMes">
+        <h1>Refund request submitted</h1>
+            <p>We're processing your request. We'll repond as soon as possible. Thank You</p>
+        <button id="close" class="close" onclick="window.location.href = '~/HomePage/Homepage.aspx'">OK</button>
+    </div>
+</div>
+
+<script>
+    const submit = document.getElementById('submit');
+    const popUpContainer = document.getElementById('popUpContainer');
+    const close = document.getElementById('close');
+
+    submit.addEventListener('click', () => {
+        popUpContainer.classList.add('show');
+    });
+
+    close.addEventListener('click', () => {
+        popUpContainer.classList.remove('show');
+    });
+
+</script>
+
+</asp:Content>
+
+
+
