@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminHeader.master.cs" Inherits="WAD_Assignment.Admin.AdminHeader" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -7,15 +8,16 @@
     <style>
         @font-face {
             font-family: 'Gabriela Stencil';
-            src: url('path-to-your-font/GabrielaStencil-Regular.woff2') format('woff2'),
-                 url('path-to-your-font/GabrielaStencil-Regular.woff') format('woff');
+            src: url('path-to-your-font/GabrielaStencil-Regular.woff2') format('woff2'), url('path-to-your-font/GabrielaStencil-Regular.woff') format('woff');
             font-weight: normal;
             font-style: normal;
         }
+        /* Rest of your styles */
+
 
         body {
             background-color: black;
-            color: yellow;             
+            color: yellow;
             font-family: 'Gabriela Stencil', sans-serif;
         }
 
@@ -31,7 +33,6 @@
             box-sizing: border-box;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             text-align: center;
-
         }
 
         .table-container {
@@ -50,7 +51,6 @@
         .table-container table tr td.left-aligned {
             text-align: left;
         }
-
     </style>
 
 </head>
@@ -58,9 +58,9 @@
 
     <form id="form1" runat="server">
         <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-            
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
         </div>
     </form>
 </body>

@@ -81,7 +81,7 @@
     </div>
 
     <!-- Add this div for the password recovery popup -->
-    <div id="passwordRecoveryPopup" style=" display:none; top: 40%; left: 25%; margin: auto; position: absolute; max-height: 100%; /* height: 77%; */ width: 50%; opacity: 1;">
+    <div id="passwordRecoveryPopup" style=" display:none; top: 40%; left: 32%; margin: auto; position: absolute; max-height: 100%; /* height: 77%; */ width: 35%; opacity: 1;">
         <div style="text-align: right; margin-bottom: -15px; color: #e9eb74;">
             <ion-icon name="close" style="cursor: pointer; font-size: 23px; margin-top: 5px; margin-right: -10px;"
                 onclick="hidePasswordRecoveryPopup();">
