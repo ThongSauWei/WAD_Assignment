@@ -120,7 +120,7 @@
             </div>
             <h3>Thanksgiving</h3>
             <span>1h 12min | Horror</span>
-            <asp:Button ID="btnEdit1" CssClass="btnEdit" runat="server" Text="Edit" PostBackUrl="" />
+            <asp:Button ID="btnEdit1" CssClass="btnEdit" runat="server" Text="Edit" PostBackUrl="~/Admin-New/EditMovie.aspx" />
             <asp:Button ID="btnDelete1" CssClass="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
         </div>
         <div class="movie">
@@ -129,7 +129,7 @@
             </div>
             <h3>Thanksgiving</h3>
             <span>1h 12min | Horror</span>
-            <asp:Button ID="btnEdit2" CssClass="btnEdit" runat="server" Text="Edit" PostBackUrl="" />
+            <asp:Button ID="btnEdit2" CssClass="btnEdit" runat="server" Text="Edit" PostBackUrl="~/Admin-New/EditMovie.aspx" />
             <asp:Button ID="btnDelete2" CssClass="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
         </div>
         <div class="movie">
@@ -138,7 +138,7 @@
             </div>
             <h3>Thanksgiving</h3>
             <span>1h 12min | Horror</span>
-            <asp:Button ID="btnEdit3" CssClass="btnEdit" runat="server" Text="Edit" PostBackUrl="" />
+            <asp:Button ID="btnEdit3" CssClass="btnEdit" runat="server" Text="Edit" PostBackUrl="~/Admin-New/EditMovie.aspx" />
             <asp:Button ID="btnDelete3" CssClass="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
         </div>
         <div class="movie">
@@ -147,12 +147,12 @@
             </div>
             <h3>Thanksgiving</h3>
             <span>1h 12min | Horror</span>
-            <asp:Button ID="btnEdit4" CssClass="btnEdit" runat="server" Text="Edit" PostBackUrl="" />
+            <asp:Button ID="btnEdit4" CssClass="btnEdit" runat="server" Text="Edit" PostBackUrl="~/Admin-New/EditMovie.aspx" />
             <asp:Button ID="btnDelete4" CssClass="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
         </div>
     </div>
     <div class="add-movie">
-        <asp:Button ID="btnAdd" CssClass="btnAdd" runat="server" Text="Add New Movie" PostBackUrl="" />
+        <asp:Button ID="btnAdd" CssClass="btnAdd" runat="server" Text="Add New Movie" PostBackUrl="~/Admin-New/AddMovie.aspx" />
     </div>
     <asp:Panel ID="deletePanel" CssClass="deletePanel" runat="server" Visible="False">
         <h3>Are you sure you want to delete this movie?</h3>

@@ -11,7 +11,7 @@ namespace WAD_Assignment.Admin_New
 {
 
 
-    public partial class EditMovie
+    public partial class AddMovie
     {
 
         /// <summary>
@@ -249,12 +249,12 @@ namespace WAD_Assignment.Admin_New
         protected global::System.Web.UI.WebControls.FileUpload imgUpload;
 
         /// <summary>
-        /// updateMovie control.
+        /// addMovie control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button updateMovie;
+        protected global::System.Web.UI.WebControls.Button addMovie;
     }
 }
