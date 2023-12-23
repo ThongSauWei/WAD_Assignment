@@ -1,0 +1,53 @@
+﻿.content-box {
+    margin: 180px auto 0;
+    height: 450px;
+    width: 70%;
+}
+
+.left-side {
+    height: 100%;
+    width: 30%;
+    float: left;
+}
+
+.right-side {
+    height: 100%;
+    width: 70%;
+    float: left;
+    overflow-y: scroll;
+}
+
+.movie-input {
+    width: 40%;
+    float: left;
+    margin-top: 10px;
+}
+
+.movie-input * {
+    color: #ecd261;
+}
+
+.movie-input select, .movie-input table table *, .movie-input table th {
+    color: black;
+}
+
+.movie-input span {
+    width: 100%;
+    display: block;
+}
+
+.bottom-side {
+    width: 100%;
+}
+
+.btnFinish {
+    background-color: #ecd261;
+    border: none;
+    width: 25%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    margin-left: 25%;
+    margin-top: 40px;
+}
