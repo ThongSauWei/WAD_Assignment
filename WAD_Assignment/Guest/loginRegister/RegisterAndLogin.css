@@ -1,0 +1,461 @@
+﻿body#topHeader {
+    background-image: url('../../image/K9it.gif') !important;
+    /*background-size: cover !important; ~/AdminPage/Admin.aspx*/
+    background-attachment: fixed !important;
+    max-height: 100% !important;
+    max-width: 100% !important;
+    /*filter: blur(100px);*/
+}
+
+body {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.RH1 {
+    animation: blink-shadow 1s infinite;
+    letter-spacing: 3px;
+    color: white;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.RH1::after {
+    content: "";
+    display: block;
+    width: 30%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ecd261);
+    position: absolute;
+    top: 110%;
+    left: 105px;
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: line-animation 2s linear infinite;
+}
+
+@keyframes line-animation {
+    0%, 100% {
+        transform: translateX(0);
+        background-position: 100% 0;
+    }
+
+    50% {
+        transform: translateX(100%);
+        background-position: 0 0;
+    }
+}
+
+#registerForm, #passwordRecoveryPopup {
+    animation: form-entry 3s ease-in-out;
+    /*background: linear-gradient(#ecd261, #0b2135);*/
+    margin: 205px auto;
+    width: 520px;
+    padding: 10px 30px 10px 30px;
+    border: 1px solid #ecd261;
+    /*background-color: rgba(40, 41, 52, 1);*/ /*#e9eb74*/
+    background-color: transparent;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 15px 0px rgb(252 255 99 / 60%);
+    /*box-shadow: 0 20px 50px 5px rgb(139 141 39 / 60%);*/
+    transition: 1s all;
+    opacity: 0.95;
+    backdrop-filter: blur(8px);
+}
+
+.form-group {
+    animation:input-entry 3s ease-in;
+}
+
+.form-group input {
+    animation: input-entry 3s ease-in;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    letter-spacing: 2px;
+}
+
+.RLaber {
+    animation: input-entry 3s ease-in, blink-shadow 1s infinite;
+    position: relative;
+    top: -55px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+    letter-spacing: 2px;
+}
+
+#passwordRecoveryPopup .form-group input:focus ~ label,
+#passwordRecoveryPopup .form-group input:valid ~ label {
+    top: -80px;
+    left: 0;
+    color: #e9eb74;
+    font-size: 18px;
+}
+
+#registerForm .form-group input:focus ~ label,
+#registerForm .form-group input:valid ~ label {
+    top: -80px;
+    left: 0;
+    color: #e9eb74;
+    font-size: 18px;
+}
+
+span#ContentPlaceHolder1_RegularExpressionValidator2 {
+    color: red;
+    position: relative;
+    top: -48px;
+    animation: blink-shadow-errorMsg 1s infinite;
+}
+
+span#ContentPlaceHolder1_RegularExpressionValidator1 {
+    color: red;
+    position: relative;
+    top: -45px;
+    animation: blink-shadow-errorMsg 1s infinite;
+}
+
+span#ContentPlaceHolder1_passwordValidator {
+    color: red;
+    position: relative;
+    top: -45px;
+    animation: blink-shadow-errorMsg 1s infinite;
+}
+
+.reg, .reg1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #ffff;
+}
+
+.reg, .reg1 a {
+    text-decoration: none;
+    margin-left: 5px;
+    color: #e9eb74;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+
+.reg2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #ffff;
+}
+
+.reg2 a {
+    text-decoration: none;
+    margin-left: 5px;
+    color: #e9eb74;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+div.btnRegister {
+    width: 200px;
+    height: 38.4px;
+    overflow: hidden;
+    margin: auto;
+}
+
+div.btnRegister span {
+    position: relative;
+    display: block;
+}
+
+.register-btn {
+    position: relative;
+    top:-81px;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    background-color: inherit;
+    border: none;
+    text-transform: uppercase;
+    color: #ecd261;
+    letter-spacing: 3px;
+    transition: 0.5s;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.register-btn:hover {
+    color: black;
+    background-color: #ecd261;
+}
+
+div.btnRegister:hover {
+    box-shadow: 0 0 5px #ecd261, 0 0 25px #ecd261, 0 0 50px #ecd261, 0 0 100px #ecd261;
+}
+
+div.btnRegister span:first-child {
+    top: 0px;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ecd261);
+    animation: animation-top 1s linear infinite;
+}
+
+ion-icon.iconFirst.md.hydrated {
+    position: absolute;
+    top: 88px;
+    right: 40px;
+    transform: translateY(-50%);
+    color: #ddc862;
+    font-size: 30px;
+}
+
+ion-icon.iconTwo.md.hydrated {
+    position: absolute;
+    top: 167px;
+    right: 40px;
+    transform: translateY(-50%);
+    color: #ddc862;
+    font-size: 25px;
+}
+
+ion-icon.iconThree.md.hydrated {
+    position: absolute;
+    top: 238px;
+    right: 40px;
+    transform: translateY(-50%);
+    color: #ddc862;
+    font-size: 25px;
+}
+
+ion-icon.iconFour.md.hydrated {
+    position: absolute;
+    top: 315px;
+    right: 40px;
+    transform: translateY(-50%);
+    color: #ddc862;
+    font-size: 30px;
+}
+
+ion-icon.iconFive.md.hydrated {
+    position: absolute;
+    top: 390px;
+    right: 40px;
+    transform: translateY(-50%);
+    color: #ddc862;
+    font-size: 25px;
+}
+
+ion-icon.iconSix.md.hydrated {
+    position: absolute;
+    top: 482px;
+    right: 40px;
+    transform: translateY(-50%);
+    color: #ddc862;
+    font-size: 25px;
+}
+
+
+
+@keyframes animation-top {
+    0% {
+        left: -100%;
+    }
+
+    50%,100% {
+        left: 100%;
+    }
+}
+
+div.btnRegister span:nth-child(2) {
+    top: -100%;
+    left: 198px;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #ecd261);
+    animation: animation-right 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes animation-right {
+    0% {
+        top: -100%;
+    }
+
+    50%,100% {
+        top: 100%;
+    }
+}
+
+div.btnRegister span:nth-child(3) {
+    bottom: 3px;
+    left: 100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #ecd261);
+    animation: animation-bottom 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes animation-bottom {
+    0% {
+        left: 100%;
+    }
+
+    50%,100% {
+        left: -100%;
+    }
+}
+
+div.btnRegister span:nth-child(4) {
+    top: 100%;
+    left: 0px;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #ecd261);
+    animation: animation-left 1s linear infinite;
+    animation-delay: 0.6s;
+}
+
+@keyframes animation-left {
+    0% {
+        top: 100%;
+    }
+
+    50%,100% {
+        top: -200%;
+    }
+}
+
+
+@keyframes form-entry {
+    0% {
+        height: 0;
+        width: 0;
+        opacity: 0;
+        padding: 0;
+    }
+
+    20% {
+        height: 0;
+        border: 1px solid #e9eb74;
+        width: 0;
+        opacity: 0;
+        padding: 0;
+    }
+
+    40% {
+        width: 0;
+        height: 400px;
+        border: 6px solid #e9eb74;
+        opacity: 0;
+        padding: 0;
+    }
+
+    100% {
+        /*height: 100%;*/
+        width: 600px;
+        opacity: 1;
+    }
+}
+
+@keyframes blink-shadow {
+    0%, 100% {
+        text-shadow: 2px 2px 10px #fdff88;
+    }
+
+    50% {
+        text-shadow: none;
+    }
+}
+
+@keyframes blink-shadow-errorMsg {
+    0%, 100% {
+        text-shadow: 0 0 10px rgb(255 255 255);
+    }
+
+    50% {
+        text-shadow: none;
+    }
+}
+
+@keyframes input-entry {
+    0% {
+        opacity: 0 !important;
+    }
+
+    90% {
+        opacity: 0 !important;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blink-shadow {
+    0%, 100% {
+        text-shadow: 0 0 10px #e9eb74;
+    }
+
+    50% {
+        text-shadow: none;
+    }
+}
+/* Small screens (phones) */
+@media all and (max-width: 767px) {
+    .registerHTML {
+        background-size: cover;
+        background-attachment: fixed;
+        margin: 120px 0px 0px 8px;
+    }
+
+    #registerForm {
+        width: 100% !important; /* Adjust the width for smaller screens */
+        margin: 10px !important; /* Adjust the margin for smaller screens */
+    }
+}
+/* Medium screens (tablets) */
+@media all and (min-width: 768px) and (max-width: 991px) {
+    .registerHTML {
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    div#passwordRecoveryPopup {
+        top: 25% !important;
+        width: 60% !important;
+        left: 179px !important;
+    }
+        
+}
+/* Large screens (desktops) */
+@media all and (min-width: 992px) and (max-width: 1199px) {
+    .registerHTML {
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    div#passwordRecoveryPopup {
+        top: 26% !important;
+        width: 46% !important;
+        left: 313px !important;
+    }
+}
+/* Extra-large screens (large desktops) */
+@media all and (min-width: 1200px) {
+    .registerHTML {
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    div#passwordRecoveryPopup {
+        top: 24% !important;
+    }
+}
