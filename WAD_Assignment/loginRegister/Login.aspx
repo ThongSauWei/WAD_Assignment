@@ -128,7 +128,6 @@
 
 
     <script type="text/javascript">
-
         function removeRequiredAttribute(divId) {
             var hiddenDiv = document.getElementById(divId);
 
@@ -151,32 +150,33 @@
                     input.setAttribute('required', 'true');
                 });
             }
+        }
 
-            function showPasswordRecoveryPopup() {
-                var popup = document.getElementById('passwordRecoveryPopup');
-                popup.style.display = 'block';
+        function showPasswordRecoveryPopup() {
+            var popup = document.getElementById('passwordRecoveryPopup');
+            popup.style.display = 'block';
 
-                // Triggering a reflow to enable the transition effect
-                popup.offsetHeight;
+            // Triggering a reflow to enable the transition effect
+            popup.offsetHeight;
 
-                popup.style.opacity = 1;
+            popup.style.opacity = 1;
 
-                addRequiredAttribute("passwordRecoveryPopup");
-                removeRequiredAttribute("registerForm");
-            }
+            addRequiredAttribute("passwordRecoveryPopup");
+            removeRequiredAttribute("registerForm");
+        }
 
-            function hidePasswordRecoveryPopup() {
-                var popup = document.getElementById('passwordRecoveryPopup');
-                popup.style.opacity = 0;
+        function hidePasswordRecoveryPopup() {
+            var popup = document.getElementById('passwordRecoveryPopup');
+            popup.style.opacity = 0;
 
-                // After the transition, hide the popup
-                setTimeout(function () {
-                    popup.style.display = 'none';
-                }, 300); // 300ms matches the transition duration
+            // After the transition, hide the popup
+            setTimeout(function () {
+                popup.style.display = 'none';
+            }, 300); // 300ms matches the transition duration
 
-                addRequiredAttribute("registerForm");
-                removeRequiredAttribute("passwordRecoveryPopup");
-            }
+            addRequiredAttribute("registerForm");
+            removeRequiredAttribute("passwordRecoveryPopup");
+        }
     </script>
 
 </asp:Content>
