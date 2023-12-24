@@ -67,29 +67,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin-New\AddMovie.aspx" />
-    <Content Include="Admin-New\EditMovie.aspx" />
-    <Content Include="Admin-New\ManageMovie.aspx" />
+    <Content Include="Admin-New\ManageMovie\AddMovie.aspx" />
+    <Content Include="Admin-New\ManageMovie\AddAndEditMovie.css" />
+    <Content Include="Admin-New\ManageMovie\EditMovie.aspx" />
+    <Content Include="Admin-New\ManageMovie\ManageMovie.aspx" />
+    <Content Include="Admin-New\ManageMovie\ManageMovie.css" />
     <Content Include="Admin\AdminCRUD.aspx" />
     <Content Include="Admin\AdminMain.aspx" />
     <Content Include="Admin\MemberCRUD.aspx" />
     <Content Include="Admin\MovieCRUD.aspx" />
     <Content Include="Admin\RefundStatus.aspx" />
-    <Content Include="Detail\abc\Testing.aspx" />
     <Content Include="App_Data\TicketDB.mdf" />
     <Content Include="App_Data\TicketDB_log.ldf">
       <DependentUpon>TicketDB.mdf</DependentUpon>
     </Content>
-    <Content Include="Detail\abc\Testing.aspx" />
-    <Content Include="Detail\Detail.aspx" />
-    <Content Include="HomePage\swipperMovie6.jpg" />
+    <Content Include="Guest\Detail\Detail.aspx" />
+    <Content Include="Guest\Detail\Detail.css" />
+    <Content Include="Guest\HomePage\Homepage.css" />
+    <Content Include="Guest\HomePage\Homepage.js" />
+    <Content Include="Guest\loginRegister\Login.css" />
+    <Content Include="Guest\loginRegister\Login.js" />
+    <Content Include="Guest\loginRegister\Register.css" />
+    <Content Include="Guest\Menu\Menu.css" />
+    <Content Include="image\swipperMovie6.jpg" />
     <Content Include="image\booked.png" />
-    <Content Include="HomePage\Homepage.aspx" />
-    <Content Include="HomePage\swipperMovie1.png" />
-    <Content Include="HomePage\swipperMovie2.jpg" />
-    <Content Include="HomePage\swipperMovie3.jpg" />
-    <Content Include="HomePage\swipperMovie4.jpg" />
-    <Content Include="HomePage\swipperMovie5.jpeg" />
+    <Content Include="Guest\HomePage\Homepage.aspx" />
+    <Content Include="image\swipperMovie1.png" />
+    <Content Include="image\swipperMovie2.jpg" />
+    <Content Include="image\swipperMovie3.jpg" />
+    <Content Include="image\swipperMovie4.jpg" />
+    <Content Include="image\swipperMovie5.jpeg" />
     <Content Include="image\card-payment.png" />
     <Content Include="image\chair.png" />
     <Content Include="image\checked.png" />
@@ -108,53 +115,55 @@
     <Content Include="image\minion1.mp4" />
     <Content Include="image\minion2.gif" />
     <Content Include="image\MM9r.gif" />
-    <Content Include="loginRegister\Login.aspx" />
-    <Content Include="loginRegister\PasswordRecovery.aspx" />
+    <Content Include="Guest\loginRegister\Login.aspx" />
+    <Content Include="Guest\loginRegister\PasswordRecovery.aspx" />
     <Content Include="image\RBackground.gif" />
-    <Content Include="loginRegister\Register.css" />
-    <Content Include="Member\Booking.aspx" />
-    <Content Include="Member\ConfirmBooking.aspx" />
+    <Content Include="Guest\loginRegister\RegisterAndLogin.css" />
+    <Content Include="MasterPage\Header.js" />
+    <Content Include="Member\Booking\Booking.aspx" />
+    <Content Include="Member\Booking\ConfirmBooking.aspx" />
     <Content Include="image\movie-image1.jpg" />
-    <Content Include="Member\Booking.css" />
+    <Content Include="Member\Booking\Booking.css" />
     <Content Include="image\cinemaLogo.png" />
-    <Content Include="header.css" />
+    <Content Include="MasterPage\header.css" />
     <Content Include="image\movie1.jpg" />
     <Content Include="image\movie2.jpg" />
-    <Content Include="Member\ConfirmBooking.css" />
-    <Content Include="Member\Payment.aspx" />
-    <Content Include="Member\Payment.css" />
-    <Content Include="Member\Payment.js" />
-    <Content Include="Menu\Menu.aspx" />
-    <Content Include="MyBooking\Cancel.aspx" />
-    <Content Include="MyBooking\Completed.aspx" />
-    <Content Include="MyBooking\myBooking.aspx" />
-    <Content Include="MyBooking\BookingDetail.aspx" />
-    <Content Include="MyBooking\bookingStyles.css" />
+    <Content Include="Member\Booking\ConfirmBooking.css" />
+    <Content Include="Member\Booking\Payment.aspx" />
+    <Content Include="Member\Booking\Payment.css" />
+    <Content Include="Member\Booking\Payment.js" />
+    <Content Include="Guest\Menu\Menu.aspx" />
+    <Content Include="Member\MyBooking\Cancel.aspx" />
+    <Content Include="Member\MyBooking\Completed.aspx" />
+    <Content Include="Member\MyBooking\Completed.js" />
+    <Content Include="Member\MyBooking\myBooking.aspx" />
+    <Content Include="Member\MyBooking\BookingDetail.aspx" />
+    <Content Include="Member\MyBooking\bookingStyles.css" />
     <Content Include="Testing.aspx" />
     <Content Include="TTT.aspx" />
     <Content Include="Web.config" />
-    <Content Include="loginRegister\Register.aspx" />
+    <Content Include="Guest\loginRegister\Register.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin-New\AddMovie.aspx.cs">
+    <Compile Include="Admin-New\ManageMovie\AddMovie.aspx.cs">
       <DependentUpon>AddMovie.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin-New\AddMovie.aspx.designer.cs">
+    <Compile Include="Admin-New\ManageMovie\AddMovie.aspx.designer.cs">
       <DependentUpon>AddMovie.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin-New\EditMovie.aspx.cs">
+    <Compile Include="Admin-New\ManageMovie\EditMovie.aspx.cs">
       <DependentUpon>EditMovie.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin-New\EditMovie.aspx.designer.cs">
+    <Compile Include="Admin-New\ManageMovie\EditMovie.aspx.designer.cs">
       <DependentUpon>EditMovie.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin-New\ManageMovie.aspx.cs">
+    <Compile Include="Admin-New\ManageMovie\ManageMovie.aspx.cs">
       <DependentUpon>ManageMovie.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin-New\ManageMovie.aspx.designer.cs">
+    <Compile Include="Admin-New\ManageMovie\ManageMovie.aspx.designer.cs">
       <DependentUpon>ManageMovie.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AdminCRUD.aspx.cs">
@@ -199,103 +208,95 @@
     <Compile Include="Admin\RefundStatus.aspx.designer.cs">
       <DependentUpon>RefundStatus.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Detail\abc\Testing.aspx.cs">
-      <DependentUpon>Testing.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Detail\abc\Testing.aspx.designer.cs">
-      <DependentUpon>Testing.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Detail\Detail.aspx.cs">
+    <Compile Include="Guest\Detail\Detail.aspx.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Detail\Detail.aspx.designer.cs">
+    <Compile Include="Guest\Detail\Detail.aspx.designer.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Header.Master.cs">
+    <Compile Include="MasterPage\Header.Master.cs">
       <DependentUpon>Header.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Header.Master.designer.cs">
+    <Compile Include="MasterPage\Header.Master.designer.cs">
       <DependentUpon>Header.Master</DependentUpon>
     </Compile>
-    <Compile Include="HomePage\Homepage.aspx.cs">
+    <Compile Include="Guest\HomePage\Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="HomePage\Homepage.aspx.designer.cs">
+    <Compile Include="Guest\HomePage\Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="loginRegister\Login.aspx.cs">
+    <Compile Include="Guest\loginRegister\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="loginRegister\Login.aspx.designer.cs">
+    <Compile Include="Guest\loginRegister\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="loginRegister\PasswordRecovery.aspx.cs">
+    <Compile Include="Guest\loginRegister\PasswordRecovery.aspx.cs">
       <DependentUpon>PasswordRecovery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="loginRegister\PasswordRecovery.aspx.designer.cs">
+    <Compile Include="Guest\loginRegister\PasswordRecovery.aspx.designer.cs">
       <DependentUpon>PasswordRecovery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Member\Booking.aspx.cs">
+    <Compile Include="Member\Booking\Booking.aspx.cs">
       <DependentUpon>Booking.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Member\Booking.aspx.designer.cs">
+    <Compile Include="Member\Booking\Booking.aspx.designer.cs">
       <DependentUpon>Booking.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Member\ConfirmBooking.aspx.cs">
+    <Compile Include="Member\Booking\ConfirmBooking.aspx.cs">
       <DependentUpon>ConfirmBooking.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Member\ConfirmBooking.aspx.designer.cs">
+    <Compile Include="Member\Booking\ConfirmBooking.aspx.designer.cs">
       <DependentUpon>ConfirmBooking.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Member\Payment.aspx.cs">
+    <Compile Include="Member\Booking\Payment.aspx.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Member\Payment.aspx.designer.cs">
+    <Compile Include="Member\Booking\Payment.aspx.designer.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Menu\Menu.aspx.cs">
+    <Compile Include="Guest\Menu\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Menu\Menu.aspx.designer.cs">
+    <Compile Include="Guest\Menu\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MyBooking\Cancel.aspx.cs">
+    <Compile Include="Member\MyBooking\Cancel.aspx.cs">
       <DependentUpon>Cancel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MyBooking\Cancel.aspx.designer.cs">
+    <Compile Include="Member\MyBooking\Cancel.aspx.designer.cs">
       <DependentUpon>Cancel.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MyBooking\Completed.aspx.cs">
+    <Compile Include="Member\MyBooking\Completed.aspx.cs">
       <DependentUpon>Completed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MyBooking\Completed.aspx.designer.cs">
+    <Compile Include="Member\MyBooking\Completed.aspx.designer.cs">
       <DependentUpon>Completed.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MyBooking\myBooking.aspx.cs">
+    <Compile Include="Member\MyBooking\myBooking.aspx.cs">
       <DependentUpon>myBooking.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MyBooking\myBooking.aspx.designer.cs">
+    <Compile Include="Member\MyBooking\myBooking.aspx.designer.cs">
       <DependentUpon>myBooking.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MyBooking\BookingDetail.aspx.cs">
+    <Compile Include="Member\MyBooking\BookingDetail.aspx.cs">
       <DependentUpon>BookingDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MyBooking\BookingDetail.aspx.designer.cs">
+    <Compile Include="Member\MyBooking\BookingDetail.aspx.designer.cs">
       <DependentUpon>BookingDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -313,22 +314,17 @@
     <Compile Include="TTT.aspx.designer.cs">
       <DependentUpon>TTT.aspx</DependentUpon>
     </Compile>
-    <Compile Include="loginRegister\Register.aspx.cs">
+    <Compile Include="Guest\loginRegister\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="loginRegister\Register.aspx.designer.cs">
+    <Compile Include="Guest\loginRegister\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\Web.config" />
-    <Content Include="Member\Web.config" />
-    <Content Include="Header.Master" />
+    <Content Include="MasterPage\Header.Master" />
     <Content Include="Admin\AdminHeader.Master" />
-    <Content Include="..\.editorconfig">
-      <Link>.editorconfig</Link>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -337,9 +333,7 @@
     </None>
     <Content Include="Web.sitemap" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Guest\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
