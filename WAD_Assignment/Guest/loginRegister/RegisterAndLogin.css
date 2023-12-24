@@ -1,6 +1,6 @@
 ﻿body#topHeader {
-    background-image: url('../../image/K9it.gif') !important;
-    /*background-size: cover !important; ~/AdminPage/Admin.aspx*/
+    background-image: url('../image/K9it.gif') !important;
+    background-size: cover !important;
     background-attachment: fixed !important;
     max-height: 100% !important;
     max-width: 100% !important;
