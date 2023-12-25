@@ -13,7 +13,6 @@
 }
 
 .swiper-slide.slide-1 {
-    background-image: url(../../image/swipperMovie1.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -48,7 +47,7 @@
 }
 
 .swiper-container .typeMenu p {
-    color: var(--gray);
+    color: #ffffff;
     font-size: 1.2rem;
 }
 
@@ -82,7 +81,7 @@
 }
 
 .swiper-container .movie-rating p, .movie-btnMenu p {
-    color: #fff;
+    color: red;
     font-size: 17px;
     font-weight: 600;
     margin-top: 5px;
@@ -437,4 +436,13 @@ article p {
 
 .containerReview .section-title strong {
     color: var(--citrine);
+}
+
+.btn-container {
+    display: flex;
+    gap: 10px; /* Adjust the gap as needed */
+}
+
+.time-item {
+    display: none;
 }

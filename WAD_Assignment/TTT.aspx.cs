@@ -36,6 +36,15 @@ namespace WAD_Assignment
                     allButton.Click += CategoryButton_Click;  // Add click event handler
                     menuBtnsDiv.Controls.Add(allButton);
 
+                    // Create a "Coming Soon" button
+                    Button comingSoonButton = new Button();
+                    comingSoonButton.Text = "Coming Soon";
+                    comingSoonButton.CssClass = "menu-btn";
+                    comingSoonButton.ID = "comingSoon";
+                    comingSoonButton.Click += CategoryButton_Click;  // Add click event handler
+                    menuBtnsDiv.Controls.Add(comingSoonButton);
+
+
                     // Add buttons for distinct categories
                     foreach (DataRow row in distinctCategories.Rows)
                     {
@@ -65,7 +74,7 @@ namespace WAD_Assignment
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT DISTINCT category FROM Movie";
+                string query = "SELECT DISTINCT category FROM Movie WHERE status = 'released'";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -87,16 +96,26 @@ namespace WAD_Assignment
 
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["CinemaDB"].ConnectionString))
             {
-                string query = "SELECT movieID, movieName, movieImage, category FROM Movie";
+                string query = "SELECT movieID, movieName, movieImage, category, duration FROM Movie";
 
-                if (!string.IsNullOrEmpty(category))
+                // Add condition to include only released movies for the "All" category
+                if (string.IsNullOrEmpty(category) || category.ToLower() == "all")
                 {
-                    query += " WHERE category = @category";
+                    query += " WHERE status = 'released'";
+                }
+                else if (category.ToLower() == "comingsoon")
+                {
+                    // Include only pending movies for the "Coming Soon" category
+                    query += " WHERE releaseDate >= CAST(GETDATE() AS DATE) AND status = 'pending'";
+                }
+                else
+                {
+                    query += " WHERE category = @category AND status = 'released'";
                 }
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    if (!string.IsNullOrEmpty(category))
+                    if (!string.IsNullOrEmpty(category) && category.ToLower() != "comingsoon")
                     {
                         command.Parameters.AddWithValue("@category", category);
                     }
@@ -112,6 +131,8 @@ namespace WAD_Assignment
 
             return dataTable;
         }
+
+
 
         private DataTable GetMoviesForCategoryFromDatabase(string category)
         {
@@ -138,7 +159,7 @@ namespace WAD_Assignment
             }
         }
 
-        
+
 
         private void LoadMoviesForCategory(string category)
         {

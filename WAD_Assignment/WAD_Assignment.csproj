@@ -94,6 +94,9 @@
     <Content Include="Guest\Menu\Menu.css" />
     <Content Include="image\cinema-screen.jpg" />
     <Content Include="image\minion-cry.gif" />
+    <Content Include="image\swipperMovie10.jpg" />
+    <Content Include="image\swipperMovie11.jpg" />
+    <Content Include="image\swipperMovie12.jpg" />
     <Content Include="image\swipperMovie6.jpg" />
     <Content Include="image\booked.png" />
     <Content Include="Guest\HomePage\Homepage.aspx" />
@@ -109,6 +112,9 @@
     <Content Include="image\profile-user.png" />
     <Content Include="image\refund.png" />
     <Content Include="image\screen.png" />
+    <Content Include="image\swipperMovie7.jpg" />
+    <Content Include="image\swipperMovie8.jpeg" />
+    <Content Include="image\swipperMovie9.jpg" />
     <Content Include="image\tng-payment.png" />
     <Content Include="image\banana.gif" />
     <Content Include="image\banana1.gif" />

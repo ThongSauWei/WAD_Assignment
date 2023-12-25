@@ -59,6 +59,7 @@
             padding: 0.6rem 0;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .menu-btn {
