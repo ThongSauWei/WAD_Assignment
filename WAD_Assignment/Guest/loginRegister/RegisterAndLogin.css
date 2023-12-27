@@ -1,10 +1,15 @@
 ﻿body#topHeader {
-    background-image: url('../image/K9it.gif') !important;
+    background-image: url('../../image/K9it.gif') !important;
     background-size: cover !important;
     background-attachment: fixed !important;
     max-height: 100% !important;
     max-width: 100% !important;
     /*filter: blur(100px);*/
+}
+
+body.blur-background {
+    filter: blur(10px); /* Adjust the blur intensity as needed */
+    pointer-events: none;
 }
 
 body {
@@ -46,6 +51,11 @@ body {
     }
 }
 
+#LF {
+    margin: 205px auto;
+    height: 430px;
+}
+
 #registerForm, #passwordRecoveryPopup {
     animation: form-entry 3s ease-in-out;
     /*background: linear-gradient(#ecd261, #0b2135);*/
@@ -63,6 +73,7 @@ body {
     opacity: 0.95;
     backdrop-filter: blur(8px);
 }
+
 
 .form-group {
     animation:input-entry 3s ease-in;
@@ -363,7 +374,7 @@ div.btnRegister span:nth-child(4) {
 
     100% {
         /*height: 100%;*/
-        width: 600px;
+        width: 520px;
         opacity: 1;
     }
 }
