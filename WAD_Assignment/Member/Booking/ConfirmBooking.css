@@ -23,8 +23,21 @@ div.movie-image img {
 
 div.movie-detail {
     float: left;
-    margin: 65px 0 0 20px;
+    margin: 35px 0 0 30px;
     width: 60%;
+}
+
+div.movie-detail span {
+    height: 25px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+}
+
+div.movie-detail span img {
+    float:left;
+    margin-right: 5px;
 }
 
 div.logo {
