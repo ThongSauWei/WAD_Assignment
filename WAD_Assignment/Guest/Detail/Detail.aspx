@@ -119,7 +119,7 @@
                                             <p><span>Movie Time:</span> <%# DateTime.Parse(Eval("time").ToString()).ToString("hh:mm tt") %></p>
                                         </p>
 
-                                        <a href="../../Member/Booking/Booking.aspx" class="btnHeader btn-primarySign" style="width: 350px; text-decoration: none; line-height: -5px; border-radius: 15px;">
+                                        <a href="../../Member/Booking/Booking.aspx?scheduleID=<%# Eval("scheduleID") %>&date=<%# Eval("date") %>&time=<%# Eval("time") %>" class="btnHeader btn-primarySign" style="width: 350px; text-decoration: none; line-height: -5px; border-radius: 15px;">
 
                                             <div class="seatButton" style="margin-left: 90px;">
                                                 Select Seats

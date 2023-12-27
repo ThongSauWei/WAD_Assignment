@@ -159,7 +159,7 @@ namespace WAD_Assignment.Detail
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("SELECT movie.movieID, movie.movieName, movie.movieImage, movie.category, movie.classification, movie.language, movie.subtitle, movie.duration, schedule.hallID, schedule.date, schedule.time FROM  movie JOIN schedule ON movie.movieID = schedule.movieID WHERE movie.movieID = @movieID", connection))
+                using (SqlCommand command = new SqlCommand("SELECT movie.movieID, movie.movieName, movie.movieImage, movie.category, movie.classification, movie.language, movie.subtitle, movie.duration, schedule.scheduleID, schedule.hallID, schedule.date, schedule.time FROM  movie JOIN schedule ON movie.movieID = schedule.movieID WHERE movie.movieID = @movieID", connection))
                 {
                     command.Parameters.AddWithValue("@movieID", movieID);
 

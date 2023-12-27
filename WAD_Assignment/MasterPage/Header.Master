@@ -119,10 +119,9 @@
                                                 <div class="content">
                                                     <div class="txtReminder">
                                                         Rate: Rate and Review "Hunger games"<br />
-                                                         <a href="#popupRate" class="rateA"
-                                                            style="width: 130px; text-decoration: none; line-height: -5px;">
-                                                        Rate Now!
-                                                       </a>
+                                                        <a href="#popupRate" class="rateA"
+                                                            style="width: 130px; text-decoration: none; line-height: -5px;">Rate Now!
+                                                        </a>
                                                         <div class="popupRating" id="popupRate">
                                                             <div class="popup_innerRating" style="margin-top: 55px;">
                                                                 <section class="modalRate hiddenRate">
@@ -132,92 +131,92 @@
                                                                     </div>
                                                                     <div class="wrapperFeed">
                                                                         <h3>Thanksgiving </h3>
-                                                                            <div class="ratingFeed">
-                                                                                <div class="feedback">
-                                                                                    <label class="angry">
-                                                                                        <input type="radio" value="1" name="feedback" />
-                                                                                        <div>
-                                                                                            <svg class="eye left">
-                                                                                                <use xlink:href="#eye">
-                                                                                            </svg>
-                                                                                            <svg class="eye right">
-                                                                                                <use xlink:href="#eye">
-                                                                                            </svg>
-                                                                                            <svg class="mouth">
-                                                                                                <use xlink:href="#mouth">
-                                                                                            </svg>
-                                                                                        </div>
-                                                                                    </label>
-                                                                                    <label class="sad">
-                                                                                        <input type="radio" value="2" name="feedback" />
-                                                                                        <div>
-                                                                                            <svg class="eye left">
-                                                                                                <use xlink:href="#eye">
-                                                                                            </svg>
-                                                                                            <svg class="eye right">
-                                                                                                <use xlink:href="#eye">
-                                                                                            </svg>
-                                                                                            <svg class="mouth">
-                                                                                                <use xlink:href="#mouth">
-                                                                                            </svg>
-                                                                                        </div>
-                                                                                    </label>
-                                                                                    <label class="ok">
-                                                                                        <input type="radio" value="3" name="feedback" />
-                                                                                        <div></div>
-                                                                                    </label>
-                                                                                    <label class="good">
-                                                                                        <input type="radio" value="4" name="feedback" checked />
-                                                                                        <div>
-                                                                                            <svg class="eye left">
-                                                                                                <use xlink:href="#eye">
-                                                                                            </svg>
-                                                                                            <svg class="eye right">
-                                                                                                <use xlink:href="#eye">
-                                                                                            </svg>
-                                                                                            <svg class="mouth">
-                                                                                                <use xlink:href="#mouth">
-                                                                                            </svg>
-                                                                                        </div>
-                                                                                    </label>
-                                                                                    <label class="happy">
-                                                                                        <input type="radio" value="5" name="feedback" />
-                                                                                        <div>
-                                                                                            <svg class="eye left">
-                                                                                                <use xlink:href="#eye">
-                                                                                            </svg>
-                                                                                            <svg class="eye right">
-                                                                                                <use xlink:href="#eye">
-                                                                                            </svg>
-                                                                                        </div>
-                                                                                    </label>
-                                                                                </div>
-
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                                                                                    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 4" id="eye">
-                                                                                        <path
-                                                                                            d="M1,1 C1.83333333,2.16666667 2.66666667,2.75 3.5,2.75 C4.33333333,2.75 5.16666667,2.16666667 6,1">
-                                                                                        </path>
-                                                                                    </symbol>
-                                                                                    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 7" id="mouth">
-                                                                                        <path d="M1,5.5 C3.66666667,2.5 6.33333333,1 9,1 C11.6666667,1 14.3333333,2.5 17,5.5">
-                                                                                        </path>
-                                                                                    </symbol>
-                                                                                </svg>
-
+                                                                        <div class="ratingFeed">
+                                                                            <div class="feedback">
+                                                                                <label class="angry">
+                                                                                    <input type="radio" value="1" name="feedback" />
+                                                                                    <div>
+                                                                                        <svg class="eye left">
+                                                                                            <use xlink:href="#eye">
+                                                                                        </svg>
+                                                                                        <svg class="eye right">
+                                                                                            <use xlink:href="#eye">
+                                                                                        </svg>
+                                                                                        <svg class="mouth">
+                                                                                            <use xlink:href="#mouth">
+                                                                                        </svg>
+                                                                                    </div>
+                                                                                </label>
+                                                                                <label class="sad">
+                                                                                    <input type="radio" value="2" name="feedback" />
+                                                                                    <div>
+                                                                                        <svg class="eye left">
+                                                                                            <use xlink:href="#eye">
+                                                                                        </svg>
+                                                                                        <svg class="eye right">
+                                                                                            <use xlink:href="#eye">
+                                                                                        </svg>
+                                                                                        <svg class="mouth">
+                                                                                            <use xlink:href="#mouth">
+                                                                                        </svg>
+                                                                                    </div>
+                                                                                </label>
+                                                                                <label class="ok">
+                                                                                    <input type="radio" value="3" name="feedback" />
+                                                                                    <div></div>
+                                                                                </label>
+                                                                                <label class="good">
+                                                                                    <input type="radio" value="4" name="feedback" checked />
+                                                                                    <div>
+                                                                                        <svg class="eye left">
+                                                                                            <use xlink:href="#eye">
+                                                                                        </svg>
+                                                                                        <svg class="eye right">
+                                                                                            <use xlink:href="#eye">
+                                                                                        </svg>
+                                                                                        <svg class="mouth">
+                                                                                            <use xlink:href="#mouth">
+                                                                                        </svg>
+                                                                                    </div>
+                                                                                </label>
+                                                                                <label class="happy">
+                                                                                    <input type="radio" value="5" name="feedback" />
+                                                                                    <div>
+                                                                                        <svg class="eye left">
+                                                                                            <use xlink:href="#eye">
+                                                                                        </svg>
+                                                                                        <svg class="eye right">
+                                                                                            <use xlink:href="#eye">
+                                                                                        </svg>
+                                                                                    </div>
+                                                                                </label>
                                                                             </div>
-                                                                            <p style="color:#F5F5F5;"><span>Movie Date:</span> 30 November 2023</p>
-                                                                            <p style="color:#F5F5F5;"><span>Movie Time:</span> 2 - 4pm</p>
-                                                                            <p style="color:#F5F5F5;"><span>Duration:</span> 1h 20min</p>
-                                                                            <!---<p>Movie Date : 17/5/2024</p>--->
-                                                                            <!----<p>Movie Time : 2- 4 pm</p>------->
-                                                                            <textarea name="opinion" cols="30" rows="5" placeholder="Your review..."></textarea>
-                                                                            <div class="btn-group">
-                                                                                <button type="submit" class="btnHeader btn-primarySign">Submit</button>
-                                                                            </div>
+
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                                                                                <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 4" id="eye">
+                                                                                    <path
+                                                                                        d="M1,1 C1.83333333,2.16666667 2.66666667,2.75 3.5,2.75 C4.33333333,2.75 5.16666667,2.16666667 6,1">
+                                                                                    </path>
+                                                                                </symbol>
+                                                                                <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 7" id="mouth">
+                                                                                    <path d="M1,5.5 C3.66666667,2.5 6.33333333,1 9,1 C11.6666667,1 14.3333333,2.5 17,5.5">
+                                                                                    </path>
+                                                                                </symbol>
+                                                                            </svg>
+
+                                                                        </div>
+                                                                        <p style="color: #F5F5F5;"><span>Movie Date:</span> 30 November 2023</p>
+                                                                        <p style="color: #F5F5F5;"><span>Movie Time:</span> 2 - 4pm</p>
+                                                                        <p style="color: #F5F5F5;"><span>Duration:</span> 1h 20min</p>
+                                                                        <!---<p>Movie Date : 17/5/2024</p>--->
+                                                                        <!----<p>Movie Time : 2- 4 pm</p>------->
+                                                                        <textarea name="opinion" cols="30" rows="5" placeholder="Your review..."></textarea>
+                                                                        <div class="btn-group">
+                                                                            <button type="submit" class="btnHeader btn-primarySign">Submit</button>
+                                                                        </div>
                                                                     </div>
                                                                 </section>
-                                                                <a href="#" class="close_popupModal1" style="border-color:gold;"><span>X</span></a>
+                                                                <a href="#" class="close_popupModal1" style="border-color: gold;"><span>X</span></a>
                                                             </div>
                                                         </div>
 
@@ -237,8 +236,54 @@
                     </div>
 
 
-                    <asp:Button ID="Button1" class="btnHeader btn-primarySign" runat="server" Text="Sign in" PostBackUrl="~/Guest/loginRegister/Login.aspx" />
+                    <%
+                        // Simulate setting the session variable during testing
+                        Session["custID"] = "C001"; // testing
 
+                        if (Session["custID"] != null)
+                        {
+                            string custID = Session["custID"].ToString();
+                            string custName = GetCustNameFromDatabase(custID);
+
+                            if (!string.IsNullOrEmpty(custName))
+                            {
+                    %>
+                    <!-- Display custName if successfully retrieved from the database -->
+                    <div class="dropWelcome1">
+                        <div class="welcomeCust1" style="color: gold;">Welcome, <%= custName %>!</div>
+                        <div class="dropdown-contentWelcome1">
+                            <p class="dropLog1" onclick="logout()">Logout</p>
+
+                            <script type="text/javascript">
+                                function logout() {
+                        // Clear session variables
+                        <% Session.Clear(); %>
+
+                        // Abandon the session
+                        <% Session.Abandon(); %>
+
+                                    // Redirect to the sign-in page
+                                    window.location.href = '../loginRegister/Login.aspx';
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <%
+                        }
+                        else
+                        {
+                    %>
+                    <!-- Display a default message - if custName is not found -->
+                    <div>Welcome!</div>
+                    <%
+                        }
+                    %>
+                    <% }
+                        else
+                        { %>
+                    <!-- Display the "Sign in" button if no session custID -->
+                    <asp:Button ID="Button1" class="btnHeader btn-primarySign" runat="server" Text="Sign in" PostBackUrl="~/Guest/loginRegister/Login.aspx" />
+                    <% } %>
                 </div>
 
                 <button type="button" id="Button2" class="menu-open-btn" data-menu-open-btn runat="server">
@@ -277,10 +322,10 @@
                             <!---<a href="#" class="navbar-link">Movie</a>-->
                         </li>
 
-                    <li>
-                        <asp:HyperLink ID="HyperLink8" class="navbar-link" runat="server" NavigateUrl="~/Member/MyBooking/myBooking.aspx">My Booking</asp:HyperLink>
-                        <!---<a href="#" class="navbar-link">My Booking</a>-->
-                    </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink8" class="navbar-link" runat="server" NavigateUrl="~/Member/MyBooking/myBooking.aspx">My Booking</asp:HyperLink>
+                            <!---<a href="#" class="navbar-link">My Booking</a>-->
+                        </li>
 
                     </ul>
 
@@ -311,9 +356,9 @@
                                 <p class="fLeft">
                                     <!---<a href="#" >Home</a>--->
 
-                                <asp:HyperLink ID="HyperLink1" class="fLink" runat="server" NavigateUrl="~/Guest/loginRegister/Login.aspx">Home</asp:HyperLink>
-                                <asp:HyperLink ID="HyperLink2" class="fLink" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
-                                <asp:HyperLink ID="HyperLink4" class="fLink" runat="server" NavigateUrl="~/Member/MyBooking/myBooking.aspx">My Booking</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink1" class="fLink" runat="server" NavigateUrl="~/Guest/loginRegister/Login.aspx">Home</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink2" class="fLink" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink4" class="fLink" runat="server" NavigateUrl="~/Member/MyBooking/myBooking.aspx">My Booking</asp:HyperLink>
 
                                     <!---
                                 <a href="#" class="fLink">Movie</a>
@@ -336,79 +381,78 @@
                                         <p>
                                             1, Jalan SS 22/19, Damansara Jaya,
                                         47400 Petaling Jaya, Selangor, Malaysia
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="address">
-                                    <ion-icon name="call-outline" style="font-size: 25px; color: red;"></ion-icon>
-                                    <p>
-                                        +60-112147553
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="address">
-                                    <ion-icon name="mail-outline" style="font-size: 25px; color: red;"></ion-icon>
-                                    <p>
-                                        info@gmail.com
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-col" id="getInTouch">
-                        <h4>Get in Touch<span></span></h4>
-                        <div id="formFooter" class="topBefore">
-                            <input id="name" type="text" placeholder="NAME">
-                            <input id="email" type="text" placeholder="E-MAIL">
-                            <textarea id="message" placeholder="MESSAGE" rows="4" cols="50"></textarea>
-                            <input id="submitButton" type="submit" value="GO!">
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="address">
+                                        <ion-icon name="call-outline" style="font-size: 25px; color: red;"></ion-icon>
+                                        <p>
+                                            +60-112147553
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="address">
+                                        <ion-icon name="mail-outline" style="font-size: 25px; color: red;"></ion-icon>
+                                        <p>
+                                            info@gmail.com
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-col" id="getInTouch">
+                            <h4>Get in Touch<span></span></h4>
+                            <div id="formFooter" class="topBefore">
+                                <input id="name" type="text" placeholder="NAME">
+                                <input id="email" type="text" placeholder="E-MAIL">
+                                <textarea id="message" placeholder="MESSAGE" rows="4" cols="50"></textarea>
+                                <input id="submitButton" type="submit" value="GO!">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="divider"></div>
+                <div class="divider"></div>
 
-            <div class="footer-bottom">
-                <div class="containerHeader">
+                <div class="footer-bottom">
+                    <div class="containerHeader">
 
-                    <p class="copyright">
-                        &copy; 2023 RSDS2G3. All Rights Reserved
-                    </p>
+                        <p class="copyright">
+                            &copy; 2023 RSDS2G3. All Rights Reserved
+                        </p>
 
-                    <ul class="social-listFooter">
+                        <ul class="social-listFooter">
 
-                        <li>
-                            <a href="#" class="social-linkFooter">
-                                <ion-icon name="logo-facebook"></ion-icon>
-                            </a>
-                        </li>
+                            <li>
+                                <a href="#" class="social-linkFooter">
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </a>
+                            </li>
 
-                        <li>
-                            <a href="#" class="social-linkFooter">
-                                <ion-icon name="logo-twitter"></ion-icon>
-                            </a>
-                        </li>
+                            <li>
+                                <a href="#" class="social-linkFooter">
+                                    <ion-icon name="logo-twitter"></ion-icon>
+                                </a>
+                            </li>
 
-                        <li>
-                            <a href="#" class="social-linkFooter">
-                                <ion-icon name="logo-pinterest"></ion-icon>
-                            </a>
-                        </li>
+                            <li>
+                                <a href="#" class="social-linkFooter">
+                                    <ion-icon name="logo-pinterest"></ion-icon>
+                                </a>
+                            </li>
 
-                        <li>
-                            <a href="#" class="social-linkFooter">
-                                <ion-icon name="logo-linkedin"></ion-icon>
-                            </a>
-                        </li>
+                            <li>
+                                <a href="#" class="social-linkFooter">
+                                    <ion-icon name="logo-linkedin"></ion-icon>
+                                </a>
+                            </li>
 
-                    </ul>
+                        </ul>
 
+                    </div>
                 </div>
-            </div>
-
         </footer>
 
 
