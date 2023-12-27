@@ -13,5 +13,32 @@ namespace WAD_Assignment
 
     public partial class TTT
     {
+
+        /// <summary>
+        /// menuBtnsDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl menuBtnsDiv;
+
+        /// <summary>
+        /// foodItemsDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl foodItemsDiv;
+
+        /// <summary>
+        /// movieRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater movieRepeater;
     }
 }
