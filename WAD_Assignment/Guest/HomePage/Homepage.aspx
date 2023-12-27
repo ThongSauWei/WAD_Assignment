@@ -20,7 +20,7 @@
                                 <h2><%# Eval("movieName") %></h2>
                                 <div class="descBanner">
                                     <p>
-                                        <a href="../Detail/Detail.aspx" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
+                                        <a href="../Detail/Detail.aspx?movieID=<%# Eval("movieID") %>" class="btnHeader btn-primarySign" style="width: 150px; display: inline-block;">
                                             <span>Book Now</span>
                                         </a>
 
@@ -70,13 +70,13 @@
                     <ItemTemplate>
                         <li>
                             <div class="movie-cardTrending">
-                                <a href="../Detail/Detail.aspx">
+                                <a href="../Detail/Detail.aspx?movieID=<%# Eval("movieID") %>">
                                     <figure class="card-banner">
                                         <img src='../../image/<%# Eval("movieImage") %>' alt='<%# Eval("movieName") %>' />
                                     </figure>
                                 </a>
                                 <div class="title-wrapper">
-                                    <a href="../Detail/Detail.aspx">
+                                    <a href="../Detail/Detail.aspx?movieID=<%# Eval("movieID") %>">
                                         <h3 class="card-title"><%# Eval("movieName") %></h3>
                                     </a>
                                 </div>
@@ -115,7 +115,7 @@
                         <asp:Repeater ID="rankRepeater" runat="server">
                             <ItemTemplate>
                                 <!-- item -->
-                                <a href="../Detail/Detail.aspx">
+                                <a href="../Detail/Detail.aspx?movieID=<%# Eval("movieID") %>">
                                     <div class="T10-item">
                                         <!-- img -->
                                         <div class="T10-img">
@@ -157,7 +157,7 @@
                 <asp:Repeater ID="comingRepeater" runat="server">
                     <ItemTemplate>
                         <div class="swiper-slide box">
-                            <a href="../Detail/Detail.aspx">
+                            <a href="../Detail/Detail.aspx?movieID=<%# Eval("movieID") %>">
                                 <div class="box-img">
                                     <img src='../../image/<%# Eval("movieImage") %>' alt='<%# Eval("movieName") %>' />
                                 </div>

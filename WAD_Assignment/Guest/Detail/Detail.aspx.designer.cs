@@ -114,21 +114,39 @@ namespace WAD_Assignment.Detail
         protected global::System.Web.UI.WebControls.Label lblClassification;
 
         /// <summary>
-        /// Img4 control.
+        /// dateRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img4;
+        protected global::System.Web.UI.WebControls.Repeater dateRepeater;
 
         /// <summary>
-        /// Img1 control.
+        /// timeRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
+        protected global::System.Web.UI.WebControls.Repeater timeRepeater;
+
+        /// <summary>
+        /// popRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater popRepeater;
+
+        /// <summary>
+        /// reviewRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater reviewRepeater;
     }
 }

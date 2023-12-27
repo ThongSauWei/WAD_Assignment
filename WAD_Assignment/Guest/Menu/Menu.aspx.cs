@@ -25,7 +25,7 @@ namespace WAD_Assignment.Menu
 
                     DataTable distinctCategories = GetDistinctCategoriesFromDatabase(connectionString);
 
-                    // Clear existing controls in menuBtnsDiv
+                    // Clear existing controls for the btn ,refresh
                     menuBtnsDiv.Controls.Clear();
 
                     // Create a default "All" button
@@ -33,7 +33,7 @@ namespace WAD_Assignment.Menu
                     allButton.Text = "All";
                     allButton.CssClass = "menu-btn";
                     allButton.ID = "all";
-                    allButton.Click += CategoryButton_Click;  // Add click event handler
+                    allButton.Click += CategoryButton_Click;  // event handler
                     menuBtnsDiv.Controls.Add(allButton);
 
                     // Create a "Coming Soon" button
@@ -41,7 +41,7 @@ namespace WAD_Assignment.Menu
                     comingSoonButton.Text = "Coming Soon";
                     comingSoonButton.CssClass = "menu-btn";
                     comingSoonButton.ID = "comingSoon";
-                    comingSoonButton.Click += CategoryButton_Click;  // Add click event handler
+                    comingSoonButton.Click += CategoryButton_Click;  // event handler
                     menuBtnsDiv.Controls.Add(comingSoonButton);
 
 
@@ -53,12 +53,11 @@ namespace WAD_Assignment.Menu
                         button.Text = category;
                         button.CssClass = "menu-btn";
                         button.ID = category.ToLower();
-                        button.Click += CategoryButton_Click;  // Add click event handler
+                        button.Click += CategoryButton_Click;  // event handler
                         menuBtnsDiv.Controls.Add(button);
                     }
                 }
 
-                // Assuming menuBtnsDiv.Controls[0] exists and is a Button control
                 string firstButtonId = ((Button)menuBtnsDiv.Controls[0]).ID.ToLower();
                 LoadMoviesForCategory(firstButtonId);
             }
@@ -98,14 +97,13 @@ namespace WAD_Assignment.Menu
             {
                 string query = "SELECT movieID, movieName, movieImage, category, duration FROM Movie";
 
-                // Add condition to include only released movies for the "All" category
                 if (string.IsNullOrEmpty(category) || category.ToLower() == "all")
                 {
                     query += " WHERE status = 'released'";
                 }
                 else if (category.ToLower() == "comingsoon")
                 {
-                    // Include only pending movies for the "Coming Soon" category
+                    // Include only pending movies for the "Coming Soon" button
                     query += " WHERE releaseDate >= CAST(GETDATE() AS DATE) AND status = 'pending'";
                 }
                 else
@@ -132,8 +130,6 @@ namespace WAD_Assignment.Menu
             return dataTable;
         }
 
-
-
         private DataTable GetMoviesForCategoryFromDatabase(string category)
         {
             return GetMoviesFromDatabase(category);
@@ -143,8 +139,6 @@ namespace WAD_Assignment.Menu
         {
             return GetMoviesFromDatabase();
         }
-
-
 
         private void CategoryButton_Click(object sender, EventArgs e)
         {
@@ -159,18 +153,14 @@ namespace WAD_Assignment.Menu
             }
         }
 
-
-
         private void LoadMoviesForCategory(string category)
         {
             DataTable moviesForCategory = category.ToLower() == "all"
                 ? GetAllMoviesFromDatabase()
                 : GetMoviesForCategoryFromDatabase(category);
 
-            // Set the data source for the repeater
             menuRepeater.DataSource = moviesForCategory;
 
-            // Bind the data to the repeater
             menuRepeater.DataBind();
         }
     }
