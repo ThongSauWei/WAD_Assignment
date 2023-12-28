@@ -14,5 +14,9 @@ namespace WAD_Assignment.MyBooking
 
         }
 
+        protected void submitRefund_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>alert('Refund request submitted. We're processing your request. We'll repond as soon as possible. Thank You');</script>");
+        }
     }
 }
