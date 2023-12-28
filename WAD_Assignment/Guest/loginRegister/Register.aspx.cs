@@ -128,10 +128,10 @@ namespace WAD_Assignment
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "sqlError", "alert('A database error occurred during registration. Please try again later.');", true);
 
                 // You can also print the details of the SQL exception to the console or log file
-                Console.WriteLine($"SQL Exception Number: {sqlEx.Number}");
-                Console.WriteLine($"SQL Exception Message: {sqlEx.Message}");
-                Console.WriteLine($"SQL Exception Class: {sqlEx.Class}");
-                Console.WriteLine($"SQL Exception State: {sqlEx.State}");
+                Response.Write($"SQL Exception Number: {sqlEx.Number}");
+                Response.Write($"SQL Exception Message: {sqlEx.Message}");
+                Response.Write($"SQL Exception Class: {sqlEx.Class}");
+                Response.Write($"SQL Exception State: {sqlEx.State}");
 
             }
             finally
