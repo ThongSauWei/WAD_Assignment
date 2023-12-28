@@ -25,6 +25,11 @@
 
             </div>
 
+            <!-- Add this div for displaying error messages -->
+            <div class="error-message" id="ErrorMessageLabel" runat="server" visible="false">
+                <p style="color: red;">Email is already registered.</p>
+            </div>
+
             <div class="form-group" style="margin-bottom: -20px;">
                 <ion-icon name="mail-outline" class="iconTwo"></ion-icon>
                 <ion-icon name="call-outline" class="iconThree"></ion-icon>
@@ -45,7 +50,7 @@
                 <ion-icon name="lock-closed-outline" class="iconFive"></ion-icon>
                 <asp:TextBox ID="CustomerPassword" runat="server" placeholder="" Required="true" type="password"></asp:TextBox>
                 <label for="CustomerPassword" class="RLaber">Password</label>
-  
+
                 <br />
                 <asp:RegularExpressionValidator ID="passwordValidator" runat="server" ControlToValidate="CustomerPassword" ErrorMessage="Password must be at least 8 characters, 1 uppercase, 1 lowercase, 1 digit, and 1 special character." ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%?&amp;*_])[A-Za-z\d@$!%*?&amp;_]{8,}$"></asp:RegularExpressionValidator>
 
@@ -53,7 +58,7 @@
 
             <div class="form-group" style="margin-bottom: -18px;">
                 <ion-icon name="lock-closed-outline" class="iconSix"></ion-icon>
-                <asp:TextBox ID="ReenterPassword" runat="server" placeholder="" Required="true" type="password" OnTextChanged="ReenterPassword_TextChanged1"></asp:TextBox>
+                <asp:TextBox ID="ReenterPassword" runat="server" placeholder="" Required="true" type="password" OnTextChanged="ReenterPassword_TextChanged"></asp:TextBox>
                 <label for="ReenterPassword" class="RLaber">Confirm Password</label>
             </div>
 
@@ -62,10 +67,11 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <asp:Button ID="Register" runat="server" Text="Register" CssClass="register-btn" PostBackURL="~/Guest/loginRegister/Login.aspx" />
+                <asp:Button ID="Register" runat="server" Text="Register" CssClass="register-btn" Onclick="Register_Click" />
             </div>
             <div class="reg2">
-                <p>Already have an account?
+                <p>
+                    Already have an account?
                 <asp:HyperLink ID="loginLink" runat="server" NavigateUrl="~/Guest/loginRegister/Login.aspx"><i>Login</i></asp:HyperLink>
             </div>
         </div>
