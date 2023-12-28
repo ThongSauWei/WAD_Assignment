@@ -122,13 +122,19 @@ span.legend-desc {
     color: white;
 }
 
+div.proceed-div {
+    width: 100%;
+    float: left;
+    height: 65px;
+    background-color: black;
+}
+
 div.seatSelected {
     width: 100%;
     float: left;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: black;
     height: 65px;
 }
 
@@ -250,6 +256,12 @@ div.booking-button span:nth-child(4) {
     50%,100% {
         top: -200%;
     }
+}
+
+.error-msg {
+    color: red;
+    margin-left: 65%;
+    font-weight: bolder;
 }
 
 /* Small screens (phones) */

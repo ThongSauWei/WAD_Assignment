@@ -44,19 +44,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="seatSelected">
-                    <div class="seatLabel">
-                        <asp:Label ID="lblSeatSelection" runat="server" Text="Seat(s) Selected: "></asp:Label>
-                        <asp:Label ID="lblSeats" runat="server" Text=""></asp:Label>
+                <div id="proceedDiv" runat="server" class="proceed-div">
+                    <div class="seatSelected">
+                        <div class="seatLabel">
+                            <asp:Label ID="lblSeatSelection" runat="server" Text="Seat(s) Selected: "></asp:Label>
+                            <asp:Label ID="lblSeats" runat="server" Text=""></asp:Label>
+                        </div>
+                        <div class="booking-button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <asp:Button ID="btnConfirm" CssClass="btnConfirm" runat="server" Text="Confirm" OnClick="btnConfirm_Click" />
+                        </div>
+                        <asp:HiddenField ID="ticketPrice" runat="server" />
                     </div>
-                    <div class="booking-button">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <asp:Button ID="btnConfirm" CssClass="btnConfirm" runat="server" Text="Confirm" PostBackUrl="~/Member/Booking/ConfirmBooking.aspx" />
-                    </div>
-                    <asp:HiddenField ID="ticketPrice" runat="server" />
+                    <asp:Label Id="errorMsg" CssClass="error-msg" runat="server" Text=""></asp:Label>
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>

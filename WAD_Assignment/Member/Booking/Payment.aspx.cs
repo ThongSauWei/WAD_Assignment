@@ -93,6 +93,8 @@ namespace WAD_Assignment.Member
                 Create_Ticket(seatNo);
             }
 
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "SuccessfulPurchase", "alert('Ticket has been " +
+                    "successfully purchased. Subsequent actions can be made in My Booking page.');", true);
             Response.Redirect("~/Guest/HomePage/Homepage.aspx");
         }
 
@@ -100,9 +102,26 @@ namespace WAD_Assignment.Member
         {
             conn.Open();
 
+            string lastRowQuery = "SELECT * FROM Ticket";
+            SqlCommand cmdSelect = new SqlCommand(lastRowQuery, conn);
+            SqlDataReader reader = cmdSelect.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+
+                }
+            }
+
+            string lastTicketID = reader["ticketID"].ToString();
+            int index = Convert.ToInt32(lastTicketID.Substring(1));
+            index++;
+            string ticketID = "T" + index;
+
             string queryStr = "INSERT INTO Ticket VALUES(@TicketID, @CustomerID, @ScheduleID, @SeatNo, @PurchaseDate, @Status)";
             SqlCommand cmdInsert = new SqlCommand(queryStr, conn);
-            cmdInsert.Parameters.AddWithValue("@TicketID", "T001");
+            cmdInsert.Parameters.AddWithValue("@TicketID", ticketID);
             cmdInsert.Parameters.AddWithValue("@CustomerID", "C001");
             cmdInsert.Parameters.AddWithValue("@ScheduleID", "S001");
             cmdInsert.Parameters.AddWithValue("@SeatNo", seatNo);
@@ -111,16 +130,18 @@ namespace WAD_Assignment.Member
 
             int row = cmdInsert.ExecuteNonQuery();
 
+            conn.Close();
+
             if (row > 0)
             {
-                // successfully added
+                Create_Payment("T001");
             }
             else
             {
-                // failed to add
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "UnsuccessfulPurchase", "alert('Some errors has " +
+                    "encountered during ticket purchase.');", true);
+                Response.Redirect("~/Member/Booking/Booking.aspx"); // waiting to modify by adding a scheduleID
             }
-
-            conn.Close();
         }
 
         private void Create_Payment(string ticketID)
@@ -137,13 +158,17 @@ namespace WAD_Assignment.Member
 
             int row = cmdInsert.ExecuteNonQuery();
 
+            conn.Close();
+
             if (row > 0)
             {
-                // successfully added
+
             }
             else
             {
-                // failed to add
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "UnsuccessfulPurchase", "alert('Some errors has " +
+                    "encountered during payment making.');", true);
+                Response.Redirect("~/Member/Booking/Booking.aspx"); // waiting to modify by adding a scheduleID
             }
         }
 
