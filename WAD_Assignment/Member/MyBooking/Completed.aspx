@@ -34,7 +34,7 @@
                     </p>
                 </div>
             </article>
-            <a id="submitRefund" href="myBooking.aspx">Submit</a>
+            <input id="ContentPlaceHolder1_submitRefund" type="button" value="Submit" />
         </div>
 
 

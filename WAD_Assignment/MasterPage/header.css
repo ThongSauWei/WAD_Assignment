@@ -315,6 +315,7 @@ header {
     padding-block: 25px;
     transition: var(--transition-2);
     z-index: 100;
+    background-color: rgba(40, 41, 52, 1);
 }
 
 .header.active {
