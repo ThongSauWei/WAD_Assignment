@@ -21,7 +21,6 @@ namespace WAD_Assignment.Entity
         private string director;
         private string cast;
         private double price;
-        private string hallId;
 
         public Movie()
         {
@@ -30,7 +29,7 @@ namespace WAD_Assignment.Entity
 
         public Movie(string movieId, string movieName, string movieDesc, string movieImgUrl, int duration, string category,
             DateTime releaseDate, string status, string language, string subtitle, string classification, string director,
-            string cast, double price, string hallId)
+            string cast, double price)
         {
             MovieId = movieId;
             MovieName = movieName;
@@ -46,7 +45,6 @@ namespace WAD_Assignment.Entity
             Director = director;
             Cast = cast;
             Price = price;
-            HallId = hallId;
         }
 
         public string MovieId { get => movieId; set => movieId = value; }
@@ -63,6 +61,5 @@ namespace WAD_Assignment.Entity
         public string Director { get => director; set => director = value; }
         public string Cast { get => cast; set => cast = value; }
         public double Price { get => price; set => price = value; }
-        public string HallId { get => hallId; set => hallId = value; }
     }
 }

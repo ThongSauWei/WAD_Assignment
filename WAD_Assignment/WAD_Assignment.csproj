@@ -136,7 +136,6 @@
     <Content Include="Guest\loginRegister\PasswordRecovery.aspx" />
     <Content Include="image\RBackground.gif" />
     <Content Include="Guest\loginRegister\RegisterAndLogin.css" />
-    <Content Include="MasterPage\Header.js" />
     <Content Include="Member\Booking\Booking.aspx" />
     <Content Include="Member\Booking\ConfirmBooking.aspx" />
     <Content Include="image\movie-image1.jpg" />

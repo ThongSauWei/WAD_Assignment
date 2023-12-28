@@ -23,6 +23,7 @@ namespace WAD_Assignment.Member
                 Image img = contentPlaceHolder.FindControl("movieImg") as Image;
                 TextBox totalPrice = contentPlaceHolder.FindControl("txtTotal") as TextBox;
                 Label seatsSelected = contentPlaceHolder.FindControl("lblSeat") as Label;
+                HiddenField scheduleId = contentPlaceHolder.FindControl("scheduleID") as HiddenField;
 
                 // initialise the image
                 movieImg.ImageUrl = img.ImageUrl;
@@ -40,6 +41,9 @@ namespace WAD_Assignment.Member
 
                 // initialise the seats chosen
                 seatsChosen.Value = seatsSelected.Text;
+
+                // initialise the schedule id
+                scheduleID.Value = scheduleId.Value;
             }
 
             if (!IsPostBack)
@@ -102,28 +106,42 @@ namespace WAD_Assignment.Member
         {
             conn.Open();
 
+            // get the last ticket id
             string lastRowQuery = "SELECT * FROM Ticket";
             SqlCommand cmdSelect = new SqlCommand(lastRowQuery, conn);
             SqlDataReader reader = cmdSelect.ExecuteReader();
 
+            string ticketID;
             if (reader.HasRows)
             {
                 while (reader.Read())
                 {
 
                 }
+
+                // advance the ticket ID
+                string lastTicketID = reader["ticketID"].ToString();
+                int index = Convert.ToInt32(lastTicketID.Substring(1));
+                index++;
+                ticketID = "T" + index.ToString("000");
+            }
+            else
+            {
+                ticketID = "T001";
             }
 
-            string lastTicketID = reader["ticketID"].ToString();
-            int index = Convert.ToInt32(lastTicketID.Substring(1));
-            index++;
-            string ticketID = "T" + index;
+            conn.Close();
+
+            conn.Open();
+
+            // get the schedule ID
+            string scheduleId = scheduleID.Value;
 
             string queryStr = "INSERT INTO Ticket VALUES(@TicketID, @CustomerID, @ScheduleID, @SeatNo, @PurchaseDate, @Status)";
             SqlCommand cmdInsert = new SqlCommand(queryStr, conn);
             cmdInsert.Parameters.AddWithValue("@TicketID", ticketID);
             cmdInsert.Parameters.AddWithValue("@CustomerID", "C001");
-            cmdInsert.Parameters.AddWithValue("@ScheduleID", "S001");
+            cmdInsert.Parameters.AddWithValue("@ScheduleID", scheduleId);
             cmdInsert.Parameters.AddWithValue("@SeatNo", seatNo);
             cmdInsert.Parameters.AddWithValue("@PurchaseDate", DateTime.Today);
             cmdInsert.Parameters.AddWithValue("@Status", "Paid");
@@ -140,7 +158,7 @@ namespace WAD_Assignment.Member
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "UnsuccessfulPurchase", "alert('Some errors has " +
                     "encountered during ticket purchase.');", true);
-                Response.Redirect("~/Member/Booking/Booking.aspx"); // waiting to modify by adding a scheduleID
+                Response.Redirect("~/Member/Booking/Booking.aspx");
             }
         }
 
@@ -148,13 +166,39 @@ namespace WAD_Assignment.Member
         {
             conn.Open();
 
+            // get the last ticket id
+            string lastRowQuery = "SELECT * FROM Payment";
+            SqlCommand cmdSelect = new SqlCommand(lastRowQuery, conn);
+            SqlDataReader reader = cmdSelect.ExecuteReader();
+
+            string paymentID;
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+
+                }
+
+                // advance the ticket ID
+                string lastPaymentID = reader["ticketID"].ToString();
+                int index = Convert.ToInt32(lastPaymentID.Substring(1));
+                index++;
+                paymentID = "P" + index.ToString("000");
+            }
+            else
+            {
+                paymentID = "P001";
+            }
+
+            
+
             string queryStr = "INSERT INTO Payment VALUES(@PaymentID, @TicketID, @PaymentAmount, @PaymentDate, @PaymentType)";
             SqlCommand cmdInsert = new SqlCommand(queryStr, conn);
-            cmdInsert.Parameters.AddWithValue("@PaymentID", "P001");
-            cmdInsert.Parameters.AddWithValue("@TicketID", "T001");
-            cmdInsert.Parameters.AddWithValue("@PaymentAmount", "20");
+            cmdInsert.Parameters.AddWithValue("@PaymentID", paymentID);
+            cmdInsert.Parameters.AddWithValue("@TicketID", ticketID);
+            cmdInsert.Parameters.AddWithValue("@PaymentAmount", Convert.ToDouble(txtTotalPrice.Text.Substring(3)));
             cmdInsert.Parameters.AddWithValue("@PaymentDate", DateTime.Today);
-            cmdInsert.Parameters.AddWithValue("@PaymentType", "Card");
+            cmdInsert.Parameters.AddWithValue("@PaymentType", paymentChoiceField.Value);
 
             int row = cmdInsert.ExecuteNonQuery();
 
@@ -168,7 +212,7 @@ namespace WAD_Assignment.Member
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "UnsuccessfulPurchase", "alert('Some errors has " +
                     "encountered during payment making.');", true);
-                Response.Redirect("~/Member/Booking/Booking.aspx"); // waiting to modify by adding a scheduleID
+                Response.Redirect("~/Member/Booking/Booking.aspx");
             }
         }
 

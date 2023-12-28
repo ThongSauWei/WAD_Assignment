@@ -303,6 +303,15 @@ namespace WAD_Assignment.Member
         protected global::System.Web.UI.WebControls.HiddenField seatsChosen;
 
         /// <summary>
+        /// scheduleID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField scheduleID;
+
+        /// <summary>
         /// btnPayment control.
         /// </summary>
         /// <remarks>

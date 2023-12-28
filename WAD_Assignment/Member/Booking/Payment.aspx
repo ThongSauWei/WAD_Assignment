@@ -106,6 +106,7 @@
                 </div>
                 <asp:HiddenField ID="paymentChoiceField" runat="server" Value="" />
                 <asp:HiddenField ID="seatsChosen" runat="server" Value="" />
+                <asp:HiddenField ID="scheduleID" runat="server" />
                 <div class="checkout">
                     <asp:Button ID="btnPayment" CssClass="payment-button" runat="server" Text="Make a payment" OnClientClick="return validateForm();" OnClick="btnPayment_Click" />
                     <ion-icon id="forward-icon" name='arrow-forward-outline'></ion-icon>

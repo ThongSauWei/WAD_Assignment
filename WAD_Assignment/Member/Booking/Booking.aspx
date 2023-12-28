@@ -58,6 +58,9 @@
                             <asp:Button ID="btnConfirm" CssClass="btnConfirm" runat="server" Text="Confirm" OnClick="btnConfirm_Click" />
                         </div>
                         <asp:HiddenField ID="ticketPrice" runat="server" />
+                        <asp:HiddenField ID="scheduleID" runat="server" />
+                        <asp:HiddenField ID="dateField" runat="server" />
+                        <asp:HiddenField ID="timeField" runat="server" />
                     </div>
                     <asp:Label Id="errorMsg" CssClass="error-msg" runat="server" Text=""></asp:Label>
                 </div>

@@ -44,6 +44,7 @@
                 <asp:Button ID="btnReserve" runat="server" Text="Reserve"  />
                 <asp:Button ID="btnPurchase" runat="server" Text="Purchase"  PostBackUrl="~/Member/Booking/Payment.aspx" />
             </div>
+            <asp:HiddenField ID="scheduleID" runat="server" />
         </div>
     </div>
 </asp:Content>

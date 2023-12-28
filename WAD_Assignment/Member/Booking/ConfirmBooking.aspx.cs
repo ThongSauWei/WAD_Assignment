@@ -21,6 +21,7 @@ namespace WAD_Assignment.Member
                 UpdatePanel updatePanel = contentPlaceHolder.FindControl("UpdatePanel1") as UpdatePanel;
                 Label seatSelected = updatePanel.FindControl("lblSeats") as Label;
                 HiddenField ticketPrice = updatePanel.FindControl("ticketPrice") as HiddenField;
+                HiddenField scheduleId = updatePanel.FindControl("scheduleID") as HiddenField;
 
                 string[] allSeats = seatSelected.Text.Split(',');
 
@@ -44,6 +45,7 @@ namespace WAD_Assignment.Member
                 txtPrice.Text = "RM " + ticketPrice.Value;
                 txtQty.Text = "x " + allSeats.Length.ToString();
                 txtTotal.Text = "RM " + (Convert.ToDouble(ticketPrice.Value) * allSeats.Length).ToString("F2");
+                scheduleID.Value = scheduleId.Value;
                 Session["controlList"] = controlList;
             }
         }

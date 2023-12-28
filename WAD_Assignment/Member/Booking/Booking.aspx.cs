@@ -18,8 +18,23 @@ namespace WAD_Assignment.Member
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack && Request.QueryString["scheduleID"] == null)
+            {
+                Response.Redirect("~/error/GeneralError.aspx");
+            }
+
+            // save the schedule id, date and time in a hidden field
+            if (Request.QueryString["scheduleID"] != null)
+            {
+                scheduleID.Value = Request.QueryString["scheduleID"];
+                dateField.Value = Request.QueryString["date"];
+                timeField.Value = Request.QueryString["time"];
+            }
+
             Initialise_Movie();
             Initialise_Table();
+
+            
         }
 
         protected void Seat_Click(object sender, ImageClickEventArgs e)
@@ -83,16 +98,16 @@ namespace WAD_Assignment.Member
 
         private void Initialise_Movie()
         {
-            // get the schedule id (waiting to modify...)
-            string scheduleId = "S001";
+            // get schedule id
+            string scheduleId = scheduleID.Value;
 
-            // get schedule date and time (waiting to modify...)
-            DateTime dateTime = new DateTime(2023, 12, 31, 18, 00, 00);
+            // get schedule date and time
+            DateTime date = DateTime.Parse(dateField.Value);
+            DateTime time = DateTime.Parse(timeField.Value);
 
-            // Movie movie = Get_Movie_Info(scheduleId); (waiting for data...)
+            Movie movie = Get_Movie_Info(scheduleId);
 
-            // movieImg.ImageUrl = movie.MovieImgUrl; (waiting for data...)
-            movieImg.ImageUrl = "~/image/movie-image1.jpg";
+            movieImg.ImageUrl = "~/image/" + movie.MovieImgUrl;
 
             ContentPlaceHolder contentPlaceHolder = (ContentPlaceHolder)Master.FindControl("ContentPlaceHolder1");
             HtmlGenericControl movieDiv = (HtmlGenericControl)contentPlaceHolder.FindControl("movieDetail");
@@ -103,15 +118,13 @@ namespace WAD_Assignment.Member
             LiteralControl text;
 
             // add a <h1> with movie title into the div
-            //h1.InnerText = movie.MovieName; (waiting for data...)
-            h1.InnerText = "Movie Name";
+            h1.InnerText = movie.MovieName;
             movieDiv.Controls.Add(h1);
 
             // add a <h3> with movie classification, category and duration into the div
-            //int hours = movie.Duration / 60;
-            //int minutes = movie.Duration % 60;
-            //h3.InnerText = movie.Classification + " | " + movie.Category + " | " + hours + " hour " + minutes + " minutes"; (waiting for data...)
-            h3.InnerText = "Classification | Category | Duration";
+            int hours = movie.Duration / 60;
+            int minutes = movie.Duration % 60;
+            h3.InnerText = movie.Classification + " | " + movie.Category + " | " + hours + " hour " + minutes + " minutes";
             movieDiv.Controls.Add(h3);
 
             // add line break
@@ -125,8 +138,7 @@ namespace WAD_Assignment.Member
 
             // add the language image and also the text to the div
             span = new HtmlGenericControl("span");
-            // text = new LiteralControl(movie.Language); (waiting for data)
-            text = new LiteralControl("Language");
+            text = new LiteralControl(movie.Language);
             span.Controls.Add(languageImg);
             span.Controls.Add(text);
             movieDiv.Controls.Add(span);
@@ -138,8 +150,7 @@ namespace WAD_Assignment.Member
 
             // add the subtitle image and also the text to the div
             span = new HtmlGenericControl("span");
-            // text = new LiteralControl(movie.Subtitle); (waiting for data)
-            text = new LiteralControl("Subtitle");
+            text = new LiteralControl(movie.Subtitle);
             span.Controls.Add(subtitleImg);
             span.Controls.Add(text);
             movieDiv.Controls.Add(span);
@@ -155,8 +166,7 @@ namespace WAD_Assignment.Member
 
             // add the director image and also the text to the div
             span = new HtmlGenericControl("span");
-            // text = new LiteralControl(movie.Director); (waiting for data)
-            text = new LiteralControl("Director");
+            text = new LiteralControl(movie.Director);
             span.Controls.Add(directorImg);
             span.Controls.Add(text);
             movieDiv.Controls.Add(span);
@@ -168,8 +178,7 @@ namespace WAD_Assignment.Member
 
             // add the cast image and also the text to the div
             span = new HtmlGenericControl("span");
-            // text = new LiteralControl(movie.Cast); (waiting for data)
-            text = new LiteralControl("Cast");
+            text = new LiteralControl(movie.Cast);
             span.Controls.Add(actorImg);
             span.Controls.Add(text);
             movieDiv.Controls.Add(span);
@@ -185,14 +194,13 @@ namespace WAD_Assignment.Member
 
             // add the time image and also the text to the div
             span = new HtmlGenericControl("span");
-            text = new LiteralControl(dateTime.ToString("yyyy-MM-dd hh:mm tt"));
+            text = new LiteralControl(date.ToString("yyyy-MM-dd") + " " + time.ToString("hh:mm tt"));
             span.Controls.Add(timeImg);
             span.Controls.Add(text);
             movieDiv.Controls.Add(span);
 
             // save the ticket price into the hidden field
-            // ticketPrice.Value = movie.Price.ToString("00"); (waiting for data...)
-            ticketPrice.Value = 20.ToString("F2");
+            ticketPrice.Value = movie.Price.ToString("F2");
         }
 
         private Movie Get_Movie_Info(string scheduleId)
@@ -208,11 +216,14 @@ namespace WAD_Assignment.Member
             
             if (reader.HasRows)
             {
-                movie = new Movie(reader["movieID"].ToString(), reader["movieName"].ToString(), reader["movieDesc"].ToString(),
-                    reader["movieImage"].ToString(), Convert.ToInt32(reader["duration"]), reader["category"].ToString(),
-                    DateTime.Parse(reader["releaseDate"].ToString()),reader["status"].ToString(), reader["language"].ToString(),
-                    reader["subtitle"].ToString(), reader["classification"].ToString(), reader["director"].ToString(),
-                    reader["cast"].ToString(), Convert.ToDouble(reader["price"]), reader["hallID"].ToString());
+                while (reader.Read())
+                {
+                    movie = new Movie(reader["movieID"].ToString(), reader["movieName"].ToString(), reader["movieDesc"].ToString(),
+                        reader["movieImage"].ToString(), Convert.ToInt32(reader["duration"]), reader["category"].ToString(),
+                        DateTime.Parse(reader["releaseDate"].ToString()), reader["status"].ToString(),
+                        reader["language"].ToString(), reader["subtitle"].ToString(), reader["classification"].ToString(),
+                        reader["director"].ToString(), reader["cast"].ToString(), Convert.ToDouble(reader["price"]));
+                }
             }
 
             conn.Close();
@@ -222,27 +233,14 @@ namespace WAD_Assignment.Member
 
         private void Initialise_Table()
         {
-            // get the schedule id (waiting to modify...)
-            string scheduleId = "S001";
+            // get the schedule id 
+            string scheduleId = scheduleID.Value;
 
             // get the capacity of the hall
-            // int capacity = Get_Hall_Capacity(scheduleId); 
-            int capacity = 50;
+            int capacity = Get_Hall_Capacity(scheduleId);
 
             // get booked seats list
-            // List<string> occupiedList = Get_Occupied_Seats(scheduleId);
-            List<string> occupiedList = new List<string>();
-            occupiedList.Add("A1");
-            occupiedList.Add("A2");
-            occupiedList.Add("A3");
-            occupiedList.Add("B6");
-            occupiedList.Add("B9");
-            occupiedList.Add("C1");
-            occupiedList.Add("C2");
-            occupiedList.Add("C7");
-            occupiedList.Add("C9");
-            occupiedList.Add("C10");
-            occupiedList.Add("D5");
+            List<string> occupiedList = Get_Occupied_Seats(scheduleId);
 
             // initialize all elements that will be added to the table       
             HtmlTable seatTable = (HtmlTable)UpdatePanel1.FindControl("seatTable");
@@ -314,7 +312,7 @@ namespace WAD_Assignment.Member
 
             conn.Open();
 
-            // get the occupied list from database (waiting to modify...)
+            // get the occupied list from database
             string queryStr = "SELECT * FROM Ticket WHERE ScheduleID = @ScheduleID";
             SqlCommand cmdSelect = new SqlCommand(queryStr, conn);
             cmdSelect.Parameters.AddWithValue("@ScheduleID", scheduleId);
