@@ -59,6 +59,26 @@ namespace WAD_Assignment.Member
 
                 seatClicked.ImageUrl = seatClicked.ImageUrl.Replace("checked.png", "chair.png");
             }
+
+            if (lblSeats.Text == "")
+            {
+                btnConfirm.PostBackUrl = "";
+            }
+            else
+            {
+                proceedDiv.Style["height"] = "65px";
+                errorMsg.Text = "";
+                btnConfirm.PostBackUrl = "~/Member/Booking/ConfirmBooking.aspx";
+            }
+        }
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
+            if (lblSeats.Text == "")
+            {
+                proceedDiv.Style["height"] = "90px";
+                errorMsg.Text = "Please choose a seat before proceeding";
+            }
         }
 
         private void Initialise_Movie()
