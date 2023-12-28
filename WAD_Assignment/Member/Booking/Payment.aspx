@@ -9,20 +9,15 @@
         <div class="ticket">
             <div class="left-side">
                 <div class="movie-detail">
-                    <img src="../../image/movie-image1.jpg" class="movie-image" width="100%" height="100%">
-                    <div class="movie-desc">
-                        <h2>Movie Title</h2>
-                        <h4>Age | Language | Duration</h4>
-                        <br />
-                        <h4>Cast</h4>
-                        <br />
-                        <h4>Date Time</h4>
+                    <asp:Image ID="movieImg" class="movie-image" width="100%" height="100%" runat="server" />
+                    <div id="movieDesc" class="movie-desc" runat="server">
+
                     </div>
                 </div>
                 <div class="total-price">
-                    <span class="lblTotalPrice">Total Price</span>
-                    <span class="txtTotalPrice">RM 303.00</span>
-                    <span class="t-and-c">Price include taxes and all service costs</span>
+                    <asp:Label ID="lblTotalPrice" runat="server" CssClass="lblTotalPrice" Text="Total Price"></asp:Label>
+                    <asp:Label ID="txtTotalPrice" runat="server" CssClass="txtTotalPrice" Text=""></asp:Label>
+                    <asp:Label ID="termsAndCond" runat="server" CssClass="t-and-c" Text="Price include taxes and all service costs"></asp:Label>
                 </div>
             </div>
             <div class="right-side">
@@ -110,6 +105,7 @@
                     </div>
                 </div>
                 <asp:HiddenField ID="paymentChoiceField" runat="server" Value="" />
+                <asp:HiddenField ID="seatsChosen" runat="server" Value="" />
                 <div class="checkout">
                     <asp:Button ID="btnPayment" CssClass="payment-button" runat="server" Text="Make a payment" OnClientClick="return validateForm();" OnClick="btnPayment_Click" />
                     <ion-icon id="forward-icon" name='arrow-forward-outline'></ion-icon>

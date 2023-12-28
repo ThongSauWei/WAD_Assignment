@@ -15,6 +15,24 @@ namespace WAD_Assignment.Member
     {
 
         /// <summary>
+        /// movieImg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image movieImg;
+
+        /// <summary>
+        /// movieDetail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl movieDetail;
+
+        /// <summary>
         /// seatText control.
         /// </summary>
         /// <remarks>

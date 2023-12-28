@@ -92,11 +92,16 @@
     <Content Include="Guest\loginRegister\Login.js" />
     <Content Include="Guest\loginRegister\Register.css" />
     <Content Include="Guest\Menu\Menu.css" />
+    <Content Include="image\actor.png" />
     <Content Include="image\cinema-screen.jpg" />
+    <Content Include="image\director.png" />
+    <Content Include="image\language.png" />
     <Content Include="image\minion-cry.gif" />
     <Content Include="image\swipperMovie10.jpg" />
     <Content Include="image\swipperMovie11.jpg" />
     <Content Include="image\swipperMovie12.jpg" />
+    <Content Include="image\minion-warning.gif" />
+    <Content Include="image\subtitle.png" />
     <Content Include="image\swipperMovie6.jpg" />
     <Content Include="image\booked.png" />
     <Content Include="Guest\HomePage\Homepage.aspx" />
@@ -115,6 +120,7 @@
     <Content Include="image\swipperMovie7.jpg" />
     <Content Include="image\swipperMovie8.jpeg" />
     <Content Include="image\swipperMovie9.jpg" />
+    <Content Include="image\time.png" />
     <Content Include="image\tng-payment.png" />
     <Content Include="image\banana.gif" />
     <Content Include="image\banana1.gif" />
@@ -219,6 +225,7 @@
     <Compile Include="Admin\RefundStatus.aspx.designer.cs">
       <DependentUpon>RefundStatus.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Movie.cs" />
     <Compile Include="error\GeneralError.aspx.cs">
       <DependentUpon>GeneralError.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

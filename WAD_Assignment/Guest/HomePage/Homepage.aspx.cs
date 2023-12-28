@@ -23,7 +23,6 @@ namespace WAD_Assignment.HomePage
                     cnn.Open();
                     Response.Write("Connection Made");
 
-                    // Fetch movie data from the database and assign it to YourMovieDataTable
                     DataTable dbMovieConnect = GetMovieDataFromDatabase(connectionString, "SELECT TOP 5 movieID, movieName, category, movieImage FROM Movie WHERE releaseDate <= CAST(GETDATE() AS DATE) ORDER BY releaseDate ASC");
                     DataTable dbReleased = GetMovieDataFromDatabase(connectionString, "SELECT movieID, movieName, category, movieImage, duration, language FROM Movie WHERE releaseDate <= CAST(GETDATE() AS DATE) AND status = 'released' ORDER BY releaseDate ASC");
                     DataTable dbComing = GetMovieDataFromDatabase(connectionString, "SELECT movieID, movieName, movieImage FROM Movie WHERE status = 'pending'");
@@ -60,7 +59,7 @@ namespace WAD_Assignment.HomePage
 
                     DataTable dbRank = GetMovieDataFromDatabase(connectionString, topMoviesQuery);
 
-                    // Bind the movie data to the repeater
+                    // Bind movie data to repeater
                     MovieRepeater.DataSource = dbMovieConnect;
                     thumbnailRepeater.DataSource = dbMovieConnect;
                     releasedRepeater.DataSource = dbReleased;
@@ -91,7 +90,7 @@ namespace WAD_Assignment.HomePage
                 {
                     connection.Open();
 
-                    // Execute the SQL query and fill the DataTable
+                    // Execute 
                     using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                     {
                         adapter.Fill(movieDataTable);
@@ -113,7 +112,7 @@ namespace WAD_Assignment.HomePage
                 case "MALAY":
                     return "BM";
                 default:
-                    return language; // If the language is not one of the specified, return it as is.
+                    return language; //if no, then return
             }
         }
 
@@ -136,10 +135,5 @@ namespace WAD_Assignment.HomePage
             return stars.ToString();
         }
 
-
-        //protected System.Void Page_Load(System.Object sender, System.EventArgs e)
-        //{
-
-        //}
     }
 }
