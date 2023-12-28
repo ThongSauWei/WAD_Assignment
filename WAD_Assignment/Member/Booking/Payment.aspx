@@ -104,7 +104,7 @@
                         </div>
                     </div>
                 </div>
-                <asp:HiddenField ID="paymentChoiceField" runat="server" Value="" />
+                <asp:HiddenField ID="paymentChoiceField" runat="server" />
                 <asp:HiddenField ID="seatsChosen" runat="server" Value="" />
                 <asp:HiddenField ID="scheduleID" runat="server" />
                 <div class="checkout">

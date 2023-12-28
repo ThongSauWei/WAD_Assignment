@@ -46,7 +46,8 @@ namespace WAD_Assignment.Member
                 txtQty.Text = "x " + allSeats.Length.ToString();
                 txtTotal.Text = "RM " + (Convert.ToDouble(ticketPrice.Value) * allSeats.Length).ToString("F2");
                 scheduleID.Value = scheduleId.Value;
-                Session["controlList"] = controlList;
+                // Session["controlList"] = controlList;
+                HttpContext.Current.Cache["controlList"] = controlList;
             }
         }
 

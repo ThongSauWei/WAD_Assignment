@@ -29,8 +29,9 @@ namespace WAD_Assignment.Member
                 movieImg.ImageUrl = img.ImageUrl;
 
                 // initialise the movie detail from the previous page
-                List<Control> controlList = (List<Control>)Session["controlList"];
-                
+                // List<Control> controlList = (List<Control>)Session["controlList"];
+                List<Control> controlList = HttpContext.Current.Cache["controlList"] as List<Control>;
+
                 foreach (Control control in controlList)
                 {
                     movieDesc.Controls.Add(control);
@@ -107,20 +108,14 @@ namespace WAD_Assignment.Member
             conn.Open();
 
             // get the last ticket id
-            string lastRowQuery = "SELECT * FROM Ticket";
+            string lastRowQuery = "SELECT TOP 1 TicketID FROM Ticket ORDER BY TicketID DESC";
             SqlCommand cmdSelect = new SqlCommand(lastRowQuery, conn);
-            SqlDataReader reader = cmdSelect.ExecuteReader();
+            string lastTicketID = (string)cmdSelect.ExecuteScalar();
 
             string ticketID;
-            if (reader.HasRows)
+            if (lastTicketID != null)
             {
-                while (reader.Read())
-                {
-
-                }
-
                 // advance the ticket ID
-                string lastTicketID = reader["ticketID"].ToString();
                 int index = Convert.ToInt32(lastTicketID.Substring(1));
                 index++;
                 ticketID = "T" + index.ToString("000");
@@ -152,7 +147,7 @@ namespace WAD_Assignment.Member
 
             if (row > 0)
             {
-                Create_Payment("T001");
+                Create_Payment(ticketID);
             }
             else
             {
@@ -166,21 +161,15 @@ namespace WAD_Assignment.Member
         {
             conn.Open();
 
-            // get the last ticket id
-            string lastRowQuery = "SELECT * FROM Payment";
+            // get the last payment id
+            string lastRowQuery = "SELECT TOP 1 PaymentID FROM Payment ORDER BY PaymentID DESC";
             SqlCommand cmdSelect = new SqlCommand(lastRowQuery, conn);
-            SqlDataReader reader = cmdSelect.ExecuteReader();
+            string lastPaymentID = (string)cmdSelect.ExecuteScalar();
 
             string paymentID;
-            if (reader.HasRows)
+            if (lastPaymentID != null)
             {
-                while (reader.Read())
-                {
-
-                }
-
                 // advance the ticket ID
-                string lastPaymentID = reader["ticketID"].ToString();
                 int index = Convert.ToInt32(lastPaymentID.Substring(1));
                 index++;
                 paymentID = "P" + index.ToString("000");
@@ -190,13 +179,16 @@ namespace WAD_Assignment.Member
                 paymentID = "P001";
             }
 
-            
+            // get the payment amount for each ticket
+            double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Substring(3));
+            int numOfTickets = seatsChosen.Value.Split(',').Length;
+            double unitPrice = totalPrice / numOfTickets;
 
             string queryStr = "INSERT INTO Payment VALUES(@PaymentID, @TicketID, @PaymentAmount, @PaymentDate, @PaymentType)";
             SqlCommand cmdInsert = new SqlCommand(queryStr, conn);
             cmdInsert.Parameters.AddWithValue("@PaymentID", paymentID);
             cmdInsert.Parameters.AddWithValue("@TicketID", ticketID);
-            cmdInsert.Parameters.AddWithValue("@PaymentAmount", Convert.ToDouble(txtTotalPrice.Text.Substring(3)));
+            cmdInsert.Parameters.AddWithValue("@PaymentAmount",  unitPrice);
             cmdInsert.Parameters.AddWithValue("@PaymentDate", DateTime.Today);
             cmdInsert.Parameters.AddWithValue("@PaymentType", paymentChoiceField.Value);
 
