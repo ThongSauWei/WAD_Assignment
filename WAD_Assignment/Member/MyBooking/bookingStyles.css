@@ -323,18 +323,18 @@
     padding: 10px
 }
 
-.confirm-container > .confirm-center > #submitRefund {
-    z-index: 1;
-    padding: 8px 16px;
-    background-color: transparent;
-    border-radius: 8px;
-    border: 1px solid #D3FBD8;
-    font-size: 26px;
-    color: #D3FBD8;
-    text-decoration: none;
-    text-align: center;
-    transition: background-color 160ms ease-in-out, color 160ms ease-in-out, transform 160ms ease-in-out, border 160ms ease-in-out;
-}
+    .confirm-container > .confirm-center > #ContentPlaceHolder1_submitRefund {
+        z-index: 1;
+        padding: 8px 16px;
+        background-color: transparent;
+        border-radius: 8px;
+        border: 1px solid #D3FBD8;
+        font-size: 26px;
+        color: #D3FBD8;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 160ms ease-in-out, color 160ms ease-in-out, transform 160ms ease-in-out, border 160ms ease-in-out;
+    }
 
 #popUpContainer {
     background-color: rgba(0, 0, 0, 0.3);
@@ -343,18 +343,18 @@
     align-items: center;
     justify-content: center; /* Add this line to center the content horizontally */
     position: fixed;
-    opacity: 0;
+    visibility: hidden;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
     transition: opacity 0.3s ease;
+    z-index: 100;
 }
 
 #popUpContainer.show {
     pointer-events: auto;
-    opacity: 1;
-    display: block;
+    visibility: visible;
 }
 
 .popUpMes {
@@ -365,8 +365,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     padding: 30px 50px;
     text-align: center;
-    margin-left: 470px;
-    margin-top: 400px;
+    margin: auto;
 }
 
 
