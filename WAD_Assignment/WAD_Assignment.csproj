@@ -81,6 +81,7 @@
     <Content Include="App_Data\TicketDB_log.ldf">
       <DependentUpon>TicketDB.mdf</DependentUpon>
     </Content>
+    <Content Include="db-script.txt" />
     <Content Include="error\Error.css" />
     <Content Include="error\GeneralError.aspx" />
     <Content Include="error\PageNotFoundError.aspx" />
