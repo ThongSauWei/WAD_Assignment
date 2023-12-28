@@ -31,11 +31,24 @@ img.movie-image {
 
 div.movie-desc {
     position: relative;
-    top: -70%;
-    left: 15%;
+    top: -85%;
+    left: 10%;
     opacity: 0;
     transition: 0.5s ease;
     color: white;
+}
+
+div.movie-desc span {
+    height: 25px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+}
+
+div.movie-desc span img {
+    float: left;
+    margin-right: 5px;
 }
 
 div.movie-detail:hover img.movie-image {

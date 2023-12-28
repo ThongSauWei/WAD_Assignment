@@ -6,118 +6,74 @@
     <!-- movies  -->
     <section class="moviesMenu" id="movies">
         <h2 class="h2 section-title">Mo<strong>vie</strong></h2>
+
+        <div class="menu-btns" id="menuBtnsDiv" runat="server">
+            <!-- Dynamic buttons will be added here -->
+        </div>
+
         <!-- movies container  -->
         <div class="movies-container">
             <!-- box-1  -->
-            <a href="../Detail/Detail.aspx">
-                <div class="boxMenu">
-                    <div class="box-img">
-                        <img src="../../image/swipperMovie1.png" alt="">
+            <asp:Repeater ID="menuRepeater" runat="server">
+                <ItemTemplate>
+                    <div class='food-item <%# Eval("category") %>'>
+                        <a href='../Detail/Detail.aspx?movieID=<%# Eval("movieID") %>'>
+                            <div class="boxMenu">
+                                <div class="box-img">
+                                    <img src='../../image/<%# Eval("movieImage") %>' alt='<%# Eval("movieName") %>' />
+                                </div>
+                                <h3><%# Eval("movieName") %></h3>
+                                <span><%# Eval("duration") %> | <%# Eval("category") %></span>
+                            </div>
+                        </a>
                     </div>
-                    <h3>Thanksgiving</h3>
-                    <span>1h 12min | Horror</span>
-                </div>
-            </a>
-
-            <!-- box-2  -->
-            <a href="../Detail/Detail.aspx">
-                <div class="boxMenu">
-                    <div class="box-img">
-                        <img src="../../image/swipperMovie2.jpg" alt="">
-                    </div>
-                    <h3>Aquaman and the Lost Kingdom</h3>
-                    <span>1h 45min | Action</span>
-                </div>
-            </a>
-
-            <!-- box-3  -->
-            <a href="../Detail/Detail.aspx">
-                <div class="boxMenu">
-                    <div class="box-img">
-                        <img src="../../image/swipperMovie3.jpg" alt="">
-                    </div>
-                    <h3>Wish</h3>
-                    <span>1h 22min | Musical</span>
-                </div>
-            </a>
-
-            <!-- box-4  -->
-            <a href="#">
-                <div class="boxMenu">
-                    <div class="box-img">
-                        <img src="../../image/swipperMovie4.jpg" alt="">
-                    </div>
-                    <h3>War On Terror: KL Anarki</h3>
-                    <span>1h 30min | Action</span>
-                </div>
-            </a>
-
-            <!-- box-5  -->
-            <a href="../Detail/Detail.aspx">
-                <div class="boxMenu">
-                    <div class="box-img">
-                        <img src="../../image/swipperMovie5.jpeg" alt="">
-                    </div>
-                    <h3>Wonka</h3>
-                    <span>1h 45min | Musical</span>
-                </div>
-            </a>
-
-            <!-- box-6  -->
-            <a href="../Detail/Detail.aspx">
-                <div class="boxMenu">
-                    <div class="box-img">
-                        <img src="../../image/swipperMovie5.jpeg" alt="">
-                    </div>
-                    <h3>Wonka</h3>
-                    <span>1h 45min | Musical</span>
-                </div>
-            </a>
-
-            <!-- box-7  -->
-            <a href="../Detail/Detail.aspx">
-                <div class="boxMenu">
-                    <div class="box-img">
-                        <img src="../../image/swipperMovie5.jpeg" alt="">
-                    </div>
-                    <h3>Wonka</h3>
-                    <span>1h 45min | Musical</span>
-                </div>
-            </a>
-
-            <!-- box-8  -->
-            <a href="../Detail/Detail.aspx">
-                <div class="boxMenu">
-                    <div class="box-img">
-                        <img src="../../image/swipperMovie5.jpeg" alt="">
-                    </div>
-                    <h3>Wonka</h3>
-                    <span>1h 45min | Musical</span>
-                </div>
-            </a>
-
-            <!-- box-9  -->
-            <a href="../Detail/Detail.aspx">
-                <div class="boxMenu">
-                    <div class="box-img">
-                        <img src="../../image/swipperMovie5.jpeg" alt="">
-                    </div>
-                    <h3>Wonka</h3>
-                    <span>1h 45min | Musical</span>
-                </div>
-            </a>
-
-            <!-- box-10  -->
-            <a href="../Detail/Detail.aspx">
-                <div class="boxMenu">
-                    <div class="box-img">
-                        <img src="../../image/swipperMovie5.jpeg" alt="">
-                    </div>
-                    <h3>Wonka</h3>
-                    <span>1h 45min | Musical</span>
-                </div>
-            </a>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
     </section>
+
+    <script>
+        const menuBtns = document.querySelectorAll('.menu-btn');
+        const foodItems = document.querySelectorAll('.food-item');
+
+        let activeBtn = "allMovie";
+
+        showFoodMenu(activeBtn);
+
+        menuBtns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                resetActiveBtn();
+                showFoodMenu(btn.id);
+                btn.classList.add('active-btn');
+            });
+        });
+
+        function resetActiveBtn() {
+            menuBtns.forEach((btn) => {
+                btn.classList.remove('active-btn');
+            });
+        }
+
+
+        function showFoodMenu(newMenuBtn) {
+            resetActiveBtn();
+            activeBtn = newMenuBtn;
+            menuBtns.forEach((btn) => {
+                if (btn.id === activeBtn) {
+                    btn.classList.add('active-btn');
+                }
+            });
+
+            foodItems.forEach((item) => {
+                if (activeBtn === "allMovie" || item.classList.contains(activeBtn)) {
+                    item.style.display = "grid";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+
+
+    </script>
 
 </asp:Content>

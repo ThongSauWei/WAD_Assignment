@@ -81,6 +81,9 @@
     <Content Include="App_Data\TicketDB_log.ldf">
       <DependentUpon>TicketDB.mdf</DependentUpon>
     </Content>
+    <Content Include="error\Error.css" />
+    <Content Include="error\GeneralError.aspx" />
+    <Content Include="error\PageNotFoundError.aspx" />
     <Content Include="Guest\Detail\Detail.aspx" />
     <Content Include="Guest\Detail\Detail.css" />
     <Content Include="Guest\HomePage\Homepage.css" />
@@ -89,6 +92,16 @@
     <Content Include="Guest\loginRegister\Login.js" />
     <Content Include="Guest\loginRegister\Register.css" />
     <Content Include="Guest\Menu\Menu.css" />
+    <Content Include="image\actor.png" />
+    <Content Include="image\cinema-screen.jpg" />
+    <Content Include="image\director.png" />
+    <Content Include="image\language.png" />
+    <Content Include="image\minion-cry.gif" />
+    <Content Include="image\swipperMovie10.jpg" />
+    <Content Include="image\swipperMovie11.jpg" />
+    <Content Include="image\swipperMovie12.jpg" />
+    <Content Include="image\minion-warning.gif" />
+    <Content Include="image\subtitle.png" />
     <Content Include="image\swipperMovie6.jpg" />
     <Content Include="image\booked.png" />
     <Content Include="Guest\HomePage\Homepage.aspx" />
@@ -104,6 +117,10 @@
     <Content Include="image\profile-user.png" />
     <Content Include="image\refund.png" />
     <Content Include="image\screen.png" />
+    <Content Include="image\swipperMovie7.jpg" />
+    <Content Include="image\swipperMovie8.jpeg" />
+    <Content Include="image\swipperMovie9.jpg" />
+    <Content Include="image\time.png" />
     <Content Include="image\tng-payment.png" />
     <Content Include="image\banana.gif" />
     <Content Include="image\banana1.gif" />
@@ -207,6 +224,28 @@
     </Compile>
     <Compile Include="Admin\RefundStatus.aspx.designer.cs">
       <DependentUpon>RefundStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Movie.cs" />
+    <Compile Include="error\GeneralError.aspx.cs">
+      <DependentUpon>GeneralError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error\GeneralError.aspx.designer.cs">
+      <DependentUpon>GeneralError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error\Error.Master.cs">
+      <DependentUpon>Error.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error\Error.Master.designer.cs">
+      <DependentUpon>Error.Master</DependentUpon>
+    </Compile>
+    <Compile Include="error\PageNotFoundError.aspx.cs">
+      <DependentUpon>PageNotFoundError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error\PageNotFoundError.aspx.designer.cs">
+      <DependentUpon>PageNotFoundError.aspx</DependentUpon>
     </Compile>
     <Compile Include="Guest\Detail\Detail.aspx.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
@@ -325,6 +364,7 @@
   <ItemGroup>
     <Content Include="MasterPage\Header.Master" />
     <Content Include="Admin\AdminHeader.Master" />
+    <Content Include="error\Error.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

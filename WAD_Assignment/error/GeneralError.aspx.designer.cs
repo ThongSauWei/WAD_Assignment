@@ -7,29 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WAD_Assignment.Menu
+namespace WAD_Assignment.error
 {
 
 
-    public partial class Menu
+    public partial class GeneralError
     {
 
         /// <summary>
-        /// menuBtnsDiv control.
+        /// btnHomePage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl menuBtnsDiv;
-
-        /// <summary>
-        /// menuRepeater control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater menuRepeater;
+        protected global::System.Web.UI.WebControls.Button btnHomePage;
     }
 }

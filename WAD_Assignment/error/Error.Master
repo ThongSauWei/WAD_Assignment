@@ -1,0 +1,16 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPage/Header.Master" AutoEventWireup="true" CodeBehind="Error.Master.cs" Inherits="WAD_Assignment.error.Site1" %>
+
+<asp:Content ID="ContentPlaceHolder" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link href="Error.css" rel="stylesheet" />
+
+    <div class="error-background">
+        <div class="error-content">
+            <div class="left-side">
+                <img src="../image/minion-cry.gif" alt="uh-ho" width="150px" height="150px" />
+            </div>
+            <div class="right-side">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+</asp:Content>

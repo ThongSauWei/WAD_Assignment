@@ -3,19 +3,19 @@
     margin-bottom: 50px;
 }
 
-.moviesMenu .section-title {
-    text-align: center;
-    margin-bottom: 45px;
-    color: var(--white);
-    line-height: 1.2;
-    font-size: 33px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
+    .moviesMenu .section-title {
+        text-align: center;
+        margin-bottom: 45px;
+        color: var(--white);
+        line-height: 1.2;
+        font-size: 33px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
 
-.moviesMenu .section-title strong {
-    color: var(--citrine);
-}
+        .moviesMenu .section-title strong {
+            color: var(--citrine);
+        }
 
 /* moviesMenu  */
 .movies-container {
@@ -28,9 +28,9 @@
     margin-top: 1rem;
 }
 
-.movies-container a {
-    text-decoration: none;
-}
+    .movies-container a {
+        text-decoration: none;
+    }
 
 .boxMenu .box-img {
     width: 100%;
@@ -38,17 +38,17 @@
     cursor: pointer;
 }
 
-.boxMenu .box-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
+    .boxMenu .box-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
 
-.boxMenu .box-img img:hover {
-    transform: translateY(-10px);
-    transition: 0.2s all linear;
-}
+        .boxMenu .box-img img:hover {
+            transform: translateY(-10px);
+            transition: 0.2s all linear;
+        }
 
 .boxMenu h3 {
     font-size: 16px;
@@ -84,3 +84,65 @@
         max-height: 500px;
     }
 }
+
+
+.food-item {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.menu-btns {
+    position: relative;
+    padding: 0.6rem 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.menu-btn {
+    position: relative;
+    background: hsl(170, 21%, 5%);
+    color: hsl(0, 3%, 80%);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 17px 25px;
+    border-radius: 4px;
+    box-shadow: inset 0 3px 7px hsla(0, 0%, 0%, 0.8);
+}
+
+    .menu-btn:focus {
+        color: hsl(57, 97%, 45%);
+        text-shadow: 0 3px 25px hsla(57, 97%, 45%, 0.5);
+    }
+
+        .menu-btn:focus::before,
+        .menu-btn:focus::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: hsl(57, 97%, 45%);
+            width: 2px;
+            height: 15px;
+        }
+
+        .menu-btn:focus::before {
+            left: 0;
+        }
+
+        .menu-btn:focus::after {
+            right: 0;
+        }
