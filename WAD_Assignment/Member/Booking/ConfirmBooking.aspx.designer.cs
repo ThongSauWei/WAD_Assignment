@@ -105,15 +105,6 @@ namespace WAD_Assignment.Member
         protected global::System.Web.UI.WebControls.TextBox txtTotal;
 
         /// <summary>
-        /// btnReserve control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReserve;
-
-        /// <summary>
         /// btnPurchase control.
         /// </summary>
         /// <remarks>

@@ -18,6 +18,7 @@ namespace WAD_Assignment.Member
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // check whether it is redirected from other page
             if (!IsPostBack && Request.QueryString["scheduleID"] == null)
             {
                 Response.Redirect("~/error/GeneralError.aspx");
@@ -32,9 +33,7 @@ namespace WAD_Assignment.Member
             }
 
             Initialise_Movie();
-            Initialise_Table();
-
-            
+            Initialise_Table();           
         }
 
         protected void Seat_Click(object sender, ImageClickEventArgs e)

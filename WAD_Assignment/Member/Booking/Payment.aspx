@@ -76,7 +76,11 @@
                                 <asp:RegularExpressionValidator ID="cvvValidation" runat="server" ControlToValidate="txtCVV" ErrorMessage="Please enter only 3 digits." Font-Size="12px" Font-Bold="True" ForeColor="#FF3300" ValidationExpression="[0-9]{3}" ValidationGroup="cardValidation"></asp:RegularExpressionValidator>
                             </div>
                             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                            <asp:UpdatePanel runat="server">
+                            <asp:UpdatePanel runat="server" UpdateMode="Conditional">
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="ddlMonth" EventName="SelectedIndexChanged" />
+                                    <asp:AsyncPostBackTrigger ControlID="ddlYear" EventName="SelectedIndexChanged" />
+                                </Triggers>
                                 <ContentTemplate>
                                     <div class="expire-div">
                                         <asp:Label ID="lblExpire" CssClass="card-label" runat="server" Text="Expire Date"></asp:Label>
@@ -110,6 +114,19 @@
                 <div class="checkout">
                     <asp:Button ID="btnPayment" CssClass="payment-button" runat="server" Text="Make a payment" OnClientClick="return validateForm();" OnClick="btnPayment_Click" />
                     <ion-icon id="forward-icon" name='arrow-forward-outline'></ion-icon>
+                    <asp:UpdatePanel runat="server" UpdateMode="Conditional">
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="countDownTimer" EventName="Tick" />
+                        </Triggers>
+                        <ContentTemplate>
+                            <div class="timer">
+                                <ion-icon id="timer-icon" name="time-outline"></ion-icon>
+                                <asp:Label ID="lblCountDown" CssClass="countdown" runat="server" Text="Time Left: 05:00"></asp:Label>
+                                <asp:HiddenField ID="timerValue" runat="server" />
+                            </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    <asp:Timer ID="countDownTimer" runat="server" Interval="1000" OnTick="CountDownTimer_Tick" />
                 </div>
             </div>
         </div>

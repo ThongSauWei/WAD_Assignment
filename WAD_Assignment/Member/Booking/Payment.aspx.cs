@@ -37,6 +37,14 @@ namespace WAD_Assignment.Member
                     movieDesc.Controls.Add(control);
                 }
 
+                // initialise the drop down list for years
+                int thisYear = DateTime.Today.Year;
+
+                for (int year = 0; year <= 5; year++)
+                {
+                    ddlYear.Items.Add(new ListItem((thisYear + year).ToString()));
+                }
+
                 // initialise the price
                 txtTotalPrice.Text = totalPrice.Text;
 
@@ -45,17 +53,14 @@ namespace WAD_Assignment.Member
 
                 // initialise the schedule id
                 scheduleID.Value = scheduleId.Value;
+
+                // initialise the timer value
+                timerValue.Value = "299";
             }
-
-            if (!IsPostBack)
+            else if (!IsPostBack)
             {
-                int thisYear = DateTime.Today.Year;
-
-                for (int year = 0; year <= 5; year++)
-                {
-                    ddlYear.Items.Add(new ListItem((thisYear + year).ToString()));
-                }
-            }     
+                Response.Redirect("~/error/GeneralError.aspx");
+            }
         }
 
         protected void ddlDate_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,6 +106,26 @@ namespace WAD_Assignment.Member
             ScriptManager.RegisterStartupScript(this, this.GetType(), "SuccessfulPurchase", "alert('Ticket has been " +
                     "successfully purchased. Subsequent actions can be made in My Booking page.');", true);
             Response.Redirect("~/Guest/HomePage/Homepage.aspx");
+        }
+
+        protected void CountDownTimer_Tick(object sender, EventArgs e)
+        {
+            int timeLeft = Convert.ToInt32(timerValue.Value);
+            int minutes;
+            int seconds;
+            if (timeLeft > 0)
+            {
+                minutes = timeLeft / 60;
+                seconds = timeLeft % 60;
+                lblCountDown.Text = "Time Left: " + minutes.ToString("00") + ":" + seconds.ToString("00");
+                timerValue.Value = (--timeLeft).ToString();
+            }
+            else
+            {
+                string script = "alert('The session is expired. Redirecting to homepage...";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "SessionExpired", script, true);
+                Response.Redirect("~/Guest/HomePage/Homepage.aspx");
+            }
         }
 
         private void Create_Ticket(string seatNo)
@@ -188,7 +213,7 @@ namespace WAD_Assignment.Member
             SqlCommand cmdInsert = new SqlCommand(queryStr, conn);
             cmdInsert.Parameters.AddWithValue("@PaymentID", paymentID);
             cmdInsert.Parameters.AddWithValue("@TicketID", ticketID);
-            cmdInsert.Parameters.AddWithValue("@PaymentAmount",  unitPrice);
+            cmdInsert.Parameters.AddWithValue("@PaymentAmount", unitPrice);
             cmdInsert.Parameters.AddWithValue("@PaymentDate", DateTime.Today);
             cmdInsert.Parameters.AddWithValue("@PaymentType", paymentChoiceField.Value);
 
@@ -207,6 +232,5 @@ namespace WAD_Assignment.Member
                 Response.Redirect("~/Member/Booking/Booking.aspx");
             }
         }
-
     }
 }

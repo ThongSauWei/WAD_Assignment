@@ -13,6 +13,7 @@ namespace WAD_Assignment.Member
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // initialise all the controls if it is redirected from other page
             if (PreviousPage != null && PreviousPage.IsCrossPagePostBack)
             {
                 ContentPlaceHolder contentPlaceHolder = PreviousPage.Master.FindControl("ContentPlaceHolder1") as ContentPlaceHolder;
@@ -49,11 +50,10 @@ namespace WAD_Assignment.Member
                 // Session["controlList"] = controlList;
                 HttpContext.Current.Cache["controlList"] = controlList;
             }
-        }
-
-        protected void btnReserve_Click(object sender, EventArgs e)
-        {
-
+            else if (!IsPostBack) // check if it is a postback
+            {
+                Response.Redirect("~/error/GeneralError.aspx");
+            }
         }
     }
 }
