@@ -46,7 +46,7 @@
                 <label for="SecurityQuestion" class="RLaber">What is your favorite movie?</label>
             </div>
 
-            <div class="form-group" style="margin-bottom: -20px;">
+            <div class="form-group" style="margin-bottom: -30px;">
                 <ion-icon name="lock-closed-outline" class="iconFive"></ion-icon>
                 <asp:TextBox ID="CustomerPassword" runat="server" placeholder="" Required="true" type="password"></asp:TextBox>
                 <label for="CustomerPassword" class="RLaber">Password</label>

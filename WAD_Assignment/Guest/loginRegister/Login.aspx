@@ -52,18 +52,26 @@
                     onclick="hidePasswordRecoveryPopup();">
                 </ion-icon>
             </div>
+            <br />
             <h2 style="color: white; text-align: center;" class="RH1">Password Recovery</h2>
-
+            <!-- Email -->
+            <div class="form-group" style="margin-bottom: -58px;">
+                <ion-icon name="mail-outline" class="iconTwo" style="top: 119px;"></ion-icon>
+                <asp:TextBox ID="CustomerEmailPR" runat="server" OnTextChanged="CustomerEmail_TextChanged"></asp:TextBox>
+                <label for="CustomerEmail" class="RLaber">Email</label>
+                <br />
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="CustomerEmailPR" ErrorMessage="Invalid email format. (e.g. user@example.com)" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"></asp:RegularExpressionValidator>
+            </div>
             <!-- Security Question -->
             <div class="form-group" style="margin-top: 45px; margin-bottom: -15px; }">
-                <ion-icon name="help-circle-outline" class="iconFour" style="top: 113px"></ion-icon>
+                <ion-icon name="help-circle-outline" class="iconFour" style="top: 182px"></ion-icon>
                 <asp:TextBox ID="SecurityQuestion" runat="server" placeholder="" Onclick=""></asp:TextBox>
                 <label for="SecurityQuestion" class="RLaber">What is your favorite movie?</label>
             </div>
 
             <!-- New Password and Confirm Password (hidden by default) -->
             <div class="form-group" style="margin-bottom: -20px;">
-                <ion-icon name="lock-closed-outline" class="iconFive" style="top: 176px;"></ion-icon>
+                <ion-icon name="lock-closed-outline" class="iconFive" style="top: 244px;"></ion-icon>
                 <asp:TextBox ID="TextBox1" runat="server" placeholder="" type="password"></asp:TextBox>
                 <label for="newPassword" class="RLaber">New Password</label>
                 <br />
@@ -72,7 +80,7 @@
             </div>
 
             <div class="form-group" style="margin-bottom: -18px;">
-                <ion-icon name="lock-closed-outline" class="iconSix" style="top: 233px;"></ion-icon>
+                <ion-icon name="lock-closed-outline" class="iconSix" style="top: 301px;"></ion-icon>
                 <asp:TextBox ID="confirmPassword" runat="server" placeholder="" type="password"></asp:TextBox>
                 <label for="confirmPassword" class="RLaber">Confirm Password</label>
             </div>
@@ -82,9 +90,10 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <button type="button" id="SubmitButton" class="register-btn" onclick="hidePasswordRecoveryPopup(); return false;">
+                <%--<button type="button" id="SubmitButton" class="register-btn" onclick="hidePasswordRecoveryPopup(); return false;"runat ="server" >
                     Submit
-                </button>
+                </button>--%>
+                <asp:Button ID="SubmitButton" runat="server" Text="Submit" CssClass="register-btn" type ="submit" OnClick="PasswordRecovery_Click" OnClientClick="return validateAndSubmit();" PostBackURL="~/Guest/loginRegister/Login.aspx" />
             </div>
         </div>
     </div>
@@ -94,6 +103,32 @@
 
     <script src="Login.js" type="text/javascript"></script>
 
+    <script type="text/javascript">
+    function validateAndSubmit() {
+        // Perform your custom validation here
 
+        // Example: Check if the password meets certain criteria
+        var newPassword = document.getElementById('TextBox1').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (newPassword.length < 8) {
+            alert('Password must be at least 8 characters.');
+            return false; // Prevent form submission
+        }
+
+        if (newPassword !== confirmPassword) {
+            alert('Passwords do not match.');
+            return false; // Prevent form submission
+        }
+
+        // If validation passes, you can submit the form
+        hidePasswordRecoveryPopup(); // Add your logic to hide the popup
+        PasswordRecovery_Click(); // Add your logic to handle password recovery
+
+        // If you want to allow the postback, return true
+        // If you want to prevent the postback, return false
+        return true;
+    }
+    </script>
 
 </asp:Content>
