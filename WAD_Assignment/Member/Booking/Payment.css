@@ -285,3 +285,24 @@ div.checkout {
     top: -65px;
     right: 8%;
 }
+
+.timer {
+    width: 30%;
+    position: relative;
+    top: -60px;
+    left: 30px;
+}
+
+#timer-icon {
+    color: white;
+    float: left;
+    font-size: 20px;
+}
+
+.countdown {
+    margin-left: 5px;
+    font-size: 18px;
+    float: left;
+    color: white;
+    font-weight: bold;
+}

@@ -1,0 +1,202 @@
+DROP TABLE [Review];
+DROP TABLE [Maintenance];
+DROP TABLE [CustomerNotification];
+DROP TABLE [Notification];
+DROP TABLE [Refund];
+DROP TABLE [Payment];
+DROP TABLE [Ticket];
+DROP TABLE [Schedule];
+DROP TABLE [Hall];
+DROP TABLE [Movie];
+DROP TABLE [Staff];
+DROP TABLE [Customer];
+
+CREATE TABLE [dbo].[Customer] (
+    [custID]           CHAR (4)      NOT NULL,
+    [custName]         VARCHAR (60)  NOT NULL,
+    [custEmail]        VARCHAR (30)  NOT NULL,
+    [custPhoneNo]      VARCHAR (12)  NOT NULL,
+    [custPassword]     VARCHAR (64)  NOT NULL,
+    [custSecurityQues] VARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([custID] ASC)
+);
+
+INSERT INTO [dbo].[Customer] ([custID], [custName], [custEmail], [custPhoneNo], [custPassword], [custSecurityQues]) VALUES (N'C001', N'Erika', N'abc26@gmail.com', N'0168627182', N'bdab0e5ea56c3dd122654c4eaa6898141748f0bda39a9d15669912afc9ae0e7f', N'Minion')
+
+INSERT INTO [dbo].[Customer] ([custID], [custName], [custEmail], [custPhoneNo], [custPassword], [custSecurityQues]) VALUES (N'C002', N'Sauwei', N'sw21@gmail.com', N'0123456789', N'e2249d5a43adbbc0375a9794c763d85b66875ce1e34fc5ba934141ed1c666a38', N'banana')
+
+
+CREATE TABLE [dbo].[Staff] (
+    [staffID]       CHAR (4)        NOT NULL,
+    [staffName]     VARCHAR (50)    NOT NULL,
+    [staffEmail]    VARCHAR (20)    NOT NULL,
+    [staffPhoneNo]  VARCHAR (11)    NOT NULL,
+    [staffPassword] VARCHAR (64)    NOT NULL,
+    [staffPosition] VARCHAR (50)    NOT NULL,
+    [salary]        DECIMAL (15, 2) NOT NULL,
+    PRIMARY KEY CLUSTERED ([staffID] ASC)
+);
+
+INSERT INTO [dbo].[Staff] ([staffID], [staffName], [staffEmail], [staffPhoneNo], [staffPassword], [staffPosition], [salary]) VALUES (N'S001', N'Ben', N'ben810@gmail.com', N'0123456789', N'Abc123456!', N'Staff', CAST(2500.00 AS Decimal(15, 2)))
+
+INSERT INTO [dbo].[Staff] ([staffID], [staffName], [staffEmail], [staffPhoneNo], [staffPassword], [staffPosition], [salary]) VALUES (N'S002', N'Admin', N'admin@gmail.com', N'0123456789', N'admin@123', N'Admin', CAST(5000.00 AS Decimal(15, 2)))
+
+
+CREATE TABLE [dbo].[Movie] (
+    [movieID]        CHAR (4)        NOT NULL,
+    [movieName]      VARCHAR (50)    NOT NULL,
+    [movieDesc]      VARCHAR (MAX)   NOT NULL,
+    [category]       VARCHAR (20)    NOT NULL,
+    [releaseDate]    DATE            NOT NULL,
+    [status]         VARCHAR (10)    NOT NULL,
+    [duration]       INT             NOT NULL,
+    [language]       VARCHAR (10)    NOT NULL,
+    [subtitle]       VARCHAR (10)    NOT NULL,
+    [classification] INT       NOT NULL,
+    [director]       VARCHAR (30)    NOT NULL,
+    [cast]           VARCHAR (MAX)   NOT NULL,
+    [movieImage]     VARCHAR (MAX)   NOT NULL,
+    [price]          DECIMAL (10, 2) NOT NULL,
+    [movieTrailer]   VARCHAR (255)   NOT NULL,
+    PRIMARY KEY CLUSTERED ([movieID] ASC)
+);
+
+INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M001', N'Thanksgiving', N'After a Black Friday riot ends in tragedy, a mysterious Thanksgiving-inspired killer terrorizes Plymouth, Massachusetts – the birthplace of the holiday. Picking off residents one by one, what begins as random revenge killings are soon revealed to be part of a larger, sinister holiday plan. Will the town uncover the killer and survive the holidays...or become guests at his twisted holiday dinner table?', N'Horror', N'2023-08-10', N'Released', 140, N'English', N'Chinese', N'13        ', N'John Director', N'John Doe, Jane Smith', N'swipperMovie1.png', CAST(15.99 AS Decimal(10, 2)), N'swipperMovie1.png')
+
+INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M002', N'Aquaman and the Lost Kingdom', N'In the film, Arthur must work with his half-brother Orm (Wilson) to prevent Black Manta (Abdul-Mateen II) from killing his family and using the cursed Black Trident to overheat the world while searching for the lost seventh kingdom of the seas.', N'Action', N'2023-09-10', N'Released', 150, N'English', N'Chinese', N'13        ', N'James Wan', N'Jason Momoa, Patrick Wilson', N'swipperMovie2.jpg', CAST(15.99 AS Decimal(10, 2)), N'swipperMovie2.jpg')
+
+INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M003', N'Wish', N'The story focuses on a 17-year-old girl named Asha (DeBose) in the Kingdom of Rosas, who makes a passionate plea to the stars in a moment of need, which leads her to meet a living, magic star fallen from the sky, something that attracts the attention of Rosas'' evil ruler Magnifico (Pine) as well.', N'Musical', N'2023-06-10', N'Pending', 120, N'English', N'Chinese', N'13        ', N'Haha', N'John Doe, Jane Smith', N'swipperMovie3.jpg', CAST(15.80 AS Decimal(10, 2)), N'swipperMovie3.jpg')
+
+INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M004', N'War On Terror: KL Anarki', N'New action movie War On Terror: KL Anarki, directed by Kroll Azry and Frank See, centres on the police uncovering a terrorist attack planned for Bukit Bintang, Kuala Lumpur, by brothers Lang (Qi Razali) and Joe (Naque Ariffin). Unfortunately for the brothers, a police special team is assigned to thwart this threat.', N'Adventure', N'2023-11-10', N'Released', 120, N'English', N'Chinese', N'13        ', N'Kroll Azry', N'Aedy Ashraf, Farali Khan', N'swipperMovie4.jpg', CAST(17.50 AS Decimal(10, 2)), N'swipperMovie4.jpg')
+
+INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M005', N'Wonka', N'Mr Willy Wonka , who is one of the main characters in the story , is an extraordinary man. He is described by many as a chocolate making genius who relishes nonsense. He is an incredibly intelligent man and is very sharp and full of life.', N'Musical', N'2023-12-10', N'Pending', 120, N'English', N'Chinese', N'13        ', N'Paul King', N'Timothée Chalamet', N'swipperMovie5.jpeg', CAST(16.60 AS Decimal(10, 2)), N'swipperMovie5.jpeg')
+
+INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M006', N'Five Nights at Freddy''s', N'Plot. At Freddy Fazbear''s Pizza, an abandoned pizzeria and family entertainment center that was once successful, a night security guard attempts to flee from the place but is captured and strapped to a torture device, which kills him.', N'Horror', N'2023-12-12', N'Released', 120, N'English', N'Chinese', N'18        ', N'Emma Tammi', N'Josh Hutcherson', N'swipperMovie6.jpg', CAST(16.60 AS Decimal(10, 2)), N'swipperMovie6.jpg')
+
+INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M007', N'Migration', N'A family of ducks living in New England try to convince their over-protective father to go on a vacation of a lifetime in the Bahamas.', N'Animation', N'2023-12-28', N'Released', 120, N'English', N'Chinese', N'12        ', N'Benjamin Renner', N'Kumail Nanjiani, Elizabeth Banks, Awkwafina, Keegan-Michael Key, David Mitchell', N'swipperMovie7.jpg', CAST(16.60 AS Decimal(10, 2)), N'swipperMovie7.jpg')
+
+INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M008', N'Napoleon', N'Napoleon is a spectacle-filled action epic that details the checkered rise and fall of the iconic French Emperor Napoleon Bonaparte, played by Oscar®-winner Joaquin Phoenix. Against a stunning backdrop of large-scale filmmaking orchestrated by legendary director Ridley Scott, the film captures Bonaparte''s relentless journey to power through the prism of his addictive, volatile relationship with his one true love, Josephine, showcasing his visionary military and political tactics against some of the most dynamic practical battle sequences ever filmed.', N'War', N'2023-11-30', N'Released', 220, N'English', N'Chinese', N'16        ', N'Ridley Scott', N'Joaquin Phoenix, Vanessa Kirby, Ben Miles, Tahar Rahim', N'swipperMovie8.jpeg', CAST(16.60 AS Decimal(10, 2)), N'swipperMovie8.jpeg')
+
+INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M009', N'Dune: Part Two', N'With clairvoyant powers that may enable him to guide humanity to a better future, Paul Atreides continues his mythic journey. Now united with Chani and the Fremen, Paul is set on a warpath of revenge against the conspirators who destroyed his family. After taking control of the empire and facing a choice between the love of his life and the fate of the known universe, he endeavours to prevent a terrible future that only he can foresee.', N'Adventure', N'2024-03-14', N'Pending', 120, N'English', N'Chinese', N'12        ', N'enis Villeneuve', N'Timothée Chalamet, Josh Brolin, Stellan Skarsgard, Zendaya', N'swipperMovie9.jpeg', CAST(16.60 AS Decimal(10, 2)), N'swipperMovie9.jpeg')
+
+INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M010', N'Elio', N'Elio struggles to fit in until he is transported by aliens and becomes the chosen one to be Earth`s galactic ambassador while his mother Olga works on the top secret project to decode alien messages.', N'Animation', N'2024-02-29', N'Pending', 120, N'English', N'Chinese', N'12        ', N'Adrian Molina', N'Yonas Kibreab, America Ferrera, Jameela Jamil, Brad Garrett', N'swipperMovie10.jpeg', CAST(16.60 AS Decimal(10, 2)), N'swipperMovie10.jpg')
+
+INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M011', N'Ghostbusters: Frozen Empire', N'The Spengler family returns to where it all started - the iconic New York City firehouse - to team up with the original Ghostbusters, who`ve developed a top-secret research lab to take busting ghosts to the next level. But when the discovery of an ancient artifact unleashes an evil force, Ghostbusters new and old must join forces to protect their home and save the world from a second Ice Age.', N'Horror', N'2024-03-28', N'Pending', 220, N'English', N'Chinese', N'16        ', N'Gil Kenan', N'Paul Rudd, Carrie Coon, Finn Wolfhard, Mckenna Grace, Kumail Nanjiani, Patton Oswalt, Celeste O''Connor, Logan Kim, Dan Aykroyd, Ernie Hudson, Annie Potts', N'swipperMovie11.jpg', CAST(18.60 AS Decimal(10, 2)), N'swipperMovie11.jpg')
+
+INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M012', N'Kung Fu Panda 4', N'The Dragon Warrior is back, and he''s about to embark to face the most threatening enemy he''s ever had to battle. Po leaves the Valley of Peace to go to the big city, where the unexpected personification of evil will already be waiting for him. A new villain, called The Chameleon, is in town, and the Dragon Warrior''s new adversary is not someone he can mess around with.', N'Animation', N'2024-03-07', N'Pending', 160, N'English', N'Chinese', N'12        ', N'Mike Mitchell, Stephanie Stine', N'Jack Black, Awkwafina, Viola Davis, Ian McShane, Dustin Hoffman, Ke Huy Quan', N'swipperMovie12.jpg', CAST(18.60 AS Decimal(10, 2)), N'swipperMovie12.jpg')
+
+
+CREATE TABLE [dbo].[Hall] (
+    [hallID] CHAR (4) NOT NULL,
+    [hallNo] INT      NOT NULL,
+    [maxPax] INT      NOT NULL,
+    PRIMARY KEY CLUSTERED ([hallID] ASC)
+);
+
+INSERT INTO [dbo].[Hall] ([hallID], [hallNo], [maxPax]) VALUES (N'H001', 1, 10)
+
+INSERT INTO [dbo].[Hall] ([hallID], [hallNo], [maxPax]) VALUES (N'H002', 2, 20)
+
+
+CREATE TABLE [dbo].[Schedule] (
+    [scheduleID] CHAR (4) NOT NULL,
+    [movieID]    CHAR (4) NOT NULL,
+    [hallID]     CHAR (4) NOT NULL,
+    [date]       DATE     NOT NULL,
+    [time]       TIME (7) NOT NULL,
+    PRIMARY KEY CLUSTERED ([scheduleID] ASC),
+    CONSTRAINT [FK_Schedule_ToHall] FOREIGN KEY ([hallID]) REFERENCES [dbo].[Hall] ([hallID]),
+    CONSTRAINT [FK_Schedule_ToMovie] FOREIGN KEY ([movieID]) REFERENCES [dbo].[Movie] ([movieID])
+);
+
+INSERT INTO [dbo].[Schedule] ([scheduleID], [movieID], [hallID], [date], [time]) VALUES (N'S001', N'M001', N'H001', N'2023-12-10', N'15:30:00')
+
+INSERT INTO [dbo].[Schedule] ([scheduleID], [movieID], [hallID], [date], [time]) VALUES (N'S002', N'M002', N'H002', N'2023-11-10', N'10:30:00')
+
+INSERT INTO [dbo].[Schedule] ([scheduleID], [movieID], [hallID], [date], [time]) VALUES (N'S003', N'M001', N'H002', N'2023-10-10', N'10:30:00')
+
+INSERT INTO [dbo].[Schedule] ([scheduleID], [movieID], [hallID], [date], [time]) VALUES (N'S004', N'M001', N'H001', N'2023-10-10', N'12:30:00')
+
+
+CREATE TABLE [dbo].[Ticket] (
+    [ticketID]     CHAR (4)     NOT NULL,
+    [custID]       CHAR (4)     NOT NULL,
+    [scheduleID]   CHAR (4)     NOT NULL,
+    [seatNo]       VARCHAR(3)     NOT NULL,
+    [purchaseDate] DATE         NOT NULL,
+    [status]       VARCHAR (30) NOT NULL,
+    PRIMARY KEY CLUSTERED ([ticketID] ASC),
+    CONSTRAINT [FK_ticketToCust] FOREIGN KEY ([custID]) REFERENCES [dbo].[Customer] ([custID]),
+    CONSTRAINT [FK_ticketToSchedule] FOREIGN KEY ([scheduleID]) REFERENCES [dbo].[Schedule] ([scheduleID])
+);
+
+INSERT INTO [dbo].[Ticket] ([ticketID], [custID], [scheduleID], [seatNo], [purchaseDate], [status]) VALUES ('T001', 'C001', 'S001', 'A1', '2023-12-29', 'Paid')
+
+INSERT INTO [dbo].[Ticket] ([ticketID], [custID], [scheduleID], [seatNo], [purchaseDate], [status]) VALUES ('T002', 'C001', 'S001', 'A2', '2023-12-29', 'Paid')
+
+
+CREATE TABLE [dbo].[Payment] (
+    [paymentID]     CHAR (4)        NOT NULL,
+    [ticketID]      CHAR (4)        NOT NULL,
+    [paymentAmount] DECIMAL (10, 2) NOT NULL,
+    [paymentDate]   DATE            NOT NULL,
+    [paymentType]   VARCHAR (50)    NOT NULL,
+    PRIMARY KEY CLUSTERED ([paymentID] ASC),
+    CONSTRAINT [FK_Payment_ToTicket] FOREIGN KEY ([ticketID]) REFERENCES [dbo].[Ticket] ([ticketID])
+);
+
+INSERT INTO [dbo].[Payment] ([paymentID], [ticketID], [paymentAmount], [paymentDate], [paymentType]) VALUES ('P001', 'T001', CAST(15.99 AS Decimal(10, 2)), '2023-12-29', 'card')
+INSERT INTO [dbo].[Payment] ([paymentID], [ticketID], [paymentAmount], [paymentDate], [paymentType]) VALUES ('P002', 'T002', CAST(15.99 AS Decimal(10, 2)), '2023-12-29', 'card')
+
+
+CREATE TABLE [dbo].[Refund] (
+    [refundID]     CHAR (4)      NOT NULL,
+    [refundReason] VARCHAR (30)  NOT NULL,
+    [refundDesc]   VARCHAR (MAX) NOT NULL,
+    [refundDate]   DATE          NOT NULL,
+    [ticketID]     CHAR (4)      NOT NULL,
+    PRIMARY KEY CLUSTERED ([refundID] ASC),
+    CONSTRAINT [FK_Refund_ToTicket] FOREIGN KEY ([ticketID]) REFERENCES [dbo].[Ticket] ([ticketID])
+);
+
+CREATE TABLE [dbo].[Notification] (
+    [notiID]     CHAR (4)      NOT NULL,
+    [movieID]  CHAR(4) NOT NULL,
+    [notiTitle]  VARCHAR (50)  NOT NULL,
+    [notiDesc]   VARCHAR (MAX) NOT NULL,
+    [notiDate]   DATE          NOT NULL,
+    [notiStatus] VARCHAR (10)  NOT NULL,
+    PRIMARY KEY CLUSTERED ([notiID] ASC), 
+    CONSTRAINT [FK_Notification_ToMovie] FOREIGN KEY ([movieID]) REFERENCES [dbo].[Movie]([movieID])
+);
+
+CREATE TABLE [dbo].[CustomerNotification] (
+    [customerNotiID] CHAR (4) NOT NULL,
+    [custID]         CHAR (4) NOT NULL,
+    [notiID]         CHAR (4) NOT NULL,
+    PRIMARY KEY CLUSTERED ([customerNotiID] ASC),
+    CONSTRAINT [FK_CustomerNotification_ToCustomer] FOREIGN KEY ([custID]) REFERENCES [dbo].[Customer] ([custID]),
+    CONSTRAINT [FK_CustomerNotification_ToNotification] FOREIGN KEY ([notiID]) REFERENCES [dbo].[Notification] ([notiID])
+);
+
+CREATE TABLE [dbo].[Maintenance] (
+    [maintenanceID] CHAR (4)      NOT NULL,
+    [movieID]       CHAR (4)      NOT NULL,
+    [staffID]       CHAR (4)      NOT NULL,
+    [log]           VARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([maintenanceID] ASC),
+    CONSTRAINT [FK_Maintenance_ToStaff] FOREIGN KEY ([staffID]) REFERENCES [dbo].[Staff] ([staffID]), 
+    CONSTRAINT [FK_Maintenance_ToMovie] FOREIGN KEY ([movieID]) REFERENCES [dbo].[Movie] ([movieID])
+);
+
+CREATE TABLE [dbo].[Review] (
+    [reviewID] CHAR (4)      NOT NULL,
+    [custID]   CHAR (4)      NOT NULL,
+    [movieID]  CHAR (4)      NOT NULL,
+    [rating]   INT NOT NULL,
+    [comment]  VARCHAR (MAX) NOT NULL,
+    [date]     DATE          NOT NULL,
+    PRIMARY KEY CLUSTERED ([reviewID] ASC),
+    CONSTRAINT [FK_Review_ToCustomer] FOREIGN KEY ([custID]) REFERENCES [dbo].[Customer] ([custID]),
+    CONSTRAINT [FK_Review_ToMovie] FOREIGN KEY ([movieID]) REFERENCES [dbo].[Movie] ([movieID])
+);

@@ -13,6 +13,7 @@ namespace WAD_Assignment.Member
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // initialise all the controls if it is redirected from other page
             if (PreviousPage != null && PreviousPage.IsCrossPagePostBack)
             {
                 ContentPlaceHolder contentPlaceHolder = PreviousPage.Master.FindControl("ContentPlaceHolder1") as ContentPlaceHolder;
@@ -21,6 +22,7 @@ namespace WAD_Assignment.Member
                 UpdatePanel updatePanel = contentPlaceHolder.FindControl("UpdatePanel1") as UpdatePanel;
                 Label seatSelected = updatePanel.FindControl("lblSeats") as Label;
                 HiddenField ticketPrice = updatePanel.FindControl("ticketPrice") as HiddenField;
+                HiddenField scheduleId = updatePanel.FindControl("scheduleID") as HiddenField;
 
                 string[] allSeats = seatSelected.Text.Split(',');
 
@@ -44,13 +46,14 @@ namespace WAD_Assignment.Member
                 txtPrice.Text = "RM " + ticketPrice.Value;
                 txtQty.Text = "x " + allSeats.Length.ToString();
                 txtTotal.Text = "RM " + (Convert.ToDouble(ticketPrice.Value) * allSeats.Length).ToString("F2");
-                Session["controlList"] = controlList;
+                scheduleID.Value = scheduleId.Value;
+                // Session["controlList"] = controlList;
+                HttpContext.Current.Cache["controlList"] = controlList;
             }
-        }
-
-        protected void btnReserve_Click(object sender, EventArgs e)
-        {
-
+            else if (!IsPostBack) // check if it is a postback
+            {
+                Response.Redirect("~/error/GeneralError.aspx");
+            }
         }
     }
 }

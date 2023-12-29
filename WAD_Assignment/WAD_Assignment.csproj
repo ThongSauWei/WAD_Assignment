@@ -81,6 +81,7 @@
     <Content Include="App_Data\TicketDB_log.ldf">
       <DependentUpon>TicketDB.mdf</DependentUpon>
     </Content>
+    <Content Include="db-script.txt" />
     <Content Include="error\Error.css" />
     <Content Include="error\GeneralError.aspx" />
     <Content Include="error\PageNotFoundError.aspx" />
@@ -136,7 +137,6 @@
     <Content Include="Guest\loginRegister\PasswordRecovery.aspx" />
     <Content Include="image\RBackground.gif" />
     <Content Include="Guest\loginRegister\RegisterAndLogin.css" />
-    <Content Include="MasterPage\Header.js" />
     <Content Include="Member\Booking\Booking.aspx" />
     <Content Include="Member\Booking\ConfirmBooking.aspx" />
     <Content Include="image\movie-image1.jpg" />

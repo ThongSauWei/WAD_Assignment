@@ -110,14 +110,8 @@ div.total-price {
     margin-bottom: 20px;
 }
 
-div.buttons {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+.purchase-button {
     margin-top: 50px !important;
-}
-
-div.buttons * {
     background-color: inherit;
     border: 2px solid #ecd261;
     width: 200px;
@@ -129,9 +123,10 @@ div.buttons * {
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: 0.5s;
+    margin-left: 55%;
 }
 
-div.buttons *:hover {
+.purchase-button:hover {
     background-color: #ecd261;
     color: rgba(40,41,52,1);
 

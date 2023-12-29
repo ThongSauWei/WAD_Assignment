@@ -23,16 +23,26 @@ namespace WAD_Assignment.Member
                 Image img = contentPlaceHolder.FindControl("movieImg") as Image;
                 TextBox totalPrice = contentPlaceHolder.FindControl("txtTotal") as TextBox;
                 Label seatsSelected = contentPlaceHolder.FindControl("lblSeat") as Label;
+                HiddenField scheduleId = contentPlaceHolder.FindControl("scheduleID") as HiddenField;
 
                 // initialise the image
                 movieImg.ImageUrl = img.ImageUrl;
 
                 // initialise the movie detail from the previous page
-                List<Control> controlList = (List<Control>)Session["controlList"];
-                
+                // List<Control> controlList = (List<Control>)Session["controlList"];
+                List<Control> controlList = HttpContext.Current.Cache["controlList"] as List<Control>;
+
                 foreach (Control control in controlList)
                 {
                     movieDesc.Controls.Add(control);
+                }
+
+                // initialise the drop down list for years
+                int thisYear = DateTime.Today.Year;
+
+                for (int year = 0; year <= 5; year++)
+                {
+                    ddlYear.Items.Add(new ListItem((thisYear + year).ToString()));
                 }
 
                 // initialise the price
@@ -40,17 +50,17 @@ namespace WAD_Assignment.Member
 
                 // initialise the seats chosen
                 seatsChosen.Value = seatsSelected.Text;
+
+                // initialise the schedule id
+                scheduleID.Value = scheduleId.Value;
+
+                // initialise the timer value
+                timerValue.Value = "299";
             }
-
-            if (!IsPostBack)
+            else if (!IsPostBack)
             {
-                int thisYear = DateTime.Today.Year;
-
-                for (int year = 0; year <= 5; year++)
-                {
-                    ddlYear.Items.Add(new ListItem((thisYear + year).ToString()));
-                }
-            }     
+                Response.Redirect("~/error/GeneralError.aspx");
+            }
         }
 
         protected void ddlDate_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,32 +108,60 @@ namespace WAD_Assignment.Member
             Response.Redirect("~/Guest/HomePage/Homepage.aspx");
         }
 
+        protected void CountDownTimer_Tick(object sender, EventArgs e)
+        {
+            int timeLeft = Convert.ToInt32(timerValue.Value);
+            int minutes;
+            int seconds;
+            if (timeLeft > 0)
+            {
+                minutes = timeLeft / 60;
+                seconds = timeLeft % 60;
+                lblCountDown.Text = "Time Left: " + minutes.ToString("00") + ":" + seconds.ToString("00");
+                timerValue.Value = (--timeLeft).ToString();
+            }
+            else
+            {
+                string script = "alert('The session is expired. Redirecting to homepage...";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "SessionExpired", script, true);
+                Response.Redirect("~/Guest/HomePage/Homepage.aspx");
+            }
+        }
+
         private void Create_Ticket(string seatNo)
         {
             conn.Open();
 
-            string lastRowQuery = "SELECT * FROM Ticket";
+            // get the last ticket id
+            string lastRowQuery = "SELECT TOP 1 TicketID FROM Ticket ORDER BY TicketID DESC";
             SqlCommand cmdSelect = new SqlCommand(lastRowQuery, conn);
-            SqlDataReader reader = cmdSelect.ExecuteReader();
+            string lastTicketID = (string)cmdSelect.ExecuteScalar();
 
-            if (reader.HasRows)
+            string ticketID;
+            if (lastTicketID != null)
             {
-                while (reader.Read())
-                {
-
-                }
+                // advance the ticket ID
+                int index = Convert.ToInt32(lastTicketID.Substring(1));
+                index++;
+                ticketID = "T" + index.ToString("000");
+            }
+            else
+            {
+                ticketID = "T001";
             }
 
-            string lastTicketID = reader["ticketID"].ToString();
-            int index = Convert.ToInt32(lastTicketID.Substring(1));
-            index++;
-            string ticketID = "T" + index;
+            conn.Close();
+
+            conn.Open();
+
+            // get the schedule ID
+            string scheduleId = scheduleID.Value;
 
             string queryStr = "INSERT INTO Ticket VALUES(@TicketID, @CustomerID, @ScheduleID, @SeatNo, @PurchaseDate, @Status)";
             SqlCommand cmdInsert = new SqlCommand(queryStr, conn);
             cmdInsert.Parameters.AddWithValue("@TicketID", ticketID);
             cmdInsert.Parameters.AddWithValue("@CustomerID", "C001");
-            cmdInsert.Parameters.AddWithValue("@ScheduleID", "S001");
+            cmdInsert.Parameters.AddWithValue("@ScheduleID", scheduleId);
             cmdInsert.Parameters.AddWithValue("@SeatNo", seatNo);
             cmdInsert.Parameters.AddWithValue("@PurchaseDate", DateTime.Today);
             cmdInsert.Parameters.AddWithValue("@Status", "Paid");
@@ -134,13 +172,13 @@ namespace WAD_Assignment.Member
 
             if (row > 0)
             {
-                Create_Payment("T001");
+                Create_Payment(ticketID);
             }
             else
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "UnsuccessfulPurchase", "alert('Some errors has " +
                     "encountered during ticket purchase.');", true);
-                Response.Redirect("~/Member/Booking/Booking.aspx"); // waiting to modify by adding a scheduleID
+                Response.Redirect("~/Member/Booking/Booking.aspx");
             }
         }
 
@@ -148,13 +186,36 @@ namespace WAD_Assignment.Member
         {
             conn.Open();
 
+            // get the last payment id
+            string lastRowQuery = "SELECT TOP 1 PaymentID FROM Payment ORDER BY PaymentID DESC";
+            SqlCommand cmdSelect = new SqlCommand(lastRowQuery, conn);
+            string lastPaymentID = (string)cmdSelect.ExecuteScalar();
+
+            string paymentID;
+            if (lastPaymentID != null)
+            {
+                // advance the ticket ID
+                int index = Convert.ToInt32(lastPaymentID.Substring(1));
+                index++;
+                paymentID = "P" + index.ToString("000");
+            }
+            else
+            {
+                paymentID = "P001";
+            }
+
+            // get the payment amount for each ticket
+            double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Substring(3));
+            int numOfTickets = seatsChosen.Value.Split(',').Length;
+            double unitPrice = totalPrice / numOfTickets;
+
             string queryStr = "INSERT INTO Payment VALUES(@PaymentID, @TicketID, @PaymentAmount, @PaymentDate, @PaymentType)";
             SqlCommand cmdInsert = new SqlCommand(queryStr, conn);
-            cmdInsert.Parameters.AddWithValue("@PaymentID", "P001");
-            cmdInsert.Parameters.AddWithValue("@TicketID", "T001");
-            cmdInsert.Parameters.AddWithValue("@PaymentAmount", "20");
+            cmdInsert.Parameters.AddWithValue("@PaymentID", paymentID);
+            cmdInsert.Parameters.AddWithValue("@TicketID", ticketID);
+            cmdInsert.Parameters.AddWithValue("@PaymentAmount", unitPrice);
             cmdInsert.Parameters.AddWithValue("@PaymentDate", DateTime.Today);
-            cmdInsert.Parameters.AddWithValue("@PaymentType", "Card");
+            cmdInsert.Parameters.AddWithValue("@PaymentType", paymentChoiceField.Value);
 
             int row = cmdInsert.ExecuteNonQuery();
 
@@ -168,9 +229,8 @@ namespace WAD_Assignment.Member
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "UnsuccessfulPurchase", "alert('Some errors has " +
                     "encountered during payment making.');", true);
-                Response.Redirect("~/Member/Booking/Booking.aspx"); // waiting to modify by adding a scheduleID
+                Response.Redirect("~/Member/Booking/Booking.aspx");
             }
         }
-
     }
 }

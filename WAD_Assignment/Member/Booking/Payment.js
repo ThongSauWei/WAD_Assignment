@@ -19,7 +19,6 @@
     }
 
     displayPaymentMethod(value);
-    displayIcon("payment-method-checked", null);
     updateHiddenField(value);
 }
 
@@ -39,17 +38,6 @@ function displayPaymentMethod(value) {
 
         removeRequiredAttribute("tngPayment");
         addRequiredAttribute("cardPayment");
-    }
-}
-
-function displayIcon(show, hide) {
-    var showIcon = document.getElementById(show);
-    var hideIcon = document.getElementById(hide);
-
-    showIcon.style.display = "block";
-
-    if (hideIcon) {
-        hideIcon.style.display = "none";
     }
 }
 
