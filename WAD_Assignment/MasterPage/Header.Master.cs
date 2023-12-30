@@ -337,12 +337,6 @@ namespace WAD_Assignment
                             // Redirect to the Detail page with the movieID parameter
                             Response.Redirect($"../Detail/Detail.aspx?movieID={movieID}", false);
                         }
-                        else
-                        {
-                            // Handle the case where the movieID is not found (e.g., show an error message)
-                            // You can customize this based on your application's needs
-                            //Response.Redirect("Homepage.aspx?error=1", false);
-                        }
                     }
                 }
             }

@@ -176,13 +176,9 @@
                                 <div class="overlay-content2" style="margin-top: -180px;">
 
                                     <div class="autocomplete2" style="width: 1300px;">
-                                        <input type="hidden" id="myInput21" runat="server" value='Thanksgiving' />
                                         <input id="myInput2" runat="server" type="text" placeholder="Search Movie..." name="search">
                                         <button id="myInputBut2" type="submit" runat="server" onserverclick="submitSearch"><i class="fa fa-search"></i></button>
                                     </div>
-
-                                    
-
 
                                 </div>
                             </div>
@@ -471,6 +467,20 @@
                         </button>
                     </div>
 
+                    <%
+                        // Simulate setting the session variable during testing
+                        Session["custID"] = "C001"; // testing
+
+                        if (Session["custID"] != null)
+                        {
+                            string custID = Session["custID"].ToString();
+                            string custName = GetCustNameFromDatabase(custID);
+
+                            if (!string.IsNullOrEmpty(custName))
+                            {
+                    %>
+
+
                     <ul class="navbar-list">
                         <li>
                             <asp:HyperLink ID="HyperLink5" class="navbar-link" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
@@ -481,6 +491,7 @@
                             <!---<a href="#" class="navbar-link">Movie</a>-->
                         </li>
 
+
                         <li>
                             <asp:HyperLink ID="HyperLink8" class="navbar-link" runat="server" NavigateUrl="~/Member/MyBooking/myBooking.aspx">My Booking</asp:HyperLink>
                             <!---<a href="#" class="navbar-link">My Booking</a>-->
@@ -488,11 +499,101 @@
 
                     </ul>
 
+                    <%
+                        }
+                        else
+                        {
+                    %>
+                    <!-- Display a default message - if custName is not found -->
+                    <ul class="navbar-list">
+                        <li>
+                            <asp:HyperLink ID="HyperLink7" class="navbar-link" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
+                            <!---<a href="./index.html" class="navbar-link">Home</a>-->
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink10" class="navbar-link" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
+                            <!---<a href="#" class="navbar-link">Movie</a>-->
+                        </li>
+
+
+                        <li>
+                            <asp:HyperLink ID="HyperLink12" class="navbar-link" runat="server" NavigateUrl="~/Member/MyBooking/myBooking.aspx">My Booking</asp:HyperLink>
+                            <!---<a href="#" class="navbar-link">My Booking</a>-->
+                        </li>
+
+                    </ul>
+                    <%
+                        }
+                    %>
+                    <% }
+                        else
+                        { %>
+                    <!-- Display a default message - if custName is not found -->
+                    <ul class="navbar-list">
+                        <li>
+                            <asp:HyperLink ID="HyperLink9" class="navbar-link" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
+                            <!---<a href="./index.html" class="navbar-link">Home</a>-->
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink13" class="navbar-link" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
+                            <!---<a href="#" class="navbar-link">Movie</a>-->
+                        </li>
+
+                    </ul>
+                    <% } %>
+
                     <ul class="navbar-social-list">
                         <li>
-                            <a href="#" class="navbar-social-link">
-                                <button class="btnHeader btn-primarySign">Sign in</button>
-                            </a>
+                            <%
+                                // Simulate setting the session variable during testing
+                                //Session["custID"] = "C001"; // testing
+
+                                if (Session["custID"] != null)
+                                {
+                                    string custID = Session["custID"].ToString();
+                                    string custName = GetCustNameFromDatabase(custID);
+
+                                    if (!string.IsNullOrEmpty(custName))
+                                    {
+                            %>
+                            <!-- Display custName if successfully retrieved from the database -->
+                            <div class="dropWelcome1">
+                                <div class="welcomeCust1" style="color: gold;">Welcome, <%= custName %>!</div>
+                                <div class="dropdown-contentWelcome1">
+                                    <p class="dropLog1" onclick="logout()">Logout</p>
+
+                                    <script type="text/javascript">
+                                        function logout() {
+                        // Clear session variables
+                        <% Session.Clear(); %>
+
+                        // Abandon the session
+                        <% Session.Abandon(); %>
+
+                                            // Redirect to the sign-in page
+                                            window.location.href = '../loginRegister/Login.aspx';
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                            <%
+                                }
+                                else
+                                {
+                            %>
+                            <!-- Display a default message - if custName is not found -->
+                            <div>Welcome!</div>
+                            <%
+                                }
+                            %>
+                            <% }
+                                else
+                                { %>
+                            <!-- Display the "Sign in" button if no session custID -->
+                            <div class="navbar-social-link">
+                                <asp:Button ID="Button3" class="btnHeader btn-primarySign" runat="server" Text="Sign in" PostBackUrl="~/Guest/loginRegister/Login.aspx" />
+                            </div>
+                            <% } %>
                         </li>
                     </ul>
                 </nav>
@@ -515,18 +616,42 @@
                                 <p class="fLeft">
                                     <!---<a href="#" >Home</a>--->
 
-                                    <asp:HyperLink ID="HyperLink1" class="fLink" runat="server" NavigateUrl="~/Guest/loginRegister/Login.aspx">Home</asp:HyperLink>
+                                    <%
+                                        // Simulate setting the session variable during testing
+                                        //Session["custID"] = "C001"; // testing
+
+                                        if (Session["custID"] != null)
+                                        {
+                                            string custID = Session["custID"].ToString();
+                                            string custName = GetCustNameFromDatabase(custID);
+
+                                            if (!string.IsNullOrEmpty(custName))
+                                            {
+                                    %>
+                                    <asp:HyperLink ID="HyperLink1" class="fLink" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
                                     <asp:HyperLink ID="HyperLink2" class="fLink" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
                                     <asp:HyperLink ID="HyperLink4" class="fLink" runat="server" NavigateUrl="~/Member/MyBooking/myBooking.aspx">My Booking</asp:HyperLink>
 
-                                    <!---
-                                <a href="#" class="fLink">Movie</a>
+                                    <%
+                                        }
+                                        else
+                                        {
+                                    %>
+                                    <asp:HyperLink ID="HyperLink14" class="fLink" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink15" class="fLink" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink16" class="fLink" runat="server" NavigateUrl="~/Member/MyBooking/myBooking.aspx">My Booking</asp:HyperLink>
 
-                                <a href="#" class="fLink">Upcoming</a>
+                                    <%
+                                        }
+                                    %>
+                                    <% }
+                                        else
+                                        { %>
+                                    <asp:HyperLink ID="HyperLink17" class="fLink" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink18" class="fLink" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
 
-                                <a href="#" class="fLink">My Booking</a>
 
-                                <a href="#" class="fLink">Contact Us</a>--->
+                                    <% } %>
                                 </p>
                             </div>
                         </div>
