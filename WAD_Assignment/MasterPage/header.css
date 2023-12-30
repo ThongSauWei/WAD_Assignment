@@ -312,7 +312,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding-block: 25px;
+    padding-block: 18px;
     transition: var(--transition-2);
     z-index: 100;
     background-color: rgba(40, 41, 52, 1);

@@ -23,7 +23,7 @@ namespace WAD_Assignment.HomePage
                     cnn.Open();
                     Response.Write("Connection Made");
 
-                    DataTable dbMovieConnect = GetMovieDataFromDatabase(connectionString, "SELECT TOP 5 movieID, movieName, category, movieImage FROM Movie WHERE releaseDate <= CAST(GETDATE() AS DATE) ORDER BY releaseDate ASC");
+                    DataTable dbMovieConnect = GetMovieDataFromDatabase(connectionString, "SELECT TOP 5 movieID, movieName, category, movieImage, movieTrailer FROM Movie WHERE releaseDate <= CAST(GETDATE() AS DATE) ORDER BY releaseDate ASC");
                     DataTable dbReleased = GetMovieDataFromDatabase(connectionString, "SELECT movieID, movieName, category, movieImage, duration, language FROM Movie WHERE releaseDate <= CAST(GETDATE() AS DATE) AND status = 'released' ORDER BY releaseDate ASC");
                     DataTable dbComing = GetMovieDataFromDatabase(connectionString, "SELECT movieID, movieName, movieImage FROM Movie WHERE status = 'pending'");
 

@@ -32,10 +32,10 @@
                                             <span>Book Now</span>
                                         </a>
 
-                                        <%--<a href='<%# Eval("trailerLink") %>' style="width: 250px; display: inline-flex; font-size: 15px; color: var(--citrine);">
+                                        <a href='<%# Eval("movieTrailer") %>' style="width: 250px; display: inline-flex; font-size: 15px; color: var(--citrine);">
                             <ion-icon name="play" style="margin-right: 10px; margin-top: 2px;"></ion-icon>
                             <span>Watch Trailer</span>
-                        </a>--%>
+                        </a>
                                     </p>
                                 </div>
                             </div>
