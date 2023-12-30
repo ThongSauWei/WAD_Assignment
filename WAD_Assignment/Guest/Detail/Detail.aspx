@@ -122,7 +122,7 @@
                             <p><span>Language:</span> <%# Eval("language") %></p>
                                             <p><span>Subtitles:</span> <%# Eval("subtitle") %></p>
                                             <p><span>Classification:</span> <%# Eval("classification") %></p>
-                                            <p><span>Hall:</span> <%# Eval("hallID") %></p>
+                                            <p><span>Hall:</span> Hall <%# Eval("hallNo") %></p>
                                             <p><span>Movie Date:</span> <%# Eval("date", "{0:dd/MM/yyyy}") %></p>
                                             <p><span>Movie Time:</span> <%# DateTime.Parse(Eval("time").ToString()).ToString("hh:mm tt") %></p>
                                         </p>
