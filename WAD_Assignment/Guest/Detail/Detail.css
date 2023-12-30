@@ -418,11 +418,22 @@ article p {
         flex-direction: column;
         justify-content: center;
     }
+
+    .rating-percents{
+        display:none;
+    }
 }
 
 @media screen and (max-width:1375px) {
     .reviewItem {
         width: 300px;
+    }
+
+    .card-rating {
+        
+        margin-left: 0px;
+        margin-right: 10px;
+       
     }
 }
 

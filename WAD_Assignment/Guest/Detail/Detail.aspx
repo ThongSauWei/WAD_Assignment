@@ -21,12 +21,12 @@
                         <h2>
                             <asp:Label runat="server" ID="lblMovieName" /></h2>
 
-                        
-                            <a id="movieTrailerLink" runat="server" style="width: 250px; display: inline-flex; font-size: 15px; color: var(--citrine); text-decoration:none; margin-top:10px;">
-                                <ion-icon name="play" style="margin-right: 10px; margin-top: 2px;"></ion-icon>
-                                <span>Watch Trailer</span>
-                            </a>
-                        
+
+                        <a id="movieTrailerLink" runat="server" style="width: 250px; display: inline-flex; font-size: 15px; color: var(--citrine); text-decoration: none; margin-top: 10px;">
+                            <ion-icon name="play" style="margin-right: 10px; margin-top: 2px;"></ion-icon>
+                            <span>Watch Trailer</span>
+                        </a>
+
 
 
                         <p>
@@ -151,7 +151,6 @@
                         </p>
 
                     </div>--%>
-
                 </div>
             </div>
 
@@ -160,11 +159,23 @@
 
 
 
+
     <!-- Main Container for Clients Review -->
     <% if (dateRepeater.Items.Count > 0)
         { %>
     <div class="containerReview">
-        <h2 class="h2 section-title">Re<strong>view</strong></h2>
+        <h2 class="h2 section-title">Customer<strong> Review</strong>
+            <br />
+            <p class="avgLab" style="color: gold; font-size: 20px; font-weight: normal; margin-top:15px;">
+                <span class="avgLabSpan" style="font-weight:bold; font-size:26px;"><asp:Label runat="server" ID="lblAvg" /></span>
+                / 5</p>
+            <p class="numRateLab" style="color: #505288; font-size: 15px; font-weight: 100;">
+                <asp:Label runat="server" ID="lblAvgRate" />
+                customer ratings</p>
+
+        </h2>
+
+
         <!-- Clients Review Section -->
         <div class="reviewSection">
 

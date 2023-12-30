@@ -27,133 +27,8 @@
 
 </head>
 
-
-
 <body id="topHeader">
-    <style>
-        .overlay2 {
-            height: 100%;
-            width: 100%;
-            display: none;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0, 0.9);
-        }
-
-        .overlay-content2 {
-            position: relative;
-            top: 46%;
-            width: 80%;
-            text-align: center;
-            margin-top: 30px;
-            margin: auto;
-        }
-
-        .overlay2 .closebtn2 {
-            position: absolute;
-            top: 20px;
-            right: 45px;
-            font-size: 60px;
-            cursor: pointer;
-            color: white;
-        }
-
-            .overlay2 .closebtn2:hover {
-                color: #ccc;
-            }
-
-        .overlay2 input[type=text] {
-            padding: 15px;
-            font-size: 17px;
-            border: none;
-            float: left;
-            width: 80%;
-            background: white;
-        }
-
-            .overlay2 input[type=text]:hover {
-                background: #f1f1f1;
-            }
-
-        .overlay2 button {
-            float: left;
-            width: 20%;
-            padding: 15px;
-            background: #ddd;
-            font-size: 17px;
-            border: none;
-            cursor: pointer;
-        }
-
-            .overlay2 button:hover {
-                background: #bbb;
-            }
-
-        .autocomplete2 {
-            position: relative;
-            display: inline-block;
-        }
-
-        .autocomplete-items {
-            position: absolute;
-            text-align: left;
-            border-bottom: none;
-            border-top: none;
-            z-index: 99;
-            color: #ffffff;
-            /*position the autocomplete items to be the same width as the container:*/
-            top: 100%;
-            left: 0;
-            right: 0;
-        }
-
-            .autocomplete-items div {
-                padding: 10px;
-                cursor: pointer;
-                background-color: black;
-            }
-
-                /*when hovering an item:*/
-                .autocomplete-items div:hover {
-                    background-color: rgba(86, 84, 84, 0.312);
-                    color: gold;
-                }
-
-        /*when navigating through the items using the arrow keys:*/
-        .autocomplete-active {
-            background-color: DodgerBlue !important;
-            color: #ffffff;
-        }
-
-        #myInput2 {
-            border: 1px solid gold;
-            background-color: black;
-            color: white;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-        }
-
-            #myInput2 input[type=text]:focus {
-                border: 1px solid lightblue;
-            }
-
-        #myInputBut2 {
-            border: 1px solid gold;
-            background-color: black;
-            color: white;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
-        }
-
-            #myInputBut2:hover {
-                border: 1px solid gold;
-                background-color: rgba(57, 56, 56, 0.312);
-                color: white;
-            }
-    </style>
+ 
     <%--<form id="form1" runat="server"></form> --%>
     <!--- #HEADER-->
     <form id="form1" runat="server">
@@ -162,7 +37,6 @@
                 <div class="overlayHeader" data-overlay></div>
 
                 <asp:HyperLink ID="HyperLink3" class="logo" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">
-                    <%--                <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="85px" height="75px" />--%>
                     <img id="cinemaLogo" src="~/image/cinemaLogo.png" runat="server" alt="cinemaLogo" style="width: 85px; height: 75px;" />
                 </asp:HyperLink>
 
@@ -222,17 +96,10 @@
                                                                     <%# Eval("notiTitle") %>: "<%# Eval("movieName") %>" - <%# Eval("notiDesc") %>
                                                                 </div>
                                                                 <div>
-                                                                    <%--<asp:Button runat="server" OnCommand="delBtnReview_Command" CommandName="Delete" CommandArgument='<%# Eval("notiID") %>'>
-                                                                        <span class="delete-icon">
-                                                                            <ion-icon name="trash-outline"></ion-icon>
-                                                                        </span>
-                                                                    </asp:Button>--%>
-
                                                                     <asp:LinkButton ID="LinkButton1" CommandName="Delete" OnClientClick="javascript:if(!confirm('Delete this information? this will delete permanently'))return false;" CommandArgument='<%#Eval("notiID") %>' runat="server">
                                                                         <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
 
                                                                     </asp:LinkButton>
-
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -247,7 +114,6 @@
                                                         <div class="profCont">
                                                             <div class="profile">
                                                                 <img id="Img3" src='../../image/<%# Eval("movieImage") %>' alt='<%# Eval("movieName") %>' style="width: 100%;" />
-                                                                <!------<img id="Img3" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />--------->
                                                             </div>
                                                         </div>
                                                         <div class="content">
@@ -271,7 +137,6 @@
                                                                                     <div class="feedback">
                                                                                         <label id="label1" class="angry">
                                                                                             <input type="radio" value="1" name="feedback" id="rating1" />
-                                                                                            <!-----<input type="radio" value="1" name="feedback" />-------->
                                                                                             <div>
                                                                                                 <svg class="eye left">
                                                                                                     <use xlink:href="#eye">
@@ -286,7 +151,6 @@
                                                                                         </label>
                                                                                         <label id="label2" class="sad">
                                                                                             <input type="radio" value="2" name="feedback" id="rating2" />
-                                                                                            <!---------<input type="radio" value="2" name="feedback" />-------->
                                                                                             <div>
                                                                                                 <svg class="eye left">
                                                                                                     <use xlink:href="#eye">
@@ -301,12 +165,10 @@
                                                                                         </label>
                                                                                         <label id="label3" class="ok">
                                                                                             <input type="radio" value="3" name="feedback" id="rating3" />
-                                                                                            <!-------<input type="radio" value="3" name="feedback" />--------->
                                                                                             <div></div>
                                                                                         </label>
                                                                                         <label id="label4" class="good">
                                                                                             <input type="radio" value="4" name="feedback" id="rating4" checked />
-                                                                                            <!-------<input type="radio" value="4" name="feedback" checked />-------->
                                                                                             <div>
                                                                                                 <svg class="eye left">
                                                                                                     <use xlink:href="#eye">
@@ -321,7 +183,6 @@
                                                                                         </label>
                                                                                         <label id="label5" class="happy">
                                                                                             <input type="radio" value="5" name="feedback" id="rating5" />
-                                                                                            <!-------<input type="radio" value="5" name="feedback" />----------->
                                                                                             <div>
                                                                                                 <svg class="eye left">
                                                                                                     <use xlink:href="#eye">
@@ -346,28 +207,21 @@
                                                                                     </svg>
 
                                                                                 </div>
-                                                                                <%--<p id="custIDPass"><%# Eval("custID") %></p>
-                                                                                <p id="movieIDPass"><%# Eval("movieID") %></p>--%>
+                                                                                
                                                                                 <input type="hidden" id="custIDHidden" name="custIDHidden" value='<%# Eval("custID") %>' />
                                                                                 <input type="hidden" id="movieIDHidden" name="movieIDHidden" value='<%# Eval("movieID") %>' />
 
                                                                                 <p style="color: #F5F5F5;"><span>Movie Date:</span> <%# Eval("date", "{0:dd/MM/yyyy}") %></p>
                                                                                 <p style="color: #F5F5F5;"><span>Movie Time:</span> <%# DateTime.Parse(Eval("time").ToString()).ToString("hh:mm tt") %></p>
                                                                                 <p style="color: #F5F5F5;"><span>Duration:</span> <%# Eval("duration") %> mins</p>
-                                                                                <!-----<textarea name="opinion" id="opinion" cols="30" rows="5" placeholder="Your review..."></textarea>----->
-                                                                                <!-----<textarea runat="server" name="opinionReview" id="Textarea1" cols="30" rows="5" placeholder="Your review..."></textarea>----->
-                                                                                <!-----<textarea id="TextAreaReview" runat="server" name="opinionReview" cols="30" rows="5" placeholder="Your review..."></textarea>---->
-
+                                                                                
                                                                                 <textarea name="txtTextReview" id="opinion" rows="5" cols="30" placeholder="Your review..."></textarea>
 
 
                                                                                 <div class="btn-group">
-                                                                                    <!-----<button type="submit" class="btnHeader btn-primarySign">Submit</button>----->
-                                                                                    <!-----<button type="submit" class="btnHeader btn-primarySign" onclick="submitReview">Submit</button>----->
+                                                                                    
                                                                                     <button type="submit" class="btnHeader btn-primarySign" runat="server" onserverclick="submitReview">Submit</button>
 
-
-                                                                                    <!-----<button type="submit" class="btnHeader btn-primarySign" onclientclick="submitReview">Submit</button>----->
                                                                                 </div>
                                                                             </div>
                                                                         </section>
@@ -393,7 +247,7 @@
 
                     <%
                         // Simulate setting the session variable during testing
-                        Session["custID"] = "C001"; // testing
+                       // Session["custID"] = "C001"; // testing
 
                         if (Session["custID"] != null)
                         {
@@ -445,11 +299,8 @@
                     <ion-icon name="reorder-two"></ion-icon>
                 </button>
 
-
                 <nav class="navbarHeader" data-navbar>
                     <div class="navbar-top">
-
-
 
                         <asp:HyperLink ID="HyperLink11" class="logo" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">
                             <div class="logo-container1">
@@ -460,8 +311,6 @@
 
                         </asp:HyperLink>
 
-
-
                         <button class="menu-close-btn" data-menu-close-btn>
                             <ion-icon name="close-outline"></ion-icon>
                         </button>
@@ -469,15 +318,11 @@
 
                     <%
                         // Simulate setting the session variable during testing
-                        Session["custID"] = "C001"; // testing
+                        //Session["custID"] = "C001"; // testing
 
                         if (Session["custID"] != null)
                         {
-                            string custID = Session["custID"].ToString();
-                            string custName = GetCustNameFromDatabase(custID);
-
-                            if (!string.IsNullOrEmpty(custName))
-                            {
+                           
                     %>
 
 
@@ -516,31 +361,15 @@
                         </li>
 
 
-                        <li>
-                            <asp:HyperLink ID="HyperLink12" class="navbar-link" runat="server" NavigateUrl="~/Member/MyBooking/myBooking.aspx">My Booking</asp:HyperLink>
-                            <!---<a href="#" class="navbar-link">My Booking</a>-->
-                        </li>
+                        
 
                     </ul>
                     <%
                         }
                     %>
-                    <% }
-                        else
-                        { %>
-                    <!-- Display a default message - if custName is not found -->
-                    <ul class="navbar-list">
-                        <li>
-                            <asp:HyperLink ID="HyperLink9" class="navbar-link" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
-                            <!---<a href="./index.html" class="navbar-link">Home</a>-->
-                        </li>
-                        <li>
-                            <asp:HyperLink ID="HyperLink13" class="navbar-link" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
-                            <!---<a href="#" class="navbar-link">Movie</a>-->
-                        </li>
-
-                    </ul>
-                    <% } %>
+                    
+                   
+                    
 
                     <ul class="navbar-social-list">
                         <li>
@@ -622,11 +451,6 @@
 
                                         if (Session["custID"] != null)
                                         {
-                                            string custID = Session["custID"].ToString();
-                                            string custName = GetCustNameFromDatabase(custID);
-
-                                            if (!string.IsNullOrEmpty(custName))
-                                            {
                                     %>
                                     <asp:HyperLink ID="HyperLink1" class="fLink" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
                                     <asp:HyperLink ID="HyperLink2" class="fLink" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
@@ -639,19 +463,12 @@
                                     %>
                                     <asp:HyperLink ID="HyperLink14" class="fLink" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
                                     <asp:HyperLink ID="HyperLink15" class="fLink" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
-                                    <asp:HyperLink ID="HyperLink16" class="fLink" runat="server" NavigateUrl="~/Member/MyBooking/myBooking.aspx">My Booking</asp:HyperLink>
+                                    
 
                                     <%
                                         }
                                     %>
-                                    <% }
-                                        else
-                                        { %>
-                                    <asp:HyperLink ID="HyperLink17" class="fLink" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
-                                    <asp:HyperLink ID="HyperLink18" class="fLink" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
-
-
-                                    <% } %>
+                                    
                                 </p>
                             </div>
                         </div>
@@ -738,8 +555,6 @@
                     </div>
                 </div>
         </footer>
-
-
 
 
         <!--- #GO TO TOP-->

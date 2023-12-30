@@ -34,25 +34,31 @@ namespace WAD_Assignment
             string connectionString = ConfigurationManager.ConnectionStrings["CinemaDB"].ConnectionString;
 
             //notification
-            Session["custID"] = "C001"; //testing
-            string customerID = Session["custID"].ToString();
-            DataTable dbNotice = GetNoticeDatabase(customerID, connectionString);
-            noticeRepeater.DataSource = dbNotice;
-            noticeRepeater.DataBind();
+            //Session["custID"] = "C001"; //testing
+            if (Session["custID"] != null)
+            {
+                string customerID = Session["custID"].ToString();
+                DataTable dbNotice = GetNoticeDatabase(customerID, connectionString);
+                noticeRepeater.DataSource = dbNotice;
+                noticeRepeater.DataBind();
+
+                ShowAfterMovieNotifications(customerID, connectionString);
+
+
+                //ttlNotification
+                // Get the total notification count
+                int totalNotificationCount = SumNotificationCounts(customerID, connectionString);
+
+                // Set the value to the numberReminder div(aspx)
+                numberReminder.InnerText = totalNotificationCount.ToString();
+            }
+
 
             //show notification when user after see dia punya movie eiheiiiiiii
             //DataTable dbAfter = GetAfterMovieDatabase(customerID);
             //afterMovieRepeater.DataSource = dbAfter;
             //afterMovieRepeater.DataBind();
-            ShowAfterMovieNotifications(customerID, connectionString);
-
-
-            //ttlNotification
-            // Get the total notification count
-            int totalNotificationCount = SumNotificationCounts(customerID, connectionString);
-
-            // Set the value to the numberReminder div(aspx)
-            numberReminder.InnerText = totalNotificationCount.ToString();
+            
         }
 
         protected void Button2_ServerClick(object sender, EventArgs e)
@@ -110,9 +116,9 @@ namespace WAD_Assignment
                         while (reader.Read())
                         {
                             string movieName = reader["movieName"].ToString();
-                            
+
                             movieNames.Add(movieName);
-                            
+
                         }
                     }
                 }
@@ -197,10 +203,10 @@ namespace WAD_Assignment
         //check whether after 4h or not
         private bool IsAfterFourHours(TimeSpan scheduleTime)
         {
-            //TimeSpan fourHoursLater = scheduleTime.Add(new TimeSpan(4, 0, 0)); // Add 4 hours
-            //return DateTime.Now.TimeOfDay >= fourHoursLater;
-            TimeSpan fiveMinutesLater = scheduleTime.Add(new TimeSpan(0, 5, 0)); // Add 5 minutes //testing purpose
-            return DateTime.Now.TimeOfDay >= fiveMinutesLater; //testing only
+            TimeSpan fourHoursLater = scheduleTime.Add(new TimeSpan(4, 0, 0)); // Add 4 hours
+            return DateTime.Now.TimeOfDay >= fourHoursLater;
+            //TimeSpan fiveMinutesLater = scheduleTime.Add(new TimeSpan(0, 5, 0)); // Add 5 minutes //testing purpose
+            //return DateTime.Now.TimeOfDay >= fiveMinutesLater; //testing only
         }
 
         //count the ttl after movie

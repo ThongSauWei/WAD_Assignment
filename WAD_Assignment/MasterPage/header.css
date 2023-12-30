@@ -1625,3 +1625,128 @@ header {
     display: block;
     cursor: pointer;
 }
+
+
+/**autocomplete search*/
+.overlay2 {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content2 {
+    position: relative;
+    top: 46%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+
+.overlay2 .closebtn2 {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
+
+    .overlay2 .closebtn2:hover {
+        color: #ccc;
+    }
+
+.overlay2 input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 80%;
+    background: white;
+}
+
+    .overlay2 input[type=text]:hover {
+        background: #f1f1f1;
+    }
+
+.overlay2 button {
+    float: left;
+    width: 20%;
+    padding: 15px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+    .overlay2 button:hover {
+        background: #bbb;
+    }
+
+.autocomplete2 {
+    position: relative;
+    display: inline-block;
+}
+
+.autocomplete-items {
+    position: absolute;
+    text-align: left;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    color: #ffffff;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+    .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: black;
+    }
+
+        /*when hovering an item:*/
+        .autocomplete-items div:hover {
+            background-color: rgba(86, 84, 84, 0.312);
+            color: gold;
+        }
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+#myInput2 {
+    border: 1px solid gold;
+    background-color: black;
+    color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+    #myInput2 input[type=text]:focus {
+        border: 1px solid lightblue;
+    }
+
+#myInputBut2 {
+    border: 1px solid gold;
+    background-color: black;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+    #myInputBut2:hover {
+        border: 1px solid gold;
+        background-color: rgba(57, 56, 56, 0.312);
+        color: white;
+    }

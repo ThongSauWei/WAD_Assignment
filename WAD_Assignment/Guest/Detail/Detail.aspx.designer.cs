@@ -150,6 +150,24 @@ namespace WAD_Assignment.Detail
         protected global::System.Web.UI.WebControls.Repeater popRepeater;
 
         /// <summary>
+        /// lblAvg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAvg;
+
+        /// <summary>
+        /// lblAvgRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAvgRate;
+
+        /// <summary>
         /// reviewRepeater control.
         /// </summary>
         /// <remarks>
