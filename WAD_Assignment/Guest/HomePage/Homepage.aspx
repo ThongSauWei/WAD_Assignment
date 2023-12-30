@@ -4,8 +4,16 @@
     <link href="Homepage.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
+
+    <div id="divAlert" runat="server" class="alert" visible="false">
+        <span class="closebtn1" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong style="color: gold;">Rate successfully!</strong><br />
+        TQ for your response !
+    </div>
     <!---Banner-->
     <div class="banner">
+
+
         <div class="slider">
             <!-- list Items -->
             <div class="list">
@@ -57,6 +65,7 @@
             </div>
         </div>
     </div>
+
 
     <!--Trneding Now-->
     <section class="trendingNow">

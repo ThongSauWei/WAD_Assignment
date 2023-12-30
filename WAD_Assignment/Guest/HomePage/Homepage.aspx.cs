@@ -73,6 +73,13 @@ namespace WAD_Assignment.HomePage
                     MovieRepeater.DataBind();
 
                 }
+
+                // Check if the success parameter is present in the query string
+                if (!string.IsNullOrEmpty(Request.QueryString["success"]))
+                {
+                    // Display a success message
+                    divAlert.Visible = true;
+                }
             }
             catch (Exception ex)
             {

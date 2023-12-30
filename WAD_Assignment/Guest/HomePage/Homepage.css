@@ -663,3 +663,37 @@
         column-gap: 2rem;
     }
 }
+
+
+/****alert */
+.alert {
+    padding: 20px;
+    background-color: black;
+    color: darkgoldenrod;
+    z-index: 151;
+    margin-top: 120px;
+    /**margin-bottom: 100px;*/
+    position: fixed;
+    width: 300px;
+    border-top-right-radius: 12px; 
+    /**border-top-left-radius: 18px;*/
+    border-bottom-right-radius: 12px; 
+    box-shadow: 9px 8px 7px #3B3C36;
+    border: 2px solid gold;
+    line-height: 25px;
+}
+
+.closebtn1 {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .closebtn1:hover {
+        color: red;
+    }

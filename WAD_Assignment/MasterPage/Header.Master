@@ -60,7 +60,7 @@
                         <label>
                             <div class="notification" id="notificationContainer">
                                 <div class="notBtn" id="notificationBtn">
-                                    <div class="numberReminder">3</div>
+                                    <div class="numberReminder" runat="server" id="numberReminder"></div>
                                     <ion-icon name="notifications-outline" style="color: rgb(226, 226, 20);"></ion-icon>
                                     <div class="boxReminder" id="notificationDropdown">
 
@@ -68,166 +68,183 @@
                                             <div class="contTop">
                                                 Notifications
                                             </div>
-                                            <div class="sec">
-                                                <asp:HyperLink ID="HyperLink9" class="secLink" runat="server" NavigateUrl="~/Guest/Detail/Detail.aspx">
-                                                    <!-- <a href="#"> -->
-                                                    <div class="profCont">
-                                                        <!-- <i class="fa-solid fa-ban"></i>/ -->
-                                                        <div class="profile">
-                                                            <img id="Img1" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="txtReminder">
-                                                            For you: "Hunger Games" now showing in cinema
-                                                        </div>
-                                                        <div class="txtIcon">
-                                                            <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
-                                                        </div>
-                                                    </div>
-                                                    <!-- </a> -->
-                                                </asp:HyperLink>
-                                            </div>
+                                            <asp:Repeater ID="noticeRepeater" runat="server" OnItemCommand="Repeater1_ItemCommand">
+                                                <ItemTemplate>
+                                                    <div class="sec">
+                                                        <div class="secLink">
+                                                            <div class="profCont">
+                                                                <div class="profile">
+                                                                    <!-- For getting notiID (delete btn) -->
+                                                                    <input type="hidden" id="notiIDHidden" runat="server" value='<%# Eval("notiID") %>' />
+                                                                    <img id="Img1" src='../../image/<%# Eval("movieImage") %>' alt='<%# Eval("movieName") %>' style="width: 100%;" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="content">
+                                                                <div class="txtReminder" style="line-height: 20px;">
+                                                                    <%# Eval("notiTitle") %>: "<%# Eval("movieName") %>" - <%# Eval("notiDesc") %>
+                                                                </div>
+                                                                <div>
+                                                                    <%--<asp:Button runat="server" OnCommand="delBtnReview_Command" CommandName="Delete" CommandArgument='<%# Eval("notiID") %>'>
+                                                                        <span class="delete-icon">
+                                                                            <ion-icon name="trash-outline"></ion-icon>
+                                                                        </span>
+                                                                    </asp:Button>--%>
 
-                                            <div class="sec">
-                                                <asp:HyperLink ID="HyperLink7" class="secLink" runat="server" NavigateUrl="~/Guest/Detail/Detail.aspx">
-                                                    <!-- <a href="#"> -->
-                                                    <div class="profCont">
-                                                        <div class="profile">
-                                                            <img id="Img2" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="txtReminder">
-                                                            Refund: Your refund for "Hunger Games" unsuccessful
-                                                        </div>
-                                                        <div class="txtIcon">
-                                                            <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
-                                                        </div>
-                                                    </div>
-                                                    <!-- </a> -->
-                                                </asp:HyperLink>
-                                            </div>
+                                                                    <asp:LinkButton ID="LinkButton1" CommandName="Delete" OnClientClick="javascript:if(!confirm('Delete this information? this will delete permanently'))return false;" CommandArgument='<%#Eval("notiID") %>' runat="server">
+                                                                        <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
 
-                                            <div class="sec">
-
-                                                <div class="profCont">
-                                                    <div class="profile">
-                                                        <img id="Img3" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />
-                                                    </div>
-                                                </div>
-                                                <div class="content">
-                                                    <div class="txtReminder">
-                                                        Rate: Rate and Review "Hunger games"<br />
-                                                        <a href="#popupRate" class="rateA"
-                                                            style="width: 130px; text-decoration: none; line-height: -5px;">Rate Now!
-                                                        </a>
-                                                        <div class="popupRating" id="popupRate">
-                                                            <div class="popup_innerRating" style="margin-top: 55px;">
-                                                                <section class="modalRate hiddenRate">
-                                                                    <div class="flex">
-                                                                        <p></p>
-
-                                                                    </div>
-                                                                    <div class="wrapperFeed">
-                                                                        <h3>Thanksgiving </h3>
-                                                                        <div class="ratingFeed">
-                                                                            <div class="feedback">
-                                                                                <label class="angry">
-                                                                                    <input type="radio" value="1" name="feedback" />
-                                                                                    <div>
-                                                                                        <svg class="eye left">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                        <svg class="eye right">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                        <svg class="mouth">
-                                                                                            <use xlink:href="#mouth">
-                                                                                        </svg>
-                                                                                    </div>
-                                                                                </label>
-                                                                                <label class="sad">
-                                                                                    <input type="radio" value="2" name="feedback" />
-                                                                                    <div>
-                                                                                        <svg class="eye left">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                        <svg class="eye right">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                        <svg class="mouth">
-                                                                                            <use xlink:href="#mouth">
-                                                                                        </svg>
-                                                                                    </div>
-                                                                                </label>
-                                                                                <label class="ok">
-                                                                                    <input type="radio" value="3" name="feedback" />
-                                                                                    <div></div>
-                                                                                </label>
-                                                                                <label class="good">
-                                                                                    <input type="radio" value="4" name="feedback" checked />
-                                                                                    <div>
-                                                                                        <svg class="eye left">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                        <svg class="eye right">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                        <svg class="mouth">
-                                                                                            <use xlink:href="#mouth">
-                                                                                        </svg>
-                                                                                    </div>
-                                                                                </label>
-                                                                                <label class="happy">
-                                                                                    <input type="radio" value="5" name="feedback" />
-                                                                                    <div>
-                                                                                        <svg class="eye left">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                        <svg class="eye right">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                    </div>
-                                                                                </label>
-                                                                            </div>
-
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                                                                                <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 4" id="eye">
-                                                                                    <path
-                                                                                        d="M1,1 C1.83333333,2.16666667 2.66666667,2.75 3.5,2.75 C4.33333333,2.75 5.16666667,2.16666667 6,1">
-                                                                                    </path>
-                                                                                </symbol>
-                                                                                <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 7" id="mouth">
-                                                                                    <path d="M1,5.5 C3.66666667,2.5 6.33333333,1 9,1 C11.6666667,1 14.3333333,2.5 17,5.5">
-                                                                                    </path>
-                                                                                </symbol>
-                                                                            </svg>
-
-                                                                        </div>
-                                                                        <p style="color: #F5F5F5;"><span>Movie Date:</span> 30 November 2023</p>
-                                                                        <p style="color: #F5F5F5;"><span>Movie Time:</span> 2 - 4pm</p>
-                                                                        <p style="color: #F5F5F5;"><span>Duration:</span> 1h 20min</p>
-                                                                        <!---<p>Movie Date : 17/5/2024</p>--->
-                                                                        <!----<p>Movie Time : 2- 4 pm</p>------->
-                                                                        <textarea name="opinion" cols="30" rows="5" placeholder="Your review..."></textarea>
-                                                                        <div class="btn-group">
-                                                                            <button type="submit" class="btnHeader btn-primarySign">Submit</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </section>
-                                                                <a href="#" class="close_popupModal1" style="border-color: gold;"><span>X</span></a>
+                                                                    </asp:LinkButton>
+                                                                    
+                                                                </div>
                                                             </div>
                                                         </div>
-
-
                                                     </div>
-                                                    <div class="txtIcon">
-                                                        <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
-                                                    </div>
-                                                </div>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
 
-                                            </div>
+
+                                            <asp:Repeater ID="afterMovieRepeater" runat="server">
+                                                <ItemTemplate>
+                                                    <div class="sec">
+                                                        <div class="profCont">
+                                                            <div class="profile">
+                                                                <img id="Img3" src='../../image/<%# Eval("movieImage") %>' alt='<%# Eval("movieName") %>' style="width: 100%;" />
+                                                                <!------<img id="Img3" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />--------->
+                                                            </div>
+                                                        </div>
+                                                        <div class="content">
+                                                            <div class="txtReminder">
+                                                                Rate: Rate and Review "<%# Eval("movieName") %>"<br />
+                                                                <a href="#popupRate" class="rateA"
+                                                                    style="width: 130px; text-decoration: none; line-height: -12px;">Rate Now!
+                                                                </a>
+
+                                                                <!------ pop up rating --------->
+                                                                <div class="popupRating" id="popupRate">
+                                                                    <div class="popup_innerRating" style="margin-top: 55px; background-image: url('../../image/<%# Eval("movieImage") %>');">
+                                                                        <section class="modalRate hiddenRate">
+                                                                            <div class="flex">
+                                                                                <p></p>
+
+                                                                            </div>
+                                                                            <div class="wrapperFeed">
+                                                                                <h3><%# Eval("movieName") %></h3>
+                                                                                <div class="ratingFeed">
+                                                                                    <div class="feedback">
+                                                                                        <label id="label1" class="angry">
+                                                                                            <input type="radio" value="1" name="feedback" id="rating1" />
+                                                                                            <!-----<input type="radio" value="1" name="feedback" />-------->
+                                                                                            <div>
+                                                                                                <svg class="eye left">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                                <svg class="eye right">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                                <svg class="mouth">
+                                                                                                    <use xlink:href="#mouth">
+                                                                                                </svg>
+                                                                                            </div>
+                                                                                        </label>
+                                                                                        <label id="label2" class="sad">
+                                                                                            <input type="radio" value="2" name="feedback" id="rating2" />
+                                                                                            <!---------<input type="radio" value="2" name="feedback" />-------->
+                                                                                            <div>
+                                                                                                <svg class="eye left">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                                <svg class="eye right">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                                <svg class="mouth">
+                                                                                                    <use xlink:href="#mouth">
+                                                                                                </svg>
+                                                                                            </div>
+                                                                                        </label>
+                                                                                        <label id="label3" class="ok">
+                                                                                            <input type="radio" value="3" name="feedback" id="rating3" />
+                                                                                            <!-------<input type="radio" value="3" name="feedback" />--------->
+                                                                                            <div></div>
+                                                                                        </label>
+                                                                                        <label id="label4" class="good">
+                                                                                            <input type="radio" value="4" name="feedback" id="rating4" checked />
+                                                                                            <!-------<input type="radio" value="4" name="feedback" checked />-------->
+                                                                                            <div>
+                                                                                                <svg class="eye left">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                                <svg class="eye right">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                                <svg class="mouth">
+                                                                                                    <use xlink:href="#mouth">
+                                                                                                </svg>
+                                                                                            </div>
+                                                                                        </label>
+                                                                                        <label id="label5" class="happy">
+                                                                                            <input type="radio" value="5" name="feedback" id="rating5" />
+                                                                                            <!-------<input type="radio" value="5" name="feedback" />----------->
+                                                                                            <div>
+                                                                                                <svg class="eye left">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                                <svg class="eye right">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                            </div>
+                                                                                        </label>
+                                                                                    </div>
+
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                                                                                        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 4" id="eye">
+                                                                                            <path
+                                                                                                d="M1,1 C1.83333333,2.16666667 2.66666667,2.75 3.5,2.75 C4.33333333,2.75 5.16666667,2.16666667 6,1">
+                                                                                            </path>
+                                                                                        </symbol>
+                                                                                        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 7" id="mouth">
+                                                                                            <path d="M1,5.5 C3.66666667,2.5 6.33333333,1 9,1 C11.6666667,1 14.3333333,2.5 17,5.5">
+                                                                                            </path>
+                                                                                        </symbol>
+                                                                                    </svg>
+
+                                                                                </div>
+                                                                                <%--<p id="custIDPass"><%# Eval("custID") %></p>
+                                                                                <p id="movieIDPass"><%# Eval("movieID") %></p>--%>
+                                                                                <input type="hidden" id="custIDHidden" name="custIDHidden" value='<%# Eval("custID") %>' />
+                                                                                <input type="hidden" id="movieIDHidden" name="movieIDHidden" value='<%# Eval("movieID") %>' />
+
+                                                                                <p style="color: #F5F5F5;"><span>Movie Date:</span> <%# Eval("date", "{0:dd/MM/yyyy}") %></p>
+                                                                                <p style="color: #F5F5F5;"><span>Movie Time:</span> <%# DateTime.Parse(Eval("time").ToString()).ToString("hh:mm tt") %></p>
+                                                                                <p style="color: #F5F5F5;"><span>Duration:</span> <%# Eval("duration") %> mins</p>
+                                                                                <!-----<textarea name="opinion" id="opinion" cols="30" rows="5" placeholder="Your review..."></textarea>----->
+                                                                                <!-----<textarea runat="server" name="opinionReview" id="Textarea1" cols="30" rows="5" placeholder="Your review..."></textarea>----->
+                                                                                <!-----<textarea id="TextAreaReview" runat="server" name="opinionReview" cols="30" rows="5" placeholder="Your review..."></textarea>---->
+
+                                                                                <textarea name="txtTextReview" id="opinion" rows="5" cols="30" placeholder="Your review..."></textarea>
+
+
+                                                                                <div class="btn-group">
+                                                                                    <!-----<button type="submit" class="btnHeader btn-primarySign">Submit</button>----->
+                                                                                    <!-----<button type="submit" class="btnHeader btn-primarySign" onclick="submitReview">Submit</button>----->
+                                                                                    <button type="submit" class="btnHeader btn-primarySign" runat="server" onserverclick="submitReview">Submit</button>
+
+
+                                                                                    <!-----<button type="submit" class="btnHeader btn-primarySign" onclientclick="submitReview">Submit</button>----->
+                                                                                </div>
+                                                                            </div>
+                                                                        </section>
+                                                                        <a href="#" class="close_popupModal1" style="border-color: gold;"><span>X</span></a>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+
                                         </div>
                                     </div>
                                 </div>
