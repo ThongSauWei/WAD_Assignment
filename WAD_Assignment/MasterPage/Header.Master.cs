@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 using System.Text;
+using System.Web.Script.Serialization;
 
 namespace WAD_Assignment
 {
@@ -92,6 +93,42 @@ namespace WAD_Assignment
 
             return custName;
         }
+
+        private string[] GetAllMovieNamesFromDatabase()
+        {
+            List<string> movieNames = new List<string>();
+
+            string connectionString = ConfigurationManager.ConnectionStrings["CinemaDB"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SELECT movieName, movieID FROM Movie", connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string movieName = reader["movieName"].ToString();
+                            
+                            movieNames.Add(movieName);
+                            
+                        }
+                    }
+                }
+            }
+
+            return movieNames.ToArray();
+        }
+
+        protected string GetMovieNamesArray()
+        {
+            string[] movieNames = GetAllMovieNamesFromDatabase();
+            return new JavaScriptSerializer().Serialize(movieNames);
+        }
+
+
+
 
         //select the notification table one
         private DataTable GetNoticeDatabase(string custID, string connectionString)
@@ -270,6 +307,48 @@ namespace WAD_Assignment
             }
         }
 
+
+
+        protected void submitSearch(object sender, EventArgs e)
+        {
+            string movieName = myInput2.Value;
+            //string movieName = myInput21.Value;
+
+            string connectionString = ConfigurationManager.ConnectionStrings["CinemaDB"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT movieID FROM Movie WHERE movieName = @movieName";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@movieName", movieName);
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        string movieID = result.ToString();
+
+                        // Check if movieID is valid
+                        if (!string.IsNullOrEmpty(movieID))
+                        {
+                            // Redirect to the Detail page with the movieID parameter
+                            Response.Redirect($"../Detail/Detail.aspx?movieID={movieID}", false);
+                        }
+                        else
+                        {
+                            // Handle the case where the movieID is not found (e.g., show an error message)
+                            // You can customize this based on your application's needs
+                            //Response.Redirect("Homepage.aspx?error=1", false);
+                        }
+                    }
+                }
+            }
+        }
+
+
         //protected void delBtnReview_Command(object sender, CommandEventArgs e)
         //{
         //    if (e.CommandName == "Delete")
@@ -304,7 +383,7 @@ namespace WAD_Assignment
         //        string custID = Request.Form["custHidden"];
 
         //        string connectionString = ConfigurationManager.ConnectionStrings["CinemaDB"].ConnectionString;
-                
+
         //        DataTable resultTable = new DataTable();
 
         //        using (SqlConnection connection = new SqlConnection(connectionString))
@@ -322,7 +401,7 @@ namespace WAD_Assignment
         //            }
         //        }
 
-               
+
 
         //        DataTable dbRateTicket = resultTable;
         //        rateTicketRepeater.DataSource = dbRateTicket;

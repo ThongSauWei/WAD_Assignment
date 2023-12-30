@@ -42,6 +42,33 @@ namespace WAD_Assignment
         protected global::System.Web.UI.HtmlControls.HtmlImage cinemaLogo;
 
         /// <summary>
+        /// myInput21 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden myInput21;
+
+        /// <summary>
+        /// myInput2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText myInput2;
+
+        /// <summary>
+        /// myInputBut2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton myInputBut2;
+
+        /// <summary>
         /// numberReminder control.
         /// </summary>
         /// <remarks>
