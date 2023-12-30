@@ -28,7 +28,7 @@
 </head>
 
 <body id="topHeader">
- 
+
     <%--<form id="form1" runat="server"></form> --%>
     <!--- #HEADER-->
     <form id="form1" runat="server">
@@ -207,19 +207,19 @@
                                                                                     </svg>
 
                                                                                 </div>
-                                                                                
+
                                                                                 <input type="hidden" id="custIDHidden" name="custIDHidden" value='<%# Eval("custID") %>' />
                                                                                 <input type="hidden" id="movieIDHidden" name="movieIDHidden" value='<%# Eval("movieID") %>' />
 
                                                                                 <p style="color: #F5F5F5;"><span>Movie Date:</span> <%# Eval("date", "{0:dd/MM/yyyy}") %></p>
                                                                                 <p style="color: #F5F5F5;"><span>Movie Time:</span> <%# DateTime.Parse(Eval("time").ToString()).ToString("hh:mm tt") %></p>
                                                                                 <p style="color: #F5F5F5;"><span>Duration:</span> <%# Eval("duration") %> mins</p>
-                                                                                
+
                                                                                 <textarea name="txtTextReview" id="opinion" rows="5" cols="30" placeholder="Your review..."></textarea>
 
 
                                                                                 <div class="btn-group">
-                                                                                    
+
                                                                                     <button type="submit" class="btnHeader btn-primarySign" runat="server" onserverclick="submitReview">Submit</button>
 
                                                                                 </div>
@@ -247,7 +247,7 @@
 
                     <%
                         // Simulate setting the session variable during testing
-                       // Session["custID"] = "C001"; // testing
+                        // Session["custID"] = "C001"; // testing
 
                         if (Session["custID"] != null)
                         {
@@ -316,13 +316,17 @@
                         </button>
                     </div>
 
+                    <!----to get the session custID----->
+                    <div class="nonLab" style="display: none;">
+                        <asp:Label ID="myLabelS" runat="server" />
+                    </div>
                     <%
                         // Simulate setting the session variable during testing
                         //Session["custID"] = "C001"; // testing
 
-                        if (Session["custID"] != null)
+                        if (!string.IsNullOrEmpty(myLabelS.Text))
                         {
-                           
+
                     %>
 
 
@@ -361,25 +365,26 @@
                         </li>
 
 
-                        
+
 
                     </ul>
                     <%
                         }
                     %>
-                    
-                   
-                    
+
+
+
 
                     <ul class="navbar-social-list">
                         <li>
+
                             <%
                                 // Simulate setting the session variable during testing
                                 //Session["custID"] = "C001"; // testing
 
-                                if (Session["custID"] != null)
+                                if (!string.IsNullOrEmpty(myLabelS.Text))
                                 {
-                                    string custID = Session["custID"].ToString();
+                                    string custID = myLabelS.Text;
                                     string custName = GetCustNameFromDatabase(custID);
 
                                     if (!string.IsNullOrEmpty(custName))
@@ -449,7 +454,7 @@
                                         // Simulate setting the session variable during testing
                                         //Session["custID"] = "C001"; // testing
 
-                                        if (Session["custID"] != null)
+                                        if (!string.IsNullOrEmpty(myLabelS.Text))
                                         {
                                     %>
                                     <asp:HyperLink ID="HyperLink1" class="fLink" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
@@ -463,12 +468,11 @@
                                     %>
                                     <asp:HyperLink ID="HyperLink14" class="fLink" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
                                     <asp:HyperLink ID="HyperLink15" class="fLink" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
-                                    
+
 
                                     <%
                                         }
                                     %>
-                                    
                                 </p>
                             </div>
                         </div>

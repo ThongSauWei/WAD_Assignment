@@ -20,6 +20,20 @@ namespace WAD_Assignment.HomePage
                 string connectionString = ConfigurationManager.ConnectionStrings["CinemaDB"].ConnectionString;
                 using (SqlConnection cnn = new SqlConnection(connectionString))
                 {
+                    string custID = (string)Session["custID"];
+
+                    if (!string.IsNullOrEmpty(custID))
+                    {
+                        // Use the custID value
+                        // For example, you can print it to the console, log it, or use it in your logic.
+                        Console.WriteLine("Session custID: " + custID);
+                    }
+                    else
+                    {
+                        // Session["custID"] is either not set or is an empty string
+                        Console.WriteLine("No");
+                    }
+
                     cnn.Open();
                     //Response.Write("Connection Made");
 

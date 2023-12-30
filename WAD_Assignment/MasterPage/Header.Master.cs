@@ -33,6 +33,20 @@ namespace WAD_Assignment
             //database link
             string connectionString = ConfigurationManager.ConnectionStrings["CinemaDB"].ConnectionString;
 
+            string custID = (string)Session["custID"];
+
+            if (!string.IsNullOrEmpty(custID))
+            {
+                // Use the custID value
+                // For example, you can print it to the console, log it, or use it in your logic.
+                myLabelS.Text = "Session custID: " + custID;
+            }
+            else
+            {
+                // Session["custID"] is either not set or is an empty string
+                Console.WriteLine("No");
+            }
+
             //notification
             //Session["custID"] = "C001"; //testing
             if (Session["custID"] != null)
