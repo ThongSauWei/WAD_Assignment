@@ -73,6 +73,9 @@ namespace WAD_Assignment.Detail
                 lblClassification.Text = movieDetails.Rows[0]["classification"].ToString();
 
                 hiddenMovieImage.Value = movieDetails.Rows[0]["movieImage"].ToString();
+
+                string movieTrailerUrl = movieDetails.Rows[0]["movieTrailer"].ToString();
+                movieTrailerLink.HRef = movieTrailerUrl;
             }
             else //not available
             {

@@ -21,6 +21,14 @@
                         <h2>
                             <asp:Label runat="server" ID="lblMovieName" /></h2>
 
+                        
+                            <a id="movieTrailerLink" runat="server" style="width: 250px; display: inline-flex; font-size: 15px; color: var(--citrine); text-decoration:none; margin-top:10px;">
+                                <ion-icon name="play" style="margin-right: 10px; margin-top: 2px;"></ion-icon>
+                                <span>Watch Trailer</span>
+                            </a>
+                        
+
+
                         <p>
                             <asp:Label runat="server" ID="lblDescription" Style="color: rgb(220, 213, 213); line-height: 4px;" />
                             <p>
@@ -131,6 +139,18 @@
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
+
+
+                    <%--<div class="movie-btnMenu" style="margin-top: 8px;">
+
+                        <p>
+                            <a id="movieTrailerLink" runat="server" style="width: 250px; display: inline-flex; font-size: 15px; color: var(--citrine); text-decoration:none;">
+                                <ion-icon name="play" style="margin-right: 10px; margin-top: 2px;"></ion-icon>
+                                <span>Watch Trailer</span>
+                            </a>
+                        </p>
+
+                    </div>--%>
 
                 </div>
             </div>
