@@ -33,6 +33,10 @@
     <!--- #HEADER-->
     <form id="form1" runat="server">
         <header class="header" data-header>
+            <!----to get the session custID----->
+                    <div class="nonLab" style="display: none;">
+                        <asp:Label ID="myLabelS" runat="server" />
+                    </div>
             <div class="containerHeader">
                 <div class="overlayHeader" data-overlay></div>
 
@@ -68,6 +72,14 @@
 
                     <!---Right-->
                     <div class="lang-wrapper">
+                        <%
+                        // Simulate setting the session variable during testing
+                        //Session["custID"] = "C001"; // testing
+
+                        if (!string.IsNullOrEmpty(myLabelS.Text))
+                        {
+
+                    %>
                         <!---Reminder-->
                         <label>
                             <div class="notification" id="notificationContainer">
@@ -242,6 +254,10 @@
                                 </div>
                             </div>
                         </label>
+
+                        <%
+                        }
+                    %>
                     </div>
 
 
@@ -316,10 +332,7 @@
                         </button>
                     </div>
 
-                    <!----to get the session custID----->
-                    <div class="nonLab" style="display: none;">
-                        <asp:Label ID="myLabelS" runat="server" />
-                    </div>
+                    
                     <%
                         // Simulate setting the session variable during testing
                         //Session["custID"] = "C001"; // testing

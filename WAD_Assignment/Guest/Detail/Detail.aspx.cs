@@ -59,31 +59,31 @@ namespace WAD_Assignment.Detail
             }
         }
 
-        protected void progressRepeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            {
-                var percentage = DataBinder.Eval(e.Item.DataItem, "Percentage");
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "SetWidthScript", $"setRatingProgressWidth({percentage});", true);
-            }
-        }
+        //protected void progressRepeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        //{
+        //    if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+        //    {
+        //        var percentage = DataBinder.Eval(e.Item.DataItem, "Percentage");
+        //        Page.ClientScript.RegisterStartupScript(this.GetType(), "SetWidthScript", $"setRatingProgressWidth({percentage});", true);
+        //    }
+        //}
 
 
-        protected void progressRepeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            {
-                // Find the controls within the RepeaterItem
-                var ratingProgressDiv = e.Item.FindControl("progressDiv") as HtmlGenericControl;
-                var percentage = Convert.ToInt32(DataBinder.Eval(e.Item.DataItem, "Percentage"));
+        //protected void progressRepeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        //{
+        //    if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+        //    {
+        //        // Find the controls within the RepeaterItem
+        //        var ratingProgressDiv = e.Item.FindControl("progressDiv") as HtmlGenericControl;
+        //        var percentage = Convert.ToInt32(DataBinder.Eval(e.Item.DataItem, "Percentage"));
 
-                // Set the width dynamically
-                if (ratingProgressDiv != null)
-                {
-                    ratingProgressDiv.Style["width"] = percentage + "%";
-                }
-            }
-        }
+        //        // Set the width dynamically
+        //        if (ratingProgressDiv != null)
+        //        {
+        //            ratingProgressDiv.Style["width"] = percentage + "%";
+        //        }
+        //    }
+        //}
 
 
         private void DisplayMovieDetails(string movieID)
@@ -234,7 +234,7 @@ namespace WAD_Assignment.Detail
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("SELECT DENSE_RANK() OVER (ORDER BY date) AS identifier, date FROM ( SELECT DISTINCT date FROM Schedule WHERE movieID = @movieID ) AS distinct_dates", connection))
+                using (SqlCommand command = new SqlCommand("SELECT DENSE_RANK() OVER (ORDER BY date) AS identifier, date FROM ( SELECT DISTINCT date FROM Schedule WHERE movieID = @movieID AND date >= GETDATE() ) AS distinct_dates", connection))
                 {
                     command.Parameters.AddWithValue("@movieID", movieID);
 
@@ -257,7 +257,7 @@ namespace WAD_Assignment.Detail
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("SELECT DENSE_RANK() OVER (ORDER BY date) AS identifier, date, time FROM Schedule WHERE movieID = @movieID", connection))
+                using (SqlCommand command = new SqlCommand("SELECT DENSE_RANK() OVER (ORDER BY date) AS identifier, date, time FROM Schedule WHERE movieID = @movieID AND date >= GETDATE()", connection))
                 {
                     command.Parameters.AddWithValue("@movieID", movieID);
 

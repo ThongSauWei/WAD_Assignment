@@ -292,6 +292,8 @@ namespace WAD_Assignment
 
         protected void submitReview(object sender, EventArgs e)
         {
+
+            string connectionString = ConfigurationManager.ConnectionStrings["CinemaDB"].ConnectionString;
             // Retrieve data from the repeater item
             //RepeaterItem item = (sender as Button).NamingContainer as RepeaterItem;
             //string custID = (item.FindControl("custIDPass") as Label).Text;
@@ -303,7 +305,6 @@ namespace WAD_Assignment
             string selectedRating = Request.Form["feedback"];
             string commentGet = Request.Form["txtTextReview"];
 
-            string connectionString = ConfigurationManager.ConnectionStrings["CinemaDB"].ConnectionString;
             // insert data
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -311,8 +312,26 @@ namespace WAD_Assignment
                 string query = "INSERT INTO Review (reviewID, custID, movieID, rating, comment, date) VALUES (@reviewID, @custID, @movieID, @rating, @comment, GETDATE())";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    //get auto reviewID
+                    string reviewID1;
+                    //Get the last custID
+                    string lastDigiReview = "SELECT TOP 1 reviewID FROM Review ORDER BY reviewID DESC";
+                    SqlCommand cmdSelect = new SqlCommand(lastDigiReview, connection);
+                    string lastCustIDReview = (string)cmdSelect.ExecuteScalar();
+                    if (lastCustIDReview != null)
+                    {
+                        int indexReview = Convert.ToInt32(lastCustIDReview.Substring(1));
+                        indexReview++;
+                        reviewID1 = "R" + indexReview.ToString("000");
+                    }else
+                    {
+                        //Default to 1 if no records exist
+                        reviewID1 = "R001";
+                    }
+
+
                     // Assuming you have a method to generate a unique reviewID
-                    command.Parameters.AddWithValue("@reviewID", "R013");
+                    command.Parameters.AddWithValue("@reviewID", reviewID1);
                     command.Parameters.AddWithValue("@custID", custID);
                     command.Parameters.AddWithValue("@movieID", movieID);
                     command.Parameters.AddWithValue("@rating", selectedRating);
@@ -326,7 +345,6 @@ namespace WAD_Assignment
                 }
             }
         }
-
 
 
         protected void submitSearch(object sender, EventArgs e)
