@@ -21,6 +21,14 @@
                         <h2>
                             <asp:Label runat="server" ID="lblMovieName" /></h2>
 
+
+                        <a id="movieTrailerLink" runat="server" style="width: 250px; display: inline-flex; font-size: 15px; color: var(--citrine); text-decoration: none; margin-top: 10px;">
+                            <ion-icon name="play" style="margin-right: 10px; margin-top: 2px;"></ion-icon>
+                            <span>Watch Trailer</span>
+                        </a>
+
+
+
                         <p>
                             <asp:Label runat="server" ID="lblDescription" Style="color: rgb(220, 213, 213); line-height: 4px;" />
                             <p>
@@ -114,7 +122,7 @@
                             <p><span>Language:</span> <%# Eval("language") %></p>
                                             <p><span>Subtitles:</span> <%# Eval("subtitle") %></p>
                                             <p><span>Classification:</span> <%# Eval("classification") %></p>
-                                            <p><span>Hall:</span> <%# Eval("hallID") %></p>
+                                            <p><span>Hall:</span> Hall <%# Eval("hallNo") %></p>
                                             <p><span>Movie Date:</span> <%# Eval("date", "{0:dd/MM/yyyy}") %></p>
                                             <p><span>Movie Time:</span> <%# DateTime.Parse(Eval("time").ToString()).ToString("hh:mm tt") %></p>
                                         </p>
@@ -132,6 +140,17 @@
                         </ItemTemplate>
                     </asp:Repeater>
 
+
+                    <%--<div class="movie-btnMenu" style="margin-top: 8px;">
+
+                        <p>
+                            <a id="movieTrailerLink" runat="server" style="width: 250px; display: inline-flex; font-size: 15px; color: var(--citrine); text-decoration:none;">
+                                <ion-icon name="play" style="margin-right: 10px; margin-top: 2px;"></ion-icon>
+                                <span>Watch Trailer</span>
+                            </a>
+                        </p>
+
+                    </div>--%>
                 </div>
             </div>
 
@@ -140,11 +159,23 @@
 
 
 
+
     <!-- Main Container for Clients Review -->
     <% if (dateRepeater.Items.Count > 0)
         { %>
     <div class="containerReview">
-        <h2 class="h2 section-title">Re<strong>view</strong></h2>
+        <h2 class="h2 section-title">Customer<strong> Review</strong>
+            <br />
+            <p class="avgLab" style="color: gold; font-size: 20px; font-weight: normal; margin-top:15px;">
+                <span class="avgLabSpan" style="font-weight:bold; font-size:26px;"><asp:Label runat="server" ID="lblAvg" /></span>
+                / 5</p>
+            <p class="numRateLab" style="color: #505288; font-size: 15px; font-weight: 100;">
+                <asp:Label runat="server" ID="lblAvgRate" />
+                customer ratings</p>
+
+        </h2>
+
+
         <!-- Clients Review Section -->
         <div class="reviewSection">
 

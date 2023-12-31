@@ -40,6 +40,16 @@ namespace WAD_Assignment.Detail
                     reviewRepeater.DataSource = dbReview;
                     reviewRepeater.DataBind();
 
+                    //DataTable dbMovieProgress = GetMovieRateProgressFromDatabase(movieID);
+                    //progressRepeater.DataSource = dbMovieProgress;
+                    //progressRepeater.DataBind();
+
+                    //DataTable dbMovieProgress = GetMovieRateProgressFromDatabase(movieID);
+                    //progressRepeater1.DataSource = dbMovieProgress;
+                    //progressRepeater1.DataBind();
+
+
+
                     //DisplayMovieDate(movieID);
                 }
                 else
@@ -49,9 +59,48 @@ namespace WAD_Assignment.Detail
             }
         }
 
+        //protected void progressRepeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        //{
+        //    if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+        //    {
+        //        var percentage = DataBinder.Eval(e.Item.DataItem, "Percentage");
+        //        Page.ClientScript.RegisterStartupScript(this.GetType(), "SetWidthScript", $"setRatingProgressWidth({percentage});", true);
+        //    }
+        //}
+
+
+        //protected void progressRepeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        //{
+        //    if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+        //    {
+        //        // Find the controls within the RepeaterItem
+        //        var ratingProgressDiv = e.Item.FindControl("progressDiv") as HtmlGenericControl;
+        //        var percentage = Convert.ToInt32(DataBinder.Eval(e.Item.DataItem, "Percentage"));
+
+        //        // Set the width dynamically
+        //        if (ratingProgressDiv != null)
+        //        {
+        //            ratingProgressDiv.Style["width"] = percentage + "%";
+        //        }
+        //    }
+        //}
+
+
         private void DisplayMovieDetails(string movieID)
         {
             DataTable movieDetails = GetMovieDetailsFromDatabase(movieID);
+            DataTable movieIDs = GetAverageRateFromDatabase(movieID);
+            DataTable movieAvgRate = GetNumRateFromDatabase(movieID);
+
+            if (movieAvgRate.Rows.Count > 0)
+            {
+                lblAvgRate.Text = movieAvgRate.Rows[0]["ReviewCount"].ToString();
+            }
+
+            if (movieIDs.Rows.Count > 0)
+            {
+                lblAvg.Text = movieIDs.Rows[0]["AverageRating"].ToString();
+            }
 
             // Check if available or not
             if (movieDetails.Rows.Count > 0)
@@ -73,6 +122,9 @@ namespace WAD_Assignment.Detail
                 lblClassification.Text = movieDetails.Rows[0]["classification"].ToString();
 
                 hiddenMovieImage.Value = movieDetails.Rows[0]["movieImage"].ToString();
+
+                string movieTrailerUrl = movieDetails.Rows[0]["movieTrailer"].ToString();
+                movieTrailerLink.HRef = movieTrailerUrl;
             }
             else //not available
             {
@@ -104,6 +156,75 @@ namespace WAD_Assignment.Detail
             return resultTable;
         }
 
+        //private DataTable GetMovieRateProgressFromDatabase(string movieID)
+        //{
+        //    DataTable resultTable = new DataTable();
+
+        //    string connectionString = ConfigurationManager.ConnectionStrings["CinemaDB"].ConnectionString;
+
+        //    using (SqlConnection connection = new SqlConnection(connectionString))
+        //    {
+        //        connection.Open();
+        //        using (SqlCommand command = new SqlCommand("SELECT RatingValues.rating, COALESCE(COUNT(Review.rating), 0) AS NumberOfRatings, COALESCE(CAST(ROUND(COUNT(Review.rating) * 100.0 / NULLIF((SELECT COUNT(*) FROM Review WHERE movieID = @movieID), 0), 0) AS INT), 0) AS Percentage FROM ( SELECT '1' AS rating UNION SELECT '2' UNION SELECT '3' UNION SELECT '4' UNION SELECT '5' ) AS RatingValues LEFT JOIN Review ON RatingValues.rating = Review.rating AND Review.movieID = @movieID GROUP BY RatingValues.rating", connection))
+        //        {
+        //            command.Parameters.AddWithValue("@movieID", movieID);
+
+        //            using (SqlDataReader reader = command.ExecuteReader())
+        //            {
+        //                resultTable.Load(reader);
+        //            }
+        //        }
+        //    }
+
+        //    return resultTable;
+        //}
+
+        private DataTable GetNumRateFromDatabase(string movieID)
+        {
+            DataTable resultTable = new DataTable();
+
+            string connectionString = ConfigurationManager.ConnectionStrings["CinemaDB"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SELECT COUNT(*) AS ReviewCount FROM Review WHERE movieID = @movieID", connection))
+                {
+                    command.Parameters.AddWithValue("@movieID", movieID);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        resultTable.Load(reader);
+                    }
+                }
+            }
+
+            return resultTable;
+        }
+
+        private DataTable GetAverageRateFromDatabase(string movieID)
+        {
+            DataTable resultTable = new DataTable();
+
+            string connectionString = ConfigurationManager.ConnectionStrings["CinemaDB"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SELECT ROUND(AVG(CAST(rating AS FLOAT)), 1) AS AverageRating FROM Review WHERE movieID = @movieID", connection))
+                {
+                    command.Parameters.AddWithValue("@movieID", movieID);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        resultTable.Load(reader);
+                    }
+                }
+            }
+
+            return resultTable;
+        }
+
         private DataTable GetMovieDateFromDatabase(string movieID)
         {
             DataTable resultTable = new DataTable();
@@ -113,7 +234,7 @@ namespace WAD_Assignment.Detail
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("SELECT DENSE_RANK() OVER (ORDER BY date) AS identifier, date FROM ( SELECT DISTINCT date FROM Schedule WHERE movieID = @movieID ) AS distinct_dates", connection))
+                using (SqlCommand command = new SqlCommand("SELECT DENSE_RANK() OVER (ORDER BY date) AS identifier, date FROM ( SELECT DISTINCT date FROM Schedule WHERE movieID = @movieID AND date >= GETDATE() ) AS distinct_dates", connection))
                 {
                     command.Parameters.AddWithValue("@movieID", movieID);
 
@@ -136,7 +257,7 @@ namespace WAD_Assignment.Detail
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("SELECT DENSE_RANK() OVER (ORDER BY date) AS identifier, date, time FROM Schedule WHERE movieID = @movieID", connection))
+                using (SqlCommand command = new SqlCommand("SELECT DENSE_RANK() OVER (ORDER BY date) AS identifier, date, time FROM Schedule WHERE movieID = @movieID AND date >= GETDATE()", connection))
                 {
                     command.Parameters.AddWithValue("@movieID", movieID);
 
@@ -159,7 +280,7 @@ namespace WAD_Assignment.Detail
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("SELECT movie.movieID, movie.movieName, movie.movieImage, movie.category, movie.classification, movie.language, movie.subtitle, movie.duration, schedule.scheduleID, schedule.hallID, schedule.date, schedule.time FROM  movie JOIN schedule ON movie.movieID = schedule.movieID WHERE movie.movieID = @movieID", connection))
+                using (SqlCommand command = new SqlCommand("SELECT movie.movieID, movie.movieName, movie.movieImage, movie.category, movie.classification, movie.language, movie.subtitle, movie.duration, schedule.scheduleID, schedule.hallID, schedule.date, schedule.time, hall.hallNo FROM movie JOIN schedule ON movie.movieID = schedule.movieID JOIN hall ON schedule.hallID = hall.hallID WHERE movie.movieID = @movieID", connection))
                 {
                     command.Parameters.AddWithValue("@movieID", movieID);
 

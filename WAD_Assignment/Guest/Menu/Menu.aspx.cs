@@ -103,8 +103,8 @@ namespace WAD_Assignment.Menu
                 }
                 else if (category.ToLower() == "comingsoon")
                 {
-                    // Include only pending movies for the "Coming Soon" button
-                    query += " WHERE releaseDate >= CAST(GETDATE() AS DATE) AND status = 'pending'";
+                    // Include only comingsoon movies for the "Coming Soon" button
+                    query += " WHERE releaseDate >= CAST(GETDATE() AS DATE) AND status = 'comingsoon'";
                 }
                 else
                 {

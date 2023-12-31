@@ -28,15 +28,19 @@
 </head>
 
 <body id="topHeader">
+
     <%--<form id="form1" runat="server"></form> --%>
     <!--- #HEADER-->
     <form id="form1" runat="server">
         <header class="header" data-header>
+            <!----to get the session custID----->
+                    <div class="nonLab" style="display: none;">
+                        <asp:Label ID="myLabelS" runat="server" />
+                    </div>
             <div class="containerHeader">
                 <div class="overlayHeader" data-overlay></div>
 
                 <asp:HyperLink ID="HyperLink3" class="logo" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">
-                    <%--                <img src='<%= ResolveUrl("~/image/cinemaLogo.png") %>' alt="cinemaLogo" width="85px" height="75px" />--%>
                     <img id="cinemaLogo" src="~/image/cinemaLogo.png" runat="server" alt="cinemaLogo" style="width: 85px; height: 75px;" />
                 </asp:HyperLink>
 
@@ -44,10 +48,22 @@
                     <!--Search-->
                     <div class="searchWrap">
                         <div class="search-box">
-                            <button class="btn-search">
+
+                            <div id="myOverlay2" class="overlay2">
+                                <span class="closebtn2" onclick="closeSearch()" title="Close Overlay">×</span>
+                                <div class="overlay-content2" style="margin-top: -180px;">
+
+                                    <div class="autocomplete2" style="width: 1300px;">
+                                        <input id="myInput2" runat="server" type="text" placeholder="Search Movie..." name="search">
+                                        <button id="myInputBut2" type="submit" runat="server" onserverclick="submitSearch"><i class="fa fa-search"></i></button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <button class="btn-search" onclick="openSearch(); return false;">
                                 <ion-icon name="search-outline"></ion-icon>
                             </button>
-                            <input type="text" class="input-search" placeholder="Search Movie...">
+                            <input type="text" class="input-search">
                         </div>
                     </div>
 
@@ -56,11 +72,19 @@
 
                     <!---Right-->
                     <div class="lang-wrapper">
+                        <%
+                        // Simulate setting the session variable during testing
+                        //Session["custID"] = "C001"; // testing
+
+                        if (!string.IsNullOrEmpty(myLabelS.Text))
+                        {
+
+                    %>
                         <!---Reminder-->
                         <label>
                             <div class="notification" id="notificationContainer">
                                 <div class="notBtn" id="notificationBtn">
-                                    <div class="numberReminder">3</div>
+                                    <div class="numberReminder" runat="server" id="numberReminder"></div>
                                     <ion-icon name="notifications-outline" style="color: rgb(226, 226, 20);"></ion-icon>
                                     <div class="boxReminder" id="notificationDropdown">
 
@@ -68,177 +92,178 @@
                                             <div class="contTop">
                                                 Notifications
                                             </div>
-                                            <div class="sec">
-                                                <asp:HyperLink ID="HyperLink9" class="secLink" runat="server" NavigateUrl="~/Guest/Detail/Detail.aspx">
-                                                    <!-- <a href="#"> -->
-                                                    <div class="profCont">
-                                                        <!-- <i class="fa-solid fa-ban"></i>/ -->
-                                                        <div class="profile">
-                                                            <img id="Img1" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="txtReminder">
-                                                            For you: "Hunger Games" now showing in cinema
-                                                        </div>
-                                                        <div class="txtIcon">
-                                                            <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
-                                                        </div>
-                                                    </div>
-                                                    <!-- </a> -->
-                                                </asp:HyperLink>
-                                            </div>
+                                            <asp:Repeater ID="noticeRepeater" runat="server" OnItemCommand="Repeater1_ItemCommand">
+                                                <ItemTemplate>
+                                                    <div class="sec">
+                                                        <div class="secLink">
+                                                            <div class="profCont">
+                                                                <div class="profile">
+                                                                    <!-- For getting notiID (delete btn) -->
+                                                                    <input type="hidden" id="notiIDHidden" runat="server" value='<%# Eval("notiID") %>' />
+                                                                    <img id="Img1" src='../../image/<%# Eval("movieImage") %>' alt='<%# Eval("movieName") %>' style="width: 100%;" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="content">
+                                                                <div class="txtReminder" style="line-height: 20px;">
+                                                                    <%# Eval("notiTitle") %>: "<%# Eval("movieName") %>" - <%# Eval("notiDesc") %>
+                                                                </div>
+                                                                <div>
+                                                                    <asp:LinkButton ID="LinkButton1" CommandName="Delete" OnClientClick="javascript:if(!confirm('Delete this information? this will delete permanently'))return false;" CommandArgument='<%#Eval("notiID") %>' runat="server">
+                                                                        <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
 
-                                            <div class="sec">
-                                                <asp:HyperLink ID="HyperLink7" class="secLink" runat="server" NavigateUrl="~/Guest/Detail/Detail.aspx">
-                                                    <!-- <a href="#"> -->
-                                                    <div class="profCont">
-                                                        <div class="profile">
-                                                            <img id="Img2" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="content">
-                                                        <div class="txtReminder">
-                                                            Refund: Your refund for "Hunger Games" unsuccessful
-                                                        </div>
-                                                        <div class="txtIcon">
-                                                            <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
-                                                        </div>
-                                                    </div>
-                                                    <!-- </a> -->
-                                                </asp:HyperLink>
-                                            </div>
-
-                                            <div class="sec">
-
-                                                <div class="profCont">
-                                                    <div class="profile">
-                                                        <img id="Img3" src="~/image/movie1.jpg" runat="server" alt="movie" style="width: 100%;" />
-                                                    </div>
-                                                </div>
-                                                <div class="content">
-                                                    <div class="txtReminder">
-                                                        Rate: Rate and Review "Hunger games"<br />
-                                                        <a href="#popupRate" class="rateA"
-                                                            style="width: 130px; text-decoration: none; line-height: -5px;">Rate Now!
-                                                        </a>
-                                                        <div class="popupRating" id="popupRate">
-                                                            <div class="popup_innerRating" style="margin-top: 55px;">
-                                                                <section class="modalRate hiddenRate">
-                                                                    <div class="flex">
-                                                                        <p></p>
-
-                                                                    </div>
-                                                                    <div class="wrapperFeed">
-                                                                        <h3>Thanksgiving </h3>
-                                                                        <div class="ratingFeed">
-                                                                            <div class="feedback">
-                                                                                <label class="angry">
-                                                                                    <input type="radio" value="1" name="feedback" />
-                                                                                    <div>
-                                                                                        <svg class="eye left">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                        <svg class="eye right">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                        <svg class="mouth">
-                                                                                            <use xlink:href="#mouth">
-                                                                                        </svg>
-                                                                                    </div>
-                                                                                </label>
-                                                                                <label class="sad">
-                                                                                    <input type="radio" value="2" name="feedback" />
-                                                                                    <div>
-                                                                                        <svg class="eye left">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                        <svg class="eye right">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                        <svg class="mouth">
-                                                                                            <use xlink:href="#mouth">
-                                                                                        </svg>
-                                                                                    </div>
-                                                                                </label>
-                                                                                <label class="ok">
-                                                                                    <input type="radio" value="3" name="feedback" />
-                                                                                    <div></div>
-                                                                                </label>
-                                                                                <label class="good">
-                                                                                    <input type="radio" value="4" name="feedback" checked />
-                                                                                    <div>
-                                                                                        <svg class="eye left">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                        <svg class="eye right">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                        <svg class="mouth">
-                                                                                            <use xlink:href="#mouth">
-                                                                                        </svg>
-                                                                                    </div>
-                                                                                </label>
-                                                                                <label class="happy">
-                                                                                    <input type="radio" value="5" name="feedback" />
-                                                                                    <div>
-                                                                                        <svg class="eye left">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                        <svg class="eye right">
-                                                                                            <use xlink:href="#eye">
-                                                                                        </svg>
-                                                                                    </div>
-                                                                                </label>
-                                                                            </div>
-
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                                                                                <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 4" id="eye">
-                                                                                    <path
-                                                                                        d="M1,1 C1.83333333,2.16666667 2.66666667,2.75 3.5,2.75 C4.33333333,2.75 5.16666667,2.16666667 6,1">
-                                                                                    </path>
-                                                                                </symbol>
-                                                                                <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 7" id="mouth">
-                                                                                    <path d="M1,5.5 C3.66666667,2.5 6.33333333,1 9,1 C11.6666667,1 14.3333333,2.5 17,5.5">
-                                                                                    </path>
-                                                                                </symbol>
-                                                                            </svg>
-
-                                                                        </div>
-                                                                        <p style="color: #F5F5F5;"><span>Movie Date:</span> 30 November 2023</p>
-                                                                        <p style="color: #F5F5F5;"><span>Movie Time:</span> 2 - 4pm</p>
-                                                                        <p style="color: #F5F5F5;"><span>Duration:</span> 1h 20min</p>
-                                                                        <!---<p>Movie Date : 17/5/2024</p>--->
-                                                                        <!----<p>Movie Time : 2- 4 pm</p>------->
-                                                                        <textarea name="opinion" cols="30" rows="5" placeholder="Your review..."></textarea>
-                                                                        <div class="btn-group">
-                                                                            <button type="submit" class="btnHeader btn-primarySign">Submit</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </section>
-                                                                <a href="#" class="close_popupModal1" style="border-color: gold;"><span>X</span></a>
+                                                                    </asp:LinkButton>
+                                                                </div>
                                                             </div>
                                                         </div>
-
-
                                                     </div>
-                                                    <div class="txtIcon">
-                                                        <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
-                                                    </div>
-                                                </div>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
 
-                                            </div>
+
+                                            <asp:Repeater ID="afterMovieRepeater" runat="server">
+                                                <ItemTemplate>
+                                                    <div class="sec">
+                                                        <div class="profCont">
+                                                            <div class="profile">
+                                                                <img id="Img3" src='../../image/<%# Eval("movieImage") %>' alt='<%# Eval("movieName") %>' style="width: 100%;" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="content">
+                                                            <div class="txtReminder">
+                                                                Rate: Rate and Review "<%# Eval("movieName") %>"<br />
+                                                                <a href="#popupRate" class="rateA"
+                                                                    style="width: 130px; text-decoration: none; line-height: -12px;">Rate Now!
+                                                                </a>
+
+                                                                <!------ pop up rating --------->
+                                                                <div class="popupRating" id="popupRate">
+                                                                    <div class="popup_innerRating" style="margin-top: 55px; background-image: url('../../image/<%# Eval("movieImage") %>');">
+                                                                        <section class="modalRate hiddenRate">
+                                                                            <div class="flex">
+                                                                                <p></p>
+
+                                                                            </div>
+                                                                            <div class="wrapperFeed">
+                                                                                <h3><%# Eval("movieName") %></h3>
+                                                                                <div class="ratingFeed">
+                                                                                    <div class="feedback">
+                                                                                        <label id="label1" class="angry">
+                                                                                            <input type="radio" value="1" name="feedback" id="rating1" />
+                                                                                            <div>
+                                                                                                <svg class="eye left">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                                <svg class="eye right">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                                <svg class="mouth">
+                                                                                                    <use xlink:href="#mouth">
+                                                                                                </svg>
+                                                                                            </div>
+                                                                                        </label>
+                                                                                        <label id="label2" class="sad">
+                                                                                            <input type="radio" value="2" name="feedback" id="rating2" />
+                                                                                            <div>
+                                                                                                <svg class="eye left">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                                <svg class="eye right">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                                <svg class="mouth">
+                                                                                                    <use xlink:href="#mouth">
+                                                                                                </svg>
+                                                                                            </div>
+                                                                                        </label>
+                                                                                        <label id="label3" class="ok">
+                                                                                            <input type="radio" value="3" name="feedback" id="rating3" />
+                                                                                            <div></div>
+                                                                                        </label>
+                                                                                        <label id="label4" class="good">
+                                                                                            <input type="radio" value="4" name="feedback" id="rating4" checked />
+                                                                                            <div>
+                                                                                                <svg class="eye left">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                                <svg class="eye right">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                                <svg class="mouth">
+                                                                                                    <use xlink:href="#mouth">
+                                                                                                </svg>
+                                                                                            </div>
+                                                                                        </label>
+                                                                                        <label id="label5" class="happy">
+                                                                                            <input type="radio" value="5" name="feedback" id="rating5" />
+                                                                                            <div>
+                                                                                                <svg class="eye left">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                                <svg class="eye right">
+                                                                                                    <use xlink:href="#eye">
+                                                                                                </svg>
+                                                                                            </div>
+                                                                                        </label>
+                                                                                    </div>
+
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                                                                                        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 4" id="eye">
+                                                                                            <path
+                                                                                                d="M1,1 C1.83333333,2.16666667 2.66666667,2.75 3.5,2.75 C4.33333333,2.75 5.16666667,2.16666667 6,1">
+                                                                                            </path>
+                                                                                        </symbol>
+                                                                                        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 7" id="mouth">
+                                                                                            <path d="M1,5.5 C3.66666667,2.5 6.33333333,1 9,1 C11.6666667,1 14.3333333,2.5 17,5.5">
+                                                                                            </path>
+                                                                                        </symbol>
+                                                                                    </svg>
+
+                                                                                </div>
+
+                                                                                <input type="hidden" id="custIDHidden" name="custIDHidden" value='<%# Eval("custID") %>' />
+                                                                                <input type="hidden" id="movieIDHidden" name="movieIDHidden" value='<%# Eval("movieID") %>' />
+
+                                                                                <p style="color: #F5F5F5;"><span>Movie Date:</span> <%# Eval("date", "{0:dd/MM/yyyy}") %></p>
+                                                                                <p style="color: #F5F5F5;"><span>Movie Time:</span> <%# DateTime.Parse(Eval("time").ToString()).ToString("hh:mm tt") %></p>
+                                                                                <p style="color: #F5F5F5;"><span>Duration:</span> <%# Eval("duration") %> mins</p>
+
+                                                                                <textarea name="txtTextReview" id="opinion" rows="5" cols="30" placeholder="Your review..."></textarea>
+
+
+                                                                                <div class="btn-group">
+
+                                                                                    <button type="submit" class="btnHeader btn-primarySign" runat="server" onserverclick="submitReview">Submit</button>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </section>
+                                                                        <a href="#" class="close_popupModal1" style="border-color: gold;"><span>X</span></a>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </label>
+
+                        <%
+                        }
+                    %>
                     </div>
 
 
                     <%
                         // Simulate setting the session variable during testing
-                        Session["custID"] = "C001"; // testing
+                        // Session["custID"] = "C001"; // testing
 
                         if (Session["custID"] != null)
                         {
@@ -290,11 +315,8 @@
                     <ion-icon name="reorder-two"></ion-icon>
                 </button>
 
-
                 <nav class="navbarHeader" data-navbar>
                     <div class="navbar-top">
-
-
 
                         <asp:HyperLink ID="HyperLink11" class="logo" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">
                             <div class="logo-container1">
@@ -305,12 +327,21 @@
 
                         </asp:HyperLink>
 
-
-
                         <button class="menu-close-btn" data-menu-close-btn>
                             <ion-icon name="close-outline"></ion-icon>
                         </button>
                     </div>
+
+                    
+                    <%
+                        // Simulate setting the session variable during testing
+                        //Session["custID"] = "C001"; // testing
+
+                        if (!string.IsNullOrEmpty(myLabelS.Text))
+                        {
+
+                    %>
+
 
                     <ul class="navbar-list">
                         <li>
@@ -322,6 +353,7 @@
                             <!---<a href="#" class="navbar-link">Movie</a>-->
                         </li>
 
+
                         <li>
                             <asp:HyperLink ID="HyperLink8" class="navbar-link" runat="server" NavigateUrl="~/Member/MyBooking/myBooking.aspx">My Booking</asp:HyperLink>
                             <!---<a href="#" class="navbar-link">My Booking</a>-->
@@ -329,11 +361,86 @@
 
                     </ul>
 
+                    <%
+                        }
+                        else
+                        {
+                    %>
+                    <!-- Display a default message - if custName is not found -->
+                    <ul class="navbar-list">
+                        <li>
+                            <asp:HyperLink ID="HyperLink7" class="navbar-link" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
+                            <!---<a href="./index.html" class="navbar-link">Home</a>-->
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink10" class="navbar-link" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
+                            <!---<a href="#" class="navbar-link">Movie</a>-->
+                        </li>
+
+
+
+
+                    </ul>
+                    <%
+                        }
+                    %>
+
+
+
+
                     <ul class="navbar-social-list">
                         <li>
-                            <a href="#" class="navbar-social-link">
-                                <button class="btnHeader btn-primarySign">Sign in</button>
-                            </a>
+
+                            <%
+                                // Simulate setting the session variable during testing
+                                //Session["custID"] = "C001"; // testing
+
+                                if (!string.IsNullOrEmpty(myLabelS.Text))
+                                {
+                                    string custID = myLabelS.Text;
+                                    string custName = GetCustNameFromDatabase(custID);
+
+                                    if (!string.IsNullOrEmpty(custName))
+                                    {
+                            %>
+                            <!-- Display custName if successfully retrieved from the database -->
+                            <div class="dropWelcome1">
+                                <div class="welcomeCust1" style="color: gold;">Welcome, <%= custName %>!</div>
+                                <div class="dropdown-contentWelcome1">
+                                    <p class="dropLog1" onclick="logout()">Logout</p>
+
+                                    <script type="text/javascript">
+                                        function logout() {
+                        // Clear session variables
+                        <% Session.Clear(); %>
+
+                        // Abandon the session
+                        <% Session.Abandon(); %>
+
+                                            // Redirect to the sign-in page
+                                            window.location.href = '../loginRegister/Login.aspx';
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                            <%
+                                }
+                                else
+                                {
+                            %>
+                            <!-- Display a default message - if custName is not found -->
+                            <div>Welcome!</div>
+                            <%
+                                }
+                            %>
+                            <% }
+                                else
+                                { %>
+                            <!-- Display the "Sign in" button if no session custID -->
+                            <div class="navbar-social-link">
+                                <asp:Button ID="Button3" class="btnHeader btn-primarySign" runat="server" Text="Sign in" PostBackUrl="~/Guest/loginRegister/Login.aspx" />
+                            </div>
+                            <% } %>
                         </li>
                     </ul>
                 </nav>
@@ -356,18 +463,29 @@
                                 <p class="fLeft">
                                     <!---<a href="#" >Home</a>--->
 
-                                    <asp:HyperLink ID="HyperLink1" class="fLink" runat="server" NavigateUrl="~/Guest/loginRegister/Login.aspx">Home</asp:HyperLink>
+                                    <%
+                                        // Simulate setting the session variable during testing
+                                        //Session["custID"] = "C001"; // testing
+
+                                        if (!string.IsNullOrEmpty(myLabelS.Text))
+                                        {
+                                    %>
+                                    <asp:HyperLink ID="HyperLink1" class="fLink" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
                                     <asp:HyperLink ID="HyperLink2" class="fLink" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
                                     <asp:HyperLink ID="HyperLink4" class="fLink" runat="server" NavigateUrl="~/Member/MyBooking/myBooking.aspx">My Booking</asp:HyperLink>
 
-                                    <!---
-                                <a href="#" class="fLink">Movie</a>
+                                    <%
+                                        }
+                                        else
+                                        {
+                                    %>
+                                    <asp:HyperLink ID="HyperLink14" class="fLink" runat="server" NavigateUrl="~/Guest/HomePage/Homepage.aspx">Home</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink15" class="fLink" runat="server" NavigateUrl="~/Guest/Menu/Menu.aspx">Movie</asp:HyperLink>
 
-                                <a href="#" class="fLink">Upcoming</a>
 
-                                <a href="#" class="fLink">My Booking</a>
-
-                                <a href="#" class="fLink">Contact Us</a>--->
+                                    <%
+                                        }
+                                    %>
                                 </p>
                             </div>
                         </div>
@@ -456,8 +574,6 @@
         </footer>
 
 
-
-
         <!--- #GO TO TOP-->
         <a href="#topHeader" class="go-top" data-go-top>
             <ion-icon name="chevron-up"></ion-icon>
@@ -465,6 +581,130 @@
 
         <!--swipper-->
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+        <script>
+            function openSearch() {
+                document.getElementById("myOverlay2").style.display = "block";
+            }
+
+            function closeSearch() {
+                document.getElementById("myOverlay2").style.display = "none";
+            }
+
+            function handleSearch() {
+                // Add your search functionality here
+                var searchTerm = document.getElementById("myInput2").value;
+                console.log("Search Term: " + searchTerm);
+                // You can add more logic here, like triggering search requests, etc.
+            }
+        </script>
+
+        <script>
+            function autocomplete(inp, arr) {
+                /*the autocomplete function takes two arguments,
+                the text field element and an array of possible autocompleted values:*/
+                var currentFocus;
+                /*execute a function when someone writes in the text field:*/
+                inp.addEventListener("input", function (e) {
+                    var a, b, i, val = this.value;
+                    /*close any already open lists of autocompleted values*/
+                    closeAllLists();
+                    if (!val) { return false; }
+                    currentFocus = -1;
+                    /*create a DIV element that will contain the items (values):*/
+                    a = document.createElement("DIV");
+                    a.setAttribute("id", this.id + "autocomplete-list");
+                    a.setAttribute("class", "autocomplete-items");
+                    /*append the DIV element as a child of the autocomplete container:*/
+                    this.parentNode.appendChild(a);
+                    /*for each item in the array...*/
+                    for (i = 0; i < arr.length; i++) {
+                        /*check if the item starts with the same letters as the text field value:*/
+                        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                            /*create a DIV element for each matching element:*/
+                            b = document.createElement("DIV");
+                            /*make the matching letters bold:*/
+                            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                            b.innerHTML += arr[i].substr(val.length);
+                            /*insert a input field that will hold the current array item's value:*/
+                            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                            /*execute a function when someone clicks on the item value (DIV element):*/
+                            b.addEventListener("click", function (e) {
+                                /*insert the value for the autocomplete text field:*/
+                                inp.value = this.getElementsByTagName("input")[0].value;
+                                /*close the list of autocompleted values,
+                                (or any other open lists of autocompleted values:*/
+                                closeAllLists();
+                            });
+                            a.appendChild(b);
+                        }
+                    }
+                });
+                /*execute a function presses a key on the keyboard:*/
+                inp.addEventListener("keydown", function (e) {
+                    var x = document.getElementById(this.id + "autocomplete-list");
+                    if (x) x = x.getElementsByTagName("div");
+                    if (e.keyCode == 40) {
+                        /*If the arrow DOWN key is pressed,
+                        increase the currentFocus variable:*/
+                        currentFocus++;
+                        /*and and make the current item more visible:*/
+                        addActive(x);
+                    } else if (e.keyCode == 38) { //up
+                        /*If the arrow UP key is pressed,
+                        decrease the currentFocus variable:*/
+                        currentFocus--;
+                        /*and and make the current item more visible:*/
+                        addActive(x);
+                    } else if (e.keyCode == 13) {
+                        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                        e.preventDefault();
+                        if (currentFocus > -1) {
+                            /*and simulate a click on the "active" item:*/
+                            if (x) x[currentFocus].click();
+                        }
+                    }
+                });
+                function addActive(x) {
+                    /*a function to classify an item as "active":*/
+                    if (!x) return false;
+                    /*start by removing the "active" class on all items:*/
+                    removeActive(x);
+                    if (currentFocus >= x.length) currentFocus = 0;
+                    if (currentFocus < 0) currentFocus = (x.length - 1);
+                    /*add class "autocomplete-active":*/
+                    x[currentFocus].classList.add("autocomplete-active");
+                }
+                function removeActive(x) {
+                    /*a function to remove the "active" class from all autocomplete items:*/
+                    for (var i = 0; i < x.length; i++) {
+                        x[i].classList.remove("autocomplete-active");
+                    }
+                }
+                function closeAllLists(elmnt) {
+                    /*close all autocomplete lists in the document,
+                    except the one passed as an argument:*/
+                    var x = document.getElementsByClassName("autocomplete-items");
+                    for (var i = 0; i < x.length; i++) {
+                        if (elmnt != x[i] && elmnt != inp) {
+                            x[i].parentNode.removeChild(x[i]);
+                        }
+                    }
+                }
+                /*execute a function when someone clicks in the document:*/
+                document.addEventListener("click", function (e) {
+                    closeAllLists(e.target);
+                });
+            }
+
+
+            document.addEventListener("DOMContentLoaded", function () {
+                var movieNames = <%= GetMovieNamesArray() %>;
+                autocomplete(document.getElementById("myInput2"), movieNames);
+            });
+        </script>
+
 
 
         <!--- custom js link-->

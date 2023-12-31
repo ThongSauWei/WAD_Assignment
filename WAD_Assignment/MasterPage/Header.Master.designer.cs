@@ -24,6 +24,15 @@ namespace WAD_Assignment
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// myLabelS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label myLabelS;
+
+        /// <summary>
         /// HyperLink3 control.
         /// </summary>
         /// <remarks>
@@ -42,49 +51,49 @@ namespace WAD_Assignment
         protected global::System.Web.UI.HtmlControls.HtmlImage cinemaLogo;
 
         /// <summary>
-        /// HyperLink9 control.
+        /// myInput2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink9;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText myInput2;
 
         /// <summary>
-        /// Img1 control.
+        /// myInputBut2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
+        protected global::System.Web.UI.HtmlControls.HtmlButton myInputBut2;
 
         /// <summary>
-        /// HyperLink7 control.
+        /// numberReminder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink7;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl numberReminder;
 
         /// <summary>
-        /// Img2 control.
+        /// noticeRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img2;
+        protected global::System.Web.UI.WebControls.Repeater noticeRepeater;
 
         /// <summary>
-        /// Img3 control.
+        /// afterMovieRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img3;
+        protected global::System.Web.UI.WebControls.Repeater afterMovieRepeater;
 
         /// <summary>
         /// Button1 control.
@@ -150,6 +159,33 @@ namespace WAD_Assignment
         protected global::System.Web.UI.WebControls.HyperLink HyperLink8;
 
         /// <summary>
+        /// HyperLink7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink7;
+
+        /// <summary>
+        /// HyperLink10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink10;
+
+        /// <summary>
+        /// Button3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button3;
+
+        /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>
@@ -193,5 +229,23 @@ namespace WAD_Assignment
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HyperLink4;
+
+        /// <summary>
+        /// HyperLink14 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink14;
+
+        /// <summary>
+        /// HyperLink15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink15;
     }
 }
