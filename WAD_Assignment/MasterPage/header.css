@@ -96,7 +96,7 @@
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100%;
+    /**height: 100%;**/
     background-color: #383838;
 }
 
@@ -184,18 +184,13 @@
     letter-spacing: 1px;
     outline: none;
     border-radius: 25px;
-    transition: all .5s ease-in-out;
+    /**transition: all .5s ease-in-out;*/
     background-color: transparent;
     padding-right: 40px;
-    color: #F5F5F5;
+    /**color: #F5F5F5;*/
 }
 
-.input-search::placeholder {
-    color: rgba(255, 255, 255, .5);
-    font-size: 12px;
-    letter-spacing: 2px;
-    font-weight: 60;
-}
+
 
 .btn-search {
     width: 50px;
@@ -213,14 +208,7 @@
     pointer-events: painted;
 }
 
-.btn-search:focus ~ .input-search,
-.input-search:focus {
-    width: 250px;
-    border-radius: 0px;
-    background-color: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, .5);
-    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-}
+
 
 /*cutter*/
 .cutter {
@@ -312,7 +300,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding-block: 25px;
+    padding-block: 18px;
     transition: var(--transition-2);
     z-index: 100;
     background-color: rgba(40, 41, 52, 1);
@@ -1052,7 +1040,7 @@ header {
     /* background-color: white; */
     border: 1px solid gold;
     border-radius: 15px;
-    background-image: url('../image/swipperMovie1.png');
+    /**background-image: url('../image/swipperMovie1.png');*/
     background-size: cover;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
@@ -1148,6 +1136,21 @@ header {
     text-decoration: none;
 }
 
+.commentFeed {
+    display: inline-block;
+    width: 100%;
+    height: 300px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    /***transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;**/
+}
 
 
 
@@ -1622,3 +1625,128 @@ header {
     display: block;
     cursor: pointer;
 }
+
+
+/**autocomplete search*/
+.overlay2 {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content2 {
+    position: relative;
+    top: 46%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+
+.overlay2 .closebtn2 {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
+
+    .overlay2 .closebtn2:hover {
+        color: #ccc;
+    }
+
+.overlay2 input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 80%;
+    background: white;
+}
+
+    .overlay2 input[type=text]:hover {
+        background: #f1f1f1;
+    }
+
+.overlay2 button {
+    float: left;
+    width: 20%;
+    padding: 15px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+    .overlay2 button:hover {
+        background: #bbb;
+    }
+
+.autocomplete2 {
+    position: relative;
+    display: inline-block;
+}
+
+.autocomplete-items {
+    position: absolute;
+    text-align: left;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    color: #ffffff;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+    .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: black;
+    }
+
+        /*when hovering an item:*/
+        .autocomplete-items div:hover {
+            background-color: rgba(86, 84, 84, 0.312);
+            color: gold;
+        }
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+#myInput2 {
+    border: 1px solid gold;
+    background-color: black;
+    color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+    #myInput2 input[type=text]:focus {
+        border: 1px solid lightblue;
+    }
+
+#myInputBut2 {
+    border: 1px solid gold;
+    background-color: black;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+    #myInputBut2:hover {
+        border: 1px solid gold;
+        background-color: rgba(57, 56, 56, 0.312);
+        color: white;
+    }

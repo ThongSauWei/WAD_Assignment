@@ -20,12 +20,26 @@ namespace WAD_Assignment.HomePage
                 string connectionString = ConfigurationManager.ConnectionStrings["CinemaDB"].ConnectionString;
                 using (SqlConnection cnn = new SqlConnection(connectionString))
                 {
-                    cnn.Open();
-                    Response.Write("Connection Made");
+                    string custID = (string)Session["custID"];
 
-                    DataTable dbMovieConnect = GetMovieDataFromDatabase(connectionString, "SELECT TOP 5 movieID, movieName, category, movieImage FROM Movie WHERE releaseDate <= CAST(GETDATE() AS DATE) ORDER BY releaseDate ASC");
+                    if (!string.IsNullOrEmpty(custID))
+                    {
+                        // Use the custID value
+                        // For example, you can print it to the console, log it, or use it in your logic.
+                        Console.WriteLine("Session custID: " + custID);
+                    }
+                    else
+                    {
+                        // Session["custID"] is either not set or is an empty string
+                        Console.WriteLine("No");
+                    }
+
+                    cnn.Open();
+                    //Response.Write("Connection Made");
+
+                    DataTable dbMovieConnect = GetMovieDataFromDatabase(connectionString, "SELECT TOP 5 movieID, movieName, category, movieImage, movieTrailer FROM Movie WHERE releaseDate <= CAST(GETDATE() AS DATE) ORDER BY releaseDate ASC");
                     DataTable dbReleased = GetMovieDataFromDatabase(connectionString, "SELECT movieID, movieName, category, movieImage, duration, language FROM Movie WHERE releaseDate <= CAST(GETDATE() AS DATE) AND status = 'released' ORDER BY releaseDate ASC");
-                    DataTable dbComing = GetMovieDataFromDatabase(connectionString, "SELECT movieID, movieName, movieImage FROM Movie WHERE status = 'pending'");
+                    DataTable dbComing = GetMovieDataFromDatabase(connectionString, "SELECT movieID, movieName, movieImage FROM Movie WHERE status = 'comingsoon'");
 
                     // Get top 10 movies with highest average ratings
                     string topMoviesQuery = @"
@@ -72,6 +86,13 @@ namespace WAD_Assignment.HomePage
                     thumbnailRepeater.DataBind();
                     MovieRepeater.DataBind();
 
+                }
+
+                // Check if the success parameter is present in the query string
+                if (!string.IsNullOrEmpty(Request.QueryString["success"]))
+                {
+                    // Display a success message
+                    divAlert.Visible = true;
                 }
             }
             catch (Exception ex)

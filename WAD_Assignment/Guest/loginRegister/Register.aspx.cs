@@ -53,7 +53,7 @@ namespace WAD_Assignment
 
         protected void ReenterPassword_TextChanged(object sender, EventArgs e)
         {
-   
+
         }
 
         protected void Register_Click(object sender, EventArgs e)
@@ -82,7 +82,8 @@ namespace WAD_Assignment
                 conn.Open();
 
                 //check the email duplicate using or not
-                using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Customer WHERE custEmail = @custEmail", conn))
+                using (
+                    SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Customer WHERE custEmail = @custEmail", conn))
                 {
                     //@ means if we didt put this it will put it as a variable but when we put a @ so that the variable will be hold until we add a velue for it
                     command.Parameters.AddWithValue("@custEmail", custEmail);
@@ -94,31 +95,51 @@ namespace WAD_Assignment
                         //return;
 
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "emailDuplicate", "alert('Email is already registered!');", true);
+                        return;
                     }
                 }
 
-                int custID;
-                //after checking the email then can insert the new user into db
-                using (SqlCommand command = new SqlCommand("INSERT INTO Customer (custName, custEmail, custPhoneNo, custPassword, custSecurityQues) OUTPUT INSERTED.custID VALUES (@custName, @custEmail, @custPhoneNo, @custPassword, @custSecurityQues)", conn))
+                string custID;
+                //Get the last custID
+                string lastDigi = "SELECT TOP 1 custID FROM Customer ORDER BY custID DESC";
+                SqlCommand cmdSelect = new SqlCommand(lastDigi, conn);
+                string lastCustID = (string)cmdSelect.ExecuteScalar();
+                if (lastCustID != null)
                 {
+                    int index = Convert.ToInt32(lastCustID.Substring(1));
+                    index++;
+                    custID = "C" + index.ToString("000");
+                }
+
+                else
+                {
+                    //Default to 1 if no records exist
+                    custID = "C001";
+                }
+                //after checking the email then can insert the new user into db
+                using (SqlCommand command = new SqlCommand("INSERT INTO Customer (custID, custName, custEmail, custPhoneNo, custPassword, custSecurityQues) VALUES (@custID, @custName, @custEmail, @custPhoneNo, @custPassword, @custSecurityQues)", conn))
+                {
+                    command.Parameters.AddWithValue("@custID", custID);
                     command.Parameters.AddWithValue("@custName", custName);
                     command.Parameters.AddWithValue("@custEmail", custEmail);
                     command.Parameters.AddWithValue("@custPhoneNo", custPhoneNo);
-                    command.Parameters.AddWithValue("@custPassword", custPassword);
+                    command.Parameters.AddWithValue("@custPassword", hashedPassword);
                     command.Parameters.AddWithValue("@custSecurityQues", custSecurityQues);
 
-                    custID = command.ExecuteNonQuery();
-                    if (custID > 0)
+                    int insertedCustID = (int)command.ExecuteNonQuery();
+                    if (insertedCustID > 0)
                     {
                         Response.Redirect("~/Guest/loginRegister/Login.aspx");
                     }
                     else
+                    {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "registrationFailed", "alert('Account registration unsuccessful!');", true);
+                    }
                 }
 
-                Session["custEmail"] = custEmail;
-                Session["custName"] = custName;
-                Session["custID"] = custID;
+                //Session["custEmail"] = custEmail;
+                //Session["custName"] = custName;
+                //Session["custID"] = "C" + custID;
 
             }
             catch (SqlException sqlEx)
@@ -127,11 +148,10 @@ namespace WAD_Assignment
                 //ErrorMessageLabel.InnerText = "A database error occurred during registration. Please try again later.";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "sqlError", "alert('A database error occurred during registration. Please try again later.');", true);
 
-                // You can also print the details of the SQL exception to the console or log file
-                Console.WriteLine($"SQL Exception Number: {sqlEx.Number}");
-                Console.WriteLine($"SQL Exception Message: {sqlEx.Message}");
-                Console.WriteLine($"SQL Exception Class: {sqlEx.Class}");
-                Console.WriteLine($"SQL Exception State: {sqlEx.State}");
+                Response.Write($"SQL Exception Number: {sqlEx.Number}");
+                Response.Write($"SQL Exception Message: {sqlEx.Message}");
+                Response.Write($"SQL Exception Class: {sqlEx.Class}");
+                Response.Write($"SQL Exception State: {sqlEx.State}");
 
             }
             finally

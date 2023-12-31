@@ -103,6 +103,14 @@
     <Content Include="image\swipperMovie12.jpg" />
     <Content Include="image\minion-warning.gif" />
     <Content Include="image\subtitle.png" />
+    <Content Include="image\swipperMovie13.jpg" />
+    <Content Include="image\swipperMovie14.jpg" />
+    <Content Include="image\swipperMovie15.png" />
+    <Content Include="image\swipperMovie16.jpg" />
+    <Content Include="image\swipperMovie17.jpg" />
+    <Content Include="image\swipperMovie18.jpg" />
+    <Content Include="image\swipperMovie19.jpg" />
+    <Content Include="image\swipperMovie20.jpg" />
     <Content Include="image\swipperMovie6.jpg" />
     <Content Include="image\booked.png" />
     <Content Include="Guest\HomePage\Homepage.aspx" />

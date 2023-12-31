@@ -121,6 +121,13 @@ body {
     font-size: 18px;
 }
 
+span#ContentPlaceHolder1_RegularExpressionValidator3 {
+    color: red;
+    position: relative;
+    top: -45px;
+    animation: blink-shadow-errorMsg 1s infinite;
+}
+
 span#ContentPlaceHolder1_RegularExpressionValidator2 {
     color: red;
     position: relative;
@@ -250,7 +257,7 @@ ion-icon.iconThree.md.hydrated {
 
 ion-icon.iconFour.md.hydrated {
     position: absolute;
-    top: 315px;
+    top: 319px;
     right: 40px;
     transform: translateY(-50%);
     color: #ddc862;
@@ -259,7 +266,7 @@ ion-icon.iconFour.md.hydrated {
 
 ion-icon.iconFive.md.hydrated {
     position: absolute;
-    top: 390px;
+    top: 396px;
     right: 40px;
     transform: translateY(-50%);
     color: #ddc862;
