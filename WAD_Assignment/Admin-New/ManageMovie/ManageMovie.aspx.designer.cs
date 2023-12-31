@@ -15,76 +15,13 @@ namespace WAD_Assignment.Admin_New
     {
 
         /// <summary>
-        /// btnEdit1 control.
+        /// allMovieContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit1;
-
-        /// <summary>
-        /// btnDelete1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete1;
-
-        /// <summary>
-        /// btnEdit2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit2;
-
-        /// <summary>
-        /// btnDelete2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete2;
-
-        /// <summary>
-        /// btnEdit3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit3;
-
-        /// <summary>
-        /// btnDelete3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete3;
-
-        /// <summary>
-        /// btnEdit4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit4;
-
-        /// <summary>
-        /// btnDelete4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete4;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl allMovieContent;
 
         /// <summary>
         /// btnAdd control.
@@ -96,13 +33,13 @@ namespace WAD_Assignment.Admin_New
         protected global::System.Web.UI.WebControls.Button btnAdd;
 
         /// <summary>
-        /// deletePanel control.
+        /// removePanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel deletePanel;
+        protected global::System.Web.UI.WebControls.Panel removePanel;
 
         /// <summary>
         /// btnConfirm control.
@@ -121,5 +58,14 @@ namespace WAD_Assignment.Admin_New
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancel;
+
+        /// <summary>
+        /// selectedMovie control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField selectedMovie;
     }
 }

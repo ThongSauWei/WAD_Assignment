@@ -61,29 +61,677 @@ CREATE TABLE [dbo].[Movie] (
     PRIMARY KEY CLUSTERED ([movieID] ASC)
 );
 
-INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M001', N'Thanksgiving', N'After a Black Friday riot ends in tragedy, a mysterious Thanksgiving-inspired killer terrorizes Plymouth, Massachusetts – the birthplace of the holiday. Picking off residents one by one, what begins as random revenge killings are soon revealed to be part of a larger, sinister holiday plan. Will the town uncover the killer and survive the holidays...or become guests at his twisted holiday dinner table?', N'Horror', N'2023-08-10', N'Released', 140, N'English', N'Chinese', N'13        ', N'John Director', N'John Doe, Jane Smith', N'swipperMovie1.png', CAST(15.99 AS Decimal(10, 2)), N'swipperMovie1.png')
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (
+    'M001',
+    'Thanksgiving',
+    'After a Black Friday riot ends in tragedy, a mysterious Thanksgiving-inspired killer terrorizes Plymouth, Massachusetts – the birthplace of the holiday. Picking off residents one by one, what begins as random revenge killings are soon revealed to be part of a larger, sinister holiday plan. Will the town uncover the killer and survive the holidays...or become guests at his twisted holiday dinner table?',
+    'Horror',
+    '2023-11-10',
+    'Released',
+    140,
+    'English',
+    'Chinese',
+    '13',
+    'Eli Roth',
+    'JPatrick Dempsey, Ty Olsson, Gina Gershon',
+    'swipperMovie1.png',
+    15.99,
+    'https://youtu.be/KbU50SdL8zA'
+);
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (
+    'M002',
+    'Aquaman and the Lost Kingdom',
+    'In the film, Arthur must work with his half-brother Orm (Wilson) to prevent Black Manta (Abdul-Mateen II) from killing his family and using the cursed Black Trident to overheat the world while searching for the lost seventh kingdom of the seas.',
+    'Action',
+    '2023-12-20',
+    'Released',
+    150,
+    'English',
+    'Chinese',
+    '13',
+    'James Wan',
+    'Jason Momoa, Ben Affleck, Patrick Wilson, Yahya Abdul-Mateen II, Nicole Kidman, Amber Heard',
+    'swipperMovie2.jpg',
+    15.99,
+    'https://youtu.be/UGc5Tzz19UY'
+);
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (
+    'M003',
+    'Wish',
+    'The story focuses on a 17-year-old girl named Asha (DeBose) in the Kingdom of Rosas, who makes a passionate plea to the stars in a moment of need, which leads her to meet a living, magic star fallen from the sky, something that attracts the attention of Rosas'' evil ruler Magnifico (Pine) as well.',
+    'Musical',
+    '2023-12-25',
+    'Released',
+    120,
+    'English',
+    'Chinese',
+    '12',
+    'Chris Buck, Jennifer Lee',
+    'Alan Tudyk, Ariana DeBose, Chris Pine',
+    'swipperMovie3.jpg',
+    15.80,
+    'https://youtu.be/oyRxxpD3yNw'
+);
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (
+    'M004',
+    'War On Terror: KL Anarki',
+    'New action movie War On Terror: KL Anarki, directed by Kroll Azry and Frank See, centres on the police uncovering a terrorist attack planned for Bukit Bintang, Kuala Lumpur, by brothers Lang (Qi Razali) and Joe (Naque Ariffin). Unfortunately for the brothers, a police special team is assigned to thwart this threat.',
+    'Action',
+    '2023-11-23',
+    'Released',
+    120,
+    'English',
+    'Chinese',
+    '16',
+    'Kroll Azry, Frank See',
+    'Aedy Ashraf, Farali Khan, Qi Razali, Daiyan Trisha, Noki K. Clique',
+    'swipperMovie4.jpg',
+    17.50,
+    'https://youtu.be/zrF5jwCxQdE'
+);
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M005',
+    'Wonka',
+    'Mr Willy Wonka , who is one of the main characters in the story , is an extraordinary man. He is described by many as a chocolate making genius who relishes nonsense. He is an incredibly intelligent man and is very sharp and full of life.',
+    'Musical',
+    '2023-12-7',
+    'Released',
+    120,
+    'English',
+    'Chinese',
+    '12',
+    'Paul King',
+    'Timothée Chalamet, Keegan-Michael Key, Sally Hawkins, Rowan Atkinson, Olivia Colman, Jim Carter',
+    'swipperMovie5.jpeg',
+    16.60,
+    'https://youtu.be/otNh9bTjXWg'
+);
 
-INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M002', N'Aquaman and the Lost Kingdom', N'In the film, Arthur must work with his half-brother Orm (Wilson) to prevent Black Manta (Abdul-Mateen II) from killing his family and using the cursed Black Trident to overheat the world while searching for the lost seventh kingdom of the seas.', N'Action', N'2023-09-10', N'Released', 150, N'English', N'Chinese', N'13        ', N'James Wan', N'Jason Momoa, Patrick Wilson', N'swipperMovie2.jpg', CAST(15.99 AS Decimal(10, 2)), N'swipperMovie2.jpg')
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M006',
+    'Five Nights at Freddy''s',
+    'Plot. At Freddy Fazbear''s Pizza, an abandoned pizzeria and family entertainment center that was once successful, a night security guard attempts to flee from the place but is captured and strapped to a torture device, which kills him.',
+    'Horror',
+    '2023-12-12',
+    'Released',
+    120,
+    'English',
+    'Chinese',
+    '18',
+    'Emma Tammi',
+    'Josh Hutcherson',
+    'swipperMovie6.jpg',
+    16.60,
+    'https://youtu.be/0VH9WCFV6XQ'
+);
 
-INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M003', N'Wish', N'The story focuses on a 17-year-old girl named Asha (DeBose) in the Kingdom of Rosas, who makes a passionate plea to the stars in a moment of need, which leads her to meet a living, magic star fallen from the sky, something that attracts the attention of Rosas'' evil ruler Magnifico (Pine) as well.', N'Musical', N'2023-06-10', N'Pending', 120, N'English', N'Chinese', N'13        ', N'Haha', N'John Doe, Jane Smith', N'swipperMovie3.jpg', CAST(15.80 AS Decimal(10, 2)), N'swipperMovie3.jpg')
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M007',
+    'Migration',
+    'A family of ducks living in New England try to convince their over-protective father to go on a vacation of a lifetime in the Bahamas.',
+    'Animation',
+    '2023-12-28',
+    'Released',
+    120,
+    'English',
+    'Chinese',
+    '12',
+    'Benjamin Renner',
+    'Kumail Nanjiani, Elizabeth Banks, Awkwafina, Keegan-Michael Key, David Mitchell',
+    'swipperMovie7.jpg',
+    16.60,
+    'https://youtu.be/hWbfohXIdEU'
+);
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M008',
+    'Napoleon',
+    'Napoleon is a spectacle-filled action epic that details the checkered rise and fall of the iconic French Emperor Napoleon Bonaparte, played by Oscar®-winner Joaquin Phoenix. Against a stunning backdrop of large-scale filmmaking orchestrated by legendary director Ridley Scott, the film captures Bonaparte''s relentless journey to power through the prism of his addictive, volatile relationship with his one true love, Josephine, showcasing his visionary military and political tactics against some of the most dynamic practical battle sequences ever filmed.',
+    'War',
+    '2023-11-30',
+    'Released',
+    220,
+    'English',
+    'Chinese',
+    '16',
+    'Ridley Scott',
+    'Joaquin Phoenix, Vanessa Kirby, Ben Miles, Tahar Rahim',
+    'swipperMovie8.jpeg',
+    16.60,
+    'https://youtu.be/OAZWXUkrjPc'
+);
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M009',
+    'Dune: Part Two',
+    'With clairvoyant powers that may enable him to guide humanity to a better future, Paul Atreides continues his mythic journey. Now united with Chani and the Fremen, Paul is set on a warpath of revenge against the conspirators who destroyed his family. After taking control of the empire and facing a choice between the love of his life and the fate of the known universe, he endeavours to prevent a terrible future that only he can foresee.',
+    'Adventure',
+    '2024-03-14',
+    'ComingSoon',
+    120,
+    'English',
+    'Chinese',
+    '12',
+    'enis Villeneuve',
+    'Timothée Chalamet, Josh Brolin, Stellan Skarsgard, Zendaya',
+    'swipperMovie9.jpg',
+    16.60,
+    'https://youtu.be/U2Qp5pL3ovA'
+);
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M010',
+    'Elio',
+    'Elio struggles to fit in until he is transported by aliens and becomes the chosen one to be Earth`s galactic ambassador while his mother Olga works on the top secret project to decode alien messages.',
+    'Animation',
+    '2024-02-29',
+    'ComingSoon',
+    120,
+    'English',
+    'Chinese',
+    '12',
+    'Adrian Molina',
+    'Yonas Kibreab, America Ferrera, Jameela Jamil, Brad Garrett',
+    'swipperMovie10.jpg',
+    16.60,
+    'https://youtu.be/2w_K3CB8PuE'
+);
 
-INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M004', N'War On Terror: KL Anarki', N'New action movie War On Terror: KL Anarki, directed by Kroll Azry and Frank See, centres on the police uncovering a terrorist attack planned for Bukit Bintang, Kuala Lumpur, by brothers Lang (Qi Razali) and Joe (Naque Ariffin). Unfortunately for the brothers, a police special team is assigned to thwart this threat.', N'Adventure', N'2023-11-10', N'Released', 120, N'English', N'Chinese', N'13        ', N'Kroll Azry', N'Aedy Ashraf, Farali Khan', N'swipperMovie4.jpg', CAST(17.50 AS Decimal(10, 2)), N'swipperMovie4.jpg')
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M011',
+    'Ghostbusters: Frozen Empire',
+    'The Spengler family returns to where it all started - the iconic New York City firehouse - to team up with the original Ghostbusters, who`ve developed a top-secret research lab to take busting ghosts to the next level. But when the discovery of an ancient artifact unleashes an evil force, Ghostbusters new and old must join forces to protect their home and save the world from a second Ice Age.',
+    'Horror',
+    '2024-03-28',
+    'ComingSoon',
+    220,
+    'English',
+    'Chinese',
+    '16',
+    'Gil Kenan',
+    'Paul Rudd, Carrie Coon, Finn Wolfhard, Mckenna Grace, Kumail Nanjiani, Patton Oswalt, Celeste O''Connor, Logan Kim, Dan Aykroyd, Ernie Hudson, Annie Potts',
+    'swipperMovie11.jpg',
+    18.60,
+    'https://youtu.be/wFNK_KEmcWs'
+);
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M012',
+    'Kung Fu Panda 4',
+    'The Dragon Warrior is back, and he''s about to embark to face the most threatening enemy he''s ever had to battle. Po leaves the Valley of Peace to go to the big city, where the unexpected personification of evil will already be waiting for him. A new villain, called The Chameleon, is in town, and the Dragon Warrior''s new adversary is not someone he can mess around with.',
+    'Animation',
+    '2024-03-07',
+    'ComingSoon',
+    160,
+    'English',
+    'Chinese',
+    '12',
+    'Mike Mitchell, Stephanie Stine',
+    'Jack Black, Awkwafina, Viola Davis, Ian McShane, Dustin Hoffman, Ke Huy Quan',
+    'swipperMovie12.jpg',
+    18.60,
+    'https://youtu.be/_inKs4eeHiI'
+);
 
-INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M005', N'Wonka', N'Mr Willy Wonka , who is one of the main characters in the story , is an extraordinary man. He is described by many as a chocolate making genius who relishes nonsense. He is an incredibly intelligent man and is very sharp and full of life.', N'Musical', N'2023-12-10', N'Pending', 120, N'English', N'Chinese', N'13        ', N'Paul King', N'Timothée Chalamet', N'swipperMovie5.jpeg', CAST(16.60 AS Decimal(10, 2)), N'swipperMovie5.jpeg')
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M013',
+    'Godzilla x Kong: The New Empire',
+    'The almighty Kong and the fearsome Godzilla are pit against a colossal undiscovered threat hidden within our world, challenging their very existence - and our own. The epic new film will delve further into the histories of these Titans, their origins and the mysteries of Skull Island and beyond, while uncovering the mythic battle that helped forge these extraordinary beings and tied them to humankind forever.',
+    'Adventure',
+    '2024-04-11',
+    'ComingSoon',
+    160,
+    'English',
+    'Chinese',
+    '12',
+    'Adam Wingard',
+    'Rebecca Hall, Brian Tyree Henry, Fala Chen, Dan Stevens, Kaylee Hottle',
+    'swipperMovie13.jpg',
+    20.60,
+    'https://youtu.be/lV1OOlGwExM'
+);
 
-INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M006', N'Five Nights at Freddy''s', N'Plot. At Freddy Fazbear''s Pizza, an abandoned pizzeria and family entertainment center that was once successful, a night security guard attempts to flee from the place but is captured and strapped to a torture device, which kills him.', N'Horror', N'2023-12-12', N'Released', 120, N'English', N'Chinese', N'18        ', N'Emma Tammi', N'Josh Hutcherson', N'swipperMovie6.jpg', CAST(16.60 AS Decimal(10, 2)), N'swipperMovie6.jpg')
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M014',
+    'Inside Out 2',
+    'The mind of newly minted teenager Riley is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who`ve long been running a successful operation by all accounts, aren`t sure how to feel when Anxiety shows up. And it looks like she`s not alone.',
+    'Animation',
+    '2024-06-13',
+    'ComingSoon',
+    120,
+    'English',
+    'Chinese',
+    '12',
+    'Kelsey Mann',
+    'Amy Poehler, Phyllis Smith, Lewis Black',
+    'swipperMovie14.jpg',
+    21.60,
+    'https://youtu.be/VWavstJydZU'
+);
 
-INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M007', N'Migration', N'A family of ducks living in New England try to convince their over-protective father to go on a vacation of a lifetime in the Bahamas.', N'Animation', N'2023-12-28', N'Released', 120, N'English', N'Chinese', N'12        ', N'Benjamin Renner', N'Kumail Nanjiani, Elizabeth Banks, Awkwafina, Keegan-Michael Key, David Mitchell', N'swipperMovie7.jpg', CAST(16.60 AS Decimal(10, 2)), N'swipperMovie7.jpg')
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M015',
+    'The Fall Guy',
+    'Colt Seavers is a stuntman, and like everyone in the stunt community, he gets blown up, shot, crashed, thrown through windows and dropped from the highest of heights, all for our entertainment. And now, fresh off an almost career-ending accident, this working-class hero has to track down a missing movie star, solve a conspiracy and try to win back the love of his life while still doing his day job. What could possibly go right?',
+    'Action',
+    '2024-02-29',
+    'ComingSoon',
+    140,
+    'English',
+    'Chinese',
+    '12',
+    'David Leitch',
+    'Ryan Gosling, Emily Blunt, Winston Duke, Aaron Taylor-Johnson, Hannah Waddingham, Stephanie Hsu',
+    'swipperMovie15.png',
+    21.60,
+    'https://youtu.be/j7jPnwVGdZ8'
+);
 
-INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M008', N'Napoleon', N'Napoleon is a spectacle-filled action epic that details the checkered rise and fall of the iconic French Emperor Napoleon Bonaparte, played by Oscar®-winner Joaquin Phoenix. Against a stunning backdrop of large-scale filmmaking orchestrated by legendary director Ridley Scott, the film captures Bonaparte''s relentless journey to power through the prism of his addictive, volatile relationship with his one true love, Josephine, showcasing his visionary military and political tactics against some of the most dynamic practical battle sequences ever filmed.', N'War', N'2023-11-30', N'Released', 220, N'English', N'Chinese', N'16        ', N'Ridley Scott', N'Joaquin Phoenix, Vanessa Kirby, Ben Miles, Tahar Rahim', N'swipperMovie8.jpeg', CAST(16.60 AS Decimal(10, 2)), N'swipperMovie8.jpeg')
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M016',
+    'Kingdom Of The Planet Of The Apes',
+    'Many ape clans have emerged in the oasis where Caesar led his fellow apes to, while humans have regressed into a feral state. One ape leader perverts the teachings of Caesar to enslave other clans in search of the last traces of a secret human technology, while another ape embarks on a journey to find freedom side by side with a human girl.',
+    'Adventure',
+    '2024-05-23',
+    'ComingSoon',
+    150,
+    'English',
+    'Chinese',
+    '12',
+    'Wes Ball',
+    'Owen Teague, Freya Allan, Kevin Durand, Peter Macon, William H. Macy',
+    'swipperMovie16.jpg',
+    25.60,
+    'https://youtu.be/NQ_HvTBaFoo'
+);
 
-INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M009', N'Dune: Part Two', N'With clairvoyant powers that may enable him to guide humanity to a better future, Paul Atreides continues his mythic journey. Now united with Chani and the Fremen, Paul is set on a warpath of revenge against the conspirators who destroyed his family. After taking control of the empire and facing a choice between the love of his life and the fate of the known universe, he endeavours to prevent a terrible future that only he can foresee.', N'Adventure', N'2024-03-14', N'Pending', 120, N'English', N'Chinese', N'12        ', N'enis Villeneuve', N'Timothée Chalamet, Josh Brolin, Stellan Skarsgard, Zendaya', N'swipperMovie9.jpeg', CAST(16.60 AS Decimal(10, 2)), N'swipperMovie9.jpeg')
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M017',
+    'The Garfield Movie',
+    'Garfield, the world-famous, Monday-hating, lasagne-loving indoor cat, is about to have a wild outdoor adventure! After an unexpected reunion with his long-lost father - scruffy street cat Vic - Garfield and his canine friend Odie are forced from their perfectly pampered lives into joining Vic in a hilarious, high-stakes heist.',
+    'Animation',
+    '2024-05-23',
+    'ComingSoon',
+    150,
+    'English',
+    'Chinese',
+    '12',
+    'Mark Dindal',
+    'Chris Pratt, Samuel L. Jackson, Ving Rhames, Nicholas Hoult, Hannah Waddingham, Cecily Strong',
+    'swipperMovie17.jpg',
+    25.60,
+    'https://youtu.be/IeFWNtMo1Fs'
+);
 
-INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M010', N'Elio', N'Elio struggles to fit in until he is transported by aliens and becomes the chosen one to be Earth`s galactic ambassador while his mother Olga works on the top secret project to decode alien messages.', N'Animation', N'2024-02-29', N'Pending', 120, N'English', N'Chinese', N'12        ', N'Adrian Molina', N'Yonas Kibreab, America Ferrera, Jameela Jamil, Brad Garrett', N'swipperMovie10.jpeg', CAST(16.60 AS Decimal(10, 2)), N'swipperMovie10.jpg')
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M018',
+    'Night Swim',
+    'No running. No diving. No lifeguard on duty. No swimming after dark - there is a hidden source of terror found in the backyard swimming pool.',
+    'Horror',
+    '2024-04-21',
+    'ComingSoon',
+    160,
+    'English',
+    'Chinese',
+    '18',
+    'Bryce McGuire',
+    'Wyatt Russell, Kerry Condon, Amélie Hoeferle, Gavin Warren',
+    'swipperMovie18.jpg',
+    25.60,
+    'https://youtu.be/PhlLO3Nb3sY'
+);
 
-INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M011', N'Ghostbusters: Frozen Empire', N'The Spengler family returns to where it all started - the iconic New York City firehouse - to team up with the original Ghostbusters, who`ve developed a top-secret research lab to take busting ghosts to the next level. But when the discovery of an ancient artifact unleashes an evil force, Ghostbusters new and old must join forces to protect their home and save the world from a second Ice Age.', N'Horror', N'2024-03-28', N'Pending', 220, N'English', N'Chinese', N'16        ', N'Gil Kenan', N'Paul Rudd, Carrie Coon, Finn Wolfhard, Mckenna Grace, Kumail Nanjiani, Patton Oswalt, Celeste O''Connor, Logan Kim, Dan Aykroyd, Ernie Hudson, Annie Potts', N'swipperMovie11.jpg', CAST(18.60 AS Decimal(10, 2)), N'swipperMovie11.jpg')
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M019',
+    'One Piece Red (Remastered)',
+    'Uta — the most beloved singer in the world.Her voice, which she sings with while concealing her true identity, has been described as “otherworldly.” She will appear in public for the first time at a live concert. As the venue fills with all kinds of Uta fans — excited pirates, the Navy watching closely, and the Straw Hats led by Luffy who simply came to enjoy her sonorous performance — the voice that the whole world has been waiting for is about to resound',
+    'Animation',
+    '2023-12-28',
+    'Released',
+    190,
+    'English',
+    'Chinese',
+    '13',
+    'Goro Taniguchi',
+    'Mayumi Tanaka, Kazuya Nakai, Akemi Okamura, Kappei Yamaguchi',
+    'swipperMovie19.jpg',
+    25.60,
+    'https://youtu.be/uHJeuu-vBjw'
+);
 
-INSERT INTO [dbo].[Movie] ([movieID], [movieName], [movieDesc], [category], [releaseDate], [status], [duration], [language], [subtitle], [classification], [director], [cast], [movieImage], [price], [movieTrailer]) VALUES (N'M012', N'Kung Fu Panda 4', N'The Dragon Warrior is back, and he''s about to embark to face the most threatening enemy he''s ever had to battle. Po leaves the Valley of Peace to go to the big city, where the unexpected personification of evil will already be waiting for him. A new villain, called The Chameleon, is in town, and the Dragon Warrior''s new adversary is not someone he can mess around with.', N'Animation', N'2024-03-07', N'Pending', 160, N'English', N'Chinese', N'12        ', N'Mike Mitchell, Stephanie Stine', N'Jack Black, Awkwafina, Viola Davis, Ian McShane, Dustin Hoffman, Ke Huy Quan', N'swipperMovie12.jpg', CAST(18.60 AS Decimal(10, 2)), N'swipperMovie12.jpg')
+INSERT INTO [dbo].[Movie] (
+    [movieID],
+    [movieName],
+    [movieDesc],
+    [category],
+    [releaseDate],
+    [status],
+    [duration],
+    [language],
+    [subtitle],
+    [classification],
+    [director],
+    [cast],
+    [movieImage],
+    [price],
+    [movieTrailer]
+) VALUES (      
+    'M020',
+    'The Goldfinger',
+    'In just a few years, the listed company Jiawen Group has gone from obscurity to prosperity to decline and liquidation, and its market value has evaporated by more than 10 billion dollars. The behind-the-scenes boss Ching Yat-Yin has also changed from a popular stockholder to a rat crossing the street that everyone shouts at.',
+    'Animation',
+    '2023-12-28',
+    'Released',
+    190,
+    'Chinese',
+    'English',
+    '16',
+    'Felix Chong',
+    'Tony Leung Chiu-Wai, Andy Lau, Simon Yam, Charlene Choi, Alex Fong Chung-Sun, Philip Keung',
+    'swipperMovie20.jpg',
+    21.60,
+    'https://youtu.be/4UJuE8_C1zU'
+);
 
 
 CREATE TABLE [dbo].[Hall] (
@@ -93,9 +741,11 @@ CREATE TABLE [dbo].[Hall] (
     PRIMARY KEY CLUSTERED ([hallID] ASC)
 );
 
-INSERT INTO [dbo].[Hall] ([hallID], [hallNo], [maxPax]) VALUES (N'H001', 1, 10)
+INSERT INTO Hall (hallID, hallNo, maxPax) VALUES ('H001', 1, 30);
 
-INSERT INTO [dbo].[Hall] ([hallID], [hallNo], [maxPax]) VALUES (N'H002', 2, 20)
+INSERT INTO Hall (hallID, hallNo, maxPax) VALUES ('H002', 2, 40);
+
+INSERT INTO Hall (hallID, hallNo, maxPax) VALUES ('H003', 3, 20);
 
 
 CREATE TABLE [dbo].[Schedule] (
@@ -109,13 +759,229 @@ CREATE TABLE [dbo].[Schedule] (
     CONSTRAINT [FK_Schedule_ToMovie] FOREIGN KEY ([movieID]) REFERENCES [dbo].[Movie] ([movieID])
 );
 
-INSERT INTO [dbo].[Schedule] ([scheduleID], [movieID], [hallID], [date], [time]) VALUES (N'S001', N'M001', N'H001', N'2023-12-10', N'15:30:00')
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S001',
+    'M001', 
+    'H001', 
+    '2024-01-02',
+    '00:30:00' 
+);
 
-INSERT INTO [dbo].[Schedule] ([scheduleID], [movieID], [hallID], [date], [time]) VALUES (N'S002', N'M002', N'H002', N'2023-11-10', N'10:30:00')
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S002',
+    'M002', 
+    'H001', 
+    '2024-01-02',
+    '15:30:00' 
+);
 
-INSERT INTO [dbo].[Schedule] ([scheduleID], [movieID], [hallID], [date], [time]) VALUES (N'S003', N'M001', N'H002', N'2023-10-10', N'10:30:00')
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S003',
+    'M001', 
+    'H001', 
+    '2024-01-03',
+    '10:30:00' 
+);
 
-INSERT INTO [dbo].[Schedule] ([scheduleID], [movieID], [hallID], [date], [time]) VALUES (N'S004', N'M001', N'H001', N'2023-10-10', N'12:30:00')
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S004',
+    'M002', 
+    'H002', 
+    '2024-01-02',
+    '10:30:00' 
+);
+
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S005',
+    'M002', 
+    'H002', 
+    '2024-01-04',
+    '11:30:00' 
+);
+
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S006',
+    'M002', 
+    'H002', 
+    '2024-01-03',
+    '12:30:00' 
+);
+
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S007',
+    'M002', 
+    'H002', 
+    '2024-01-04',
+    '12:30:00' 
+);
+
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S008',
+    'M003', 
+    'H002', 
+    '2024-01-05',
+    '12:30:00' 
+);
+
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S009',
+    'M003', 
+    'H001', 
+    '2024-01-02',
+    '12:30:00' 
+);
+
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S010',
+    'M004', 
+    'H002', 
+    '2024-01-05',
+    '12:30:00' 
+);
+
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S011',
+    'M005', 
+    'H002', 
+    '2024-01-03',
+    '12:30:00' 
+);
+
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S012',
+    'M006', 
+    'H002', 
+    '2024-01-03',
+    '12:30:00' 
+);
+
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S013',
+    'M007', 
+    'H001', 
+    '2024-01-03',
+    '11:30:00' 
+);
+
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S014',
+    'M008', 
+    'H001', 
+    '2024-01-02',
+    '11:30:00' 
+);
+
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S015',
+    'M019', 
+    'H002', 
+    '2024-01-04',
+    '10:30:00' 
+);
+
+INSERT INTO [dbo].[Schedule] (
+    [scheduleID],
+    [movieID],
+    [hallID],
+    [date],
+    [time]
+) VALUES (
+    'S016',
+    'M020', 
+    'H002', 
+    '2024-01-04',
+    '10:30:00' 
+);
 
 
 CREATE TABLE [dbo].[Ticket] (
@@ -170,6 +1036,71 @@ CREATE TABLE [dbo].[Notification] (
     CONSTRAINT [FK_Notification_ToMovie] FOREIGN KEY ([movieID]) REFERENCES [dbo].[Movie]([movieID])
 );
 
+INSERT INTO [dbo].[Notification] (
+    [notiID],
+    [movieID],
+    [notiTitle],
+    [notiDesc],
+    [notiDate],
+    [notiStatus]
+) VALUES (
+    'N001',
+    'M001', 
+    'New Release!',
+    'Check out our latest movie release.',
+    '2023-12-28',
+    'Active'
+);
+
+INSERT INTO [dbo].[Notification] (
+    [notiID],
+    [movieID],
+    [notiTitle],
+    [notiDesc],
+    [notiDate],
+    [notiStatus]
+) VALUES (
+    'N002',
+    'M002', 
+    'New Release!',
+    'Check out our latest movie release.',
+    '2023-12-29',
+    'Active'
+);
+
+
+INSERT INTO [dbo].[Notification] (
+    [notiID],
+    [movieID],
+    [notiTitle],
+    [notiDesc],
+    [notiDate],
+    [notiStatus]
+) VALUES (
+    'N003',
+    'M004', 
+    'Refund',
+    'Your refund unsuccessfully.',
+    '2023-12-28',
+    'Active'
+);
+
+INSERT INTO [dbo].[Notification] (
+    [notiID],
+    [movieID],
+    [notiTitle],
+    [notiDesc],
+    [notiDate],
+    [notiStatus]
+) VALUES (
+    'N004',
+    'M005', 
+    'Refund',
+    'Your refund successfully',
+    '2023-12-30',
+    'Active'
+);
+
 CREATE TABLE [dbo].[CustomerNotification] (
     [customerNotiID] CHAR (4) NOT NULL,
     [custID]         CHAR (4) NOT NULL,
@@ -178,6 +1109,47 @@ CREATE TABLE [dbo].[CustomerNotification] (
     CONSTRAINT [FK_CustomerNotification_ToCustomer] FOREIGN KEY ([custID]) REFERENCES [dbo].[Customer] ([custID]),
     CONSTRAINT [FK_CustomerNotification_ToNotification] FOREIGN KEY ([notiID]) REFERENCES [dbo].[Notification] ([notiID])
 );
+
+INSERT INTO [dbo].[CustomerNotification] (
+    [customerNotiID],
+    [custID],
+    [notiID]
+) VALUES (
+    'U001',
+    'C001', 
+    'N001'  
+);
+
+INSERT INTO [dbo].[CustomerNotification] (
+    [customerNotiID],
+    [custID],
+    [notiID]
+) VALUES (
+    'U002',
+    'C001', 
+    'N002'  
+);
+
+INSERT INTO [dbo].[CustomerNotification] (
+    [customerNotiID],
+    [custID],
+    [notiID]
+) VALUES (
+    'U003',
+    'C001', 
+    'N003' 
+);
+
+INSERT INTO [dbo].[CustomerNotification] (
+    [customerNotiID],
+    [custID],
+    [notiID]
+) VALUES (
+    'U004',
+    'C002', 
+    'N004'  
+);
+
 
 CREATE TABLE [dbo].[Maintenance] (
     [maintenanceID] CHAR (4)      NOT NULL,
@@ -199,4 +1171,372 @@ CREATE TABLE [dbo].[Review] (
     PRIMARY KEY CLUSTERED ([reviewID] ASC),
     CONSTRAINT [FK_Review_ToCustomer] FOREIGN KEY ([custID]) REFERENCES [dbo].[Customer] ([custID]),
     CONSTRAINT [FK_Review_ToMovie] FOREIGN KEY ([movieID]) REFERENCES [dbo].[Movie] ([movieID])
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R001',
+    'C001', 
+    'M002', 
+    '5', 
+    'First of all, overall I really enjoyed Aquaman and the Lost Kingdom. Although initially discouraged by low ratings from critics, I have to say I do not understand what most of the critics were talking about. It was also way better then other recent superhero films like Black Panther 2 and Dr. Strange 2.',
+    '2023-12-20'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R002',
+    'C002', 
+    'M002', 
+    '4', 
+    'The shot visuals are sensory overload, and pays homages to epic films like War of the World, Avatar, absolutely amazing!  The pacing of the movie matches the high action sequences that are big but not over kill. The story has good hidden messages for those ready to hear and understand it. ',
+    '2023-12-24'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R003',
+    'C002', 
+    'M002', 
+    '3', 
+    'This is an entertaining family movie to watch. It wasn''t spectacular, and some scenes tend to be a little cheesy/cliche, but overall, there is a good mix of action and emotion. I enjoyed Orm more in this movie because we got more insight/development of his morals and thought process.',
+    '2023-12-20'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R004',
+    'C001', 
+    'M001', 
+    '3', 
+    'I imagine this is how some might have felt in 96'' watching Scream opening night or in 78'' with Halloween. THANKSGIVING is so aggressively over-the-top, but at least it knows & embraces it. Eli Roth’s slasher film features some of the most gruesome & hilarious kills of the year. ',
+    '2023-12-30'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R005',
+    'C002', 
+    'M001', 
+    '3',
+    'Dive into this horror flick that''s a total throwback to those crazy, blood-soaked classics. It''s like a blast from the past, but with a fresh, modern vibe. This movie pays respects to the old-school scarefests by mixing gallons of gore with outrageous scenes. ', 
+    '2023-12-19'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R006',
+    'C001', 
+    'M003', 
+    '5', 
+    'The movie has a good start, a story that has a good direction, but loses touch. Not only does it feel generic, but it also fails to be unique or give off a special experience, i know this is in honour of Disney''s anniversary but it doesn''t justify it, the movie has its best parts of course. ',
+    '2023-12-30'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R007',
+    'C002',
+    'M003', 
+    '5',
+    '!!This movie is a dream come true!! The Disney movie of the year. From the art the movie., to the voices of the characters, and I think I love the most is the message of the movie. Can’t rely on other people to make your dreams come true, you have do you make your own wish come true. ', 
+    '2023-12-24'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R008',
+    'C001', 
+    'M003', 
+    '5', 
+    'The humor was somewhat cheesy. But the kids at the cinema i was in had a good laugh. Even some adults. I cracked a few chuckles here and there. After all it is a family movie. There was a mix of somewhat cheesy. To sort of dark humor at certain points. Yes the comedy is not top tier.',
+    '2023-12-10'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R009',
+    'C002', 
+    'M004', 
+    '4', 
+    'I recently watched the movie, and I must say it exceeded all my expectations. The storyline was captivating, and the characters were brilliantly portrayed. The visual effects were stunning, making it a truly immersive experience.',
+    '2023-12-30'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R010',
+    'C001', 
+    'M004', 
+    '1', 
+    'I was excited about this movie, but unfortunately, it fell flat for me. The storyline was confusing, and the characters lacked depth. The plot twists felt forced, and I couldn''t connect with the film emotionally. It''s a disappointment considering the hype.',
+    '2023-12-20'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R011',
+    'C001', 
+    'M004', 
+    '4', 
+    'This movie is an absolute masterpiece! The writing is brilliant, the acting is phenomenal, and the cinematography is breathtaking. Every scene is meticulously crafted, and the soundtrack complements the emotions perfectly.',
+    '2023-12-30'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R012',
+    'C002', 
+    'M005', 
+    '4', 
+    'This movie is an absolute masterpiece! The writing is brilliant, the acting is phenomenal, and the cinematography is breathtaking. Every scene is meticulously crafted, and the soundtrack complements the emotions perfectly.',
+    '2023-12-30'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R013',
+    'C002', 
+    'M005', 
+    '4', 
+    'This movie was an unexpected gem! The plot took surprising turns, keeping me guessing until the end. The character dynamics were refreshing, and the cinematography was breathtaking.',
+    '2023-12-30'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R014',
+    'C002', 
+    'M006', 
+    '2', 
+    'This movie was an unexpected gem! The plot took surprising turns, keeping me guessing until the end. The character dynamics were refreshing, and the cinematography was breathtaking.',
+    '2023-12-20'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R015',
+    'C001', 
+    'M006', 
+    '5', 
+    'Brace yourselves for pure movie magic! This film is an absolute delight—a symphony of storytelling, visuals, and stellar performances. The narrative unfolds seamlessly, drawing you into a world where every detail is meticulously crafted. ',
+    '2023-12-30'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R016',
+    'C001', 
+    'M006', 
+    '5', 
+    'Brace yourselves for pure movie magic! This film is an absolute delight—a symphony of storytelling, visuals, and stellar performances. The narrative unfolds seamlessly, drawing you into a world where every detail is meticulously crafted. ',
+    '2023-12-30'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R017',
+    'C002', 
+    'M007', 
+    '5', 
+    'This movie was an unexpected gem! The plot took surprising turns, keeping me guessing until the end. The character dynamics were refreshing, and the cinematography was breathtaking.',
+    '2023-12-31'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R018',
+    'C001', 
+    'M008', 
+    '4', 
+    'This film had its hits and misses. Some scenes were gripping, while others felt a bit disjointed. The performances were commendable, but the pacing could have been smoother. Despite its flaws, it manages to deliver moments of brilliance.',
+    '2023-12-21'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R019',
+    'C001', 
+    'M009', 
+    '4', 
+    'The movie presents an intriguing concept, but the execution left me somewhat disappointed. While the premise is innovative, the plot becomes convoluted at times.',
+    '2023-12-21'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R020',
+    'C001', 
+    'M019', 
+    '5', 
+    'This movie was an unexpected gem! The plot took surprising turns, keeping me guessing until the end. The character dynamics were refreshing, and the cinematography was breathtaking.',
+    '2023-12-31'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R021',
+    'C001', 
+    'M019', 
+    '5', 
+    'This movie was an unexpected gem! The plot took surprising turns, keeping me guessing until the end. The character dynamics were refreshing, and the cinematography was breathtaking.',
+    '2023-12-31'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R022',
+    'C001', 
+    'M020', 
+    '5', 
+    'This movie was an unexpected gem! The plot took surprising turns, keeping me guessing until the end. The character dynamics were refreshing, and the cinematography was breathtaking.',
+    '2023-12-31'
+);
+
+INSERT INTO [dbo].[Review] (
+    [reviewID],
+    [custID],
+    [movieID],
+    [rating],
+    [comment],
+    [date]
+) VALUES (
+    'R023',
+    'C001', 
+    'M020', 
+    '4', 
+    'The movie presents an intriguing concept, but the execution left me somewhat disappointed. While the premise is innovative, the plot becomes convoluted at times.',
+    '2023-12-31'
 );

@@ -123,7 +123,36 @@ namespace WAD_Assignment.Member
             // add a <h3> with movie classification, category and duration into the div
             int hours = movie.Duration / 60;
             int minutes = movie.Duration % 60;
-            h3.InnerText = movie.Classification + " | " + movie.Category + " | " + hours + " hour " + minutes + " minutes";
+            string hourStr;
+            string minuteStr;
+
+            if (hours > 1)
+            {
+                hourStr = hours + " hours";
+            }
+            else if (hours == 1)
+            {
+                hourStr = hours + " hour";
+            }
+            else
+            {
+                hourStr = "";
+            }
+
+            if (minutes > 1)
+            {
+                minuteStr = minutes + " minutes";
+            }
+            else if (minutes == 1) 
+            {
+                minuteStr = minutes + " minute";
+            }
+            else
+            {
+                minuteStr = "";
+            }
+
+            h3.InnerText = movie.Classification + " | " + movie.Category + " | " + hourStr + " " + minuteStr;
             movieDiv.Controls.Add(h3);
 
             // add line break
