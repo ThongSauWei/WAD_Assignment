@@ -40,7 +40,7 @@
                 <%--<asp:HyperLink ID="forgetPass" runat="server" NavigateUrl="PasswordRecovery.aspx"><i>Click Here</i></asp:HyperLink>--%>
                 <!-- Add this button/link where you want to trigger the password recovery popup -->
                 <button type="button" class="FP" onclick="showPasswordRecoveryPopup();">
-                    <i><b>Click Here</b></i>
+                    <b><i>Click Here</i></b>
                 </button>
             </div>
         </div>
