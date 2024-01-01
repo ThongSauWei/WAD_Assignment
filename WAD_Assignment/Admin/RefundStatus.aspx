@@ -1,67 +1,61 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Admin/AdminHeader.Master" AutoEventWireup="true" CodeBehind="RefundStatus.aspx.cs" Inherits="WAD_Assignment.Admin.RefundStatus" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <script type="text/javascript">
-        function confirmAccept() {
-            var result = confirm("Are you sure you want to accept?");
-            if (result) {
-                // User clicked "OK"
-                alert("Acceptance confirmed!");
-            } else {
-                // User clicked "Cancel" or closed the dialog
-                alert("Acceptance canceled!");
-            }
+    <style>
+        .btnStyleCss{
+            background-color: yellow; 
+            color: black; 
+            padding: 10px 10px; 
+            border: 5px solid yellow;
+            text-align: center; 
         }
 
-        function confirmReject() {
+    </style>
+
+    <script type="text/javascript">
+        function rejectRefund() {
             var result = confirm("Are you sure you want to reject?");
             if (result) {
-                // User clicked "OK"
-                alert("Rejection confirmed!");
+                alert("Rejected!");
             } else {
-                // User clicked "Cancel" or closed the dialog
-                alert("Rejection canceled!");
+                alert("Cancel reject!");
             }
+            return result;
         }
-
     </script>
 
-        <div>
-            <h1>REFUND STATUS</h1>
-            <table style="width:100%;">
-                <tr>
-                    <td class="auto-style1">Booking ID</td>
-                    <td class="auto-style2">Movie Name</td>
-                    <td class="auto-style3">User email</td>
-                </tr>
-                <tr>
-                    <td class="auto-style1">90001</td>
-                    <td class="auto-style2">Aquaman and the Lost Kingdom</td>
-                    <td class="auto-style3">ali@gmail.com</td>
-                    <td>
-                        <asp:Button ID="btnAccept" runat="server" Text="Accept" OnClick="btnAccept_Click" />
-                        &nbsp;&nbsp;
-                        <asp:Button ID="btnReject" runat="server" Text="Reject" OnClick="btnReject_Click" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style1">90002</td>
-                    <td class="auto-style2">War On Terror: KL Anarki</td>
-                    <td class="auto-style3">beauti@gmail.com</td>
-                    <td>
-                        <asp:Button ID="btnAccept0" runat="server" Text="Accept" OnClick="btnAccept_Click" />
-                        &nbsp;&nbsp;
-                        <asp:Button ID="btnReject0" runat="server" Text="Reject" OnClick="btnReject_Click" />
-                    </td>
-                </tr>
-            </table>
-
+    <div>
+        <h2>REFUND STATUS PAGE</h2><br />
+        <h3>Please take action for the following refund status.</h3><br />
             
-        <br />
-        <br />
-        <br />
-        <asp:Button ID="btnRedirect8" runat="server" Text="Back to Admin Main Page" OnClientClick="redirectToAdminMain()" PostBackUrl="~/Admin/AdminMain.aspx"/>
+                <asp:Repeater ID="repeaterRefund" runat="server">
+                    <HeaderTemplate>
+                            <table class="data-table" border="1">
+                                <tr>
+                                    <th>Refund Date</th>
+                                    <th>Refund ID</th>
+                                    <th>Action</th>
+                                </tr>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <tr>
+                                <td><%# Eval("refundDate") %></td>
+                                <td><%# Eval("refundID") %></td>
+                                <td>&nbsp;&nbsp;
+                <asp:Button ID="btnAccept" runat="server" Text="Accept" CssClass="btnStyleCss" OnClientClick="redirectToUpdatePage()" PostBackUrl="~/Admin/Update.aspx" />
+                &nbsp;&nbsp;
+                <asp:Button ID="btnReject" runat="server" OnClientClick="return rejectRefund()" Text="Reject" CssClass="btnStyleCss"  OnClick ="btnReject_Click"/></td>
+                            </tr>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            </table>
+                        </FooterTemplate>
+                </asp:Repeater>
 
 
-        </div>
+                
+               
+
+
+    </div>
 </asp:Content>

@@ -76,12 +76,16 @@
     <Content Include="Admin-New\ManageMovie\ManageMovie1.aspx" />
     <Content Include="Admin-New\ManageMovie\ManageMovie.css" />
     <Content Include="Admin-New\AdminMainNew.css" />
+    <Content Include="Admin\AddAdmin.aspx" />
     <Content Include="Admin-New\Report\SalesReport.aspx" />
     <Content Include="Admin\AdminCRUD.aspx" />
     <Content Include="Admin\AdminMain.aspx" />
     <Content Include="Admin\MemberCRUD.aspx" />
     <Content Include="Admin\MovieCRUD.aspx" />
     <Content Include="Admin\RefundStatus.aspx" />
+    <Content Include="Admin\UpdateAdmin.aspx" />
+    <Content Include="Admin\ViewAdmin.aspx" />
+    <Content Include="Admin\ViewRefund.aspx" />
     <Content Include="App_Data\TicketDB.mdf" />
     <Content Include="App_Data\TicketDB_log.ldf">
       <DependentUpon>TicketDB.mdf</DependentUpon>
@@ -217,6 +221,12 @@
     <Compile Include="Admin-New\ManageMovie\ManageMovie1.aspx.designer.cs">
       <DependentUpon>ManageMovie1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AddAdmin.aspx.cs">
+      <DependentUpon>AddAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddAdmin.aspx.designer.cs">
+      <DependentUpon>AddAdmin.aspx</DependentUpon>
     <Compile Include="Admin-New\Report\SalesReport.aspx.cs">
       <DependentUpon>SalesReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -265,6 +275,27 @@
     </Compile>
     <Compile Include="Admin\RefundStatus.aspx.designer.cs">
       <DependentUpon>RefundStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateAdmin.aspx.cs">
+      <DependentUpon>UpdateAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateAdmin.aspx.designer.cs">
+      <DependentUpon>UpdateAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewAdmin.aspx.cs">
+      <DependentUpon>ViewAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewAdmin.aspx.designer.cs">
+      <DependentUpon>ViewAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewRefund.aspx.cs">
+      <DependentUpon>ViewRefund.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewRefund.aspx.designer.cs">
+      <DependentUpon>ViewRefund.aspx</DependentUpon>
     </Compile>
     <Compile Include="Entity\Movie.cs" />
     <Compile Include="error\GeneralError.aspx.cs">

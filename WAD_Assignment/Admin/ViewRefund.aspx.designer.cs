@@ -11,61 +11,70 @@ namespace WAD_Assignment.Admin
 {
 
 
-    public partial class AdminHeader
+    public partial class ViewRefund
     {
 
         /// <summary>
-        /// form1 control.
+        /// lblRefundId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblRefundId;
 
         /// <summary>
-        /// HyperLinkAdminCRUD control.
+        /// lblRefundReason control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLinkAdminCRUD;
+        protected global::System.Web.UI.WebControls.Label lblRefundReason;
 
         /// <summary>
-        /// HyperLinkMemberCRUD control.
+        /// lblRefundDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLinkMemberCRUD;
+        protected global::System.Web.UI.WebControls.Label lblRefundDesc;
 
         /// <summary>
-        /// HyperLinkProductCRUD control.
+        /// lblRefundDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLinkProductCRUD;
+        protected global::System.Web.UI.WebControls.Label lblRefundDate;
 
         /// <summary>
-        /// HyperLinkRefundStatus control.
+        /// lblTicketId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLinkRefundStatus;
+        protected global::System.Web.UI.WebControls.Label lblTicketId;
 
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// btnAccept control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button btnAccept;
+
+        /// <summary>
+        /// btnReject control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnReject;
     }
 }
