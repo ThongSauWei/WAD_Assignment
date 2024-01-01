@@ -7,65 +7,65 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WAD_Assignment.Admin_New
+namespace WAD_Assignment.Admin_New.ManageCustomer
 {
 
 
-    public partial class ManageMovie
+    public partial class ManageCustomer
     {
 
         /// <summary>
-        /// allMovieContent control.
+        /// allContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl allMovieContent;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl allContent;
 
         /// <summary>
-        /// btnAdd control.
+        /// customerRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Repeater customerRepeater;
 
         /// <summary>
-        /// removePanel control.
+        /// GetAllCustomers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel removePanel;
+        protected global::System.Web.UI.WebControls.SqlDataSource GetAllCustomers;
 
         /// <summary>
-        /// btnConfirm control.
+        /// hiddenPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConfirm;
+        protected global::System.Web.UI.WebControls.Panel hiddenPanel;
 
         /// <summary>
-        /// btnCancel control.
+        /// btnDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
+        protected global::System.Web.UI.WebControls.Button btnDelete;
 
         /// <summary>
-        /// selectedMovie control.
+        /// btnBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField selectedMovie;
+        protected global::System.Web.UI.WebControls.Button btnBack;
     }
 }

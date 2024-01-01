@@ -3,105 +3,119 @@
 <asp:Content ID="ContentPlaceHolder" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="AddAndEditMovie.css" rel="stylesheet" />
 
-    <div class="content-box">
+    <div id="contentDiv" runat="server" class="content-box">
         <div class="left-side">
-            <img src="../../image/movie1.jpg" width="270px" height="330px"/>
+            <asp:Image ID="movieImg" runat="server" Width="270px" Height="330px" />
         </div>
         <div class="right-side">
-            <h2 style="padding-left: 30px; color:#ecd261;">Add Movie</h2>
-            <div class="movie-input">
-                <asp:Label ID="lblMovieName" runat="server" Text="Movie Name:"></asp:Label>
-                <asp:TextBox ID="txtMovieName" runat="server"></asp:TextBox>
+            <h2 style="padding-left: 30px; color: #ecd261;">Add Movie</h2>
+            <div class="group">
+                <div class="movie-input">
+                    <asp:Label ID="lblMovieName" runat="server" Text="Movie Name:"></asp:Label>
+                    <asp:TextBox ID="txtMovieName" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="movieNameValidation" ControlToValidate="txtMovieName" Font-Bold="True" Font-Size="12px" ForeColor="#FF3300" runat="server" ErrorMessage="This field is required."></asp:RequiredFieldValidator>
+                </div>
+                <div class="movie-input">
+                    <asp:Label ID="lblCategory" runat="server" Text="Category:"></asp:Label>
+                    <asp:DropDownList ID="ddlCategory" runat="server" Style="width:70%;">
+                    </asp:DropDownList>
+                </div>
             </div>
-            <div class="movie-input">
-                <asp:Label ID="lblCategory" runat="server" Text="Category:"></asp:Label>
-                <asp:DropDownList ID="ddlCategory" runat="server">
-                    <asp:ListItem Value="action">Action</asp:ListItem>
-                    <asp:ListItem Value="horror">Horror</asp:ListItem>
-                    <asp:ListItem Value="musical">Musical</asp:ListItem>
-                </asp:DropDownList>
+            <div class="group">
+                <div class="movie-input" style="width: 80%;">
+                    <asp:Label ID="lblMovieDesc" runat="server" Text="Movie Description:"></asp:Label>
+                    <asp:TextBox ID="txtMovieDesc" runat="server" TextMode="MultiLine" Columns="65" Rows="5"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="movieDescValidation" ControlToValidate="txtMovieDesc" Font-Bold="True" Font-Size="12px" ForeColor="#FF3300" runat="server" ErrorMessage="This field is required."></asp:RequiredFieldValidator>
+                </div>
             </div>
-            <div class="movie-input" style="width: 80%;">
-                <asp:Label ID="lblMovieDesc" runat="server" Text="Movie Description:"></asp:Label>
-                <asp:TextBox ID="txtMovieDesc" runat="server" TextMode="MultiLine" Columns="54"></asp:TextBox>
+            <div class="group">
+                <div class="movie-input">
+                    <asp:Label ID="lblReleaseDate" runat="server" Text="Release Date:"></asp:Label>
+                    <asp:Calendar ID="calReleaseDate" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                        <NextPrevStyle VerticalAlign="Bottom" />
+                        <OtherMonthDayStyle ForeColor="#808080" />
+                        <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                        <SelectorStyle BackColor="#CCCCCC" />
+                        <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                        <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                        <WeekendDayStyle BackColor="#FFFFCC" />
+                    </asp:Calendar>
+                </div>
+                <div class="movie-input">
+                    <asp:Label ID="lblLanguage" runat="server" Text="Language:"></asp:Label>
+                    <asp:RadioButtonList ID="rblLanguage" runat="server">
+                        <asp:ListItem Value="English">English</asp:ListItem>
+                        <asp:ListItem Value="Chinese">Chinese</asp:ListItem>
+                        <asp:ListItem Value="Malay">Malay</asp:ListItem>
+                    </asp:RadioButtonList>
+                    <asp:RequiredFieldValidator ID="languageValidation" ControlToValidate="rblLanguage" Font-Bold="True" Font-Size="12px" ForeColor="#FF3300" runat="server" ErrorMessage="This field is required."></asp:RequiredFieldValidator>
+                </div>
+                <div class="movie-input" style="margin-top: 40px;">
+                    <asp:Label ID="lblSubtitle" runat="server" Text="Subtitle:"></asp:Label>
+                    <asp:CheckBoxList ID="cblSubtitle" runat="server">
+                        <asp:ListItem Value="English">English</asp:ListItem>
+                        <asp:ListItem Value="Chinese">Chinese</asp:ListItem>
+                        <asp:ListItem Value="Malay">Malay</asp:ListItem>
+                    </asp:CheckBoxList>
+                </div>
             </div>
-            <div class="movie-input">
-                <asp:Label ID="lblReleaseDate" runat="server" Text="Release Date:"></asp:Label>
-                <asp:Calendar ID="calReleaseDate" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
-                    <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
-                    <NextPrevStyle VerticalAlign="Bottom" />
-                    <OtherMonthDayStyle ForeColor="#808080" />
-                    <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-                    <SelectorStyle BackColor="#CCCCCC" />
-                    <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
-                    <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
-                    <WeekendDayStyle BackColor="#FFFFCC" />
-                </asp:Calendar>
+            <div class="group">
+                <div class="movie-input">
+                    <asp:Label ID="lblDuration" runat="server" Text="Duration (60 - 240min):"></asp:Label>
+                    <asp:TextBox ID="txtDuration" runat="server"></asp:TextBox>
+                    <asp:RangeValidator ID="durationValidation" runat="server" ErrorMessage="Only in between 60 to 240." Font-Bold="True" Font-Size="12px" ForeColor="#FF3300" MaximumValue="240" MinimumValue="60" Type="Integer" ControlToValidate="txtDuration"></asp:RangeValidator>
+                </div>
+                <div class="movie-input">
+                    <asp:Label ID="lblClassification" runat="server" Text="Classification:"></asp:Label>
+                    <asp:DropDownList ID="ddlClassification" runat="server" Style="width:70%;">
+                        <asp:ListItem Value="0">0</asp:ListItem>
+                        <asp:ListItem Value="12">12</asp:ListItem>
+                        <asp:ListItem Value="13">13</asp:ListItem>
+                        <asp:ListItem Value="16">16</asp:ListItem>
+                        <asp:ListItem Value="18">18</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
             </div>
-            <div class="movie-input">
-                <asp:Label ID="lblEndDate" runat="server" Text="End Date:"></asp:Label>
-                <asp:Calendar ID="calEndDate" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt"  ForeColor="Black" Height="180px" Width="200px">
-                    <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
-                    <NextPrevStyle VerticalAlign="Bottom" />
-                    <OtherMonthDayStyle ForeColor="#808080" />
-                    <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-                    <SelectorStyle BackColor="#CCCCCC" />
-                    <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
-                    <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
-                    <WeekendDayStyle BackColor="#FFFFCC" />
-                </asp:Calendar>
+            <div class="group">
+                <div style="float:left; width: 40%;">
+                    <div class="movie-input">
+                        <asp:Label ID="lblDirector" runat="server" Text="Director:"></asp:Label>
+                        <asp:TextBox ID="txtDirector" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="directorValidation" ControlToValidate="txtDirector" Font-Bold="True" Font-Size="12px" ForeColor="#FF3300" runat="server" ErrorMessage="This field is required."></asp:RequiredFieldValidator>
+                    </div>
+                    <div class="movie-input" style="margin-top: 18px;">
+                        <asp:Label ID="lblMovieImage" runat="server" Text="Movie Image:"></asp:Label>
+                        <asp:FileUpload ID="imgUpload" runat="server" />
+                        <asp:RequiredFieldValidator ID="imageValidation" ControlToValidate="imgUpload" Font-Bold="True" Font-Size="12px" ForeColor="#FF3300" runat="server" ErrorMessage="This field is required."></asp:RequiredFieldValidator>
+                    </div>
+                </div>
+                <div class="movie-input">
+                    <asp:Label ID="lblCast" runat="server" Text="Cast:"></asp:Label>
+                    <asp:TextBox ID="txtCast" runat="server" TextMode="MultiLine" Rows="5" Columns="25"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="castValidation" ControlToValidate="txtCast" Font-Bold="True" Font-Size="12px" ForeColor="#FF3300" runat="server" ErrorMessage="This field is required."></asp:RequiredFieldValidator>
+                </div>
             </div>
-            <div class="movie-input">
-                <asp:Label ID="lblStatus" runat="server" Text="Status:"></asp:Label>
-                <asp:RadioButtonList ID="rblStatus" runat="server">
-                    <asp:ListItem Value="coming soon">Coming Soon</asp:ListItem>
-                    <asp:ListItem Value="releasing">Releasing</asp:ListItem>
-                    <asp:ListItem Value="ended">Ended</asp:ListItem>
-                </asp:RadioButtonList>
-            </div>
-            <div class="movie-input" style="height:102.4px;">
-                <asp:Label ID="lblDuration" runat="server" Text="Duration:"></asp:Label>
-                <asp:TextBox ID="txtDuration" runat="server"></asp:TextBox>
-            </div>
-            <div class="movie-input">
-                <asp:Label ID="lblLanguage" runat="server" Text="Language:"></asp:Label>
-                <asp:RadioButtonList ID="rblLanguage" runat="server">
-                    <asp:ListItem Value="english">English</asp:ListItem>
-                    <asp:ListItem Value="chinese">Chinese</asp:ListItem>
-                    <asp:ListItem Value="malay">Malay</asp:ListItem>
-                </asp:RadioButtonList>
-            </div>
-            <div class="movie-input">
-                <asp:Label ID="lblSubtitle" runat="server" Text="Subtitle:"></asp:Label>
-                <asp:CheckBoxList ID="cblSubtitle" runat="server">
-                    <asp:ListItem Value="english">English</asp:ListItem>
-                    <asp:ListItem Value="chinese">Chinese</asp:ListItem>
-                    <asp:ListItem Value="malay">Malay</asp:ListItem>
-                </asp:CheckBoxList>
-            </div>
-            <div class="movie-input">
-                <asp:Label ID="lblDirector" runat="server" Text="Director:"></asp:Label>
-                <asp:TextBox ID="txtDirector" runat="server"></asp:TextBox>
-            </div>
-            <div class="movie-input">
-                <asp:Label ID="lblCast" runat="server" Text="Cast:"></asp:Label>
-                <asp:TextBox ID="txtCast" runat="server"></asp:TextBox>
-            </div>
-            <div class="movie-input">
-                <asp:Label ID="lblClassification" runat="server" Text="Classification:"></asp:Label>
-                <asp:DropDownList ID="ddlClassification" runat="server">
-                    <asp:ListItem Value="0">none</asp:ListItem>
-                    <asp:ListItem Value="13">13</asp:ListItem>
-                    <asp:ListItem Value="18">18</asp:ListItem>
-                </asp:DropDownList>
-            </div>
-            <div class="movie-input">
-                <asp:Label ID="lblMovieImage" runat="server" Text="Movie Image:"></asp:Label>
-                <asp:FileUpload ID="imgUpload" runat="server" />
+            <div class="group">
+                <div class="movie-input">
+                    <asp:Label ID="lblMovieTrailer" runat="server" Text="Movie Trailer (link):"></asp:Label>
+                    <asp:TextBox ID="txtTrailer" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="trailerValidation" ControlToValidate="txtTrailer" Font-Bold="True" Font-Size="12px" ForeColor="#FF3300" runat="server" ErrorMessage="This field is required."></asp:RequiredFieldValidator>
+                </div>
+                <div class="movie-input">
+                    <asp:Label ID="lblPrice" runat="server" Text="Price:"></asp:Label>
+                    <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+                    <asp:RangeValidator ID="PriceValidation" ControlToValidate="txtPrice" Font-Bold="True" Font-Size="12px" MinimumValue="0" MaximumValue="50" runat="server" Type="Double"></asp:RangeValidator>
+                </div>
             </div>
             <div class="bottom-side">
-            <asp:Button ID="addMovie" CssClass="btnFinish" runat="server" Text="Add Movie" />
-        </div>
+                <asp:Button ID="addMovie" CssClass="btnFinish" runat="server" Text="Add Movie" OnClick="AddMovie_Click" />
+            </div>
         </div>
     </div>
+    <asp:Panel ID="hiddenPanel" CssClass="hiddenPanel" runat="server">
+        <h3>Are you sure to add this movie?</h3>
+        <asp:Button ID="btnConfirm" CssClass="btnConfirm" runat="server" Text="Confirm" OnClick="btnConfirm_Click" PostBackUrl="~/Admin-New/ManageMovie/ManageMovie.aspx" />
+        <asp:Button ID="btnCancel" CssClass="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
+    </asp:Panel>
 </asp:Content>

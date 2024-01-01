@@ -1,11 +1,21 @@
-﻿.movie-content {
+﻿.all-movie {
+    margin-top: 150px;
+}
+
+.movie-content, .ended-movie-content {
     max-width: 1300px;
     margin-right: auto;
     margin-left: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, auto));
     gap: 2rem;
-    margin-top: 180px;
+}
+
+h2.movie-status {
+    color: #ecd261;
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
 }
 
 div.movie-img {
@@ -26,12 +36,13 @@ div.movie-img {
     color: #dfdddb;
 }
 
-.btnEdit, .btnDelete {
+.btnEdit, .btnRemove {
     border: none;
     width: 100%;
     color: white;
     font-size: 16px;
     cursor: pointer;
+    height: 25px;
 }
 
 .btnEdit, .btnConfirm {
@@ -47,21 +58,26 @@ div.movie-img {
     background-color: green;
 }
 
-.btnDelete, .btnCancel {
+.btnRemove, .btnCancel {
     background-color: red;
 }
 
-.btnDelete:hover, .btnCancel:hover {
+.btnRemove:hover, .btnCancel:hover {
     background-color: #f14747;
 }
 
-.btnDelete:active, .btnCancel:active {
+.btnRemove:active, .btnCancel:active {
     background-color: #a70202;
 }
 
 div.add-movie {
+    position: fixed;
+    bottom: 0;
+    right: 0;
     width: 100%;
-    margin: 40px auto;
+    padding-block: 10px;
+    z-index: 100;
+    background-color: black;
 }
 
 .btnAdd {
@@ -75,7 +91,7 @@ div.add-movie {
     margin-left: 42.5%;
 }
 
-.deletePanel {
+.removePanel {
     width: 400px;
     height: 120px;
     position: absolute;
@@ -86,10 +102,11 @@ div.add-movie {
     border-radius: 10px;
 }
 
-    .deletePanel h3 {
-        color: white;
-        text-align: center;
-    }
+.removePanel h3 {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
 
 .btnConfirm, .btnCancel {
     width: 25%;
@@ -98,6 +115,9 @@ div.add-movie {
     cursor: pointer;
     color: white;
     font-size: 16px;
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 40px;
 }
 
 .btnConfirm {

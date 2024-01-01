@@ -17,17 +17,30 @@
     overflow-y: scroll;
 }
 
+.group {
+    width: 100%;
+    float:left;
+    margin-top: 15px;
+}
+
 .movie-input {
     width: 40%;
     float: left;
-    margin-top: 10px;
+}
+
+div.group > div > .movie-input {
+    width: 100%;
 }
 
 .movie-input * {
     color: #ecd261;
 }
 
-.movie-input select, .movie-input table table *, .movie-input table th {
+.movie-input input[type="text"] {
+    width: 70%;
+}
+
+.movie-input input:not([type="file"]), .movie-input textarea, .movie-input select, .movie-input select *, .movie-input table table *, .movie-input table th {
     color: black;
 }
 
@@ -50,4 +63,65 @@
     color: white;
     margin-left: 25%;
     margin-top: 40px;
+    cursor: pointer;
+}
+
+.btnFinish:hover {
+    background-color: #ebda76;
+}
+
+.hiddenPanel {
+    width: 400px;
+    height: 120px;
+    position: absolute;
+    top: 40%;
+    left: 37%;
+    border: none;
+    background-color: #8b8672;
+    border-radius: 10px;
+}
+
+.hiddenPanel h3 {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btnConfirm, .btnCancel {
+    width: 25%;
+    margin-bottom: 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.btnConfirm {
+    margin-left: 10%;
+    background-color: #2ec92e;
+    margin-top: 20px;
+}
+
+.btnConfirm:hover {
+    background-color: #51e451;
+}
+
+.btnConfirm:active {
+    background-color: green;
+}
+
+.btnCancel {
+    margin-left: 30%;
+    background-color: red;
+}
+
+ .btnCancel:hover {
+    background-color: #f14747;
+}
+
+  .btnCancel:active {
+    background-color: #a70202;
 }
