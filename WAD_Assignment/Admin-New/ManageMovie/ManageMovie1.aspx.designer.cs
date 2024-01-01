@@ -11,7 +11,7 @@ namespace WAD_Assignment.Admin_New
 {
 
 
-    public partial class ManageMovie
+    public partial class ManageMovie1
     {
 
         /// <summary>

@@ -73,7 +73,7 @@
     <Content Include="Admin-New\ManageMovie\AddAndEditMovie.css" />
     <Content Include="Admin-New\ManageMovie\EditMovie.aspx" />
     <Content Include="Admin-New\AdminMainNew.js" />
-    <Content Include="Admin-New\ManageMovie\ManageMovie.aspx" />
+    <Content Include="Admin-New\ManageMovie\ManageMovie1.aspx" />
     <Content Include="Admin-New\ManageMovie\ManageMovie.css" />
     <Content Include="Admin-New\AdminMainNew.css" />
     <Content Include="Admin-New\Report\SalesReport.aspx" />
@@ -210,12 +210,12 @@
     <Compile Include="Admin-New\ManageMovie\EditMovie.aspx.designer.cs">
       <DependentUpon>EditMovie.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin-New\ManageMovie\ManageMovie.aspx.cs">
-      <DependentUpon>ManageMovie.aspx</DependentUpon>
+    <Compile Include="Admin-New\ManageMovie\ManageMovie1.aspx.cs">
+      <DependentUpon>ManageMovie1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin-New\ManageMovie\ManageMovie.aspx.designer.cs">
-      <DependentUpon>ManageMovie.aspx</DependentUpon>
+    <Compile Include="Admin-New\ManageMovie\ManageMovie1.aspx.designer.cs">
+      <DependentUpon>ManageMovie1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin-New\Report\SalesReport.aspx.cs">
       <DependentUpon>SalesReport.aspx</DependentUpon>
