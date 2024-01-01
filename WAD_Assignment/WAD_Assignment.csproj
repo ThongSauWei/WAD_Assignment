@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin-New\ManageCustomer\ManageCustomer.aspx" />
     <Content Include="Admin-New\ManageMovie\AddMovie.aspx" />
     <Content Include="Admin-New\ManageMovie\AddAndEditMovie.css" />
     <Content Include="Admin-New\ManageMovie\EditMovie.aspx" />
@@ -170,6 +171,13 @@
     <Content Include="Guest\loginRegister\Register.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin-New\ManageCustomer\ManageCustomer.aspx.cs">
+      <DependentUpon>ManageCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin-New\ManageCustomer\ManageCustomer.aspx.designer.cs">
+      <DependentUpon>ManageCustomer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin-New\ManageMovie\AddMovie.aspx.cs">
       <DependentUpon>AddMovie.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -59,9 +59,6 @@
                         <asp:ListItem Value="Malay">Malay</asp:ListItem>
                     </asp:CheckBoxList>
                 </div>
-                <div class="movie-input">
-                    <asp:CheckBox ID="ended" runat="server" Value="Ended" Text="Ended?" />
-                </div>
             </div>
             <div class="group">
                 <div class="movie-input">
