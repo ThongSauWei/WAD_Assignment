@@ -126,3 +126,25 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.movie_title span').textContent = timeString;
     }
 });
+
+//sidebar
+document.addEventListener('DOMContentLoaded', function () {
+    // Get all h1 elements inside the sidebar
+    var h1Elements = document.querySelectorAll('#sidebar-wrapper ul li a h1');
+
+    // Add hover event listener to the sidebar wrapper
+    document.getElementById('sidebar-wrapper').addEventListener('mouseover', function () {
+        // Show all h1 elements
+        h1Elements.forEach(function (h1) {
+            h1.style.display = 'block';
+        });
+    });
+
+    // Add mouseout event listener to the sidebar wrapper
+    document.getElementById('sidebar-wrapper').addEventListener('mouseout', function () {
+        // Hide all h1 elements
+        h1Elements.forEach(function (h1) {
+            h1.style.display = 'none';
+        });
+    });
+});
