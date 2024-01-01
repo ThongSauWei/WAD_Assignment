@@ -11,61 +11,79 @@ namespace testing
 {
 
 
-    public partial class AdminHeader
+    public partial class ViewAdmin
     {
 
         /// <summary>
-        /// form1 control.
+        /// lblStaffID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblStaffID;
 
         /// <summary>
-        /// HyperLinkAdminCRUD control.
+        /// lblStaffName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLinkAdminCRUD;
+        protected global::System.Web.UI.WebControls.Label lblStaffName;
 
         /// <summary>
-        /// HyperLinkMemberCRUD control.
+        /// lblStaffEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLinkMemberCRUD;
+        protected global::System.Web.UI.WebControls.Label lblStaffEmail;
 
         /// <summary>
-        /// HyperLinkProductCRUD control.
+        /// lblStaffPhoneNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLinkProductCRUD;
+        protected global::System.Web.UI.WebControls.Label lblStaffPhoneNo;
 
         /// <summary>
-        /// HyperLinkRefundStatus control.
+        /// lblStaffPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLinkRefundStatus;
+        protected global::System.Web.UI.WebControls.Label lblStaffPassword;
 
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// lblStaffPosition control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label lblStaffPosition;
+
+        /// <summary>
+        /// lblStaffSalary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStaffSalary;
+
+        /// <summary>
+        /// btnDone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDone;
     }
 }
