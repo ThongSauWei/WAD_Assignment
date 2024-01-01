@@ -8,21 +8,28 @@
     <style>
         @font-face {
             font-family: 'Gabriela Stencil';
-            src: url('path-to-your-font/GabrielaStencil-Regular.woff2') format('woff2'), url('path-to-your-font/GabrielaStencil-Regular.woff') format('woff');
+            src: url('path-to-your-font/GabrielaStencil-Regular.woff2') format('woff2'),
+                 url('path-to-your-font/GabrielaStencil-Regular.woff') format('woff');
             font-weight: normal;
             font-style: normal;
         }
-        /* Rest of your styles */
-
 
         body {
             background-color: black;
-            color: yellow;
+            color: yellow;             
             font-family: 'Gabriela Stencil', sans-serif;
         }
 
         h1,
+        h2,
         h3 {
+            color: yellow;
+            font-family: 'Gabriela Stencil', sans-serif;
+            text-align: center;
+        }
+
+        .header{
+            color: yellow;
             font-family: 'Gabriela Stencil', sans-serif;
             text-align: center;
         }
@@ -33,36 +40,141 @@
             box-sizing: border-box;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             text-align: center;
+
         }
 
-        .table-container {
+        .side-menu {
+            color: white;
+            animation: glow 2s infinite;
+            margin: 205px auto;
+            width: 20%;
+            padding: 10px 10px 10px 10px;
+            border: 1px solid yellow;
+            background-color: transparent;
+            border-radius: 10px;
+            box-sizing: border-box;
+            box-shadow: 5px 5px 15px 0px rgb(252 255 99 / 60%);
+            transition: 1s all;
+            opacity: 0.95;
+            backdrop-filter: blur(8px);
+            float: left;
+        }
+        .side-menu th, td{
+            padding: 10px 10px 10px 10px;
+            border: 1px solid yellow;
+            background-color: transparent;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .displayOnly{
+            color: white;
+            animation: glow 2s infinite;
+            margin: 205px auto;
+            width: 80%;
+            padding: 10px 10px 10px 10px;
+            border: 1px solid yellow;
+            background-color: transparent;
+            border-radius: 10px;
+            box-sizing: border-box;
+            box-shadow: 5px 5px 15px 0px rgb(252 255 99 / 60%);
+            transition: 1s all;
+            opacity: 0.95;
+            backdrop-filter: blur(8px);
+            float: right;
+        }
+
+        .hyperlink-css{
+            color: white;
+        }
+
+        .hyperlink-css:hover{
+            color: red;
+        }
+
+        td:nth-child(2), th:nth-child(2){
+            width: 350px;
+        }
+
+        td:nth-child(1), th:nth-child(1){
+            width: 50px;
+            border: 1px solid yellow;
+        }
+
+        .data-table{
+            color: yellow;
             display: flex;
             justify-content: center;
             text-align: center;
+            width: 100%;
+            border: 10px transparent;
+            background-color: transparent;
+            border-radius: 10px;
+            border-color: yellow;
         }
 
-        table {
-            width: 80%; /* Adjust the width as needed */
-            /* Additional styles for the table if needed */
+        .table-container {
+            color: yellow;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            border: 0px
         }
 
-
-        /* Specify text-align left for a specific cell */
-        .table-container table tr td.left-aligned {
-            text-align: left;
+        whole-table {
+            width: 80%; 
         }
+
+        .content-place-holder-css {
+            width: 309px;
+        }
+
     </style>
 
 </head>
 <body>
 
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-
-        </div>
+        <div class="header">
+            <br />
+            <br />
+            <br />
+            <br />
+            <h1>ADMIN PAGE</h1>
+            <table class="side-menu">
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLinkAdminCRUD" runat="server" NavigateUrl="~/AdminCRUD.aspx" CssClass="hyperlink-css">ADMIN CRUD</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLinkMemberCRUD" runat="server" NavigateUrl="~/MemberCRUD.aspx" CssClass="hyperlink-css">MEMBER CRUD</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLinkProductCRUD" runat="server" NavigateUrl="~/MovieCRUD.aspx" CssClass="hyperlink-css">MOVIE CRUD</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLinkRefundStatus" runat="server" NavigateUrl="~/RefundStatus.aspx" CssClass="hyperlink-css">REFUND STATUS</asp:HyperLink>
+                    </td>
+                </tr>
+            </table>
+            <table class="displayOnly">
+                <tr>
+                    <td class="content-place-holder-css" rowspan="4">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+            </div>
     </form>
 </body>
 </html>
+
 
