@@ -67,16 +67,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin-New\AdminMainNew.aspx" />
     <Content Include="Admin-New\ManageMovie\AddMovie.aspx" />
     <Content Include="Admin-New\ManageMovie\AddAndEditMovie.css" />
     <Content Include="Admin-New\ManageMovie\EditMovie.aspx" />
+    <Content Include="Admin-New\AdminMainNew.js" />
     <Content Include="Admin-New\ManageMovie\ManageMovie.aspx" />
     <Content Include="Admin-New\ManageMovie\ManageMovie.css" />
-    <Content Include="Admin\AdminCRUD.aspx" />
-    <Content Include="Admin\AdminMain.aspx" />
-    <Content Include="Admin\MemberCRUD.aspx" />
-    <Content Include="Admin\MovieCRUD.aspx" />
-    <Content Include="Admin\RefundStatus.aspx" />
+    <Content Include="Admin-New\AdminMainNew.css" />
     <Content Include="App_Data\TicketDB.mdf" />
     <Content Include="App_Data\TicketDB_log.ldf">
       <DependentUpon>TicketDB.mdf</DependentUpon>
@@ -170,12 +168,26 @@
     <Content Include="Guest\loginRegister\Register.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin-New\AdminMainNew.aspx.cs">
+      <DependentUpon>AdminMainNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin-New\AdminMainNew.aspx.designer.cs">
+      <DependentUpon>AdminMainNew.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin-New\ManageMovie\AddMovie.aspx.cs">
       <DependentUpon>AddMovie.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin-New\ManageMovie\AddMovie.aspx.designer.cs">
       <DependentUpon>AddMovie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin-New\AdminSideBar.Master.cs">
+      <DependentUpon>AdminSideBar.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin-New\AdminSideBar.Master.designer.cs">
+      <DependentUpon>AdminSideBar.Master</DependentUpon>
     </Compile>
     <Compile Include="Admin-New\ManageMovie\EditMovie.aspx.cs">
       <DependentUpon>EditMovie.aspx</DependentUpon>
@@ -190,48 +202,6 @@
     </Compile>
     <Compile Include="Admin-New\ManageMovie\ManageMovie.aspx.designer.cs">
       <DependentUpon>ManageMovie.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\AdminCRUD.aspx.cs">
-      <DependentUpon>AdminCRUD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\AdminCRUD.aspx.designer.cs">
-      <DependentUpon>AdminCRUD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\AdminHeader.Master.cs">
-      <DependentUpon>AdminHeader.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\AdminHeader.Master.designer.cs">
-      <DependentUpon>AdminHeader.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\AdminMain.aspx.cs">
-      <DependentUpon>AdminMain.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\AdminMain.aspx.designer.cs">
-      <DependentUpon>AdminMain.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\MemberCRUD.aspx.cs">
-      <DependentUpon>MemberCRUD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\MemberCRUD.aspx.designer.cs">
-      <DependentUpon>MemberCRUD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\MovieCRUD.aspx.cs">
-      <DependentUpon>MovieCRUD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\MovieCRUD.aspx.designer.cs">
-      <DependentUpon>MovieCRUD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\RefundStatus.aspx.cs">
-      <DependentUpon>RefundStatus.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\RefundStatus.aspx.designer.cs">
-      <DependentUpon>RefundStatus.aspx</DependentUpon>
     </Compile>
     <Compile Include="Entity\Movie.cs" />
     <Compile Include="error\GeneralError.aspx.cs">
@@ -371,8 +341,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage\Header.Master" />
-    <Content Include="Admin\AdminHeader.Master" />
     <Content Include="error\Error.Master" />
+    <Content Include="Admin-New\AdminSideBar.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
