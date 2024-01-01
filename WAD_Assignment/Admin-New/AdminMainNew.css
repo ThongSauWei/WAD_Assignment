@@ -39,62 +39,41 @@ body {
 #ST1:hover {
     color: #ecd261 !important;
 }
+
 #ST2:hover {
     color: #ecd261 !important;
 }
+
 #ST3:hover {
     color: #ecd261 !important;
 }
+
 #ST4:hover {
     color: #ecd261 !important;
-} 
+}
+
 #ST5:hover {
     color: #ecd261 !important;
 }
+
 #sidebar-wrapper {
     min-height: 100vh;
-    transition: width 4s ease-in-out;
+    width: 108px;
     overflow: hidden;
-
-}
-
-    #sidebar-wrapper:hover {
-        min-width: 300px;
-    }
-
-#sidebar-wrapper ul li {
-    position: relative;
-}
-
-        #sidebar-wrapper ul li a {
-            display: flex;
-        }
-
-            #sidebar-wrapper ul li a span {
-                opacity: 0;
-                position: absolute;
-                left: 50px; /* Adjust the distance from the icon */
-                transition: opacity 0.25s ease-out;
-            }
-
-        #sidebar-wrapper ul li:hover a span {
-            opacity: 1;
-        }
-
-#sidebar-wrapper {
-    min-height: 100vh;
-    -webkit-transition: margin 0.25s ease-out;
-    -moz-transition: margin 0.25s ease-out;
-    -o-transition: margin 0.25s ease-out;
-    transition: margin 0.25s ease-out;
+    transition: width 0.75s ease-in-out;
     background: linear-gradient(45deg, #272a2f, #202328);
     box-shadow: 5px -5px 10px #131517, -5px 5px 10px #353941;
 }
+
+    #sidebar-wrapper:hover {
+        width: 300px;
+    }
 
     #sidebar-wrapper .avatar {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         padding: 15px 0;
     }
 
@@ -120,6 +99,7 @@ body {
     }
 
         #sidebar-wrapper ul li {
+            position: relative;
             padding: 10px 25px;
             margin-bottom: 10px;
         }
@@ -133,6 +113,7 @@ body {
                 color: #858788;
                 border-radius: 5px;
                 box-shadow: inset 5px -5px 10px #1a1c20, inset -5px 5px 10px #3e444d;
+                transition: width 0.75s ease-in-out;
             }
 
                 #sidebar-wrapper ul li a i {
@@ -142,6 +123,16 @@ body {
                     #sidebar-wrapper ul li a i:hover {
                         color: #ecd261 !important;
                     }
+
+                #sidebar-wrapper ul li a span {
+                    opacity: 0;
+                    position: absolute;
+                    left: 50px;
+                }
+
+            #sidebar-wrapper ul li:hover a span {
+                opacity: 1;
+            }
 
 .active_link a {
     color: #ecd261 !important;
