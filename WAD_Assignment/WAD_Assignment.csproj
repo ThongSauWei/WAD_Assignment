@@ -77,6 +77,7 @@
     <Content Include="Admin-New\ManageMovie\ManageMovie.css" />
     <Content Include="Admin-New\AdminMainNew.css" />
     <Content Include="Admin\AddAdmin.aspx" />
+    <Content Include="Admin-New\Report\SalesReport.aspx" />
     <Content Include="Admin\AdminCRUD.aspx" />
     <Content Include="Admin\AdminMain.aspx" />
     <Content Include="Admin\MemberCRUD.aspx" />
@@ -226,6 +227,12 @@
     </Compile>
     <Compile Include="Admin\AddAdmin.aspx.designer.cs">
       <DependentUpon>AddAdmin.aspx</DependentUpon>
+    <Compile Include="Admin-New\Report\SalesReport.aspx.cs">
+      <DependentUpon>SalesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin-New\Report\SalesReport.aspx.designer.cs">
+      <DependentUpon>SalesReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AdminCRUD.aspx.cs">
       <DependentUpon>AdminCRUD.aspx</DependentUpon>

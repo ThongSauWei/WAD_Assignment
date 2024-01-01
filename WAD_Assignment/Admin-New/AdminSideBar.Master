@@ -24,6 +24,9 @@
             <div id="sidebar-wrapper">
                 <div class="avatar">
                     <a href="#"><i class="fas fa-user"></i></a>
+                    <div id="userName" style="display: none; font-size: 20px; color: #858788; margin-top: 10px;">
+                        <h1 class="car1_title">Joe</h1>
+                    </div>
                 </div>
                 <ul>
                     <li>
@@ -59,11 +62,55 @@
             <!-- /#sidebar-wrapper -->
 
             <!-- Page Content -->
-            <div id="page-content-wrapper">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
-            </div>
         </div>
     </form>
     <script src="AdminMainNew.js"></script>
+    <script>
+        //sidebar
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all h1 elements inside the sidebar
+            var h1Elements = document.querySelectorAll('#sidebar-wrapper ul li a h1');
+
+            // Add hover event listener to the sidebar wrapper
+            document.getElementById('sidebar-wrapper').addEventListener('mouseover', function () {
+                // Show all h1 elements
+                h1Elements.forEach(function (h1) {
+                    h1.style.display = 'block';
+                });
+            });
+
+            // Add mouseout event listener to the sidebar wrapper
+            document.getElementById('sidebar-wrapper').addEventListener('mouseout', function () {
+                // Hide all h1 elements
+                h1Elements.forEach(function (h1) {
+                    h1.style.display = 'none';
+                });
+            });
+        });
+
+        //userName
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get avatar elements
+            var avatar = document.querySelector('.avatar');
+            var userName = document.getElementById('userName');
+
+            // Get sidebar wrapper
+            var sidebarWrapper = document.getElementById('sidebar-wrapper');
+
+            // Add hover event listener to the sidebar wrapper
+            sidebarWrapper.addEventListener('mouseover', function () {
+                // Show the user name
+                userName.style.display = 'block';
+            });
+
+            // Add mouseout event listener to the sidebar wrapper
+            sidebarWrapper.addEventListener('mouseout', function () {
+                // Hide the user name
+                userName.style.display = 'none';
+            });
+        });
+
+    </script>
 </body>
 </html>
