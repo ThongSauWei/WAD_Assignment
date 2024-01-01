@@ -10,7 +10,7 @@ using System.Web.UI.HtmlControls;
 
 namespace WAD_Assignment.Admin_New
 {
-    public partial class ManageMovie1 : System.Web.UI.Page
+    public partial class ManageMovie : System.Web.UI.Page
     {
         private static string connStr = ConfigurationManager.ConnectionStrings["CinemaDB"].ConnectionString;
         private SqlConnection conn = new SqlConnection(connStr);

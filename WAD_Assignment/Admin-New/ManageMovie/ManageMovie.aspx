@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="../AdminSideBar.Master" AutoEventWireup="true" CodeBehind="ManageMovie1.aspx.cs" Inherits="WAD_Assignment.Admin_New.ManageMovie1" %>
+﻿<%@ Page Language="C#" MasterPageFile="../../MasterPage/Header.Master" AutoEventWireup="true" CodeBehind="ManageMovie.aspx.cs" Inherits="WAD_Assignment.Admin_New.ManageMovie" %>
 
 <asp:Content ID="ContentPlaceHolder1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="ManageMovie.css" rel="stylesheet" />
@@ -10,7 +10,7 @@
     </div>
     <asp:Panel ID="removePanel" CssClass="removePanel" runat="server">
         <h3>Are you sure you want to remove this movie?</h3>
-        <asp:Button ID="btnConfirm" CssClass="btnConfirm" runat="server" Text="Confirm" OnClick="btnConfirm_Click" PostBackUrl="~/Admin-New/ManageMovie/ManageMovie1.aspx" />
+        <asp:Button ID="btnConfirm" CssClass="btnConfirm" runat="server" Text="Confirm" OnClick="btnConfirm_Click" PostBackUrl="~/Admin-New/ManageMovie/ManageMovie.aspx" />
         <asp:Button ID="btnCancel" CssClass="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
     </asp:Panel>
     <asp:HiddenField ID="selectedMovie" runat="server" />
