@@ -18,7 +18,13 @@ namespace WAD_Assignment.Admin_New
             if (PreviousPage != null && PreviousPage.IsCrossPagePostBack)
             {
                 Set_Category_List();
+
                 hiddenPanel.Visible = false;
+                contentDiv.Style["filter"] = "brightness(100%)";
+            }
+            else if (!IsPostBack)
+            {
+                Response.Redirect("~/error/GeneralError.aspx");
             }
         }
 
@@ -54,6 +60,11 @@ namespace WAD_Assignment.Admin_New
 
             hiddenPanel.Visible = true;
             contentDiv.Style["filter"] = "brightness(50%)";
+        }
+
+        protected void cancelAdd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin-New/ManageMovie/ManageMovie.aspx");
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)

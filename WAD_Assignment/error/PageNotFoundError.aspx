@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/error/Error.Master" AutoEventWireup="true" CodeBehind="PageNotFoundError.aspx.cs" Inherits="WAD_Assignment.error.PageNotFoundError" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/error/Error.Master" AutoEventWireup="true" CodeFile="PageNotFoundError.aspx.cs" Inherits="WAD_Assignment.error.PageNotFoundError" %>
 
 <asp:Content ID="ContentPlaceHolder" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p class="error-attention">404 Error</p>

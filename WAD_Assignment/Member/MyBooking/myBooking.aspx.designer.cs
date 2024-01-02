@@ -13,5 +13,23 @@ namespace WAD_Assignment.MyBooking
 
     public partial class booking
     {
+
+        /// <summary>
+        /// activeBooking control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl activeBooking;
+
+        /// <summary>
+        /// passiveBooking control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl passiveBooking;
     }
 }

@@ -29,13 +29,19 @@ namespace WAD_Assignment.Admin_New
                 Get_Movie_Detail(movieID);
 
                 hiddenPanel.Visible = false;
-            } 
+                contentDiv.Style["filter"] = "brightness(100%)";
+            }
         }
 
         protected void UpdateMovie_Click(object sender, EventArgs e)
         {
             hiddenPanel.Visible = true;
             contentDiv.Style["filter"] = "brightness(50%)";
+        }
+
+        protected void cancelUpdate_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin-New/ManageMovie/ManageMovie.aspx");
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)

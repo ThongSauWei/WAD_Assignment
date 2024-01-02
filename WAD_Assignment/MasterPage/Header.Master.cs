@@ -373,7 +373,7 @@ namespace WAD_Assignment
                         if (!string.IsNullOrEmpty(movieID))
                         {
                             // Redirect to the Detail page with the movieID parameter
-                            Response.Redirect($"../Detail/Detail.aspx?movieID={movieID}", false);
+                            Response.Redirect("../Detail/Detail.aspx?movieID=" + movieID, false);
                         }
                     }
                 }

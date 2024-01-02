@@ -123,6 +123,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Display the time in the format HH:mm
         var timeString = hours + ':' + minutes;
+<<<<<<< Updated upstream
         document.querySelector('.movie_title span').textContent = timeString;
+=======
+        document.querySelector('.time_num span').textContent = timeString;
+>>>>>>> Stashed changes
     }
 });

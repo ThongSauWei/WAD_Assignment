@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WAD_Assignment.Admin_New.ManageCustomer
+namespace WAD_Assignment.Admin_New.ManageStaff
 {
 
 
-    public partial class ManageCustomer
+    public partial class ManageStaff
     {
 
         /// <summary>
@@ -24,39 +24,66 @@ namespace WAD_Assignment.Admin_New.ManageCustomer
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl allContent;
 
         /// <summary>
-        /// customerRepeater control.
+        /// btnAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater customerRepeater;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
 
         /// <summary>
-        /// GetAllCustomers control.
+        /// staffRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource GetAllCustomers;
+        protected global::System.Web.UI.WebControls.Repeater staffRepeater;
 
         /// <summary>
-        /// hiddenPanel control.
+        /// GetAllStaffs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel hiddenPanel;
+        protected global::System.Web.UI.WebControls.SqlDataSource GetAllStaffs;
 
         /// <summary>
-        /// custIDField control.
+        /// deletePanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField custIDField;
+        protected global::System.Web.UI.WebControls.Panel deletePanel;
+
+        /// <summary>
+        /// btnConfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnConfirm;
+
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
+
+        /// <summary>
+        /// staffIDField control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField staffIDField;
     }
 }

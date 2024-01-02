@@ -26,6 +26,7 @@
                         <tbody class="card1_table_tbody" id="threeCustomer"><%--only loop first 3 customer--%>
                             <tr>
                                 <td><i class="positiveIcon fas fa-check"></i>ABC</td>
+<<<<<<< Updated upstream
                                 <td>0123456789/td>
                                 <td>abc@gmail.com</td>
                                 <td>
@@ -36,14 +37,32 @@
                                 <td><i class="positiveIcon fas fa-check"></i>ABC</td>
                                 <td>0123456789/td>
                                 <td>abc@gmail.com</td>
+=======
+                                <td>0123456789</td>
+                                <td>abc@gmail.com</td>
+                                <td>
+                                    <button id="viewBtn" class="btn btn-secondary"><a href="ManageCustomer/ManageCustomer.aspx">View List</a></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><i class="positiveIcon fas fa-check"></i>SauWei</td>
+                                <td>0123456789</td>
+                                <td>sw@gmail.com</td>
+>>>>>>> Stashed changes
                                 <td>
                                     <button id="viewBtn2" class="btn btn-secondary">View List</button>
                                 </td>
                             </tr>
                             <tr>
+<<<<<<< Updated upstream
                                 <td><i class="positiveIcon fas fa-check"></i>ABC</td>
                                 <td>0123456789/td>
                                 <td>abc@gmail.com</td>
+=======
+                                <td><i class="positiveIcon fas fa-check"></i>Erika</td>
+                                <td>0123456789</td>
+                                <td>erika@gmail.com</td>
+>>>>>>> Stashed changes
                                 <td>
                                     <button id="viewBtn3" class="btn btn-secondary">View List</button>
                                 </td>
@@ -69,7 +88,11 @@
         <div class="row row2">
             <div class="card card3" id="OneMovie">
                 <div class="movie_title">
+<<<<<<< Updated upstream
                     <button class="btn btn-secondary">Movie</button>
+=======
+                    <button class="btn btn-secondary"><a href="ManageMovie/ManageMovie.aspx">Movie</a></button>
+>>>>>>> Stashed changes
                     <span></span>
                 </div>
                 <div class="movie_image" id="showMovie">
@@ -106,7 +129,11 @@
                         </thead>
                         <tbody class="card1_table_tbody" id="threeCancelRefund"><%--Only show first Three Cancel and Refund--%>
                             <tr>
+<<<<<<< Updated upstream
                                 <td><i class="positiveIcon fas fa-check"></i> John Doe</td>
+=======
+                                <td><i class="positiveIcon fas fa-check"></i>Ben</td>
+>>>>>>> Stashed changes
                                 <td>Change the mind</td>
                                 <td>Processing</td>
                                 <td>
@@ -117,7 +144,11 @@
                                 </td>
                             </tr>
                             <tr>
+<<<<<<< Updated upstream
                                 <td><i class="positiveIcon fas fa-check"></i> Gonzales Higuan</td>
+=======
+                                <td><i class="positiveIcon fas fa-check"></i>Nathan</td>
+>>>>>>> Stashed changes
                                 <td>Sudden Got OT</td>
                                 <td>Processing</td>
                                 <td>
@@ -128,7 +159,11 @@
                                 </td>
                             </tr>
                             <tr>
+<<<<<<< Updated upstream
                                 <td><i class="positiveIcon fas fa-check"></i> Turgut Ozben</td>
+=======
+                                <td><i class="positiveIcon fas fa-check"></i>ABC</td>
+>>>>>>> Stashed changes
                                 <td>Select Wrong Time</td>
                                 <td>Processing</td>
                                 <td>

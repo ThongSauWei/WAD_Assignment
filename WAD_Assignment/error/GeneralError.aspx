@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/error/Error.Master" AutoEventWireup="true" CodeBehind="GeneralError.aspx.cs" Inherits="WAD_Assignment.error.GeneralError" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/error/Error.Master" AutoEventWireup="true" CodeFile="GeneralError.aspx.cs" Inherits="WAD_Assignment.error.GeneralError" %>
 
 <asp:Content ID="ContentPlaceHolder" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <img src="../image/minion-warning.gif" width="100px" height="100px">

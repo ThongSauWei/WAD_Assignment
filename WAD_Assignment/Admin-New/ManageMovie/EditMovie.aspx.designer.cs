@@ -357,6 +357,15 @@ namespace WAD_Assignment.Admin_New
         protected global::System.Web.UI.WebControls.Button updateMovie;
 
         /// <summary>
+        /// cancelUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cancelUpdate;
+
+        /// <summary>
         /// hiddenPanel control.
         /// </summary>
         /// <remarks>

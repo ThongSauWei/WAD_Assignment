@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PasswordRecovery.aspx.cs" Inherits="WAD_Assignment.loginRegister.PasswordRecovery" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PasswordRecovery.aspx.cs" Inherits="WAD_Assignment.loginRegister.PasswordRecovery" %>
 
 <!DOCTYPE html>
 

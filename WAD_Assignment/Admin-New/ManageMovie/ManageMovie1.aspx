@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream:WAD_Assignment/Admin-New/ManageMovie/ManageMovie1.aspx
 ﻿<%@ Page Language="C#" MasterPageFile="../AdminSideBar.Master" AutoEventWireup="true" CodeBehind="ManageMovie1.aspx.cs" Inherits="WAD_Assignment.Admin_New.ManageMovie1" %>
+=======
+﻿<%@ Page Language="C#" MasterPageFile="~/Admin-New/AdminSideBar.Master" AutoEventWireup="true" CodeFile="ManageMovie.aspx.cs" Inherits="WAD_Assignment.Admin_New.ManageMovie" %>
+>>>>>>> Stashed changes:WAD_Assignment/Admin-New/ManageMovie/ManageMovie.aspx
 
 <asp:Content ID="ContentPlaceHolder1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="ManageMovie.css" rel="stylesheet" />

@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[Customer] (
     [custName]         VARCHAR (60)  NOT NULL,
     [custEmail]        VARCHAR (30)  NOT NULL,
     [custPhoneNo]      VARCHAR (12)  NOT NULL,
-    [custPassword]     VARCHAR (64)  NOT NULL,
+    [custPassword]     CHAR (64)  NOT NULL,
     [custSecurityQues] VARCHAR (MAX) NOT NULL,
     PRIMARY KEY CLUSTERED ([custID] ASC)
 );
@@ -31,15 +31,15 @@ CREATE TABLE [dbo].[Staff] (
     [staffName]     VARCHAR (50)    NOT NULL,
     [staffEmail]    VARCHAR (20)    NOT NULL,
     [staffPhoneNo]  VARCHAR (11)    NOT NULL,
-    [staffPassword] VARCHAR (64)    NOT NULL,
+    [staffPassword] CHAR (64)    NOT NULL,
     [staffPosition] VARCHAR (50)    NOT NULL,
     [salary]        DECIMAL (15, 2) NOT NULL,
     PRIMARY KEY CLUSTERED ([staffID] ASC)
 );
 
-INSERT INTO [dbo].[Staff] ([staffID], [staffName], [staffEmail], [staffPhoneNo], [staffPassword], [staffPosition], [salary]) VALUES (N'S001', N'Ben', N'ben810@gmail.com', N'0123456789', N'Abc123456!', N'Staff', CAST(2500.00 AS Decimal(15, 2)))
+INSERT INTO [dbo].[Staff] ([staffID], [staffName], [staffEmail], [staffPhoneNo], [staffPassword], [staffPosition], [salary]) VALUES (N'S001', N'Ben', N'ben810@gmail.com', N'0123456789', N'bdab0e5ea56c3dd122654c4eaa6898141748f0bda39a9d15669912afc9ae0e7f', N'Staff', CAST(2500.00 AS Decimal(15, 2)))
 
-INSERT INTO [dbo].[Staff] ([staffID], [staffName], [staffEmail], [staffPhoneNo], [staffPassword], [staffPosition], [salary]) VALUES (N'S002', N'Admin', N'admin@gmail.com', N'0123456789', N'admin@123', N'Admin', CAST(5000.00 AS Decimal(15, 2)))
+INSERT INTO [dbo].[Staff] ([staffID], [staffName], [staffEmail], [staffPhoneNo], [staffPassword], [staffPosition], [salary]) VALUES (N'S002', N'Admin', N'admin@gmail.com', N'0123456789', N'e2249d5a43adbbc0375a9794c763d85b66875ce1e34fc5ba934141ed1c666a38', N'Admin', CAST(5000.00 AS Decimal(15, 2)))
 
 
 CREATE TABLE [dbo].[Movie] (
@@ -1020,6 +1020,7 @@ CREATE TABLE [dbo].[Refund] (
     [refundReason] VARCHAR (30)  NOT NULL,
     [refundDesc]   VARCHAR (MAX) NOT NULL,
     [refundDate]   DATE          NOT NULL,
+    [refundStatus] VARCHAR (20)  NOT NULL,
     [ticketID]     CHAR (4)      NOT NULL,
     PRIMARY KEY CLUSTERED ([refundID] ASC),
     CONSTRAINT [FK_Refund_ToTicket] FOREIGN KEY ([ticketID]) REFERENCES [dbo].[Ticket] ([ticketID])

@@ -16,25 +16,26 @@
                 <div class="cancel-refund">
                     <div class="row">
                         <p>Ticket ID </p>
-                        <p>T001</p>
+                        <p id="pTicketID" runat="server"></p>
                     </div>
                     <div class="row">
                         <p>Refund Reason </p>
-                        <asp:DropDownList class="refundReason" runat="server">
+                        <asp:DropDownList id="ddlReason" class="refundReason" runat="server">
                             <asp:ListItem></asp:ListItem>
                             <asp:ListItem>Wrong Date/Time</asp:ListItem>
                             <asp:ListItem>Wrong Movie</asp:ListItem>
-                            <asp:ListItem>Wrong Date/Time</asp:ListItem>
+                            <asp:ListItem>Emergency Issue</asp:ListItem>
                         </asp:DropDownList>
                     </div>
                     <div class="row">
                         <p>State your reason</p>
-                        <textarea class="refundState" maxlength="100"></textarea>
+                        <asp:TextBox ID="txtDesc" CssClass="refundState" runat="server" maxlength="100" TextMode="MultiLine"></asp:TextBox>
                     </div>
                 </div>
-
+                <asp:HiddenField ID="ticketIDField" runat="server" />
+                <asp:HiddenField ID="amountField" runat="server" />
             </article>
-            <a class="cancel-next" href="Completed.aspx">Next</a>
+            <asp:Button ID="proceedBtn" runat="server" CssClass="cancel-next" PostBackUrl="~/Member/MyBooking/Completed.aspx" Text="Next" />
         </div>
 
 

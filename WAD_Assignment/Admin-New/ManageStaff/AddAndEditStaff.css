@@ -1,56 +1,54 @@
-﻿.content-box {
+﻿.content-div {
     margin: 180px auto 0;
     height: 450px;
-    width: 70%;
+    width: 40%;
+    background-color: #17171c;
 }
 
-.left-side {
-    height: 100%;
-    width: 30%;
-    float: left;
-}
-
-.right-side {
-    height: 100%;
-    width: 70%;
-    float: left;
-    overflow-y: scroll;
+.content-div > h2 {
+    width: 100%;
+    text-align: center;
+    color: #ecd261;
+    padding-top: 10px;
 }
 
 .group {
     width: 100%;
-    float:left;
+    float: left;
     margin-top: 15px;
 }
 
-.movie-input {
-    width: 40%;
+.staff-input {
+    width: 45%;
     float: left;
+    padding-left: 20px;
 }
 
-div.group > div > .movie-input {
-    width: 100%;
-}
-
-.movie-input * {
-    color: #ecd261;
-}
-
-.movie-input input[type="text"] {
+.staff-input input, .staff-input select {
     width: 70%;
 }
 
-.movie-input input:not([type="file"]), .movie-input textarea, .movie-input select, .movie-input select *, .movie-input table table *, .movie-input table th {
+.staff-input input, .staff-input select, .staff-input select * {
     color: black;
 }
 
-.movie-input span {
+
+div.group > div > .staff-input {
+    width: 100%;
+}
+
+.staff-input * {
+    color: #ecd261;
+}
+
+.staff-input span {
     width: 100%;
     display: block;
 }
 
 .bottom-side {
     width: 100%;
+    float: left;
 }
 
 .btnFinish, .cancelAction {
@@ -61,7 +59,7 @@ div.group > div > .movie-input {
     border-radius: 10px;
     font-size: 16px;
     color: white;
-    margin-left: 6%;
+    margin-left: 15%;
     margin-top: 40px;
     cursor: pointer;
 }
