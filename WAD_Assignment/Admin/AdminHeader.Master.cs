@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace testing
+namespace WAD_Assignment.Admin
 {
     public partial class AdminHeader : System.Web.UI.MasterPage
     {
