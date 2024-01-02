@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="../../MasterPage/Header.Master" AutoEventWireup="true" CodeFile="Payment.aspx.cs" Inherits="WAD_Assignment.Member.Payment" %>
+﻿<%@ Page Language="C#" MasterPageFile="../../MasterPage/Header.Master" AutoEventWireup="true" CodeBehind="Payment.aspx.cs" Inherits="WAD_Assignment.Member.Payment" %>
 
 <asp:Content ID="ContentPlaceHolder" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="Payment.css" rel="stylesheet" />

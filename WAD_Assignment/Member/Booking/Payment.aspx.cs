@@ -122,7 +122,7 @@ namespace WAD_Assignment.Member
             }
             else
             {
-                string script = "alert('The session is expired. Redirecting to homepage...');";
+                string script = "alert('The session is expired. Redirecting to homepage...";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "SessionExpired", script, true);
                 Response.Redirect("~/Guest/HomePage/Homepage.aspx");
             }

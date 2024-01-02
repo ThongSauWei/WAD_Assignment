@@ -1,6 +1,6 @@
 ﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="WAD_Assignment.WebForm1" %>--%>
 
-<%@ Page Language="C#" MasterPageFile="../../MasterPage/Header.Master" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="WAD_Assignment.WebForm1" %>
+<%@ Page Language="C#" MasterPageFile="../../MasterPage/Header.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="WAD_Assignment.WebForm1" %>
 
 <asp:Content ID="ContentPlaceHolder" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="RegisterAndLogin.css" rel="stylesheet" />

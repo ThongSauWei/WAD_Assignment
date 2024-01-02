@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="../../MasterPage/Header.Master" AutoEventWireup="true" CodeFile="Menu.aspx.cs" Inherits="WAD_Assignment.Menu.Menu" %>
+﻿<%@ Page Language="C#" MasterPageFile="../../MasterPage/Header.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="WAD_Assignment.Menu.Menu" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link href="Menu.css" rel="stylesheet" />

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Header.Master.cs" Inherits="WAD_Assignment.Header" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Header.master.cs" Inherits="WAD_Assignment.Header" %>
 
 
 <!DOCTYPE html>

@@ -13,12 +13,8 @@ namespace WAD_Assignment.Member
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            if (Session["custID"] == null)
-            {
-                Response.Redirect("~/Guest/loginRegister/Login.aspx");
-            }
-            else if (PreviousPage != null && PreviousPage.IsCrossPagePostBack) // initialise all the controls if it is redirected from other page
+            // initialise all the controls if it is redirected from other page
+            if (PreviousPage != null && PreviousPage.IsCrossPagePostBack)
             {
                 ContentPlaceHolder contentPlaceHolder = PreviousPage.Master.FindControl("ContentPlaceHolder1") as ContentPlaceHolder;
                 Image img = contentPlaceHolder.FindControl("movieImg") as Image;

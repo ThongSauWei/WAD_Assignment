@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="../../MasterPage/Header.Master" AutoEventWireup="true" CodeFile="Booking.aspx.cs" Inherits="WAD_Assignment.Member.WebForm1" %>
+﻿<%@ Page Language="C#" MasterPageFile="../../MasterPage/Header.Master" AutoEventWireup="true" CodeBehind="Booking.aspx.cs" Inherits="WAD_Assignment.Member.WebForm1" %>
 
 <asp:Content ID="ContentPlaceHolder" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="Booking.css" rel="stylesheet" />

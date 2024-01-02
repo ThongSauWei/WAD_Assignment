@@ -11,18 +11,7 @@ namespace WAD_Assignment.MyBooking
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["ticketID"] == null)
-            {
-                Response.Redirect("~/error/GeneralError.aspx");
-            }
-            else
-            {
-                string ticketID = Request.QueryString["ticketID"];
-                string amount = Request.QueryString["amount"];
-                pTicketID.InnerText = ticketID;
-                ticketIDField.Value = ticketID;
-                amountField.Value = amount;
-            }
+
         }
 
     }

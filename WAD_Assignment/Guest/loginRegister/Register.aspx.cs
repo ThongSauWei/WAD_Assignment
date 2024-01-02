@@ -148,10 +148,10 @@ namespace WAD_Assignment
                 //ErrorMessageLabel.InnerText = "A database error occurred during registration. Please try again later.";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "sqlError", "alert('A database error occurred during registration. Please try again later.');", true);
 
-                Response.Write("SQL Exception Number: " + sqlEx.Number);
-                Response.Write("SQL Exception Message: " + sqlEx.Message);
-                Response.Write("SQL Exception Class: " + sqlEx.Class);
-                Response.Write("SQL Exception State: " + sqlEx.State);
+                Response.Write($"SQL Exception Number: {sqlEx.Number}");
+                Response.Write($"SQL Exception Message: {sqlEx.Message}");
+                Response.Write($"SQL Exception Class: {sqlEx.Class}");
+                Response.Write($"SQL Exception State: {sqlEx.State}");
 
             }
             finally

@@ -30,7 +30,6 @@
                 </div>
                 <ul>
                     <li>
-<<<<<<< Updated upstream
                         <a href="#"><i class="fa fa-users"></i>
                             <h1 id="ST1" class="car1_title" style="margin-left: 15px; padding-right: 56px; display: none;">Customers</h1>
                         </a>
@@ -52,62 +51,18 @@
                     </li>
                     <li>
                         <a href="#"><i class="fas fa-user-cog"></i>
-=======
-                        <a href="ManageCustomer/ManageCustomer.aspx"><i class="fa fa-users"></i>
-                            <h1 id="ST1" class="car1_title" style="margin-left: 15px; padding-right: 56px; display: none;">Customers</h1>
-                        </a>
-                    </li>
-                    <%--<li>
-                        <a href="ManageCustomer/Manage.aspx"><i class="fas fa-ban"></i>
-                            <h1 id="ST2" class="car1_title" style="margin-left: 15px; display: none;">Cancel & Refund</h1>
-                        </a>
-                    </li>--%>
-                    <li>
-                        <a href="ManageMovie/ManageMovie.aspx"><i class="fa fa-film"></i>
-                            <h1 id="ST3" class="car1_title" style="margin-left: 15px; padding-right: 97px; display: none;">Movie</h1>
-                        </a>
-                    </li>
-                    <%--                    <li>
-                        <a href="#"><i class="fas fa-file-alt"></i>
-                            <h1 id="ST4" class="car1_title" style="margin-left: 15px; padding-right: 88px; display: none;">Report</h1>
-                        </a>
-                    </li>--%>
-                    <li>
-                        <a href="ManageStaff/ManageStaff.aspx"><i class="fas fa-user-cog"></i>
->>>>>>> Stashed changes
                             <h1 id="ST5" class="car1_title" style="margin-left: 12px; padding-right: 103px; display: none;">Staff</h1>
                         </a>
                     </li>
                 </ul>
                 <div class="avatar">
-<<<<<<< Updated upstream
                     <a href="#"><i class="fas fa-sign-out-alt"></i></a>
-=======
-                    <a href="#"><i class="fas fa-sign-out-alt" onclick="logout()"></i></a>
-
-                    <script type="text/javascript">
-                        function logout() {
-                        // Clear session variables
-                        <% Session.Clear(); %>
-
-                        // Abandon the session
-                        <% Session.Abandon(); %>
-
-                            // Redirect to the sign-in page
-                            window.location.href = '../../Guest/loginRegister/Login.aspx';
-                        }
-                    </script>
->>>>>>> Stashed changes
                 </div>
             </div>
             <!-- /#sidebar-wrapper -->
 
             <!-- Page Content -->
-<<<<<<< Updated upstream
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
-=======
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
->>>>>>> Stashed changes
         </div>
     </form>
     <script src="AdminMainNew.js"></script>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Admin-New/AdminSideBar.Master" AutoEventWireup="true" CodeFile="AddMovie.aspx.cs" Inherits="WAD_Assignment.Admin_New.AddMovie" %>
+﻿<%@ Page Language="C#" MasterPageFile="../../MasterPage/Header.Master" AutoEventWireup="true" CodeBehind="AddMovie.aspx.cs" Inherits="WAD_Assignment.Admin_New.AddMovie" %>
 
 <asp:Content ID="ContentPlaceHolder" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="AddAndEditMovie.css" rel="stylesheet" />
@@ -110,7 +110,6 @@
             </div>
             <div class="bottom-side">
                 <asp:Button ID="addMovie" CssClass="btnFinish" runat="server" Text="Add Movie" OnClick="AddMovie_Click" />
-                <asp:Button ID="cancelAdd" CssClass="cancelAction" runat="server" Text="Cancel" OnClick="cancelAdd_Click" CausesValidation="False" />
             </div>
         </div>
     </div>

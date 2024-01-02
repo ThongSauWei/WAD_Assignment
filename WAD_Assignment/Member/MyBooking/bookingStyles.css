@@ -20,7 +20,7 @@
     margin: 126px 1.5rem 3rem 1.5rem;
 }
 
-.mybooking-container .card {
+.mybooking-container > .card {
     display: flex;
     max-width: 800px;
     margin: 30px auto;
@@ -29,24 +29,24 @@
     transition: transform 260ms ease-in-out, box-shadow 260ms ease-in-out;
 }
 
-.mybooking-container .card-old {
+.mybooking-container > .card-old {
     filter: contrast(0.6);
 }
 
-.mybooking-container > div > .card:first-child {
+.mybooking-container > .card:first-child {
     margin-top: 0;
 }
 
-.mybooking-container > div > .card:last-child {
+.mybooking-container > .card:last-child {
     margin-bottom: 0;
 }
 
-.mybooking-container .card > img {
+.mybooking-container > .card > img {
     vertical-align: middle;
     border-radius: 12px 0 0 12px;
 }
 
-.mybooking-container .card_content {
+.mybooking-container > .card > .card_content {
     display: flex;
     flex-direction: column;
     margin: 10px 15px;
@@ -80,8 +80,8 @@
     box-shadow: -10px 3px 61px -20px rgba(0,0,0,0.87);
 }
 
-.mybooking-container .card:hover,
-.mybooking-container .card:active {
+.mybooking-container > .card:hover,
+.mybooking-container > .card:active {
     transform: scale(1.01);
     box-shadow: -10px 3px 61px -20px rgba(0,0,0,0.87);
 }
@@ -323,7 +323,7 @@
     padding: 10px
 }
 
-    .btnSubmit {
+    .confirm-container > .confirm-center > #ContentPlaceHolder1_submitRefund {
         z-index: 1;
         padding: 8px 16px;
         background-color: transparent;

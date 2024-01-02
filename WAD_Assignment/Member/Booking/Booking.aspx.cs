@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.UI.HtmlControls;
+using WAD_Assignment.Entity;
 
 namespace WAD_Assignment.Member
 {
@@ -103,6 +104,10 @@ namespace WAD_Assignment.Member
             DateTime date = DateTime.Parse(dateField.Value);
             DateTime time = DateTime.Parse(timeField.Value);
 
+            Movie movie = Get_Movie_Info(scheduleId);
+
+            movieImg.ImageUrl = "~/image/" + movie.MovieImgUrl;
+
             ContentPlaceHolder contentPlaceHolder = (ContentPlaceHolder)Master.FindControl("ContentPlaceHolder1");
             HtmlGenericControl movieDiv = (HtmlGenericControl)contentPlaceHolder.FindControl("movieDetail");
             HtmlGenericControl h1 = new HtmlGenericControl("h1");
@@ -111,136 +116,147 @@ namespace WAD_Assignment.Member
             LiteralControl br;
             LiteralControl text;
 
+            // add a <h1> with movie title into the div
+            h1.InnerText = movie.MovieName;
+            movieDiv.Controls.Add(h1);
+
+            // add a <h3> with movie classification, category and duration into the div
+            int hours = movie.Duration / 60;
+            int minutes = movie.Duration % 60;
+            string hourStr;
+            string minuteStr;
+
+            if (hours > 1)
+            {
+                hourStr = hours + " hours";
+            }
+            else if (hours == 1)
+            {
+                hourStr = hours + " hour";
+            }
+            else
+            {
+                hourStr = "";
+            }
+
+            if (minutes > 1)
+            {
+                minuteStr = minutes + " minutes";
+            }
+            else if (minutes == 1) 
+            {
+                minuteStr = minutes + " minute";
+            }
+            else
+            {
+                minuteStr = "";
+            }
+
+            h3.InnerText = movie.Classification + " | " + movie.Category + " | " + hourStr + " " + minuteStr;
+            movieDiv.Controls.Add(h3);
+
+            // add line break
+            br = new LiteralControl("<br />");
+            movieDiv.Controls.Add(br);
+
+            // create a new image for language
+            Image languageImg = new Image();
+            languageImg.ID = "languageImg";
+            languageImg.ImageUrl = "~/image/language.png";
+
+            // add the language image and also the text to the div
+            span = new HtmlGenericControl("span");
+            text = new LiteralControl(movie.Language);
+            span.Controls.Add(languageImg);
+            span.Controls.Add(text);
+            movieDiv.Controls.Add(span);
+
+            // create a new image for subtitle
+            Image subtitleImg = new Image();
+            subtitleImg.ID = "subtitleImg";
+            subtitleImg.ImageUrl = "~/image/subtitle.png";
+
+            // add the subtitle image and also the text to the div
+            span = new HtmlGenericControl("span");
+            text = new LiteralControl(movie.Subtitle);
+            span.Controls.Add(subtitleImg);
+            span.Controls.Add(text);
+            movieDiv.Controls.Add(span);
+
+            // add line break
+            br = new LiteralControl("<br />");
+            movieDiv.Controls.Add(br);
+
+            // create a new image for director
+            Image directorImg = new Image();
+            directorImg.ID = "directorImg";
+            directorImg.ImageUrl = "~/image/director.png";
+
+            // add the director image and also the text to the div
+            span = new HtmlGenericControl("span");
+            text = new LiteralControl(movie.Director);
+            span.Controls.Add(directorImg);
+            span.Controls.Add(text);
+            movieDiv.Controls.Add(span);
+
+            // create a new image for cast
+            Image actorImg = new Image();
+            actorImg.ID = "actorImg";
+            actorImg.ImageUrl = "~/image/actor.png";
+
+            // add the cast image and also the text to the div
+            span = new HtmlGenericControl("span");
+            text = new LiteralControl(movie.Cast);
+            span.Controls.Add(actorImg);
+            span.Controls.Add(text);
+            movieDiv.Controls.Add(span);
+
+            // add line break
+            br = new LiteralControl("<br />");
+            movieDiv.Controls.Add(br);
+
+            // create a new image for time
+            Image timeImg = new Image();
+            timeImg.ID = "timeImg";
+            timeImg.ImageUrl = "~/image/time.png";
+
+            // add the time image and also the text to the div
+            span = new HtmlGenericControl("span");
+            text = new LiteralControl(date.ToString("yyyy-MM-dd") + " " + time.ToString("hh:mm tt"));
+            span.Controls.Add(timeImg);
+            span.Controls.Add(text);
+            movieDiv.Controls.Add(span);
+
+            // save the ticket price into the hidden field
+            ticketPrice.Value = movie.Price.ToString("F2");
+        }
+
+        private Movie Get_Movie_Info(string scheduleId)
+        {
+            Movie movie = null;
+
             conn.Open();
 
             string queryStr = "SELECT * FROM Movie m, Schedule s WHERE m.MovieID = s.MovieID AND s.ScheduleID = @ScheduleID";
             SqlCommand cmdSelect = new SqlCommand(queryStr, conn);
             cmdSelect.Parameters.AddWithValue("@ScheduleID", scheduleId);
             SqlDataReader reader = cmdSelect.ExecuteReader();
-
+            
             if (reader.HasRows)
             {
                 while (reader.Read())
                 {
-                    movieImg.ImageUrl = "~/image/" + reader["movieImage"].ToString();
-
-                    // add a <h1> with movie title into the div
-                    h1.InnerText = reader["movieName"].ToString();
-                    movieDiv.Controls.Add(h1);
-
-                    // add a <h3> with movie classification, category and duration into the div
-                    int hours = Convert.ToInt32(reader["duration"].ToString()) / 60;
-                    int minutes = Convert.ToInt32(reader["duration"].ToString()) % 60;
-                    string hourStr;
-                    string minuteStr;
-
-                    if (hours > 1)
-                    {
-                        hourStr = hours + " hours";
-                    }
-                    else if (hours == 1)
-                    {
-                        hourStr = hours + " hour";
-                    }
-                    else
-                    {
-                        hourStr = "";
-                    }
-
-                    if (minutes > 1)
-                    {
-                        minuteStr = minutes + " minutes";
-                    }
-                    else if (minutes == 1)
-                    {
-                        minuteStr = minutes + " minute";
-                    }
-                    else
-                    {
-                        minuteStr = "";
-                    }
-
-                    h3.InnerText = reader["classification"].ToString() + " | " + reader["category"].ToString() + " | " + hourStr + " " + minuteStr;
-                    movieDiv.Controls.Add(h3);
-
-                    // add line break
-                    br = new LiteralControl("<br />");
-                    movieDiv.Controls.Add(br);
-
-                    // create a new image for language
-                    Image languageImg = new Image();
-                    languageImg.ID = "languageImg";
-                    languageImg.ImageUrl = "~/image/language.png";
-
-                    // add the language image and also the text to the div
-                    span = new HtmlGenericControl("span");
-                    text = new LiteralControl(reader["language"].ToString());
-                    span.Controls.Add(languageImg);
-                    span.Controls.Add(text);
-                    movieDiv.Controls.Add(span);
-
-                    // create a new image for subtitle
-                    Image subtitleImg = new Image();
-                    subtitleImg.ID = "subtitleImg";
-                    subtitleImg.ImageUrl = "~/image/subtitle.png";
-
-                    // add the subtitle image and also the text to the div
-                    span = new HtmlGenericControl("span");
-                    text = new LiteralControl(reader["subtitle"].ToString());
-                    span.Controls.Add(subtitleImg);
-                    span.Controls.Add(text);
-                    movieDiv.Controls.Add(span);
-
-                    // add line break
-                    br = new LiteralControl("<br />");
-                    movieDiv.Controls.Add(br);
-
-                    // create a new image for director
-                    Image directorImg = new Image();
-                    directorImg.ID = "directorImg";
-                    directorImg.ImageUrl = "~/image/director.png";
-
-                    // add the director image and also the text to the div
-                    span = new HtmlGenericControl("span");
-                    text = new LiteralControl(reader["director"].ToString());
-                    span.Controls.Add(directorImg);
-                    span.Controls.Add(text);
-                    movieDiv.Controls.Add(span);
-
-                    // create a new image for cast
-                    Image actorImg = new Image();
-                    actorImg.ID = "actorImg";
-                    actorImg.ImageUrl = "~/image/actor.png";
-
-                    // add the cast image and also the text to the div
-                    span = new HtmlGenericControl("span");
-                    text = new LiteralControl(reader["cast"].ToString());
-                    span.Controls.Add(actorImg);
-                    span.Controls.Add(text);
-                    movieDiv.Controls.Add(span);
-
-                    // add line break
-                    br = new LiteralControl("<br />");
-                    movieDiv.Controls.Add(br);
-
-                    // create a new image for time
-                    Image timeImg = new Image();
-                    timeImg.ID = "timeImg";
-                    timeImg.ImageUrl = "~/image/time.png";
-
-                    // add the time image and also the text to the div
-                    span = new HtmlGenericControl("span");
-                    text = new LiteralControl(date.ToString("yyyy-MM-dd") + " " + time.ToString("hh:mm tt"));
-                    span.Controls.Add(timeImg);
-                    span.Controls.Add(text);
-                    movieDiv.Controls.Add(span);
-
-                    // save the ticket price into the hidden field
-                    ticketPrice.Value = Convert.ToDouble(reader["price"].ToString()).ToString("F2");
+                    movie = new Movie(reader["movieID"].ToString(), reader["movieName"].ToString(), reader["movieDesc"].ToString(),
+                        reader["movieImage"].ToString(), Convert.ToInt32(reader["duration"]), reader["category"].ToString(),
+                        DateTime.Parse(reader["releaseDate"].ToString()), reader["status"].ToString(),
+                        reader["language"].ToString(), reader["subtitle"].ToString(), reader["classification"].ToString(),
+                        reader["director"].ToString(), reader["cast"].ToString(), Convert.ToDouble(reader["price"]));
                 }
             }
 
             conn.Close();
+
+            return movie;
         }
 
         private void Initialise_Table()
@@ -433,7 +449,5 @@ namespace WAD_Assignment.Member
 
             return td;
         }
-
-        
     }
 }

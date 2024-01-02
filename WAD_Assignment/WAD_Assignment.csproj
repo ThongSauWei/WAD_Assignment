@@ -67,33 +67,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin-New\AdminMainNew.aspx" />
-    <Content Include="Admin-New\AdminMainNew.css" />
-    <Content Include="Admin-New\AdminMainNew.js" />
-    <Content Include="Admin-New\AdminSideBar.Master" />
     <Content Include="Admin-New\ManageCustomer\ManageCustomer.aspx" />
-<<<<<<< Updated upstream
     <Content Include="Admin-New\AdminMainNew.aspx" />
-=======
-    <Content Include="Admin-New\ManageCustomer\ManageCustomer.css" />
->>>>>>> Stashed changes
     <Content Include="Admin-New\ManageMovie\AddMovie.aspx" />
     <Content Include="Admin-New\ManageMovie\AddAndEditMovie.css" />
     <Content Include="Admin-New\ManageMovie\EditMovie.aspx" />
     <Content Include="Admin-New\AdminMainNew.js" />
     <Content Include="Admin-New\ManageMovie\ManageMovie1.aspx" />
     <Content Include="Admin-New\ManageMovie\ManageMovie.css" />
-<<<<<<< Updated upstream
     <Content Include="Admin-New\AdminMainNew.css" />
     <Content Include="Admin-New\Report\SalesReport.aspx" />
     <Content Include="Admin\AddAdmin.aspx" />
-=======
-    <Content Include="Admin-New\ManageStaff\AddAndEditStaff.css" />
-    <Content Include="Admin-New\ManageStaff\AddStaff.aspx" />
-    <Content Include="Admin-New\ManageStaff\EditStaff.aspx" />
-    <Content Include="Admin-New\ManageStaff\ManageStaff.aspx" />
-    <Content Include="Admin-New\ManageStaff\ManageStaff.css" />
->>>>>>> Stashed changes
     <Content Include="Admin\AdminCRUD.aspx" />
     <Content Include="Admin\AdminMain.aspx" />
     <Content Include="Admin\MemberCRUD.aspx" />
@@ -195,20 +179,6 @@
     <Content Include="Guest\loginRegister\Register.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin-New\AdminMainNew.aspx.cs">
-      <DependentUpon>AdminMainNew.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin-New\AdminMainNew.aspx.designer.cs">
-      <DependentUpon>AdminMainNew.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin-New\AdminSideBar.Master.cs">
-      <DependentUpon>AdminSideBar.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin-New\AdminSideBar.Master.designer.cs">
-      <DependentUpon>AdminSideBar.Master</DependentUpon>
-    </Compile>
     <Compile Include="Admin-New\ManageCustomer\ManageCustomer.aspx.cs">
       <DependentUpon>ManageCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -265,27 +235,6 @@
     <Compile Include="Admin\AddAdmin.aspx.designer.cs">
       <DependentUpon>AddAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin-New\ManageStaff\AddStaff.aspx.cs">
-      <DependentUpon>AddStaff.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin-New\ManageStaff\AddStaff.aspx.designer.cs">
-      <DependentUpon>AddStaff.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin-New\ManageStaff\EditStaff.aspx.cs">
-      <DependentUpon>EditStaff.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin-New\ManageStaff\EditStaff.aspx.designer.cs">
-      <DependentUpon>EditStaff.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin-New\ManageStaff\ManageStaff.aspx.cs">
-      <DependentUpon>ManageStaff.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin-New\ManageStaff\ManageStaff.aspx.designer.cs">
-      <DependentUpon>ManageStaff.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\AdminCRUD.aspx.cs">
       <DependentUpon>AdminCRUD.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -328,7 +277,6 @@
     <Compile Include="Admin\RefundStatus.aspx.designer.cs">
       <DependentUpon>RefundStatus.aspx</DependentUpon>
     </Compile>
-<<<<<<< Updated upstream
     <Compile Include="Admin\UpdateAdmin.aspx.cs">
       <DependentUpon>UpdateAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -351,8 +299,6 @@
       <DependentUpon>ViewRefund.aspx</DependentUpon>
     </Compile>
     <Compile Include="Entity\Movie.cs" />
-=======
->>>>>>> Stashed changes
     <Compile Include="error\GeneralError.aspx.cs">
       <DependentUpon>GeneralError.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

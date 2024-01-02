@@ -17,15 +17,13 @@ namespace WAD_Assignment.Admin_New
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["staffID"] == null)
-            {
-                Response.Redirect("~/error/GeneralError.aspx");
-            }
-            else
-            {
-                Initialise_Movie();
-                removePanel.Visible = false;
-            }
+            //if (Session["StaffID"] == null)
+            //{
+            //    Response.Redirect("~/error/GeneralError.aspx");
+            //}
+
+            Initialise_Movie();
+            removePanel.Visible = false;
         }
 
         protected void btnRemove_Click(object sender, EventArgs e)

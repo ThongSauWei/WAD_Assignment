@@ -53,7 +53,7 @@ div.group > div > .movie-input {
     width: 100%;
 }
 
-.btnFinish, .cancelAction {
+.btnFinish {
     background-color: #ecd261;
     border: none;
     width: 25%;
@@ -61,12 +61,12 @@ div.group > div > .movie-input {
     border-radius: 10px;
     font-size: 16px;
     color: white;
-    margin-left: 6%;
+    margin-left: 25%;
     margin-top: 40px;
     cursor: pointer;
 }
 
-.btnFinish:hover, .cancelAction:hover {
+.btnFinish:hover {
     background-color: #ebda76;
 }
 
